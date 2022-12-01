@@ -1,0 +1,75 @@
+﻿@model List<Proyecto>
+
+
+@{
+    ViewBag.Title = "Proyectos";
+}
+
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-auto" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+
+@section page_title
+{
+    <h2>RDO</h2>
+}
+
+@section page_toolbar {
+
+}
+
+
+
+<table class="table table-bordered table-hover display" id="proyectos_table">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Contrato</th>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.codigo)</td>
+                <td> @Html.DisplayFor(modelItem => item.Contrato.Codigo)</td>
+                <td> @Html.DisplayFor(modelItem => item.nombre_proyecto)</td>
+                <td> @(item.estado_proyecto == true ? "Activo" : "Inactivo") </td>
+                <td style=" width:  200px;">
+                    @Html.ActionLink("Ver", "Detailsproyecto", "RdoCabecera", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                    <!--  @Html.ActionLink("Editar", "Edit", "Proyecto", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })-->
+                    <!--  <div style="float: left">
+        <form action="@Url.Action("Delete", "Proyecto", new {id = item.Id})" method="post" class="form-inline">
+            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" onclick="return confirm('Esta seguro de Eliminar este Registro?');" />
+        </form>
+    </div>-->
+                </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+
+                <th>Código</th>
+                <th>Contrato</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th></th>
+            </tr>
+
+
+        </tfoot>
+    </table>

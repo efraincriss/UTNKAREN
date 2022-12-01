@@ -1,0 +1,29 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.CertificadoFacturaDto
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Información Detalle</h2>
+                    </div>
+
+                    <div class="col" align="right">
+                        @Html.ActionLink("Regresar", "Details", "Factura", new { id = 5 }, new { @class = "btn btn-outline-primary" })
+                    </div>.
+                </div>
+                <dl class="dl-horizontal">
+
+                    <h1>pendiente</h1>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

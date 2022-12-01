@@ -1,0 +1,65 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.CartaArchivoDto
+
+@{
+    ViewBag.Title = "Editar Computo";
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+        <div align="right" style="margin-bottom: 0.5em;">
+
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Información Archivo</h2>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+  
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CartaId)
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CartaId, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CartaId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        Archivos:<br />
+                        <input type="file" name="file" multiple />
+                    </div>
+                    <div class="form-group">
+                        @*  @Html.LabelFor(model => model.vigente, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.HiddenFor(model => model.vigente)
+                                @Html.ValidationMessageFor(model => model.vigente, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                            @Html.ActionLink("Cancelar", "Details", "CartaArchivo", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    </div>

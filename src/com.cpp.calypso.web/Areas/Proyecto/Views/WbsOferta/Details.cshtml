@@ -1,0 +1,83 @@
+﻿
+@model com.cpp.calypso.proyecto.aplicacion.WbsOfertaDto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WbsOfertaDto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OfertaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OfertaId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisciplinaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisciplinaId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ElementoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ElementoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActividadId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActividadId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.observaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.observaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vigente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vigente)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

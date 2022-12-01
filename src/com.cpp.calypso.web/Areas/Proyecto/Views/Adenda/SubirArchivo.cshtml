@@ -1,0 +1,16 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.AdendaDto
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+@using (Html.BeginForm("SubirArchivo", "Adenda", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <td>Archivo:</td><br />
+    <input type="file" name="UploadedFile" required="" />
+    <input type="submit" name="Submit" value="Subir" class="btn btn-outline-primary btn-sm" />
+
+}

@@ -1,0 +1,125 @@
+﻿@model com.cpp.calypso.web.Models.PreciarioDetalleViewModel
+
+
+@{
+    ViewBag.Title = "Detalles Del Preciario";
+
+}
+
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Preciario</h4>
+                    </div>
+                    <div  align="right">
+
+
+                        <form action="@Url.Action("ClonarPreciario", "Preciario", new {id = Model.Preciario.Id})" method="post" class="form-inline">
+                            @Html.ActionLink("Descargar Preciario Actual","ExportarExcelPrecios","Preciario", new { id = Model.Preciario.Id }, new { @class = "btn btn-outline-indigo btn-sm" }) 
+                            <input type="submit" value="Clonar" class="btn btn-outline-primary btn-sm" onclick="return confirm('Se Procedera a Clonar el Preciario del Contrato');" /> 
+                            @Html.ActionLink("Editar", "Edit", new { id = Model.Preciario.Id }, new { @class = "btn btn-outline-indigo btn-sm" }) 
+                            @Html.ActionLink("Regresar", "Index", "Preciario", new { id = Model.Preciario.Id }, new { @class = "btn btn-outline-primary btn-sm" })
+
+                        </form>
+                    </div>
+
+
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Contrato:</b> @Model.Preciario.Contrato.Codigo</h6>
+                        <h6><b>Vigencia:</b> @(Model.Preciario.fecha_desde.ToShortDateString()) - @(Model.Preciario.fecha_hasta.ToShortDateString()) </h6>
+                        <h6><b>Fecha Actualizacion:</b>@DateTime.Now </h6>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="items_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="items-tab" data-toggle="tab" href="#wbsofertas" role="tab" aria-controls="home" aria-expanded="true">Detalles de los Preciarios</a>
+            </li>
+
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="items" role="tabpanel" aria-labelledby="items-tab">
+
+                <div class="col" align="right">
+                    @Html.ActionLink("Formato Excel Masivo", "ExportarExcel", "Preciario", new { id = Model.Preciario.Id }, new { @class = " btn btn-primary" })
+                     @Html.ActionLink("Carga Masiva", "CargaExcel", new { id = Model.Preciario.Id }, new { @class = "btn btn-outline-primary"})
+                    @* @Html.ActionLink("Carga Masiva", "", new { id = Model.Preciario.Id }, new { @id = "mio", @class = "btn btn-outline-primary", data_toggle = "modal", data_target = "#myModal" })*@
+                    @Html.ActionLink("Nuevo", "Create", "DetallePreciario", new { id = Model.Preciario.Id }, new { @class = "btn btn-primary" })
+                </div>
+                <hr/>
+                <table class="table table-bordered table-hover display" id="items_table">
+                    <thead>
+                    <tr>
+                        <th>Item Padre</th>
+                        <th>Nombre Padre</th>
+                        <th>Item Código</th>
+                        <th>Nombre Item</th>
+                      <th>P.U</th>
+                        <th>Operaciones</th>
+                    </tr>
+
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model.DetallesPreciario)
+                        {
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => item.Item.item_padre)</td>
+                                <td> @Html.DisplayFor(modelItem => item.nombreitempadre)</td>
+                                <td> @Html.DisplayFor(modelItem => item.Item.codigo)</td>
+                                <td> @Html.DisplayFor(modelItem => item.Item.nombre)</td>
+                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.precio_unitario)</td>
+
+
+                                <td style="width: 200px;">
+                                   
+                                        @Html.ActionLink("Ver", "Details", "DetallePreciario", new {id = item.Id}, new {@class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;"})
+                                        @Html.ActionLink("Editar", "Edit", "DetallePreciario", new {id = item.Id}, new {@class = "btn btn-outline-primary btn-sm" , style = " float:  left; margin-right: 0.3em;" })
+                                   
+                                    <div style="float: left">
+                                        <form action="@Url.Action("Delete", "DetallePreciario", new {id = item.Id})" method="post" class="form-inline">
+                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" onclick="return confirm('Esta seguro de Eliminar este Registro?');"/>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                          <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+

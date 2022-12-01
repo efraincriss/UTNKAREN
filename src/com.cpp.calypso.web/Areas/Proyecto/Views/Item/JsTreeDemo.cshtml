@@ -1,0 +1,93 @@
+﻿@model List<Item>
+
+@{
+    ViewBag.Title = "Jerarquia Item";
+}
+
+@section page_title
+{
+    <h2>GESTIÓN DE ITEMS</h2>}
+<link href="~/Content/css/omega/theme.css" rel="stylesheet" />
+<link href="~/Content/css/primereact.min.css" rel="stylesheet" />
+<link href="~/Content/css/primeicons.css" rel="stylesheet" />
+<link href="~/Content/css/block-ui.css" rel="stylesheet" />
+
+<div class="row align-content-center">
+    <div class="col">
+        <div id="content-item" class="i"></div>
+    </div>
+
+</div>
+<br>
+<table class="table table-bordered table-hover display" id="items_table">
+    <thead>
+    <tr>
+        <th>Código Item</th>
+        <th>Código Padre</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Operaciones</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @Html.DisplayFor(modelItem => item.codigo)</td>
+            <td> @Html.DisplayFor(modelItem => item.item_padre)</td>
+            <td> @Html.DisplayFor(modelItem => item.nombre)</td>
+            <td> @Html.DisplayFor(modelItem => item.descripcion)</td>
+            <td style="width:100px">
+                <a href="#" class="create btn btn-outline-success btn-sm" data-value="@item.Id">VER</a>
+
+
+            </td>
+        </tr>
+    }
+    </tbody>
+    <tfoot>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </tfoot>
+</table>
+
+<div class="modal fade" id="veritem" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="veritems">
+                    @if (Model.Count > 0) {
+
+                        //Html.RenderAction("DetailsDatos");
+
+                    }
+                </div>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">CERRAR</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/items.js"></script>
+
+
+
+    <script type="text/javascript">
+        $(".create").click(function () {
+            var id = $(this).data("value");
+            console.log(id);
+            $("#veritems").load("/Proyecto/Item/DetailsDatos/" + id,
+                function () {
+                    $('#veritem').modal("show");
+                });
+
+        });
+    </script>

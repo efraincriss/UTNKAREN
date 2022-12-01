@@ -1,0 +1,48 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.ComputoDto>
+
+@{
+    ViewBag.Title = "IndexSeleccionComputo";
+}
+
+<h2>IndexSeleccionComputo</h2>
+
+
+<table class="table">
+    <tr>
+        <th>Área</th>
+        <th>Diciplina</th>
+        <th>Elemento</th>
+        <th>Actividad</th>
+        <th>Código item</th>
+        <th>Nombre item</th>       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.diciplina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.elemento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.actividad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.item_codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.item_nombre)
+        </td>
+        
+        <td>
+            Ingresar
+        </td>
+    </tr>
+}
+
+</table>

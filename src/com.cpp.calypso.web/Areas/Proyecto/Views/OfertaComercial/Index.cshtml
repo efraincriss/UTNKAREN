@@ -1,0 +1,23 @@
+﻿@model OfertaDto
+@{
+    ViewBag.Title = "Ofertas Comerciales";
+}
+
+@section page_title
+{
+
+    <h2>Ofertas Comerciales</h2>
+    <i class="fa fa-th-list"></i> Listado
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+}
+
+<div id="content" class="@ViewBag.RequerimientoId">
+
+</div>
+
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/ofertascomerciales.js"></script>

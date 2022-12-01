@@ -1,0 +1,94 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.AvanceProcuraDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-sm-12 col-md-8">
+
+<div class="card">
+<div class="card-body">
+<h2 class="card-title">Información Avance de Procura</h2>
+<hr />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.OfertaId)
+         
+            @Html.HiddenFor(model => model.vigente)
+            <div class="row">
+                <div class="col-xs-12 col">
+                    <h6><b>Proyecto: </b>@Model.Oferta.Proyecto.codigo </h6>
+                    <h6><b>Descripción:</b>@Model.Oferta.Proyecto.descripcion_proyecto </h6>
+
+                </div>
+
+                <div class="col-xs-12 col">
+                    <h6><b>Oferta: </b> @Model.Oferta.codigo</h6>
+                    <h6><b>Descripción:</b> @Model.Oferta.descripcion</h6>
+
+                </div>
+            </div>
+    
+    
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha_presentacion)
+      
+                        @Html.EditorFor(model => model.fecha_presentacion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.fecha_presentacion, "", new { @class = "text-danger" })
+      
+                    </div>
+                </div>
+                <div class="col">
+            
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha_desde)
+        
+                        @Html.EditorFor(model => model.fecha_desde, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.fecha_desde, "", new { @class = "text-danger" })
+       
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+
+                <div class="col">  <div class="form-group">
+                    @Html.LabelFor(model => model.fecha_hasta)
+       
+                    @Html.EditorFor(model => model.fecha_hasta, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fecha_hasta, "", new { @class = "text-danger" })
+        
+                </div></div>
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CertificadoId)
+              
+                        @Html.EditorFor(model => model.CertificadoId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CertificadoId, "", new { @class = "text-danger" })
+                
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                    @Html.ActionLink("Cancelar", "Details", "AvanceProcura", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+                </div>
+            </div>
+        </div>
+    }
+    
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,107 @@
+﻿@model com.cpp.calypso.web.Areas.Proyecto.Models.IndexWbsViewModel
+
+@{
+    ViewBag.Title = "Index";
+
+    var proyecto = Model.oferta.proyecto_codigo;
+    var cliente = Model.oferta.cliente_razon_social;
+    var fecha_oferta = Model.oferta.fecha_oferta.GetValueOrDefault();
+}
+
+
+<div class="row">
+    <div style="width: 100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Oferta WBS</h2>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Código Oferta: </b>@Model.oferta.codigo</h6>
+                        <h6><b>Versión: </b>@Model.oferta.version</h6>
+                        <h6><b>Definitiva: </b>@Html.DisplayFor(model => model.oferta.es_final)</h6>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Cliente: </b>@cliente</h6>
+                        <h6><b>Proyecto: </b>@proyecto</h6>
+                        <h6><b>Fecha Oferta: </b>@fecha_oferta.ToString("dd/MM/yyyy")</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col" align="right" style="padding-right: 0; padding-bottom: 1em;">
+        @Html.ActionLink("Editar WBS", "Index", new { id = Model.oferta.Id }, new { @class = "btn btn-primary" })
+
+    </div>
+</div>
+
+<div class="row">
+    <div style="width: 100%;">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-bordered table-hover display">
+                    <thead>
+                        <tr>
+                            <th>Padre</th>
+                            <th>Actividad</th>
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Fin</th>
+                            <th>Observaciones</th>
+                            <th>Operaciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model.Wbs)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.nombre_padre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.nivel_nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.fecha_inicial)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.fecha_final)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.observaciones)
+                                </td>
+                                <td style=" width:  120px;">
+                                    @Html.ActionLink("Editar", "Editar", "Wbs", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                    <div style="float: left">
+                                        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Eliminar", "Wbs", new {id = item.Id})" method="post" class="form-inline">
+                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.AvanceIngenieriaDto>
+
+@{
+    /**/
+
+    ViewBag.Title = "Avance de Ingeniería";
+}
+@section page_title
+{
+    <h2>Avance de Ingeniería</h2>
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+    <div id="Id" class="@ViewBag.OfertaId" />
+@section page_toolbar {
+
+    <div class="btn-toolbar" role="toolbar">
+        @Html.ActionLink(" Crear Avance de Ingeniería ", "Create", new { id = ViewBag.OfertaId }, new { @class = "btn btn-primary", style = "margin-top: 1em;" })&nbsp;
+     
+        <div id="content" align="left">
+
+        </div>
+    </div>
+}
+
+
+
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-auto" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+
+<p>
+
+</p>
+
+<table class="table table-bordered table-hover display" id="avances_table">
+    <thead>
+        <tr>
+            <th>Proyecto</th>
+            <th>Oferta</th>
+            <th>@Html.DisplayNameFor(model => model.fecha_presentacion)</th>
+            <th>@Html.DisplayNameFor(model => model.fecha_desde)</th>
+            <th>@Html.DisplayNameFor(model => model.fecha_hasta)</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codigo_proyecto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codigo_oferta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_presentacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_desde)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_hasta)
+                </td>
+
+                <td style=" width: 200px;">
+                    @Html.ActionLink("Ver", "Details", "AvanceIngenieria", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                    <div style="float: left">
+                        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", "AvanceIngenieria", new {id = item.Id})" method="post" class="form-inline">
+                            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </tfoot>
+
+</table>
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/certificado_ingenieria.js"></script>

@@ -1,0 +1,29 @@
+﻿
+
+@{
+    ViewBag.Title = "WS";
+}
+
+
+@section page_title {
+    <h2>Consumo de WS Registro Civil</h2>
+}
+@section page_toolbar {
+ 
+}
+
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+}
+
+    <div class="row">
+        <div class="card" style="width:100%;border:none">
+            <div class="card-body">
+                           <div id="content-registrocivil"></div>
+          
+            </div>
+        </div>
+    </div>
+        <script src="~/Scripts/build/vendors.js"></script>
+        <script src="~/Scripts/build/ws_registro_civil.js"></script>

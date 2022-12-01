@@ -1,0 +1,156 @@
+CAPEX -Encontrado - Actualizado02/01/2020
+EXTRAORDINARIOS -Encontrado - Actualizado02/01/2020
+FC01.01 -Encontrado - Actualizado02/01/2020
+FC01.02 -Encontrado - Actualizado02/01/2020
+FC01.03 -Encontrado - Actualizado02/01/2020
+FC01.04 -Encontrado - Actualizado02/01/2020
+FC01.05 -Encontrado - Actualizado02/01/2020
+FC01.06 -Encontrado - Actualizado02/01/2020
+FC01.07 -Encontrado - Actualizado02/01/2020
+FC02.01 -Encontrado - Actualizado02/01/2020
+FC02.02 -Encontrado - Actualizado02/01/2020
+FC02.03 -Encontrado - Actualizado02/01/2020
+FC02.04 -Encontrado - Actualizado02/01/2020
+FC02.05 -Encontrado - Actualizado02/01/2020
+FC02.06 -Encontrado - Actualizado02/01/2020
+FC02.07 -Encontrado - Actualizado02/01/2020
+FC02.08 -Encontrado - Actualizado02/01/2020
+FC02.09 -Encontrado - Actualizado02/01/2020
+FC02.10 -Encontrado - Actualizado02/01/2020
+FC02.11 -Encontrado - Actualizado02/01/2020
+FC02.12 -Encontrado - Actualizado02/01/2020
+FC02.13 -Encontrado - Actualizado02/01/2020
+FC02.14 -Encontrado - Actualizado02/01/2020
+FC02.15 -Encontrado - Actualizado02/01/2020
+FC02.16 -Encontrado - Actualizado02/01/2020
+FC02.17 -Encontrado - Actualizado02/01/2020
+FC02.18 -Encontrado - Actualizado02/01/2020
+FC02.19 -Encontrado - Actualizado02/01/2020
+FC02.20 -Encontrado - Actualizado02/01/2020
+FC02.21 -Encontrado - Actualizado02/01/2020
+FC02.23 -Encontrado - Actualizado02/01/2020
+FC02.25 -Encontrado - Actualizado02/01/2020
+FC02.26 -Encontrado - Actualizado02/01/2020
+FC02.30 -Encontrado - Actualizado02/01/2020
+FC02.31 -Encontrado - Actualizado02/01/2020
+FC02.32 -Encontrado - Actualizado02/01/2020
+FC02.33 -Encontrado - Actualizado02/01/2020
+FC02.34 -Encontrado - Actualizado02/01/2020
+FC02.37 -Encontrado - Actualizado02/01/2020
+FC02.38 -Encontrado - Actualizado02/01/2020
+FC02.39 -Encontrado - Actualizado02/01/2020
+FC02.40 -Encontrado - Actualizado02/01/2020
+FC02.41 -Encontrado - Actualizado02/01/2020
+FC02.42 -Encontrado - Actualizado02/01/2020
+FC02.43 -Encontrado - Actualizado02/01/2020
+FC02.44 -Encontrado - Actualizado02/01/2020
+FC02.48 -Encontrado - Actualizado02/01/2020
+FC02.49 -Encontrado - Actualizado02/01/2020
+FC02.50 -Encontrado - Actualizado02/01/2020
+FC02.52 -Encontrado - Actualizado02/01/2020
+FC02.53 -Encontrado - Actualizado02/01/2020
+FC02.55 -Encontrado - Actualizado02/01/2020
+FC02.56 -Encontrado - Actualizado02/01/2020
+FC02.57 -Encontrado - Actualizado02/01/2020
+FC02.58 -Encontrado - Actualizado02/01/2020
+FC02.59 -Encontrado - Actualizado02/01/2020
+FC02.60 -Encontrado - Actualizado02/01/2020
+FC02.62 -Encontrado - Actualizado02/01/2020
+FC02.63 -Encontrado - Actualizado02/01/2020
+FC02.64 -Creado -02/01/2020
+FC02.65 -Creado -02/01/2020
+FC02.66 -Creado -02/01/2020
+FC03.01 -Encontrado - Actualizado02/01/2020
+FC03.02 -Encontrado - Actualizado02/01/2020
+FC03.03 -Encontrado - Actualizado02/01/2020
+FC03.04 -Encontrado - Actualizado02/01/2020
+FC03.05 -Encontrado - Actualizado02/01/2020
+FC03.09 -Encontrado - Actualizado02/01/2020
+FC03.10 -Encontrado - Actualizado02/01/2020
+FC03.11 -Encontrado - Actualizado02/01/2020
+FC03.20 -Encontrado - Actualizado02/01/2020
+FC03.21 -Encontrado - Actualizado02/01/2020
+FC03.22 -Encontrado - Actualizado02/01/2020
+FC03.23 -Encontrado - Actualizado02/01/2020
+FC03.24 -Encontrado - Actualizado02/01/2020
+FC03.27 -Creado -02/01/2020
+FC04.01 -Encontrado - Actualizado02/01/2020
+FC04.02 -Encontrado - Actualizado02/01/2020
+FC04.04 -Encontrado - Actualizado02/01/2020
+FC04.05 -Encontrado - Actualizado02/01/2020
+FC04.06 -Encontrado - Actualizado02/01/2020
+FC04.07 -Encontrado - Actualizado02/01/2020
+FC04.08 -Encontrado - Actualizado02/01/2020
+FC04.17 -Creado -02/01/2020
+FC04.18 -Encontrado - Actualizado02/01/2020
+FC04.19 -Encontrado - Actualizado02/01/2020
+FC04.70 -Creado -02/01/2020
+FC05.02 -Encontrado - Actualizado02/01/2020
+FC05.03 -Creado -02/01/2020
+FC05.99 -Creado -02/01/2020
+FC07.02 -Encontrado - Actualizado02/01/2020
+FC07.03 -Creado -02/01/2020
+FC08.01 -Encontrado - Actualizado02/01/2020
+FC08.02 -Encontrado - Actualizado02/01/2020
+FC08.03 -Encontrado - Actualizado02/01/2020
+FC08.04 -Encontrado - Actualizado02/01/2020
+FC08.05 -Encontrado - Actualizado02/01/2020
+FC08.06 -Encontrado - Actualizado02/01/2020
+FC08.07 -Encontrado - Actualizado02/01/2020
+FC08.08 -Encontrado - Actualizado02/01/2020
+FC08.09 -Creado -02/01/2020
+FC08.11 -Creado -02/01/2020
+FC08.12 -Creado -02/01/2020
+FC09.01 -Encontrado - Actualizado02/01/2020
+FC09.03 -Encontrado - Actualizado02/01/2020
+FC09.04 -Encontrado - Actualizado02/01/2020
+FC09.05 -Encontrado - Actualizado02/01/2020
+FC09.06 -Encontrado - Actualizado02/01/2020
+FC09.07 -Encontrado - Actualizado02/01/2020
+FC09.08 -Encontrado - Actualizado02/01/2020
+FC09.09 -Encontrado - Actualizado02/01/2020
+FC09.10 -Encontrado - Actualizado02/01/2020
+FC09.11 -Encontrado - Actualizado02/01/2020
+FC09.12 -Encontrado - Actualizado02/01/2020
+FC09.13 -Encontrado - Actualizado02/01/2020
+FC09.14 -Encontrado - Actualizado02/01/2020
+FC09.15 -Encontrado - Actualizado02/01/2020
+FC09.16 -Encontrado - Actualizado02/01/2020
+FC09.19 -Encontrado - Actualizado02/01/2020
+FC09.20 -Creado -02/01/2020
+FC09.21 -Encontrado - Actualizado02/01/2020
+FC09.22 -Encontrado - Actualizado02/01/2020
+FC09.23 -Encontrado - Actualizado02/01/2020
+FC09.30 -Encontrado - Actualizado02/01/2020
+FC09.31 -Encontrado - Actualizado02/01/2020
+FC09.32 -Creado -02/01/2020
+FC09.33 -Encontrado - Actualizado02/01/2020
+FC09.34 -Encontrado - Actualizado02/01/2020
+FC09.35 -Encontrado - Actualizado02/01/2020
+FC09.36 -Encontrado - Actualizado02/01/2020
+FC09.38 -Creado -02/01/2020
+FC09.39 -Creado -02/01/2020
+FC09.40 -Creado -02/01/2020
+FC10.01 -Encontrado - Actualizado02/01/2020
+FC10.02 -Encontrado - Actualizado02/01/2020
+FC10.05 -Encontrado - Actualizado02/01/2020
+FC10.07 -Encontrado - Actualizado02/01/2020
+FC10.08 -Encontrado - Actualizado02/01/2020
+FC10.09 -Encontrado - Actualizado02/01/2020
+FC10.13 -Encontrado - Actualizado02/01/2020
+FC10.14 -Encontrado - Actualizado02/01/2020
+FC10.15 -Encontrado - Actualizado02/01/2020
+FC10.16 -Encontrado - Actualizado02/01/2020
+FC10.18 -Encontrado - Actualizado02/01/2020
+FC10.19 -Encontrado - Actualizado02/01/2020
+FC10.21 -Encontrado - Actualizado02/01/2020
+FC10.22 -Encontrado - Actualizado02/01/2020
+FC10.23 -Encontrado - Actualizado02/01/2020
+FC10.24 -Encontrado - Actualizado02/01/2020
+FC10.25 -Encontrado - Actualizado02/01/2020
+FC10.26 -Creado -02/01/2020
+FC10.27 -Creado -02/01/2020
+FC10.28 -Creado -02/01/2020
+FC11.01 -Encontrado - Actualizado02/01/2020
+FC11.02 -Creado -02/01/2020
+OPEX -Encontrado - Actualizado02/01/2020

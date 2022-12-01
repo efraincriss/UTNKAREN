@@ -1,0 +1,45 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.ProcesoNotificacionDto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@section page_title
+{
+
+    <h2>Detalles del Proceso de notificación</h2>
+    <i class="fa fa-tag"></i> Notificaciones
+}
+
+<div>
+    <div class="" align="right">
+        @Html.ActionLink("Editar", "Edit", "ProcesoNotificacion", new{ id = Model.Id}, new { @class = "btn btn-outline-primary" })
+        @Html.ActionLink("Regresar", "Index", "ProcesoNotificacion", new { @class = "btn btn-outline-primary" })
+    </div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.formato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.formato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+</div>

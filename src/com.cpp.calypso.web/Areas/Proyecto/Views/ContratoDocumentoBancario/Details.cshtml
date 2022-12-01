@@ -1,0 +1,105 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.ContratoDocumentoBancarioDto
+
+@{
+    ViewBag.Title = "Contrato Documento Bancario";
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Información del Documento Bancario</h2>
+                    </div>
+
+                    <div class="col" align="right">
+                        @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+                        @Html.ActionLink("Regresar", "Details", "Contrato", new { id = Model.ContratoId }, new { @class = "btn btn-outline-primary"})
+                    </div>
+                </div>
+                <div>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ContratoId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Contrato.Codigo)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.InstitucionFinancieraId)
+                        </dt>
+                       
+                        <dd>
+                            @Html.DisplayFor(model => model.InstitucionFinanciera.nombre)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.tipo_documento)
+                        </dt>
+
+                        <dd>
+                            @(Model.tipo_documento == 1 ? "Garantía" : "Seguro")
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.codigo)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.codigo)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.fecha_emision)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.fecha_emision)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.fecha_vencimiento)
+                        </dt>
+                
+                        <dd>
+                            @Html.DisplayFor(model => model.fecha_vencimiento)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.notificado_cliente)
+                        </dt>
+
+                        <dd>
+                            @(Model.notificado_cliente == true ? "Activo" : "Inactivo")
+                        </dd>
+
+                        <dt>
+                            Estado
+                        </dt>
+
+                        <dd>
+                            @(Model.estado == 1 ? "Activo" : "Inactivo")
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.fecha_notificacion)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.fecha_notificacion)
+                        </dd>
+
+                        
+
+                    </dl>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

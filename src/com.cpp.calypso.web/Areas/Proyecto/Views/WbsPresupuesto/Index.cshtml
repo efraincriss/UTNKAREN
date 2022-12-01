@@ -1,0 +1,96 @@
+﻿@model PresupuestoDto
+@{
+    ViewBag.Title = "WBS";
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v3")
+}
+
+<div id="PresupuestoId" class="@Model.Id"></div>
+
+<div id="RequerimientoTipo" class="@ViewBag.Requerimiento"></div>
+
+<div class="row">
+    <div style="width: 100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">WBS</h2>
+                    </div>
+
+                    <div class="col" align="right">
+
+
+
+                        @Html.ActionLink("Excel Fechas", "ExportarExcel", "WbsPresupuesto", new { id = Model.Id }, new { @class = "btn btn-outline-indigo", style = "margin-bottom: 3em" })
+
+
+                        @* @Html.ActionLink("Cargar Fechas", "CargaExcelFechas", "OfertaPresupuesto", new { id = Model.Id }, new { @class = "btn btn-outline-primary ", style = "margin-bottom: 3em" })*@
+
+
+                    </div>
+                    <div id="content-subir-excel" style="display: inline-block;margin-right: 1em" align="right">
+
+
+                    </div>
+                    @Html.ActionLink("Regresar", "Details", "OfertaPresupuesto", new { id = Model.Id }, new { @class = "btn btn-outline-primary", style = "margin-bottom: 3em" })
+                </div>
+                <hr />
+
+                <div class="row">
+                    <div class="col">
+                        <h6><b>Proyecto Código - Descripción: </b>@Model.Proyecto.codigo - @Model.Proyecto.nombre_proyecto</h6>
+                    </div>
+                    <div class="col">
+                        <h6><b>Código Oferta - Versión: </b>@Model.codigo - @Model.version</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="panel_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="gestion-tab" data-toggle="tab" href="#gestion" role="tab" aria-controls="home" aria-expanded="true">Creación de WBS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="ordenar-tab" data-toggle="tab" href="#ordenar" role="tab" aria-controls="profile">Reordenar WBS</a>
+            </li>
+           @*<li class="nav-item">
+                <a class="nav-link" id="jerarquia-tab" data-toggle="tab" href="#jerarquia" role="tab" aria-controls="profile">Diagrama</a>
+            </li>*@
+
+        </ul>
+
+
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="gestion" role="tabpanel" aria-labelledby="gestion-tab">
+                <div id="content-presupuestos" class="@ViewBag.Id">
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="ordenar" role="tabpanel" aria-labelledby="ordenar-tab">
+                <div id="content_reordenar" class="@ViewBag.Id">
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="jerarquia" role="tabpanel" aria-labelledby="jerarquia-tab">
+                <div id="content-jerarquia" class="@ViewBag.Id"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/wbs_presupuestos.js"></script>

@@ -1,0 +1,54 @@
+﻿@model com.cpp.calypso.web.Areas.Proyecto.Models.CreateProcesoListaViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+@section page_title
+{
+
+    <h2>Procesos por lista de distribución</h2>
+    <i class="fa fa-tag"></i> Crear
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+        @using (Html.BeginForm()) 
+        {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.ProcesoListaDistribucion.vigente)
+        
+       
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ProcesoListaDistribucion.ProcesoNotificacionId)
+            
+                    @Html.DropDownListFor(model => model.ProcesoListaDistribucion.ProcesoNotificacionId, new SelectList(Model.procesos, "Id", "nombre"), "Selecciona el proceso", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ProcesoListaDistribucion.ProcesoNotificacionId, "", new { @class = "text-danger" })
+            
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ProcesoListaDistribucion.ListaDistribucionId)
+     
+                    @Html.DropDownListFor(model => model.ProcesoListaDistribucion.ListaDistribucionId, new SelectList(Model.listas, "Id", "nombre"), "Selecciona la lista", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ProcesoListaDistribucion.ListaDistribucionId, "", new { @class = "text-danger" })
+                </div>
+
+
+       
+
+       
+
+                <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                @Html.ActionLink("Regresar", "Index", "ProcesoListaDistribucion", new { @class = "btn btn-outline-primary"})
+            </div>
+        }
+    </div>
+</div>

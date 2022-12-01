@@ -1,0 +1,39 @@
+﻿@model List<TransmitalCabeceraDto>
+
+@{
+    ViewBag.Title = "Transmittal";
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+@if (ViewBag.Msg != null)
+{
+
+    <div class="row">
+
+        <div class="alert alert-danger" role="alert">
+
+
+            <div class="col-sm-11 align-middle">
+                @ViewBag.Msg
+            </div>
+
+        </div>
+    </div>
+}
+@section page_title
+{
+    <h2>Transmittals</h2>
+}
+@section page_toolbar {
+
+}
+<div id="content">
+
+</div>
+
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/transmittal.js"></script>

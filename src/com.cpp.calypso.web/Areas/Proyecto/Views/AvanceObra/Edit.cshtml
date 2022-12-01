@@ -1,0 +1,163 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.AvanceObraDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Avance de obra</h2>
+                <hr />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.OfertaId)
+                        @Html.HiddenFor(model => model.vigente)
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.descripcion)
+
+                            @Html.TextAreaFor(model => model.descripcion, new { @class = "form-control", rows = "3" })
+                            @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.alcance)
+                            @Html.TextAreaFor(model => model.alcance, new { @class = "form-control", rows = "3" })
+                            @Html.ValidationMessageFor(model => model.alcance, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.fecha_presentacion)
+
+                            @Html.EditorFor(model => model.fecha_presentacion, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.fecha_presentacion, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.fecha_desde)
+                                    @Html.EditorFor(model => model.fecha_desde, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.fecha_desde, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.fecha_hasta)
+                                    @Html.EditorFor(model => model.fecha_hasta, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.fecha_hasta, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                        </div>
+            <!--
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.certificado)
+
+                            @Html.EditorFor(model => model.certificado, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.certificado, "", new { @class = "text-danger" })
+
+                        </div>
+                -->
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.comentario)
+
+                            @Html.TextAreaFor(model => model.comentario, new { @class = "form-control", rows = "3" })
+                            @Html.ValidationMessageFor(model => model.comentario, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <!--
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.monto_ingenieria)
+                                    <br />
+                                    @Html.DisplayFor(model => model.monto_ingenieria, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.monto_ingenieria, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.monto_suministros)
+                                    <br />
+                                    @Html.DisplayFor(model => model.monto_suministros, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.monto_suministros, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.monto_construccion)
+                                    <br />
+                                    @Html.DisplayFor(model => model.monto_construccion, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.monto_construccion, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.monto_total)
+                                    <br />
+                                    @Html.DisplayFor(model => model.monto_total, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.monto_total, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                        </div>
+                        -->
+                        
+                        <div class="row">
+                            
+                            <div class="col">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.monto_total)
+                                    <br />
+                                    @Html.DisplayFor(model => model.monto_total, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.monto_total, "", new { @class = "text-danger" })
+
+                                </div>
+
+                            </div>
+
+                       
+                      
+
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.aprobado)
+
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.aprobado)
+                                    @Html.ValidationMessageFor(model => model.aprobado, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                        </div>
+
+                        </div>
+
+
+
+                        <hr />
+                        <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                        @Html.ActionLink("Regresar", "Index", "AvanceObra", new { id = Model.OfertaId }, new { @class = "btn btn-outline-primary" })
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

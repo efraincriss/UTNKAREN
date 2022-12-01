@@ -1,0 +1,68 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.ListaDistribucionDto>
+
+@{
+    ViewBag.Title = "Lista de Distribución";
+}
+
+@section page_title
+{
+
+    <h2>Listas de distribución</h2>
+    <i class="fa fa-th-list"></i> Listado
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+
+@section page_toolbar {
+    <div class="btn-toolbar" role="toolbar">
+        @Html.ActionLink("Nuevo", "Create", "ListaDistribucion", new { @class = "btn btn-outline-primary", style = "margin-top: 1em;" })
+    </div>
+}
+
+<table class="table table-bordered table-hover display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estado)
+                </td>
+                <td>
+                    @Html.ActionLink("Ver", "Details", "ListaDistribucion", new { id = item.Id }, new { @class = "btn btn-outline-success", style = " float:  left; margin-right: 0.3em;" })
+                    @Html.ActionLink("Editar", "Edit", "ListaDistribucion", new { id = item.Id }, new { @class = "btn btn-outline-primary", style = " float:  left; margin-right: 0.3em;" })
+                    <div style="float: left">
+                        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", new {id = item.Id})" method="post" class="form-inline">
+                            <input type="submit" value="Eliminar" class="btn btn-outline-danger" />
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.estado)</th>
+            <th></th>
+        </tr>
+    </tfoot>
+
+</table>

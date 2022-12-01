@@ -1,0 +1,57 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.GRDto
+
+@{
+    ViewBag.Title = "Detalles GR";
+}
+
+<link href="~/Content/css/omega/theme.css" rel="stylesheet" />
+<link href="~/Content/css/primereact.min.css" rel="stylesheet" />
+<link href="~/Content/css/primeicons.css" rel="stylesheet" />
+<link href="~/Content/css/block-ui.css" rel="stylesheet" />
+<link href="~/Content/css/time-picker.css" rel="stylesheet" />
+
+<div id="GRId" class="@Model.Id"></div>
+<div id="ProyectoId" class="@Model.ProyectoId"></div>
+
+
+<div class="row">
+    <div style="width: 100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">GR</h2>
+                    </div>
+                    <div class="col">
+                        @Html.ActionLink("Regresar", "Index", "GR", new { @class = "btn btn-outline-primary", style = "margin-bottom: 1em; float: right" })
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col">
+                        <h6><b>Cliente: </b>@Model.Cliente.razon_social</h6>
+                        <h6><b>Contrato: </b>@Model.Contrato.Codigo</h6>
+                        <h6><b># GR: </b>@Model.numero_gr</h6>
+                    </div>
+                    <div class="col">
+                        <h6><b>Fecha Registro: </b>@Model.fecha_registro</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <div id="content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/build/detalle_gr.js"></script>
+

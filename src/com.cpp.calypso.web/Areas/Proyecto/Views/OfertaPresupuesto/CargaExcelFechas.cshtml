@@ -1,0 +1,37 @@
+﻿@section page_title
+{
+    <i class="fa fa-tag"></i> Carga de Fechas Wbs Presupuesto XLS
+    <h2>Carga Masiva Fechas Wbs</h2>
+}
+
+@{
+    ViewBag.Title = "CargaExcelFechas";
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+
+            @ViewBag.Error
+        </div>
+    </div>
+
+}
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Msg
+    </div>
+}
+<div align="right">
+    @Html.ActionLink("Regresar", "Index", "WbsPresupuesto", new { id = @ViewBag.idoferta }, new { @class = " btn btn-primary" })
+
+</div>
+@using (Html.BeginForm("CargaExcelFechas", "OfertaPresupuesto", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="hidden" name="id" value="@ViewBag.idoferta" required="" />
+    <input type="file" name="UploadedFile" required="" />
+    <input type="submit" value="Cargar" class="btn btn-primary" />
+}
+

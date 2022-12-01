@@ -1,0 +1,70 @@
+﻿@model List<AvanceIngenieriaExcel>
+        <div class="row">
+            <div style="width: 100%;">
+                <div class="card">
+
+                    <div class="card-header">
+                        <b>Datos Avance de Ingeniería :</b>
+                    </div><br />
+                    <div class="table-responsive">
+                        <table table class="table table-responsive-lg table-bordered table-hover display" id="contratos_table"
+                               style="font-size: 12px">
+
+                            <thead>
+                                <tr>
+                                    <th>Count</th>
+                                    <th>Tipo de Registro</th>
+                                    <th>Wo</th>
+                                    <th>HH</th>
+                                    <th>Ejecutante</th>
+                                    <th>Fecha</th>
+                                    <th>Observaciones</th>
+                                    <th>Etapa</th>
+                                    <th>Proyecto</th>
+                                    <th>Código Proyecto</th>
+                                    <th>Especialidad</th>
+                                    <th style="display: none"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.count</td>
+                                        <td>@item.tipo_registro</td>
+                                        <td>@item.wo</td>
+                                        <td>@item.hh</td>
+                                        <td>@item.ejecutante</td>
+                                        <td>@item.fecha</td>
+                                        <td>@item.observaciones</td>
+                                        <td>@item.etapa</td>
+                                        <td>@item.proyecto</td>
+                                        <td>@item.codigoproyecto</td>
+                                        <td>@item.especialidad</td>
+                                        <td style="display: none"></td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Count</th>
+                                    <th>Tipo de Registro</th>
+                                    <th>Wo</th>
+                                    <th>HH</th>
+                                    <th>Ejecutante</th>
+                                    <th>Fecha</th>
+                                    <th>Observaciones</th>
+                                    <th>Etapa</th>
+                                    <th>Proyecto</th>
+                                    <th>Código Proyecto</th>
+                                    <th>Especialidad</th>
+                                    <th style="display: none"></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>

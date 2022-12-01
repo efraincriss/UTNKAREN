@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Archivos Avance de obra</h2>
+                <hr />
+
+                @using (Html.BeginForm("CreateArchivo", "AvanceObra", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="form-group">
+                            <input type="hidden" name="AvanceObraId" value="@ViewBag.ObraId" />
+                            Archivos:<br />
+                            <input type="file" name="UploadedFile" required="" accept="image/*" multiple="" data-val-required="Seleccione un Archivo" />
+                        </div>
+
+                        <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+
+
+                        @Html.ActionLink("Cancelar", "Details", "AvanceObra", new { id = @ViewBag.ObraId }, new { @class = "btn btn-outline-primary" })
+
+
+                    </div>
+
+                }
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

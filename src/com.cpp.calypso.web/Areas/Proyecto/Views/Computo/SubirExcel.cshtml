@@ -1,0 +1,52 @@
+﻿
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Carga Excel Cómputos</h2>
+
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        <div class="row">
+
+                            @ViewBag.Error
+                        </div>
+                    </div>
+
+                }
+                @if (ViewBag.Msg != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        @ViewBag.Msg
+                    </div>
+                }
+                @*@Html.ActionLink("Exportar Wbs Excel", "ExportarExcel", "Computo", new { OfertaId = @ViewBag.OfertaId}, new { @class = " btn btn-primary" })*@
+                @Html.ActionLink("Regresar al Árbol", "EstructuraComputos", "Computo", new { id = @ViewBag.OfertaId }, new { @class = " btn btn-primary" })
+                @using (Html.BeginForm("SubirExcel", "Computo", FormMethod.Post, new { enctype = "multipart/form-data", transaction = Model }))
+                {
+
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                        <b><td>Archivo:</td></b><br />
+                        <input type="number" name="ofertaid" hidden="" id="oferta" value=" @ViewBag.OfertaId" required="" /><br />
+                        <div class="form-group">
+                            <input type="file" name="UploadedFile" id="fot" required="" /><br />
+                            <div class="form-group">
+                                <br />
+                                <input type="submit" value="Cargar" class="btn btn-primary" />
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

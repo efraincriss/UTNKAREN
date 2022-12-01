@@ -1,0 +1,80 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.AdendaDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Información Adenda</h2>
+              
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="">
+
+               
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+
+                    <div class="form-group">
+                
+                      
+                            @Html.HiddenFor(model => model.ContratoId, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ContratoId, "", new { @class = "text-danger" })
+                      
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.codigo)
+                        
+                            @Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.codigo, "", new { @class = "text-danger" })
+                     
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha)
+
+                        @Html.EditorFor(model => model.fecha, new { htmlAttributes = new { @class = "form-control datepicker", @type = "date" } })
+                        @Html.ValidationMessageFor(model => model.fecha, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.descripcion)
+                       
+                            @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+                       
+                    </div>
+                    <div class="form-group">
+                        Archivo:<br />
+                        <input type="file" name="file"/>
+                    </div>
+                    <div class="form-group">
+                      
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.HiddenFor(model => model.vigente)
+                                @Html.ValidationMessageFor(model => model.vigente, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="GUARDAR" class="btn btn-primary" />
+                            @Html.ActionLink("Regresar", "Details", "Contrato", new { id = Model.ContratoId}, new { @class = " btn btn-outline-primary" })
+                        </div>
+                    </div>
+                </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>

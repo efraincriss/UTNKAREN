@@ -1,0 +1,88 @@
+﻿
+@model FormModelView
+
+@{
+    var entityName = Html.Title(Model).Singularize();
+    var title = string.Format("Eliminar {0}", entityName);
+    var confirmation = string.Format("¿Está seguro de eliminar este {0}?", entityName);
+
+    ViewBag.Title = title;
+}
+
+
+@section page_title {@title}
+
+
+@section view_form {
+
+
+<div class="nuc_form_view">
+
+    @using (Html.BeginForm(null, null, null, FormMethod.Post, new { @id = "nuc_frm_delete" }))
+    {
+        using (Html.BeginPanelHeader(confirmation, new { @class = "bg-danger" }))
+        {
+
+        }
+
+        using (Html.BeginPanelBody())
+        {
+            @Html.Partial("FormDynamic/FormView.Delete")
+        }
+
+
+        using (Html.BeginPanelFooter())
+        {
+            using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+
+                <div class="form-actions no-color">
+
+                    <button class="btn btn-danger" type="submit" id="nuc_btn_delete">
+                        <i class="fa fa-times"></i>
+                        Elimnar
+                    </button>
+                    @Html.ActionLink("Cancelar", "Index", new object { }, new { @class = "btn btn-primary" })
+
+                </div>
+            }
+        }
+    }
+
+</div>
+}
+
+
+
+@section Scripts {
+    <script type="application/javascript">
+        (function (w, $, undefined) {
+
+            var _$form = $('form[id=nuc_frm_delete]');
+
+             _$form.find("#nuc_btn_delete").click(function (e) {
+
+                e.preventDefault();
+
+                if (!_$form.valid()) {
+                        return;
+                }
+
+                 $.blockUI();
+
+                 //_$form.block(/* options here if needed */);
+
+                _$form.submit();
+
+             });
+
+
+        }) (window, jQuery);
+
+
+    </script>
+
+
+}

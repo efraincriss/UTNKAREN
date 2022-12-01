@@ -1,0 +1,18 @@
+﻿@using System.Globalization
+
+@{
+    ViewBag.Title = "Observaciones Proyecto";
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+<div id="ProyectoId" class="@ViewBag.Proyecto.Id" />
+<div id="AvanceId" class="@ViewBag.Proyecto.Id"/>
+<div id="content">
+
+</div>
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/comentarios_proyecto.js"></script>

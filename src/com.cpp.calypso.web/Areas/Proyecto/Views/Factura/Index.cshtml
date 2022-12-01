@@ -1,0 +1,48 @@
+﻿@model List<FacturaDto>
+@{
+    ViewBag.Title = "Listado";
+
+}
+
+@section css {
+     @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-6" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+@section page_title
+{
+    <h2>Facturas</h2>
+}
+@section page_toolbar {
+    <!-- <div class="btn-toolbar" role="toolbar">
+
+              <a href='@Url.Action("Create", "Factura")' class="btn btn-primary pull-right nuc_action_create">
+                  <i class="fa fa-plus"></i>
+                  Nueva Factura
+
+              </a>
+          </div>
+    -->
+}
+    <div style="float:right">
+        @Html.ActionLink("Cargar Facturas", "AnalisisExcel",null, new { @class = "btn btn-outline-info", style = " float:  left; margin-right: 0.3em;" })
+
+    </div>
+<br />
+<br />
+<div id="content-viewfactura"></div>
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/verfacturas.js"></script>

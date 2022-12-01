@@ -1,0 +1,205 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.RdoDetalleDto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RdoCabeceraId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComputoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo_preciario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_actividad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.porcentaje_presupuesto_total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.porcentaje_costo_eac_total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.presupuesto_total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad_planificada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio_unitario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.costo_presupuesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.costo_eac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ac_anterior)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ac_diario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ac_actual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ev_anterior)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ev_diario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ev_actual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pv_costo_planificado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_inicio_prevista)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_fin_prevista)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_inicio_real)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_fin_real)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad_anterior)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad_diaria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad_acumulada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.porcentaje_avance_anterior)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.porcentaje_avance_diario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.porcentaje_avance_actual_acumulado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.porcentaje_avance_previsto_acumulado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vigente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RdoCabeceraId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComputoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigo_preciario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_actividad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.porcentaje_presupuesto_total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.porcentaje_costo_eac_total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.presupuesto_total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad_planificada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio_unitario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.costo_presupuesto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.costo_eac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ac_anterior)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ac_diario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ac_actual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ev_anterior)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ev_diario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ev_actual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pv_costo_planificado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_inicio_prevista)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_fin_prevista)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_inicio_real)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_fin_real)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad_anterior)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad_diaria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad_acumulada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.porcentaje_avance_anterior)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.porcentaje_avance_diario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.porcentaje_avance_actual_acumulado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.porcentaje_avance_previsto_acumulado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vigente)
+        </td>
+    </tr>
+}
+
+</table>

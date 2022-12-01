@@ -1,0 +1,123 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.RepresentanteEmpresaDto
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@if (ViewBag.Msg != null)
+{
+
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-xs-12 col-md-8">
+            <div class="alert alert-danger" role="alert">
+                <div class="row">
+
+
+                    <div class="col-sm-11 align-middle">
+                        @ViewBag.Msg
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
+@section page_title {<i class="fa fa-unlock-alt"></i> Representante legal de la empresa}
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-xs-12 col-md-6">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Ingresar representantes</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.tipo_identificacion)
+
+                    @Html.DropDownListFor(model => model.tipo_identificacion, new List<SelectListItem>
+                    {
+                        new SelectListItem {Text = "Cédula", Value = "Cedula", Selected = true},
+                        new SelectListItem {Text = "Ruc", Value = "Ruc"},
+                        new SelectListItem {Text = "Pasaporte", Value = "Passaporte"},
+                    }, null, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.tipo_identificacion, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.identificacion)
+
+                    @Html.EditorFor(model => model.identificacion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.identificacion, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nombre)
+
+                    @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.tipo_representante)
+
+                    @Html.DropDownListFor(model => model.tipo_representante, new List<SelectListItem>
+                    {
+                        new SelectListItem {Text = "Presidente", Value = "Presidente", Selected = true},
+                        new SelectListItem {Text = "Representante Legal", Value = "Representante"},
+                    }, null, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.tipo_representante, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.fecha_inicio)
+
+                            @Html.EditorFor(model => model.fecha_inicio, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.fecha_inicio, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.fecha_fin)
+
+                            @Html.EditorFor(model => model.fecha_fin, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.fecha_fin, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-check">
+                    @Html.EditorFor(model => model.estado_representante)
+                    @Html.LabelFor(model => model.estado_representante)
+                    @Html.ValidationMessageFor(model => model.estado_representante, "", new { @class = "text-danger" })
+                </div>
+
+                @Html.HiddenFor(model => model.EmpresaId, new { htmlAttributes = new { @class = "form-control" } })
+
+
+                <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+
+                @Html.ActionLink("Cancelar", "Details", "Empresa", new { id = Model.EmpresaId }, new { @class = "btn btn-outline-primary" })
+            </div>
+        }
+
+    </div>
+</div>
+

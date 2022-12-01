@@ -1,0 +1,178 @@
+﻿
+@{
+    ViewBag.Title = "Adjuntos Transmittal ";
+
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+<div id="Id" class="@ViewBag.TransmittalId" />
+<div id="OfertaComercialId" class="@ViewBag.OfertaComercialId" />
+<div id="content">
+
+</div>
+
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/details_transmittal.js"></script>
+
+@*
+        @model com.cpp.calypso.web.Areas.Proyecto.Models.TransmitalCabeceraDetalleViewModel
+
+        @{
+            ViewBag.Title = "Details";
+        }
+
+        @if (ViewBag.Msg != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                <div class="row">
+                    <div class="col-sm-1" style=" padding-top: 0.4em;">
+                        <i class="icon-ban icons font-4xl  mt-auto" style="padding-left: 0.6em;"></i>
+                    </div>
+                    <div class="col-sm-11">
+                        @ViewBag.Msg
+                    </div>
+                </div>
+            </div>
+        }
+    <div class="row">
+        <div style="width:  100%;">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="card-title">Adjuntos Transmittals</h2>
+                        </div>
+
+                        <div class="col" align="right">
+                            @if (ViewBag.Id > 0)
+                            {@Html.ActionLink("Descargar", "ObtenerWord", "TransmitalCabecera", new { id = Model.TransmitalCabecera.Id }, new { @class = "btn btn-outline-primary", style = " margin-left: 0.2em" })
+                            @Html.ActionLink("Regresar", "Details", "OfertaComercial", new { id = ViewBag.Id }, new { @class = "btn btn-outline-primary", style = " margin-left: 0.2em" })
+                        }
+                        else
+                        {
+
+                            @Html.ActionLink("Descargar", "ObtenerWord", "TransmitalCabecera", new { id = Model.TransmitalCabecera.Id }, new { @class = "btn btn-outline-primary", style = " margin-left: 0.2em" })
+                            @Html.ActionLink("Regresar", "IndexTransmital", "TransmitalCabecera", new { @class = "btn btn-outline-primary", style = " margin-left: 0.2em" })
+
+
+                        }
+
+                        </div>
+                    </div>
+                    <hr />
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <h6><b>Código Transmital: </b>@Model.TransmitalCabecera.codigo_transmital</h6>
+                            <h6><b>Descripcion: </b> @Model.TransmitalCabecera.descripcion</h6>
+                            <h6><b>Fecha Emisión: </b>@Model.TransmitalCabecera.fecha_emision</h6>
+                            <h6>
+                                <b>Enviado por:</b>  @Model.TransmitalCabecera.enviado_por
+                            </h6>
+                            <h6><b>Dirigido a:</b> @Model.TransmitalCabecera.dirigido_a</h6>
+                            <h6><b>Copia a:</b> @Model.TransmitalCabecera.copia_a</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div style="width:  100%;">
+
+            <ul class="nav nav-tabs" id="empresa_tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="novedades-tab" data-toggle="tab" href="#novedades" role="tab" aria-controls="home" aria-expanded="true">Detalles</a>
+                </li>
+
+            </ul>
+
+
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="novedades" role="tabpanel" aria-labelledby="novedades-tab">
+                    <div class="col" align="right">
+
+                        @if (Model.TransmitalCabecera.OfertaComercialId > 0)
+                        {
+                            @Html.ActionLink("Nuevo", "Create", "TransmitalDetalle", new { id = Model.TransmitalCabecera.Id, ofertaid = Model.TransmitalCabecera.OfertaComercialId }, new { @class = "btn btn-outline-primary" })
+
+
+                        }
+                        else
+                        {
+
+                            @Html.ActionLink("Nuevo", "Createso", "TransmitalDetalle", new { id = Model.TransmitalCabecera.Id }, new { @class = "btn btn-outline-success" })
+
+                        }
+                    </div>
+                    <hr />
+                    <table class="table table-bordered table-hover display">
+                        <thead>
+                            <tr>
+                                <th class="align-middle text-center">Codigo </th>
+                                <th class="align-middle text-center">Decripción</th>
+                                <th class="align-middle text-center">Nr.Hojas</th>
+                                <th class="align-middle text-center">Nr.Copias</th>
+
+                                <th class="align-middle text-center">Adjunto</th>
+                                <th class="align-middle text-center">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.DetallesTransmital)
+                            {
+                                <tr>
+                                    <td> @Html.DisplayFor(modelItem => item.codigo_detalle)</td>
+                                    <td style=" width:  200px;"> @Html.DisplayFor(modelItem => item.descripcion)</td>
+                                    <td> @Html.DisplayFor(modelItem => item.nro_hojas)</td>
+                                    <td> @Html.DisplayFor(modelItem => item.nro_copias)</td>
+
+                                    <td align="center">
+
+                                        <a href="@Url.Action("descargararchivo", "TransmitalDetalle", new {id = item.ArchivoId})">
+                                            <i class="fa fa-file-archive-o fa-lg "></i>
+
+                                        </a>
+                                    </td>
+                                    <td style=" width:  170px;">
+
+                                        @Html.ActionLink("Editar", "Edit", "TransmitalDetalle", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                        <div style="float: left">
+                                            <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", "TransmitalDetalle", new {id = item.Id})" method="post" class="form-inline">
+                                                <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Codigo </th>
+                                <th>Decripción</th>
+                                <th>Nro Hojas</th>
+                                <th>Nro Copias</th>
+                                <th>Adjunto</th>
+
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+*@
+

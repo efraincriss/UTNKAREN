@@ -1,0 +1,79 @@
+﻿
+@{
+
+    var title = "";
+    var type = ViewBag.type;
+    if (ViewBag.type.Equals("WBS"))
+    {
+        title = "WBS";
+
+    }
+    else if (ViewBag.type.Equals("AvanceObra"))
+    {
+        title = "Avance de Obra";
+    }
+    else if (ViewBag.type.Equals("OrdenServicio"))
+    {
+        title = "Orden de Servicio";
+    }
+    else if (ViewBag.type.Equals("AvanceIngenieria"))
+    {
+        title = "Avance de Ingeniería";
+    }
+    else if (ViewBag.type.Equals("AvanceProcura"))
+    {
+        title = "Avance de Procura";
+    }
+    else if (ViewBag.type.Equals("OrdenCompra"))
+    {
+        title = "Orden de Compra";
+    }
+    else
+    {
+        title = "Orden de Servicio";
+    }
+    ViewBag.Title = title;
+}
+
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">@title</h2>
+                <hr />
+                @if (type == "AvanceIngenieria")
+                {
+                    @*  @Html.ActionLink("Cargar Archivo Excel Ingenieria", "SubirExcelAll", "AvanceIngenieria", null, new { @class = "btn btn-outline-primary" })*@
+                    <div id="content_upload" align="left">
+
+                    </div>
+                    <hr />
+                }
+                <div id="content" class="@type">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/seleccion_oferta.js"></script>
+@*<script>
+        $(function () {
+            $("#scontrato").chosen();
+            $("#sproyecto").chosen();
+            $("#srequerimiento").chosen();
+            $("#sbaserdo").chosen();
+        });
+    </script>*@

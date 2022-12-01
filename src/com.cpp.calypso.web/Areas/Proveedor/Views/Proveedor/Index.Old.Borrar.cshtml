@@ -1,0 +1,98 @@
+﻿@model  TreeReactModelView
+
+@{
+
+    var title = Html.Title(Model);
+    if (!string.IsNullOrEmpty(Model.Title))
+    {
+        title = Model.Title;
+    }
+
+    ViewBag.Title = title;
+
+    var controllerName = ViewContext.RouteData.Values["controller"].ToString();
+
+
+    var elementContenedorId = "nuc_tree_body";
+    if (!string.IsNullOrWhiteSpace(Model.Id))
+    {
+        elementContenedorId = elementContenedorId + "_" + @Model.Id;
+    }
+
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+}
+
+
+@section page_title
+{
+    <i class="fa fa-tag"></i> @title
+}
+
+
+@section page_toolbar {
+
+    <ul class="nav nav-tabs float-right" role="tablist">
+
+        @if (Model.View.Details && Html.CheckPermissions(controllerName, "Export"))
+        {
+            <li class="nav-item">
+                <a class="nav-link  nuc_action_export" href="@Url.Action("Export", new { format = "excel"})"
+                   data-toggle="tooltip" data-placement="top" title="Exportar Excel">
+                    <i class="fa fa-file-excel-o"></i> Exportar Excel
+                </a>
+            </li>
+        }
+
+
+        @if (Model.View.Create && Html.CheckPermissions(controllerName, "Create"))
+        {
+            <li class="nav-item">
+                <a href="@Url.Action("Create")" class="nav-link   nuc_action_create">
+                    <i class="fa fa-plus"></i>
+                    Nuevo
+                </a>
+            </li>
+        }
+
+    </ul>
+}
+
+
+@if (!string.IsNullOrWhiteSpace(Model.Mensaje.Texto))
+{
+    @Html.Partial("_ShowAlert", Model.Mensaje)
+}
+
+
+<div id="nuc_pnl_ToUpdate">
+
+    <div class="nuc_tree_view col-lg-12">
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <div id="@elementContenedorId">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+@section Scripts {
+
+    <script src="~/Scripts/build/vendors.js"></script>
+    <script src="~/Scripts/build/proveedores.js"></script>
+
+}
+
+

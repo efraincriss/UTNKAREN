@@ -1,0 +1,23 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.Dto.CargosSectorDto
+
+@{
+    /**/
+    ViewBag.Title = "Configurar Cargos por Sector";
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+
+
+@section page_title { <i class="fa fa-unlock-alt"></i> Configurar Cargos por Sector}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+        <div id="content-editar-cargos-sector"></div>
+    </div>
+</div>
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/editar_cargos_sector.js"></script>

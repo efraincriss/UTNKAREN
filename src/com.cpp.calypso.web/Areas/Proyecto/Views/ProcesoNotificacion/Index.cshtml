@@ -1,0 +1,66 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.ProcesoNotificacionDto>
+
+@{
+    ViewBag.Title = "Proceso de notificaciones";
+}
+
+@section page_title
+{
+
+    <h2>Procesos de Notificación</h2>
+    <i class="fa fa-tag"></i> Notificaciones
+}
+
+
+@section page_toolbar {
+    <div class="btn-toolbar" role="toolbar">
+        @Html.ActionLink("Nuevo", "Create", "ProcesoNotificacion", new { @class = "btn btn-outline-primary", style="margin-top: 1em;" })
+    </div>
+}
+
+
+<table class="table table-bordered table-hover display">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Formato</th>
+            <th>Tipo de Notificación</th>
+            <th>Estado</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.formato)</td>
+                <td>@Html.DisplayFor(modelItem => item.Tipo)</td>
+                <td>@Html.DisplayFor(modelItem => item.estado)</td>
+                <td style="width:250px;">
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-primary", style = " float:  left; margin-right: 0.3em;" })
+                    @Html.ActionLink("Detalles", "Details", new { id = item.Id }, new { @class = "btn btn-outline-success", style = " float:  left; margin-right: 0.3em;" })
+                    <div style="float: left">
+                        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", new {id = item.Id})" method="post" class="form-inline">
+                            <input type="submit" value="Eliminar" class="btn btn-outline-danger" />
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <th>Nombre</th>
+            <th>Formato</th>
+            <th>Tipo de Notificación</th>
+            <th>Estado</th>
+            <th></th>
+        </tr>
+    </tfoot>
+
+
+
+</table>

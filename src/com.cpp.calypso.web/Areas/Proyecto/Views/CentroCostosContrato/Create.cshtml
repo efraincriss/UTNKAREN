@@ -1,0 +1,68 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.CentrocostosContratoDto
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@section page_title {<i class="fa fa-unlock-alt"></i> Crear Centro de Costo Contrato para el contrato}
+
+<style>
+
+    .margen {
+        margin-top: 30px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.HiddenFor(model => Model.ContratoId, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.id_centrocostos)
+
+                    @Html.DropDownListFor(model => model.id_centrocostos, new SelectList(ViewBag.centrocostos, "Id","nombre")
+                        , null, new {@class = "form-control"} )
+                    @Html.ValidationMessageFor(model => model.id_centrocostos, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.observaciones)
+
+                    @Html.EditorFor(model => model.observaciones, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.observaciones, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group margen">
+                        <div class="checkbox">
+                            @Html.LabelFor(model => model.estado)&nbsp;
+                            @Html.EditorFor(model => model.estado)
+                            @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+                        </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="">
+                        <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                        @Html.ActionLink("Cancelar", "Details", "Contrato", new { id = Model.ContratoId }, new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+</div>

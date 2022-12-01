@@ -1,0 +1,209 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.DetalleAvanceProcuraDto
+@{
+    ViewBag.Title = "Detall Avance Procura";
+}
+
+@section page_title {<i class="fa fa-unlock-alt"></i>Información Detalle Avance de Procura}
+
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+
+            @ViewBag.Msg
+        </div>
+    </div>
+
+}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.AvanceProcuraId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.HiddenFor(model => model.vigente)
+            
+
+
+            <div class="row">
+                <div class="col-xs-12 col">
+                    <h6><b>Proyecto: </b>@Model.AvanceProcura.Oferta.Proyecto.codigo  @Model.AvanceProcura.Oferta.Proyecto.descripcion_proyecto </h6>
+
+                </div>
+
+                <div class="col-xs-12 col">
+                    <h6><b>Oferta: </b> @Model.AvanceProcura.Oferta.codigo @Model.AvanceProcura.Oferta.descripcion</h6>
+
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.OrdenCompraId)
+
+                @Html.DropDownListFor(model => model.OrdenCompraId, new SelectList(Model.OrdenesCompra, "Id", "nro_pedido_compra"), "Seleccione una Orden de Compra", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.OrdenCompraId, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.DetalleOrdenCompraId)
+
+                @Html.DropDownListFor(model => model.DetalleOrdenCompraId, new SelectList(""), "Selecciona un Item", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DetalleOrdenCompraId, "", new { @class = "text-danger" })
+             
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha_real)
+
+                        @Html.EditorFor(model => model.fecha_real, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.fecha_real, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.cantidad)
+
+                        @Html.EditorFor(model => model.cantidad, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.cantidad, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.precio_unitario)<br />
+                        @Html.EditorFor(model => model.precio_unitario, new { htmlAttributes = new { @class = "form-control", @disabled = "disable" } })
+                        @Html.ValidationMessageFor(model => model.precio_unitario, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.valor_real)<br />
+
+
+
+                        @Html.EditorFor(model => model.valor_real, new { htmlAttributes = new { @class = "form-control", @disabled = "disable" } })
+
+                        @Html.ValidationMessageFor(model => model.valor_real, "", new { @class = "text-danger" })
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.estado)
+
+                        @Html.DropDownListFor(model => model.estado,
+                            new SelectList(Enum.GetValues(typeof(DetalleAvanceProcura.EstadoDetalleProcura))), "Seleccione Estado", new { @class = "form-control" })
+
+                        @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col">
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+
+                <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                @Html.ActionLink("Regresar", "Details", "AvanceProcura", new { id = Model.AvanceProcuraId }, new { @class = "btn btn-outline-primary" })
+
+            </div>
+        </div>
+        }
+    </div>
+</div>
+<div>
+
+</div>
+@section Scripts{
+
+    <script>
+      
+        $(function() {
+            $("#OrdenCompraId").chosen();
+        });
+
+        $("#cantidad").focusout(function() {
+
+            $("#valor_real").val($("#precio_unitario").val() * $("#cantidad").val());
+        });
+
+
+        $("#DetalleOrdenCompraId").change(function() {
+
+            var ofe = $(this).val();
+
+            if (ofe > 0) {
+
+                $.get("/Proyecto/DetalleAvanceProcura/DetalleComputo2/?",
+                    { id: ofe },
+                    function(data) {
+                        var objeto = JSON.parse(data);
+                        console.log(objeto['precio_unitario']);
+
+                        $("#precio_unitario").val(objeto['precio_unitario']);
+                        $("#valor_real").val($("#precio_unitario").val() * $("#cantidad").val());
+                    });
+
+            } else {
+
+            }
+
+          
+        });
+
+
+        $("#OrdenCompraId").change(function() {
+
+            var orden = $(this).val();
+            if (orden > 0) {
+
+                $.get("/Proyecto/DetalleAvanceProcura/ObtenerComputosOrdenes/?",
+                    { id: orden },
+                    function(data) {
+                      
+                        $("#DetalleOrdenCompraId").empty();
+              
+                        $("#DetalleOrdenCompraId").append("<option>Seleccione un Item</option>");
+                        $.each(JSON.parse(data),
+                            function (index, row) {
+
+                                console.log(row.ComputoId);
+                                $("#DetalleOrdenCompraId")
+                                    .append("<option value='" +
+                                        row.Id +
+                                        "'>" +
+                                    row.nombreitem +
+                                        "</option>");
+                            });
+
+                       
+                    });
+            } else {
+                $("#DetalleOrdenCompraId").empty();
+                $("#DetalleOrdenCompraId").append("<option value='0'>Seleccione un Item</option>");
+            }
+        });
+    </script>
+}
+

@@ -1,0 +1,150 @@
+﻿@using System.Globalization
+@model com.cpp.calypso.web.Areas.Proyecto.AvanceObraDetallesViewModel
+
+@{
+    ViewBag.Title = "Details";
+    var aprobado = Model.AvanceObra.aprobado;
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v3")
+
+}
+<div id="AvanceId" class="@Model.AvanceObra.Id"></div>
+<div id="OfertaId" class="@Model.AvanceObra.OfertaId"></div>
+<div id="ContratoId" class="@ViewBag.ContratoId"></div>
+<div id="FechaOfertaId" class="@ViewBag.Fecha"></div>
+<div id="Aprobado" class="@(Model.AvanceObra.aprobado ? 1 : 0)"></div>
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        <h4 class="card-title">Detalle de avance de obra</h4>
+                    </div>
+
+                    <div class="col-8" align="right">
+
+
+                        @if (aprobado)
+                        {@Html.ActionLink("Generar RDO", "CreateRdoAvance", "RdoCabecera", new { id = Model.AvanceObra.Id }, new { @class = " btn btn-outline-success " })
+                        <div style="float: right; margin-left: 0.2em">
+                            <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("DesaprobarAvance", "AvanceObra", new {id = Model.AvanceObra.Id})" method="post">
+                                <input type="submit" value="Desaprobar" class="btn btn-outline-primary" />
+                            </form>
+                        </div>
+                        @Html.ActionLink("Regresar", "Index", "AvanceObra", new { id = Model.AvanceObra.OfertaId }, new { @class = " btn btn-outline-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Excel Avance Obra", "GetExcelCarga", "AvanceObra", new { id = Model.AvanceObra.Id }, new { @class = " btn btn-outline-primary btn-sm", style = " margin-left: 0.2em", id = "ExcelAvance" })
+                        <div id="content-subir-excel-avance" style="display: inline-block"></div>
+
+                        @Html.ActionLink("Excel EAC", "ExportarEAC", "Computo", new { id = Model.AvanceObra.OfertaId }, new { @class = " btn btn-outline-primary btn-sm", style = " margin-left: 0.2em", id = "ExcelEAC" })
+                        <div id="content-subir-excel" style="display: inline-block"></div>
+
+                        @Html.ActionLink("Editar Datos", "Edit", "AvanceObra", new { id = Model.AvanceObra.Id }, new { @class = " btn btn-outline-primary btn-sm", style = "margin-left: 0.2em" })
+
+                        <div style="float: right; margin-left: 0.2em">
+                            <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("AprobarAvance", "AvanceObra", new {id = Model.AvanceObra.Id})" method="post">
+                                <input type="submit" value="Aprobar" class="btn btn-outline-primary btn-sm" />
+                            </form>
+                        </div>
+                        @Html.ActionLink("Regresar", "Index", "AvanceObra", new { id = Model.AvanceObra.OfertaId }, new { @class = " btn btn-outline-primary btn-sm" })
+                    }
+
+
+                    </div>
+                </div>
+                <br />
+                @if (ViewBag.msg != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        @ViewBag.msg
+                    </div>
+
+                }
+                @if (ViewBag.MsgError != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        <div class="row">
+                            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                                <i class="icon-ban icons font-4xl  mt-auto" style="padding-left: 0.6em;"></i>
+                            </div>
+                            <div class="col-sm-11">
+                                @ViewBag.MsgError
+                            </div>
+                        </div>
+                    </div>
+                }
+                <hr />
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6><b>Oferta:</b> @Html.DisplayFor(model => model.AvanceObra.Oferta.codigo)</h6>
+                        <h6><b>Fecha Presentación:</b> @Html.DisplayFor(model => model.AvanceObra.fecha_presentacion)</h6>
+                        <h6><b>Aprobado:</b> @Html.DisplayFor(model => model.AvanceObra.aprobado)</h6>
+                        <h6><b>Descripción:</b> @Html.DisplayFor(model => model.AvanceObra.descripcion)</h6>
+                        <h6><b>Alcance:</b> @Html.DisplayFor(model => model.AvanceObra.alcance)</h6>
+                        <h6><b>Comentarios:</b> @Html.DisplayFor(model => model.AvanceObra.comentario)</h6>
+
+                    </div>
+                    <div class="col-md-6">
+                        <h6><b>Código - Nombre Proyecto:</b> @Html.DisplayFor(model => model.proyecto.codigo) - @Html.DisplayFor(model => model.proyecto.nombre_proyecto)</h6>
+                        <h6><b>Perido:</b> @Html.DisplayFor(model => model.AvanceObra.fecha_desde) - @Html.DisplayFor(model => model.AvanceObra.fecha_hasta)</h6>
+                        <h6><b>Emitido:</b> @Html.DisplayFor(model => model.AvanceObra.emitido)</h6>
+                        <h6><b>Monto Total:</b> @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", Model.AvanceObra.monto_total)</h6>
+                        <h6><b>Monto Presupuestado:</b> @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", ViewBag.montos[0])</h6>
+                        <h6><b>Monto AIU:</b> @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", ViewBag.montos[1])</h6>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="detalles_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="detalle-tab" data-toggle="tab" href="#detalles" role="tab" aria-controls="home" aria-expanded="true">Detalle de avances de obra</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" id="archivos-tab" data-toggle="tab" href="#archivos" role="tab" aria-controls="home" aria-expanded="true">Archivos</a>
+            </li>
+        </ul>
+
+
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="detalles" role="tabpanel" aria-labelledby="detalles-tab">
+                <div id="content">
+
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade show" id="archivos" role="tabpanel" aria-labelledby="archivos-tab">
+                <div id="content_archivos_a">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/avance_obra.js"></script>
+
+

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="es">
+  <texts>
+     
+
+    <text name="Actions">Acciones</text>
+    <text name="RoleName">Nombre del Rol</text>
+    <text name="DisplayName">Nombre Visualizar</text>
+    <text name="CreateNewRole">Crear Nuevo Rol</text>
+    <text name="EditRole">Editar Rol</text>
+    <text name="EditUser">Editar Usuario</text>
+    <text name="Edit">Editar</text>
+    <text name="Delete">Eliminar</text>
+     
+    
+
+  </texts>
+</localizationDictionary>

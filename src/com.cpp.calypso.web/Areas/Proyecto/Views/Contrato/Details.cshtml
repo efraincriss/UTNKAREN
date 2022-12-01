@@ -1,0 +1,303 @@
+﻿@model com.cpp.calypso.web.Models.ContratoDocumentoCentrosViewModel
+
+@{
+        ViewBag.Title = "DETALLES CONTRATOS";
+        var estado = Model.Contrato.estado_contrato == true ? "Activo" : "Inactivo";
+        var es_principal = Model.Cliente.razon_social;
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Detalles del Contrato</h4>
+                    </div>
+                    <div class="col" align="right">
+                        @Html.ActionLink("Regresar", "Index", "Contrato", new { id = Model.Contrato.Id }, new { @class = " btn btn-outline-primary" })
+                        @Html.ActionLink("Editar Datos", "Edit", "Contrato", new { id = Model.Contrato.Id }, new { @class = " btn btn-outline-primary" })
+                    </div>
+                </div>
+                <hr />
+                @if (ViewBag.Msg != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        <div class="row">
+                            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                                <i class="icon-ban icons font-4xl  mt-auto" style="padding-left: 0.6em;"></i>
+                            </div>
+                            <div class="col-sm-11">
+                                @ViewBag.Msg
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6>Número del Contrato: <b>@Model.Contrato.Codigo</b></h6>
+                        <h6>Empresa: <b>@Model.Empresa.razon_social</b></h6>
+
+
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <h6>Estado: <b>@(Model.Contrato.estado_contrato == true ? "Activo" : "Inactivo")</b></h6>
+                        <h6>Cliente: <b>@Model.Cliente.razon_social</b></h6>
+
+                    </div>
+
+                    <div class="col-xs-12 col-md-12">
+                        <h6>Objeto: <span>@Model.Contrato.objeto</span></h6>
+                        <h6>Fecha Contrato: <span>@Model.Contrato.fecha_inicio.ToString("dd/MM/yyyy")</span></h6>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="proyectos_table" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="proyectos-tab" data-toggle="tab" href="#proyectos" role="tab" aria-controls="home" aria-expanded="true">Proyectos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="documentos-tab" data-toggle="tab" href="#documentos" role="tab" aria-controls="profile">Documentos Legales</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="costos-tab" data-toggle="tab" href="#costos" role="tab" aria-controls="profile">Centro de Costos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="adendas-tab" data-toggle="tab" href="#adendas" role="tab" aria-controls="profile">Adendas</a>
+            </li>
+
+        </ul>
+
+
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane show active" id="proyectos" role="tabpanel" aria-labelledby="proyectos-tab">
+            <div class="col" align="right">
+                @Html.ActionLink("Nuevo", "Create", "Proyecto", new { id = Model.Contrato.Id }, new { @class = "btn btn-primary" })
+            </div>
+            <hr />
+            <table class="table table-bordered table-hover display" id="pr_table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Estado</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Proyecto)
+                    {
+                        <tr>
+                            <td> @Html.DisplayFor(modelItem => item.codigo)</td>
+                            <td> @Html.DisplayFor(modelItem => item.nombre_proyecto)</td>
+                            <td> @Html.DisplayFor(modelItem => item.descripcion_proyecto)</td>
+                            <td> @(item.estado_proyecto == true ? "Activo" : "Inactivo") </td>
+                            <td style=" width:  200px;">
+                                <!--   @Html.ActionLink("Ver", "Details", "Proyecto", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })-->
+                                @Html.ActionLink("Editar", "EditProyectoC", "Proyecto", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                <div style="float: left">
+                                    <form action="@Url.Action("DeleteC", "Proyecto", new {id = item.Id})" method="post" class="form-inline" onsubmit="return confirm('Esta seguro de Eliminar este Registro?');">
+                                        <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                                    </form>
+                                </div>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Estado</th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+
+            <div class="tab-pane fade" id="documentos" role="tabpanel" aria-labelledby="documentos-tab">
+                <div class="col" align="right">
+                    @Html.ActionLink("Nuevo", "Create", "ContratoDocumentoBancario", new { id = Model.Contrato.Id }, new { @class = "btn btn-primary" })
+                </div>
+                <hr />
+                <table class="table table-bordered table-hover display" id="contradodoc_table">
+                    <thead>
+                        <tr>
+                            <th>Tipo de Documento</th>
+                            <th>Institución Financiera</th>
+                            <th>Número</th>
+                            <th>Fecha Emisión</th>
+                            <th>Fecha Vigencia</th>
+                            <th>Adjunto</th>
+                            <th>Estado</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ContratoDocumentoBancario)
+                        {
+                            <tr>
+                                <td> @(item.tipo_documento == 1 ? "Garantía" : "Seguro")</td>
+                                <td> @Html.DisplayFor(modelItem => item.InstitucionFinanciera.nombre)</td>
+                                <td> @Html.DisplayFor(modelItem => item.codigo)</td>
+                                <td> @Html.DisplayFor(modelItem => item.fecha_emision)</td>
+                                <td> @(item.fecha_vencimiento.Value)</td>
+                                <td align="center">
+
+                                    <a href="@Url.Action("descargararchivo", "ContratoDocumentoBancario", new {id = item.ArchivosContrato.ArchivoId})">
+                                        <i class="fa fa-file-archive-o fa-lg "></i>
+
+                                    </a>
+                                </td>
+                                <td> @(item.estado == 1 ? "Activo" : "Inactivo") </td>
+                                <td style=" width:  300px;">
+                                    @Html.ActionLink("Ver", "Details", "ContratoDocumentoBancario", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                    @Html.ActionLink("Editar", "Edit", "ContratoDocumentoBancario", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                    <div style="float: left">
+                                        <form action="@Url.Action("Delete", "ContratoDocumentoBancario", new {id = item.Id})" method="post" class="form-inline" onsubmit="return confirm('Esta seguro de Eliminar este Registro?');">
+                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+
+
+
+            <div class="tab-pane fade" id="costos" role="tabpanel" aria-labelledby="costos-tab">
+                <div class="col" align="right">
+                    @Html.ActionLink("Nuevo", "Create", "CentroCostosContrato", new { id = Model.Contrato.Id }, new { @class = "btn btn-primary" })
+                </div>
+                <hr />
+                <table class="table table-bordered table-hover display" id="ca_table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Centro de Costo</th>
+                            <th>Estado</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CentrocostosContrato)
+                        {
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => item.Id)</td>
+                                <td>  @(item.id_centrocostos == 1 ? "Costos de Seguro" : "Costos de Mantenimiento")</td>
+                                <td> @(item.estado == true ? "Activo" : "Inactivo") </td>
+                                <td style=" width:  300px;">
+                                    @Html.ActionLink("Ver", "Details", "CentroCostosContrato", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                    @Html.ActionLink("Editar", "Edit", "CentroCostosContrato", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                    <div style="float: left">
+                                        <form action="@Url.Action("Delete", "CentroCostosContrato", new {id = item.Id})" method="post" class="form-inline" onsubmit="return confirm('Esta seguro de Eliminar este Registro?');">
+                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Código</th>
+                            <th>Centro de Costo</th>
+                            <th>Estado</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+
+            <div class="tab-pane fade" id="adendas" role="tabpanel" aria-labelledby="andendas-tab">
+                <div class="col" align="right">
+
+                    @Html.ActionLink("Nuevo", "Create", "Adenda", new { id = Model.Contrato.Id }, new { @class = "btn btn-primary" })
+                </div>
+                <hr />
+                <table class="table table-bordered table-hover display" id="adendas_table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Fecha</th>
+                            <th>Adjunto</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Adenda)
+                        {
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => item.codigo)</td>
+                                <td> @Html.DisplayFor(modelItem => item.descripcion)</td>
+                                <td> @(item.fecha.ToShortDateString())</td>
+                                <td align="center">
+
+                                    <a href="@Url.Action("descargararchivo", "ContratoDocumentoBancario", new {id = item.ArchivosContrato.ArchivoId})">
+                                        <i class="fa fa-file-archive-o fa-lg "></i>
+
+                                    </a>
+                                </td>
+                                <td style=" width:  300px;">
+                                    @Html.ActionLink("Ver", "Details", "Adenda", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                    @Html.ActionLink("Editar", "Edit", "Adenda", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                    <div style="float: left">
+                                        <form action="@Url.Action("Delete", "Adenda", new {id = item.Id})" method="post" class="form-inline" onsubmit="return confirm('Esta seguro de Eliminar este Registro?');">
+                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Fecha</th>
+                            <th>Adjunto</th>
+                            <th></th>
+                        </tr>
+
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+        </div>
+

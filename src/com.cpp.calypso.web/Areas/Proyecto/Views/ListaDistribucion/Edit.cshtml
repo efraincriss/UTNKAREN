@@ -1,0 +1,51 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.ListaDistribucionDto
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Datos de la notificación</h2>
+                <hr />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.vigente)
+                            @Html.HiddenFor(model => model.codigo)
+                         
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.nombre)
+                            @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-check">
+                            @Html.EditorFor(model => model.estado, new { htmlAttributes = new { @class = "form-check-input" } })
+                            @Html.LabelFor(model => model.estado, new { htmlAttributes = new { @class = "form-check-label" } })
+                            @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+                        </div>
+
+
+
+                        <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                        @Html.ActionLink("Regresar", "Index", "ListaDistribucion", new { @class = "btn btn-outline-primary" })
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

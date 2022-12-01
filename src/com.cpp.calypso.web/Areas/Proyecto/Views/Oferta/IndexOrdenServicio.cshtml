@@ -1,0 +1,68 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.OfertaDto>
+
+@{
+    ViewBag.Title = "IndexOrdenServicio";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="col" align="right">
+            
+        </div>
+        <table class="table table-bordered table-hover display">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cliente</th>
+                <th>Proyecto</th>
+                <th>Oferta Código</th>
+                <th>Fecha Oferta</th>
+                <th>Estado Oferta</th>
+                <th>Operaciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cliente_razon_social)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Proyecto.codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fecha_oferta)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.estado_oferta)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Ver ordenes de servicio", "Index", "OrdenServicio", new {id = item.Id}, new {@class = "btn btn-outline-primary"})
+                    </td>
+                </tr>
+            }
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>Cliente</th>
+                <th>Proyecto</th>
+                <th>Oferta Código</th>
+                <th>Fecha Oferta</th>
+                <th>Estado Oferta</th>
+                <th>Operaciones</th>
+            </tr>
+            </tfoot>
+
+        </table>
+    </div>
+</div>
+

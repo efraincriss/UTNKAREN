@@ -1,0 +1,1096 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E94B2407-04D1-4F7B-8067-6D2257FA1CE6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.cpp.calypso.proyecto.aplicacion</RootNamespace>
+    <AssemblyName>com.cpp.calypso.proyecto.aplicacion</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abp, Version=3.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Abp.3.6.2\lib\netstandard2.0\Abp.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.AutoMapper, Version=3.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Abp.AutoMapper.3.6.1\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.EntityFramework.Common, Version=3.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Abp.EntityFramework.Common.3.6.2\lib\netstandard2.0\Abp.EntityFramework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Core, Version=1.16.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Azure.Core.1.16.0\lib\net461\Azure.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Data.Tables, Version=12.1.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Azure.Data.Tables.12.1.0\lib\netstandard2.0\Azure.Data.Tables.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.LoggingFacility.4.1.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearScript, Version=5.4.9.0, Culture=neutral, PublicKeyToken=935d0c957da47c73, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JavaScriptEngineSwitcher.V8.2.4.2\lib\net45\ClearScript.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.DynamicFilters, Version=3.0.1.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.DynamicFilters.3.0.1\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.3, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EPPlus.4.5.3.3\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.4.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ExcelDataReader.3.4.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Core, Version=2.4.9.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JavaScriptEngineSwitcher.Core.2.4.9\lib\net45\JavaScriptEngineSwitcher.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.V8, Version=2.4.2.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JavaScriptEngineSwitcher.V8.2.4.2\lib\net45\JavaScriptEngineSwitcher.V8.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqToExcel, Version=1.11.0.0, Culture=neutral, PublicKeyToken=9c8ea65a58f03f1f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LinqToExcel.1.11.0\lib\LinqToExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Extensions.Caching.Abstractions.2.0.2\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=2.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Extensions.Caching.Memory.2.0.2\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Extensions.Options.2.0.2\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Extensions.Primitives.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Office.Interop.Outlook.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Outlook.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Outlook, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NetOffice, Version=1.7.4.11, Culture=neutral, PublicKeyToken=7292cd2a8b1e0703, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NetOffice.Core.1.7.4.11\lib\net45\NetOffice.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Context, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nito.AsyncEx.Context.1.1.0\lib\net46\Nito.AsyncEx.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Coordination, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nito.AsyncEx.Coordination.1.0.2\lib\net46\Nito.AsyncEx.Coordination.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Tasks, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nito.AsyncEx.Tasks.1.1.0\lib\net46\Nito.AsyncEx.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Collections.Deque, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nito.Collections.Deque.1.0.0\lib\portable45-net45+win8+wp8+wpa81\Nito.Collections.Deque.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Disposables, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nito.Disposables.1.0.0\lib\portable45-net45+win8+wp8+wpa81\Nito.Disposables.dll</HintPath>
+    </Reference>
+    <Reference Include="OfficeApi, Version=1.7.4.11, Culture=neutral, PublicKeyToken=7292cd2a8b1e0703, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NetOffice.Core.1.7.4.11\lib\net45\OfficeApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="OutlookApi, Version=1.7.4.11, Culture=neutral, PublicKeyToken=7292cd2a8b1e0703, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NetOffice.Outlook.1.7.4.11\lib\net45\OutlookApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="QRCoder, Version=1.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\QRCoder.1.3.5\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=17.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Compression.Base.17.4.0.43\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocIO.Base, Version=17.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.DocIO.AspNet.17.4.0.43\lib\net46\Syncfusion.DocIO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocToPdfConverter.Base, Version=17.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.DocToPDFConverter.AspNet.17.4.0.43\lib\net46\Syncfusion.DocToPdfConverter.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=17.4460.0.43, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Licensing.17.4.0.43\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.OfficeChart.Base, Version=17.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.OfficeChart.Base.17.4.0.43\lib\net46\Syncfusion.OfficeChart.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=17.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Pdf.AspNet.17.4.0.43\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Drawing.Common.4.5.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Linq.Dynamic.Core.1.0.8.6\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory.Data, Version=1.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Memory.Data.1.0.2\lib\net461\System.Memory.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.Serialization.Formatters.4.3.0\lib\net46\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Claims, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Claims.4.3.0\lib\net46\System.Security.Claims.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks, Version=4.0.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Xml.XPath.4.3.0\lib\net46\System.Xml.XPath.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Xml.XPath.XmlDocument.4.3.0\lib\net46\System.Xml.XPath.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="TimeZoneConverter, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\TimeZoneConverter.2.4.1\lib\net45\TimeZoneConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="VBIDEApi, Version=1.7.4.11, Culture=neutral, PublicKeyToken=7292cd2a8b1e0703, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NetOffice.Core.1.7.4.11\lib\net45\VBIDEApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Xceed.Words.NET, Version=1.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DocX.1.2.1\lib\Xceed.Words.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acceso\Dto\ActualizarTarjetaDto.cs" />
+    <Compile Include="Acceso\Dto\ArchivoConsultaPublicaDto.cs" />
+    <Compile Include="Acceso\Dto\ConsultaPublicaDto.cs" />
+    <Compile Include="Acceso\Dto\InputAlertaVencimientoReporteDto.cs" />
+    <Compile Include="Acceso\Dto\InputLiquidacionDto.cs" />
+    <Compile Include="Acceso\Dto\InputRequisitosDto.cs" />
+    <Compile Include="Acceso\Dto\InputRequisitosReporteDto.cs" />
+    <Compile Include="Acceso\Dto\RequisitosReporteDto.cs" />
+    <Compile Include="Acceso\Dto\TarjetaAccesoDto.cs" />
+    <Compile Include="Acceso\Dto\ValidacionRequisitoDto.cs" />
+    <Compile Include="Acceso\Interface\IAlertaVencimientos.cs" />
+    <Compile Include="Acceso\Interface\IConsultaPublica.cs" />
+    <Compile Include="Acceso\Interface\ITarjetaAcceso.cs" />
+    <Compile Include="Acceso\Interface\IValidacionRequisito.cs" />
+    <Compile Include="Acceso\Service\AlertaVencimientosService.cs" />
+    <Compile Include="Acceso\Service\ConsultaPublicaService.cs" />
+    <Compile Include="Acceso\Service\TarjetaAccesoService.cs" />
+    <Compile Include="Acceso\Service\ValidacionRequisitoService.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\AvancePorcentajeProyectoDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\CargaTimesheetDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\CatalogosCertificacionIngenieriaDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\CertificadoIngenieriaProyectoDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\ColaboradorCertificacionIngenieriaDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\ColaboradorListadoIngenieriaDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\ColaboradorRubroIngenieriaDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\DetalleDirectoE500Dto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\DetalleIndirectosIngenieriaDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\DetallesDirectosIngenieriaDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\FechasHorasDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\FeriadoDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\ParametroSistemaDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\PlanificacionTimesheetDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\GrupoCertificadoIngenieriaDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\PorcentajeAvanceIngenieriaDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\PorcentajeIndirectoIngenieriaDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\ResponseColaboradorItemIngenieriaDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\ResultadoCertificacion.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\ProyectoIngenieriaDto.cs" />
+    <Compile Include="CertificacionIngenieria\Dto\ResultadoColaboradorRubro.cs" />
+    <Compile Include="CertificacionIngenieria\Interface\IAvancePorcentajeProyecto.cs" />
+    <Compile Include="CertificacionIngenieria\Interface\IColaboradorCertificacionIngenieria.cs" />
+    <Compile Include="CertificacionIngenieria\Interface\IColaboradorRubroIngenieria.cs" />
+    <Compile Include="CertificacionIngenieria\Interface\IDetalleDirectoE500.cs" />
+    <Compile Include="CertificacionIngenieria\Interface\IDetalleIndirectosIngenieria.cs" />
+    <Compile Include="CertificacionIngenieria\Interface\IDetallesDirectosIngenieria.cs" />
+    <Compile Include="CertificacionIngenieria\Interface\IPaciente.cs" />
+    <Compile Include="CertificacionIngenieria\Interface\IParametroSistema.cs" />
+    <Compile Include="CertificacionIngenieria\Interface\IPlanificacionTimesheet.cs" />
+    <Compile Include="CertificacionIngenieria\Interface\IGrupoCertificadoIngenieria.cs" />
+    <Compile Include="CertificacionIngenieria\Interface\IPorcentajeAvanceIngenieria.cs" />
+    <Compile Include="CertificacionIngenieria\Interface\IPorcentajeIndirectoIngenieria.cs" />
+    <Compile Include="CertificacionIngenieria\Models\CatalogosIngenieria.cs" />
+    <Compile Include="CertificacionIngenieria\Interface\IFeriado.cs" />
+    <Compile Include="CertificacionIngenieria\Models\CertificadoProyectoDirectosE500.cs" />
+    <Compile Include="CertificacionIngenieria\Models\ColaboradorDato.cs" />
+    <Compile Include="CertificacionIngenieria\Models\ColaboradorUbicacion.cs" />
+    <Compile Include="CertificacionIngenieria\Models\DetallesDirectos.cs" />
+    <Compile Include="CertificacionIngenieria\Models\DetallesSinCertificar.cs" />
+    <Compile Include="CertificacionIngenieria\Models\DtoValoresRubro.cs" />
+    <Compile Include="CertificacionIngenieria\Models\E500Distribucion.cs" />
+    <Compile Include="CertificacionIngenieria\Models\E500ViaticosModel.cs" />
+    <Compile Include="CertificacionIngenieria\Models\HijosPaciente.cs" />
+    <Compile Include="CertificacionIngenieria\Models\ProyectoDetalle.cs" />
+    <Compile Include="CertificacionIngenieria\Models\ProyectoDistribucionModel.cs" />
+    <Compile Include="CertificacionIngenieria\Models\ProyectosCertificacion.cs" />
+    <Compile Include="CertificacionIngenieria\Models\RedistribucionTotales.cs" />
+    <Compile Include="CertificacionIngenieria\Models\ValidacionColaboradorRubro.cs" />
+    <Compile Include="CertificacionIngenieria\Service\AvancePorcentajeProyectoService.cs" />
+    <Compile Include="CertificacionIngenieria\Service\ColaboradorCertificacionIngenieriaService.cs" />
+    <Compile Include="CertificacionIngenieria\Service\ColaboradorRubroIngenieriaService.cs" />
+    <Compile Include="CertificacionIngenieria\Service\DetalleDirectoE500Service.cs" />
+    <Compile Include="CertificacionIngenieria\Service\DetalleIndirectosIngenieriaServices.cs" />
+    <Compile Include="CertificacionIngenieria\Service\DetallesDirectosIngenieriaService.cs" />
+    <Compile Include="CertificacionIngenieria\Service\FeriadoService.cs" />
+    <Compile Include="CertificacionIngenieria\Service\PacienteService.cs" />
+    <Compile Include="CertificacionIngenieria\Service\ParametroSistemaService.cs" />
+    <Compile Include="CertificacionIngenieria\Service\PlanificacionTimesheetService.cs" />
+    <Compile Include="CertificacionIngenieria\Service\GrupoCertificadoIngenieriaService.cs" />
+    <Compile Include="CertificacionIngenieria\Service\PorcentajeAvanceIngenieriaService.cs" />
+    <Compile Include="CertificacionIngenieria\Service\PorcentajeIndirectoIngenieriaService.cs" />
+    <Compile Include="Documentos\Dto\CarpetaDto.cs" />
+    <Compile Include="Documentos\Dto\DocumentoDto.cs" />
+    <Compile Include="Documentos\Dto\EstructuraArbol.cs" />
+    <Compile Include="Documentos\Dto\ImagenSeccionDto.cs" />
+    <Compile Include="Documentos\Dto\SeccionDto.cs" />
+    <Compile Include="Documentos\Dto\UsuarioAutorizadoDto.cs" />
+    <Compile Include="Documentos\Interface\ICarpeta.cs" />
+    <Compile Include="Documentos\Interface\IDocumento.cs" />
+    <Compile Include="Documentos\Interface\IImagenSeccion.cs" />
+    <Compile Include="Documentos\Interface\ISeccion.cs" />
+    <Compile Include="Documentos\Interface\IUsuarioAutorizado.cs" />
+    <Compile Include="Documentos\Models\FechasSincronizacion.cs" />
+    <Compile Include="Documentos\Models\ReporteDocumentos.cs" />
+    <Compile Include="Documentos\Models\ReporteUsuariosAutorizados.cs" />
+    <Compile Include="Documentos\Service\CarpetaService.cs" />
+    <Compile Include="Documentos\Service\ImagenSeccionservice.cs" />
+    <Compile Include="Documentos\Service\SeccionService.cs" />
+    <Compile Include="Documentos\Service\DocumentoService.cs" />
+    <Compile Include="Documentos\Service\UsuarioAutorizadoService.cs" />
+    <Compile Include="Dto\AdminRotacionDto.cs" />
+    <Compile Include="Dto\ArchivoOrdenProcederDto.cs" />
+    <Compile Include="Dto\ArchivoPresupuestoDto.cs" />
+    <Compile Include="Dto\ArchivosAvanceObraDto.cs" />
+    <Compile Include="Dto\ArchivosOfertaDto.cs" />
+    <Compile Include="Dto\ArchivosRequerimientoDto.cs" />
+    <Compile Include="Dto\CargosSectorDto.cs" />
+    <Compile Include="Dto\CategoriasEncargadoDto.cs" />
+    <Compile Include="Dto\CertificadoIngenieriaDto.cs" />
+    <Compile Include="Dto\CobroDto.cs" />
+    <Compile Include="Dto\CobroFacturaDto.cs" />
+    <Compile Include="Dto\ColaboradorBajaDto.cs" />
+    <Compile Include="Dto\ColaboradorCargaSocialDto.cs" />
+    <Compile Include="Dto\ColaboradorDiscapacidadDto.cs" />
+    <Compile Include="Dto\ColaboradoresDetallesDto.cs" />
+    <Compile Include="Dto\ColaboradoresAusentismoDto.cs" />
+    <Compile Include="Dto\ColaboradoresAusentismoReintegrosDto.cs" />
+    <Compile Include="Dto\ColaboradoresAusentismoRequisitosDto.cs" />
+    <Compile Include="Dto\ColaboradoresComidaDto.cs" />
+    <Compile Include="Dto\ColaboradoresHistoricoDto.cs" />
+    <Compile Include="Dto\ColaboradoresLookupDto.cs" />
+    <Compile Include="Dto\ColaboradoresDto.cs" />
+    <Compile Include="Dto\ColaboradoresVisitaDto.cs" />
+    <Compile Include="Dto\ColaboradorFormacionEducativaDto.cs" />
+    <Compile Include="Dto\ColaboradorIngenieriaDto.cs" />
+    <Compile Include="Dto\ColaboradorMovilizacionDto.cs" />
+    <Compile Include="Dto\ColaboradorNombresDto.cs" />
+    <Compile Include="Dto\ColaboradorReporteDto.cs" />
+    <Compile Include="Dto\ColaboradorRequisitoDto.cs" />
+    <Compile Include="Dto\ColaboradorRequisitoHistoricoDto.cs" />
+    <Compile Include="Dto\ColaboradorResponsabilidadDto.cs" />
+    <Compile Include="Dto\ColaboradorServicioDto.cs" />
+    <Compile Include="Dto\ColaboradoresFotografiaDto.cs" />
+    <Compile Include="Dto\ColaboradoresHuellaDigitalDto.cs" />
+    <Compile Include="Dto\ComputoComercialDto.cs" />
+    <Compile Include="Dto\ComputoPresupuestoDto.cs" />
+    <Compile Include="Dto\ComputosTemporalDto.cs" />
+    <Compile Include="Dto\AdendaDto.cs" />
+    <Compile Include="Dto\ArchivoContratoDto.cs" />
+    <Compile Include="Dto\ArchivoDto.cs" />
+    <Compile Include="Dto\AvanceIngenieriaDto.cs" />
+    <Compile Include="Dto\AvanceObraDto.cs" />
+    <Compile Include="Dto\AvanceProcuraDto.cs" />
+    <Compile Include="Dto\CartaArchivoDto.cs" />
+    <Compile Include="Dto\CartaDto.cs" />
+    <Compile Include="Dto\CatalogoDto.cs" />
+    <Compile Include="Dto\CentrocostosContratoDto.cs" />
+    <Compile Include="Dto\CertificadoDto.cs" />
+    <Compile Include="Dto\CertificadoFacturaDto.cs" />
+    <Compile Include="Dto\CiudadDto.cs" />
+    <Compile Include="Dto\ClienteDto.cs" />
+    <Compile Include="Dto\ColaboradorDto.cs" />
+    <Compile Include="Dto\ComputoDto.cs" />
+    <Compile Include="Dto\ComunidadDto.cs" />
+    <Compile Include="Dto\ConsumoDto.cs" />
+    <Compile Include="Dto\GastoDirectoCertificadoDto.cs" />
+    <Compile Include="Dto\OrdenServicioTempDto.cs" />
+    <Compile Include="Dto\PacienteDto.cs" />
+    <Compile Include="Dto\QrColaboradoresDto.cs" />
+    <Compile Include="Dto\RsoCabeceraDto.cs" />
+    <Compile Include="Dto\RsoDetalleEacDto.cs" />
+    <Compile Include="Interfaces\ICertificadoIngenieriaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradorIngenieriaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IOrdenServicioTemp.cs" />
+    <Compile Include="Interfaces\IQrColaboradores.cs" />
+    <Compile Include="Interfaces\IRsoCabeceraAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IRsoDetalleEacAsyncBaseCrudAppService.cs" />
+    <Compile Include="Models\CustomStringComparer.cs" />
+    <Compile Include="Proveedor\ConsumoExtemporaneoService.cs" />
+    <Compile Include="Proveedor\DetalleConsumoExtemporaneoService.cs" />
+    <Compile Include="Proveedor\Dto\ConsumoExtemporaneoDto.cs" />
+    <Compile Include="Dto\ContactoEmergenciaDto.cs" />
+    <Compile Include="Dto\CreateColaboradorRequisitoDto.cs" />
+    <Compile Include="Dto\PrecipitacionDto.cs" />
+    <Compile Include="Dto\RegistroCivilDto.cs" />
+    <Compile Include="Dto\RequisitoAccesoDto.cs" />
+    <Compile Include="Interfaces\IColaboradoresAusentismoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradoresAusentismoRequisitosAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradoresComidaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradoresFotografiaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradoresHistoricoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradoresHuellaDigitalAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradoresAusentismoReintegrosAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradoresVisitaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradorMovilizacionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradorRequisitoHistoricoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IContactoEmergencia.cs" />
+    <Compile Include="Interfaces\IColaboradorResponsabilidadAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\DetalleLiquidacionService.cs" />
+    <Compile Include="Proveedor\DetalleReservaService.cs" />
+    <Compile Include="Proveedor\Dto\ConsumoViandaDto.cs" />
+    <Compile Include="Dto\ContactoDto.cs" />
+    <Compile Include="Dto\ContratoDocumentoBancarioDto.cs" />
+    <Compile Include="Dto\ContratoDto.cs" />
+    <Compile Include="Interfaces\IColaboradorBajaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradorDiscapacidadAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradorFormacionEducativaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradorRequisitoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradorServicioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICargosSectorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICategoriasEncargadoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Dto\HistoricosOfertaComercialDto.cs" />
+    <Compile Include="Proveedor\Dto\ConsumoViandaDetalleDto.cs" />
+    <Compile Include="Proveedor\Dto\ContratoProveedorTipoOpcionesDto.cs" />
+    <Compile Include="Dto\OfertaComercialDto.cs" />
+    <Compile Include="Dto\OfertaComercialPresupuestoDto.cs" />
+    <Compile Include="Dto\WbsComercialDto.cs" />
+    <Compile Include="Interfaces\IOfertaComercialAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IOfertaComercialPresupuestoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\Dto\ContratoProveedorDto.cs" />
+    <Compile Include="Dto\CorreoExternoDto.cs" />
+    <Compile Include="Dto\CorreoListaDto.cs" />
+    <Compile Include="Dto\DestinatarioCartaDto.cs" />
+    <Compile Include="Dto\DestinatarioDto.cs" />
+    <Compile Include="Dto\DestinoAlimentacionDto.cs" />
+    <Compile Include="Dto\DestinoDto.cs" />
+    <Compile Include="Dto\DestinoServicioDto.cs" />
+    <Compile Include="Dto\DetalleAvanceIngenieriaDto.cs" />
+    <Compile Include="Dto\DetalleAvanceObraDto.cs" />
+    <Compile Include="Dto\DetalleAvanceProcuraDto.cs" />
+    <Compile Include="Dto\DetalleCertificadoDto.cs" />
+    <Compile Include="Proveedor\Dto\DetalleConsumoExtemporaneoDto.cs" />
+    <Compile Include="Proveedor\Dto\DetalleDistribucionDto.cs" />
+    <Compile Include="Dto\DetalleGananciaDto.cs" />
+    <Compile Include="Dto\DetalleGRDto.cs" />
+    <Compile Include="Dto\DetalleItemIngenieriaDto.cs" />
+    <Compile Include="Dto\DetalleOrdenCompraDto.cs" />
+    <Compile Include="Dto\DetalleOrdenServicioDto.cs" />
+    <Compile Include="Dto\DetallePreciarioDto.cs" />
+    <Compile Include="Proveedor\Dto\DetalleLiquidacionDto.cs" />
+    <Compile Include="Proveedor\Dto\DetalleReservaDto.cs" />
+    <Compile Include="Proveedor\Dto\DistribucionTransporteUpdateDto.cs" />
+    <Compile Include="Proveedor\Dto\ConsumoViandaTotalesDto.cs" />
+    <Compile Include="Proveedor\Dto\DistribucionSolicitudDto.cs" />
+    <Compile Include="Proveedor\Dto\DistribucionViandaTransporteDto.cs" />
+    <Compile Include="Proveedor\Dto\DistribucionViandaGrupoDto.cs" />
+    <Compile Include="Proveedor\Dto\DistribucionViandaProveedorDto.cs" />
+    <Compile Include="Proveedor\Dto\DistribucionViandaDto.cs" />
+    <Compile Include="Dto\FacturaDto.cs" />
+    <Compile Include="Dto\GananciaDto.cs" />
+    <Compile Include="Dto\GananciaModel.cs" />
+    <Compile Include="Dto\GRDto.cs" />
+    <Compile Include="Dto\GrupoItemDto.cs" />
+    <Compile Include="Dto\GrupoPersonalDto.cs" />
+    <Compile Include="Dto\GrupoPersonalRequisitoDto.cs" />
+    <Compile Include="Dto\HistoricosOfertaDto.cs" />
+    <Compile Include="Dto\HorarioDto.cs" />
+    <Compile Include="Dto\ItemDto.cs" />
+    <Compile Include="Proveedor\Dto\EspacioHabitacionDto.cs" />
+    <Compile Include="Proveedor\Dto\EspacioLibreDto.cs" />
+    <Compile Include="Proveedor\Dto\FormatLiquidacionConsumo.cs" />
+    <Compile Include="Proveedor\Dto\FormatLiquidacionSolicitudVianda.cs" />
+    <Compile Include="Proveedor\Dto\HabitacionDto.cs" />
+    <Compile Include="Proveedor\Dto\JustificacionViandaDto.cs" />
+    <Compile Include="Dto\ListaDistribucionDto.cs" />
+    <Compile Include="Dto\LocacionDto.cs" />
+    <Compile Include="Proveedor\Dto\LiquidacionServicioDto.cs" />
+    <Compile Include="Proveedor\Dto\MenuProveedorDto.cs" />
+    <Compile Include="Dto\NovedadColaboradorDto.cs" />
+    <Compile Include="Proveedor\Dto\NovedadProveedorDto.cs" />
+    <Compile Include="Dto\OpcionComidaDto.cs" />
+    <Compile Include="Dto\ParroquiaDto.cs" />
+    <Compile Include="Dto\PresupuestoDto.cs" />
+    <Compile Include="Proveedor\Dto\ProveedorDetalleDto.cs" />
+    <Compile Include="Proveedor\Dto\ProveedorInfoDto.cs" />
+    <Compile Include="Proveedor\Dto\ProveedorDto.cs" />
+    <Compile Include="Dto\RequisitoColaboradorDto.cs" />
+    <Compile Include="Dto\RequisitoFrenteDto.cs" />
+    <Compile Include="Proveedor\Dto\RequisitoProveedorDto.cs" />
+    <Compile Include="Dto\RequisitosDto.cs" />
+    <Compile Include="Proveedor\Dto\RequisitoServicioDto.cs" />
+    <Compile Include="Dto\RetencionFacturaDto.cs" />
+    <Compile Include="Dto\NovedadDto.cs" />
+    <Compile Include="Dto\ObraAdicionalDto.cs" />
+    <Compile Include="Dto\ObraDisruptivoDto.cs" />
+    <Compile Include="Dto\OfertaDto.cs" />
+    <Compile Include="Dto\OrdenCompraDto.cs" />
+    <Compile Include="Dto\OrdenServicioDto.cs" />
+    <Compile Include="Dto\PaisDto.cs" />
+    <Compile Include="Dto\PorcentajeIncrementoDto.cs" />
+    <Compile Include="Dto\PreciarioDto.cs" />
+    <Compile Include="Dto\ProcesoListaDistribucionDto.cs" />
+    <Compile Include="Dto\ProcesoNotificacionDto.cs" />
+    <Compile Include="Dto\ProvinciaDto.cs" />
+    <Compile Include="Dto\ProyectoColaboradorDto.cs" />
+    <Compile Include="Dto\ProyectoObservacionDto.cs" />
+    <Compile Include="Dto\RdoCabeceraDto.cs" />
+    <Compile Include="Dto\RdoDetalleDto.cs" />
+    <Compile Include="Dto\RdoDetalleEacDto.cs" />
+    <Compile Include="Dto\SecuencialDto.cs" />
+    <Compile Include="Dto\ServicioDestinoComidaDto.cs" />
+    <Compile Include="Dto\ServicioDestinoDto.cs" />
+    <Compile Include="Dto\ServicioDto.cs" />
+    <Compile Include="Proveedor\Dto\ReservaHotelDto.cs" />
+    <Compile Include="Proveedor\Dto\FormatLiquidacionReserva.cs" />
+    <Compile Include="Proveedor\Dto\ReservaQR.cs" />
+    <Compile Include="Proveedor\Dto\ReservaQRDetalle.cs" />
+    <Compile Include="Proveedor\Dto\ServicioProveedorDto.cs" />
+    <Compile Include="Proveedor\Dto\SolicitudViandaDto.cs" />
+    <Compile Include="Dto\TempOfertaDto.cs" />
+    <Compile Include="Dto\TempRequerimientoDto.cs" />
+    <Compile Include="Dto\TipoCatalogoDto.cs" />
+    <Compile Include="Proveedor\Dto\TarifaHotelDto.cs" />
+    <Compile Include="Proveedor\Dto\TarifaLavanderiaDto.cs" />
+    <Compile Include="Proveedor\Dto\TarifaTipoHabitacionDto.cs" />
+    <Compile Include="Proveedor\Dto\TipoAccionEmpresaDto.cs" />
+    <Compile Include="Proveedor\Dto\TipoOpcionComidaDto.cs" />
+    <Compile Include="Dto\TransmitalCabeceraDto.cs" />
+    <Compile Include="Dto\TransmitalDetalleDto.cs" />
+    <Compile Include="Dto\WbsDto.cs" />
+    <Compile Include="Dto\WbsOfertaDto.cs" />
+    <Compile Include="Dto\WbsPresupuestoDto.cs" />
+    <Compile Include="Dto\ZonaDto.cs" />
+    <Compile Include="Dto\ZonaFrenteDto.cs" />
+    <Compile Include="Proveedor\Dto\ZonaProveedorInfoDto.cs" />
+    <Compile Include="Proveedor\Dto\ZonaProveedorDto.cs" />
+    <Compile Include="Dto\ZonaProvinciaDto.cs" />
+    <Compile Include="Dto\CuentaEmpresaDto.cs" />
+    <Compile Include="Dto\InstitucionFinancieraDto.cs" />
+    <Compile Include="Dto\ProyectoDto.cs" />
+    <Compile Include="Dto\RepresentanteEmpresaDto.cs" />
+    <Compile Include="Dto\RequerimientoDto.cs" />
+    <Compile Include="Interfaces\IAdendaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IAdminRotacionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IArchivoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IAvanceIngenieriaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IAvanceObraAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IAvanceProcuraAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICartaArchivoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICartaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICatalogoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICentrocostoContratoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICertificadoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICertificadoFacturaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICiudadAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IClienteAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICobroAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICobroFacturaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradorCargaSocialAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IColaboradoresAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IComputoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IComputoPresupuestoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IComputosTemporalAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IComunidadAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IConsumoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\EspacioHabitacionService.cs" />
+    <Compile Include="Proveedor\HabitacionService.cs" />
+    <Compile Include="Proveedor\Interfaces\IDetalleConsumoExtemporaneo.cs" />
+    <Compile Include="Proveedor\Interfaces\IConsumoExtemporaneo.cs" />
+    <Compile Include="Proveedor\Interfaces\IConsumoViandaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IContactoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IContradoDocumentoBancarioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IContratoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\Interfaces\IContratoProveedorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICorreoExternoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICorreoListaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ICuentaEmpresaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDestinatarioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDestinatarioCartaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDestinoAlimentacionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDestinoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDestinoServicioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDetalleAvanceIngenieriaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDetalleAvanceObraAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDetalleAvanceProcuraAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDetalleCertificadoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\Interfaces\IDetalleDistribucionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDetalleGananciaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDetalleGRAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDetalleItemIngenieriaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDetalleOrdenCompraAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDetalleOrdenServicioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IDetallePreciarioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\Interfaces\IDetalleLiquidacion.cs" />
+    <Compile Include="Proveedor\Interfaces\IDetalleReserva.cs" />
+    <Compile Include="Proveedor\Interfaces\IDistribucionViandaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IEmpresaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IFacturaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IGananciaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IGRAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IGrupoItemAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IGrupoPersonalAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IGrupoPersonalRequisitoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IHistoricosOfertaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IHorarioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IInstitucionFinancieraAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IItemAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\Interfaces\IEspacioHabitacion.cs" />
+    <Compile Include="Proveedor\Interfaces\IHabitacion.cs" />
+    <Compile Include="Proveedor\Interfaces\IJustificacionViandaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IListaDistribucionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ILocacionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\Interfaces\ILiquidacionServicio.cs" />
+    <Compile Include="Proveedor\Interfaces\IMenuProveedorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\INovedadAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\INovedadColaboradorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\Interfaces\INovedadProveedorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IObraAdicionalAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IObraDisruptivoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IOfertaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IOpcionComidaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IOrdenCompraAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IOrdenServicioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IPaisAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IParroquiaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IPorcentajeIncrementoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IPreciarioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IPresupuestoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IProcesoListaDistribucionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IProcesoNotificacionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\Interfaces\IProveedorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IProvinciaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IProyectoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IProyectoColaboradorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IProyectoObservacionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IRdoCabeceraAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IRdoDetalleAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IRdoDetalleEacAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IRepresentanteEmpresaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IRequerimientoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IRequisitoColaboradorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IRequisitoFrenteAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\Interfaces\IRequisitoProveedorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IRequisitosAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\Interfaces\IRequisitoServicioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IRetencionFacturaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ISecuencialAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IServicioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IServicioDestinoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IServicioDestinoComidaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\Interfaces\IReservaHotel.cs" />
+    <Compile Include="Proveedor\Interfaces\IServicioProveedorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\Interfaces\ISolicitudViandaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ITempOfertaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ITempRequerimientoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ITipoCatalogoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ITipoAccionEmpresaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ITipoOpcionComidaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ITransmitalCabeceraAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\ITransmitalDetalleAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IWbsAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IWbsOfertaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IWbsPresupuestoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IZonaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IZonaFrenteAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\Interfaces\ITarifaHotel.cs" />
+    <Compile Include="Proveedor\Interfaces\ITarifaLavanderia.cs" />
+    <Compile Include="Proveedor\Interfaces\IZonaProveedorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\IZonaProvinciaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Interfaces\RequisitosFrente.cs" />
+    <Compile Include="Proveedor\Dto\TotalesDistribuccionDto.cs" />
+    <Compile Include="Proveedor\LiquidacionServicioService.cs" />
+    <Compile Include="Proveedor\Models\TipoOpcionComidaHorario.cs" />
+    <Compile Include="Proveedor\Models\ServiciosLiquidaciones.cs" />
+    <Compile Include="Proveedor\ReservaHotelService.cs" />
+    <Compile Include="Proveedor\TarifaHotelService.cs" />
+    <Compile Include="Proveedor\TarifaLavanderiaService.cs" />
+    <Compile Include="ProyectoAplicacionModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dto\EmpresaDto.cs" />
+    <Compile Include="RecursosHumanos\Dto\ActualizacionSueldoDto.cs" />
+    <Compile Include="RecursosHumanos\Dto\CapacitacionDto.cs" />
+    <Compile Include="RecursosHumanos\Dto\CapacitacionesColaboradorDto.cs" />
+    <Compile Include="RecursosHumanos\Dto\ColaboradorDto.cs" />
+    <Compile Include="RecursosHumanos\Dto\DetalleActualizacionSueldoDto.cs" />
+    <Compile Include="Documentos\Dto\ResultadoEliminacionResponse.cs" />
+    <Compile Include="RecursosHumanos\Interfaces\IActualizacionSueldo.cs" />
+    <Compile Include="RecursosHumanos\Interfaces\ICapacitacion.cs" />
+    <Compile Include="RecursosHumanos\Services\ActualizacionSueldoService.cs" />
+    <Compile Include="RecursosHumanos\Services\CapacitacionService.cs" />
+    <Compile Include="RecursosHumanos\Interfaces\IDetalleActualizacionSueldo.cs" />
+    <Compile Include="RecursosHumanos\Services\DetalleActualizacionSueldoService.cs" />
+    <Compile Include="Seguridades\Dto\ProblemaSincronizacionDto.cs" />
+    <Compile Include="Seguridades\Interface\IProblemaSincronizacion.cs" />
+    <Compile Include="Seguridades\Service\ProblemaSincronizacionService.cs" />
+    <Compile Include="Service\AdendaServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\AdminRotacionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ArchivoService.cs" />
+    <Compile Include="Service\AvanceIngenieriaService.cs" />
+    <Compile Include="Service\AvanceObraService.cs" />
+    <Compile Include="Service\AvanceProcuraService.cs" />
+    <Compile Include="Service\CargosSectorService.cs" />
+    <Compile Include="Service\CartaArchivoServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\CartaServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\CatalogoService.cs" />
+    <Compile Include="Service\CategoriasEncargadoService.cs" />
+    <Compile Include="Service\CentrocostosContratoServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\CertificadoFacturaServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\CertificadoIngenieriaService.cs" />
+    <Compile Include="Service\CertificadoService.cs" />
+    <Compile Include="Service\CiudadService.cs" />
+    <Compile Include="Service\ClienteServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\CobroFacturaService.cs" />
+    <Compile Include="Service\CobroService.cs" />
+    <Compile Include="Service\ColaboradorBajaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ColaboradorCargaSocialAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ColaboradorDiscapacidadAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ColaboradoresAusentismoReintegrosService.cs" />
+    <Compile Include="Service\ColaboradoresAusentismoRequisitosService.cs" />
+    <Compile Include="Service\ColaboradoresAusentismoService.cs" />
+    <Compile Include="Service\ColaboradoresComidaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ColaboradoresFotografiaService.cs" />
+    <Compile Include="Service\ColaboradoresHistoricoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ColaboradoresHuellaDigitalService.cs" />
+    <Compile Include="Service\ColaboradoresService.cs" />
+    <Compile Include="Service\ColaboradoresVisitaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ColaboradorFormacionEducativaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ColaboradorIngenieriaService.cs" />
+    <Compile Include="Service\ColaboradorMovilizacionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ColaboradorRequisitoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ColaboradorRequisitoHistoricoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ColaboradorResponsabilidadAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ColaboradorService.cs" />
+    <Compile Include="Service\ColaboradorServicioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ComputoPresupuestoService.cs" />
+    <Compile Include="Service\ComputoServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ComputosTemporalService.cs" />
+    <Compile Include="Service\ComunidadAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ConsumoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\ConsumoViandaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ContactoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ContactoEmergenciaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ContratoDocumentoBancarioServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\ContratoProveedorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ContratoServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\CorreoExternoService.cs" />
+    <Compile Include="Service\CorreoListaService.cs" />
+    <Compile Include="Service\CuentaEmpresaService.cs" />
+    <Compile Include="Service\DestinatarioCartaServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\DestinatarioServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\DestinoAlimentacionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\DestinoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\DestinoServicioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\DetalleAvanceIngenieriaService.cs" />
+    <Compile Include="Service\DetalleAvanceObraService.cs" />
+    <Compile Include="Service\DetalleAvanceProcuraService.cs" />
+    <Compile Include="Service\DetalleCertificadoService.cs" />
+    <Compile Include="Proveedor\DetalleDistribucionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\DetalleGananciaService.cs" />
+    <Compile Include="Service\DetalleGRService.cs" />
+    <Compile Include="Service\DetalleItemIngenieria.cs" />
+    <Compile Include="Service\DetalleOrdenCompraService.cs" />
+    <Compile Include="Service\DetalleOrdenServicioService.cs" />
+    <Compile Include="Service\DetallePreciarioServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\DistribucionViandaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\EmpresaService.cs" />
+    <Compile Include="Service\FacturaServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\GananciaServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\GrService.cs" />
+    <Compile Include="Service\GrupoItemService.cs" />
+    <Compile Include="Service\GrupoPersonalAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\GrupoPersonalRequisitoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\HistoricosOfertaService.cs" />
+    <Compile Include="Service\HorarioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\InstitucionFinancieraService.cs" />
+    <Compile Include="Service\IRequisitonAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ItemServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\JustificacionViandaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ListaDistribucionService.cs" />
+    <Compile Include="Service\LocacionAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\MenuProveedorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\NovedadColaboradorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\NovedadProveedorAsyncServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\NovedadService.cs" />
+    <Compile Include="Service\ObraAdicionalService.cs" />
+    <Compile Include="Service\ObraDisruptivoService.cs" />
+    <Compile Include="Service\OfertaComercialPresupuestoService.cs" />
+    <Compile Include="Service\OfertaComercialService.cs" />
+    <Compile Include="Service\OfertaService.cs" />
+    <Compile Include="Service\OpcionComidaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\OrdenCompraService.cs" />
+    <Compile Include="Service\OrdenServicioService.cs" />
+    <Compile Include="Service\OrdenServicioTempService.cs" />
+    <Compile Include="Service\PaisService.cs" />
+    <Compile Include="Service\ParroquiaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\PorcentajeIncrementoService.cs" />
+    <Compile Include="Service\PreciarioServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\PresupuestoService.cs" />
+    <Compile Include="Service\ProcesoListaDistribucionService.cs" />
+    <Compile Include="Service\ProcesoNotificacionService.cs" />
+    <Compile Include="Proveedor\ProveedorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ProvinciaService.cs" />
+    <Compile Include="Service\ProyectoColaboradorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ProyectoObservacionService.cs" />
+    <Compile Include="Service\ProyectoService.cs" />
+    <Compile Include="Service\QrColaboradoresService.cs" />
+    <Compile Include="Service\RdoCabeceraServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\RdoDetalleEacService.cs" />
+    <Compile Include="Service\RdoDetalleServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\RepresentanteEmpresaService.cs" />
+    <Compile Include="Service\RequerimientoService.cs" />
+    <Compile Include="Service\RequisitoColaboradorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\RequisitoFrenteAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\RequisitoProveedorServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\RequisitoServicioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\RequisitosService.cs" />
+    <Compile Include="Service\RetencionFacturaServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\RsoCabeceraServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\RsoDetalleEacService.cs" />
+    <Compile Include="Service\SecuencialService.cs" />
+    <Compile Include="Service\ServicioAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ServicioDestinoAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ServicioDestinoComidaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\ServicioProveedorAsyncBaseCrudAppService.cs" />
+    <Compile Include="Proveedor\SolicitudViandaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\TempOfertaService.cs" />
+    <Compile Include="Service\TempRequerimientoService.cs" />
+    <Compile Include="Service\TipoCatalogoService.cs" />
+    <Compile Include="Proveedor\TipoAccionEmpresaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\TipoOpcionComidaAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\TransmitalCabeceraServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\TransmitalDetalleServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\WbsOfertaServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\WbsPresupuestoService.cs" />
+    <Compile Include="Service\WbsService.cs" />
+    <Compile Include="Service\ZonaFrenteService.cs" />
+    <Compile Include="Proveedor\ZonaProveedorServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="Service\ZonaProvinciaService.cs" />
+    <Compile Include="Service\ZonaService.cs" />
+    <Compile Include="Transporte\Dto\ChoferDto.cs" />
+    <Compile Include="Transporte\Dto\ColaboradorRutaDto.cs" />
+    <Compile Include="Transporte\Dto\ConsumoTransporteDto.cs" />
+    <Compile Include="Transporte\Dto\LugarDto.cs" />
+    <Compile Include="Transporte\Dto\OperacionDiariaDto.cs" />
+    <Compile Include="Transporte\Dto\OperacionDiariaRutaDto.cs" />
+    <Compile Include="Transporte\Dto\ParadaDto.cs" />
+    <Compile Include="Transporte\Dto\RutaDto.cs" />
+    <Compile Include="Transporte\Dto\RutaHorarioDto.cs" />
+    <Compile Include="Transporte\Dto\RutaHorarioVehiculoDto.cs" />
+    <Compile Include="Transporte\Dto\RutaParadaDto.cs" />
+    <Compile Include="Transporte\Interface\IChofer.cs" />
+    <Compile Include="Transporte\Dto\VehiculoDto.cs" />
+    <Compile Include="Transporte\Dto\VehiculoHistoricoDto.cs" />
+    <Compile Include="Transporte\Interface\IColaboradorRuta.cs" />
+    <Compile Include="Transporte\Interface\IConsumoTransporte.cs" />
+    <Compile Include="Transporte\Interface\ILugar.cs" />
+    <Compile Include="Transporte\Interface\IOperacionDiaria.cs" />
+    <Compile Include="Transporte\Interface\IOperacionDiariaRuta.cs" />
+    <Compile Include="Transporte\Interface\IParada.cs" />
+    <Compile Include="Transporte\Interface\IRuta.cs" />
+    <Compile Include="Transporte\Interface\IRutaHorario.cs" />
+    <Compile Include="Transporte\Interface\IRutaHorarioVehiculo.cs" />
+    <Compile Include="Transporte\Interface\IRutaParada.cs" />
+    <Compile Include="Transporte\Models\DiarioViajeVehiculoDto.cs" />
+    <Compile Include="Transporte\Models\InputReporteTransporte.cs" />
+    <Compile Include="Transporte\Models\InputRetiroTransportista.cs" />
+    <Compile Include="Transporte\Models\PersonasTransportadasDto.cs" />
+    <Compile Include="Transporte\Models\RetiroTransportistaModel.cs" />
+    <Compile Include="Transporte\Models\TrabajoDiarioDto.cs" />
+    <Compile Include="Transporte\Models\TransportistasDatos.cs" />
+    <Compile Include="Transporte\Service\ChoferService.cs" />
+    <Compile Include="Transporte\Interface\IVehiculo.cs" />
+    <Compile Include="Transporte\Interface\IVehiculoHistorico.cs" />
+    <Compile Include="Transporte\Service\ColaboradorRutaService.cs" />
+    <Compile Include="Transporte\Service\ConsumoTransporteService.cs" />
+    <Compile Include="Transporte\Service\LugarService.cs" />
+    <Compile Include="Transporte\Service\OperacionDiariaRutaService.cs" />
+    <Compile Include="Transporte\Service\OperacionDiariaService.cs" />
+    <Compile Include="Transporte\Service\ParadaService.cs" />
+    <Compile Include="Transporte\Service\RutaHorarioService.cs" />
+    <Compile Include="Transporte\Service\RutaHorarioVehiculoService.cs" />
+    <Compile Include="Transporte\Service\RutaParadaService.cs" />
+    <Compile Include="Transporte\Service\RutaService.cs" />
+    <Compile Include="Transporte\Service\VehiculoHistoricoService.cs" />
+    <Compile Include="Transporte\Service\VehiculoService.cs" />
+    <Compile Include="WebService\AccionServicioWebDto.cs" />
+    <Compile Include="WebService\IWebServiceAsyncBaseCrudAppService.cs" />
+    <Compile Include="WebService\ParametroServicioWebDto.cs" />
+    <Compile Include="WebService\ServicioWebDto.cs" />
+    <Compile Include="WebService\WebServiceService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\vendor\Abp.TestBase\Abp.TestBase.csproj">
+      <Project>{d00320ab-3167-4768-a049-d5986a56707d}</Project>
+      <Name>Abp.TestBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.cpp.calypso.comnu.dominio\com.cpp.calypso.comun.dominio.csproj">
+      <Project>{cd1a1be4-2627-4640-9f31-148fc47adb6f}</Project>
+      <Name>com.cpp.calypso.comun.dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.cpp.calypso.comnu.entityframework.tests\com.cpp.calypso.comun.entityframework.tests.csproj">
+      <Project>{fc2eba57-6ab3-4d17-89be-64a2443d2d05}</Project>
+      <Name>com.cpp.calypso.comun.entityframework.tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.cpp.calypso.comun.aplicacion.test\com.cpp.calypso.comun.aplicacion.test.csproj">
+      <Project>{b58a6132-58f4-4b77-a70a-8e0fd652ea9f}</Project>
+      <Name>com.cpp.calypso.comun.aplicacion.test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.cpp.calypso.comun.aplicacion\com.cpp.calypso.comun.aplicacion.csproj">
+      <Project>{8924802f-227d-46c1-9d4b-257ec9c3a8b4}</Project>
+      <Name>com.cpp.calypso.comun.aplicacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.cpp.calypso.comun.dominio.tests\com.cpp.calypso.comun.dominio.tests.csproj">
+      <Project>{62740233-3263-497c-afdf-07ad9dae2cf7}</Project>
+      <Name>com.cpp.calypso.comun.dominio.tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.cpp.calypso.comun.entityframework\com.cpp.calypso.comun.entityframework.csproj">
+      <Project>{c31d2291-2e39-40dd-b4dc-6343bae9fe88}</Project>
+      <Name>com.cpp.calypso.comun.entityframework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.cpp.calypso.framework.test\com.cpp.calypso.framework.test.csproj">
+      <Project>{e9380cfe-48c8-4192-81d6-69c1ba23f04e}</Project>
+      <Name>com.cpp.calypso.framework.test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.cpp.calypso.framework\com.cpp.calypso.framework.csproj">
+      <Project>{04167c27-e49b-4d93-9f0a-4ce969b3bc26}</Project>
+      <Name>com.cpp.calypso.framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.cpp.calypso.proyecto.dominio\com.cpp.calypso.proyecto.dominio.csproj">
+      <Project>{d4455905-15a2-45bf-a4db-e147c2f99f7d}</Project>
+      <Name>com.cpp.calypso.proyecto.dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.cpp.calypso.proyecto.entityframework\com.cpp.calypso.proyecto.entityframework.csproj">
+      <Project>{b44a0827-d43c-4e98-b3e7-13288ae7930d}</Project>
+      <Name>com.cpp.calypso.proyecto.entityframework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.cpp.calypso.seguridad.aplicacion\com.cpp.calypso.seguridad.aplicacion.csproj">
+      <Project>{71e0008a-51f3-46ba-80bd-8ec01cd7c57c}</Project>
+      <Name>com.cpp.calypso.seguridad.aplicacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.cpp.calypso.seguridad.entityframework\com.cpp.calypso.seguridad.entityframework.csproj">
+      <Project>{8ce4d43a-233f-4684-9d61-dbf0fcda7f6e}</Project>
+      <Name>com.cpp.calypso.seguridad.entityframework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="InteropExtensionLib">
+      <Guid>{C3D19104-7A67-4EB0-B459-D5B2E734D430}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Outlook1">
+      <Guid>{00062FFF-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.OutlookViewCtl">
+      <Guid>{0006F062-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Office2013CustomActionsLib">
+      <Guid>{AB4D3FA3-21B9-443C-886E-FC4A417D3E4D}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="UCAddinLib">
+      <Guid>{AB54A09E-1604-4438-9AC7-04BE3E6B0320}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

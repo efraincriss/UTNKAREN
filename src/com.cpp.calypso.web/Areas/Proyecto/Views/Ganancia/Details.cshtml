@@ -1,0 +1,109 @@
+﻿@model com.cpp.calypso.web.Areas.Proyecto.Models.GananciaDetalleViewModel
+
+@{
+    ViewBag.Title = "GananciaDetalle";
+
+}
+
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Ganancia</h4>
+                    </div>
+                    <div align="right">
+
+
+                        
+                            @Html.ActionLink("Editar", "Edit", new { id = Model.Ganancia.Id }, new { @class = "btn btn-outline-primary" }) 
+                            @Html.ActionLink("Regresar", "Index", "Ganancia", new { @class = "btn btn-outline-primary" })
+
+                       </div>
+
+
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Contrato:</b> @Model.Ganancia.Contrato.Codigo-  @Model.Ganancia.Contrato.descripcion</h6>
+                        <h6><b>Cliente:</b> @Model.Ganancia.Contrato.Cliente.codigoasignado-  @Model.Ganancia.Contrato.Cliente.razon_social</h6>
+                        <h6><b>Periódo:</b> @(Model.Ganancia.fecha_inicio) - @(Model.Ganancia.fecha_fin) </h6>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="items_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="items-tab" data-toggle="tab" href="#wbsofertas" role="tab" aria-controls="home" aria-expanded="true">Detalles Ganancia</a>
+            </li>
+
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="items" role="tabpanel" aria-labelledby="items-tab">
+
+                <div class="col" align="right">
+                  
+                    @Html.ActionLink("Nuevo", "Create", "DetalleGanancia", new { id = Model.Ganancia.Id}, new { @class = "btn btn-primary" })
+                </div>
+                <hr />
+                <table class="table table-bordered table-hover display" id="items_table">
+                    <thead>
+                        <tr>
+                            <th>Porcentaje de Incremento</th>
+                            <th>Grupo Item</th>
+                            <th>Valor</th>
+                            <th>Operaciones</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model.DetallesGanancia)
+                        {
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => item.PorcentajeIncremento.descripcion)</td>
+                                <td> @Html.DisplayFor(modelItem => item.GrupoItem.descripcion)</td>
+                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.valor)%</td>
+                                <td style="width: 200px;">
+                                    <div style="float: left">
+                                        @Html.ActionLink("Ver", "Details", "DetalleGanancia", new { id = item.Id }, new { @class = "btn btn-outline-success", style = " float:  left; margin-right: 0.3em;" })
+                                        @Html.ActionLink("Editar", "Edit", "DetalleGanancia", new { id = item.Id }, new { @class = "btn btn-outline-primary" })
+                                    </div>
+                                    <div style="float: right">
+                                        <form action="@Url.Action("Delete", "DetalleGanancia", new {id = item.Id})" method="post" class="form-inline">
+                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger" onclick="return confirm('Esta seguro de Eliminar este Registro?');" />
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+
+                        <tr>
+                            <th>Porcentaje de Incremento</th>
+                            <th>Grupo Item</th>
+                            <th>Valor</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

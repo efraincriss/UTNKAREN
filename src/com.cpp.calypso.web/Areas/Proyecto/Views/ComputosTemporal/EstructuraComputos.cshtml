@@ -1,0 +1,62 @@
+﻿@model com.cpp.calypso.web.Models.OfertaComputoViewModel
+
+<link href="~/Content/css/omega/theme.css" rel="stylesheet" />
+<link href="~/Content/css/primereact.min.css" rel="stylesheet" />
+<link href="~/Content/css/primeicons.css" rel="stylesheet" />
+<link href="~/Content/css/block-ui.css" rel="stylesheet" />
+<div id="OfertaId" class="@Model.Oferta.Id"></div>
+<div id="ContratoId" class="@Model.Contrato.Id"></div>
+<div id="FechaOfertaId" class="@Model.Oferta.fecha_oferta"></div>
+
+@{
+    ViewBag.Title = "Agregar Items";
+}
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewBag.Error
+                    </div>
+                }
+                @if (ViewBag.Msg != null)
+                {
+                  
+                    <div class="alert alert-success" role="alert">
+                        @ViewBag.Msg
+                    </div>
+                }
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h4 class="card-title">WBS</h4>
+                        </div>
+                        <div class="col-sm-7">
+                        </div>
+                        <div class="col-sm-1">
+                            @Html.ActionLink("Regresar", "Index", "ComputosTemporal", new { mensaje = "true" }, new { @class = " btn btn-primary" })
+                        </div>
+                    </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Contrato:</b> @Model.Contrato.Codigo @Model.Contrato.objeto</h6>
+                        <h6><b>Proyecto:</b> @Model.Oferta.Proyecto.codigo @Model.Oferta.Proyecto.descripcion_proyecto</h6>
+                        <h6><b>Oferta:</b> @Model.Oferta.codigo @Model.Oferta.descripcion</h6>
+                        <h6><b>Fecha Oferta:</b> @Model.Oferta.fecha_oferta.Value.ToString("dd/MM/yyyy")</h6>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div id="content-computos">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/build/crearPresupuesto.js"></script>

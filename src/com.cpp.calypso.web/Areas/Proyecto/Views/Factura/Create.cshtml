@@ -1,0 +1,180 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.FacturaDto
+
+
+@{
+    ViewBag.Title = "Crear Factura";
+}
+
+@section page_title {<i class="fa fa-unlock-alt"></i> Crear Contrato}
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EmpresaId)
+                        @Html.DropDownListFor(model => model.EmpresaId, new SelectList(Model.Empresas, "Id", "razon_social"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.EmpresaId, "", new { @class = "text-danger" })
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ClienteId)
+                        @Html.DropDownListFor(model => model.ClienteId, new SelectList(Model.Clientes, "Id", "razon_social"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        
+            <div class="form-group">
+                @Html.LabelFor(model => model.tipo_documento)
+             
+                    @Html.EditorFor(model => model.tipo_documento, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.tipo_documento, "", new { @class = "text-danger" })
+                
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.numero_documento)
+              
+                    @Html.EditorFor(model => model.numero_documento, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.numero_documento, "", new { @class = "text-danger" })
+               
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fecha_emision)
+                
+                    @Html.EditorFor(model => model.fecha_emision, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fecha_emision, "", new { @class = "text-danger" })
+                
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fecha_recepcion)
+                
+                    @Html.EditorFor(model => model.fecha_recepcion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fecha_recepcion, "", new { @class = "text-danger" })
+               
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fecha_ultimo_certificado)
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.fecha_ultimo_certificado, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fecha_ultimo_certificado, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fecha_vencimiento)
+                
+                    @Html.EditorFor(model => model.fecha_vencimiento, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fecha_vencimiento, "", new { @class = "text-danger" })
+               
+            </div>
+
+
+          
+            <div class="form-group">
+                @Html.LabelFor(model => model.valor_importe)
+               
+                    @Html.EditorFor(model => model.valor_importe,String.Format(" 0:0,0.0"),
+                    new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.valor_importe, "", new { @class = "text-danger" })
+                
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.valor_iva)
+                
+                    @Html.EditorFor(model => model.valor_iva, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.valor_iva, "", new { @class = "text-danger" })
+              
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.valor_total)
+               
+                    @Html.EditorFor(model => model.valor_total, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.valor_total, "", new { @class = "text-danger" })
+                
+            </div>
+
+           
+            <div class="form-group">
+                @Html.LabelFor(model => model.valor_a_cobrar)
+               
+                    @Html.EditorFor(model => model.valor_a_cobrar, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.valor_a_cobrar, "", new { @class = "text-danger" })
+                
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.valor_cobrado)
+              
+                    @Html.EditorFor(model => model.valor_cobrado, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.valor_cobrado, "", new { @class = "text-danger" })
+               
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.codigosapId)
+            
+                    @Html.EditorFor(model => model.codigosapId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.codigosapId, "", new { @class = "text-danger" })
+            
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.plazo)
+              
+                    @Html.EditorFor(model => model.plazo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.plazo, "", new { @class = "text-danger" })
+               
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.fecha_cobro)
+               
+                    @Html.EditorFor(model => model.fecha_cobro, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fecha_cobro, "", new { @class = "text-danger" })
+                
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.estado)
+                
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.estado)
+                        @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+                    </div>
+               
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                    @Html.ActionLink("Regresar", "Index", "Factura", null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

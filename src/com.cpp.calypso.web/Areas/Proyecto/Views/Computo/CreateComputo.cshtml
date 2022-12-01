@@ -1,0 +1,112 @@
+﻿@model com.cpp.calypso.web.Models.ComputoNuevoViewModel
+
+@if (ViewBag.Correcto != null)
+{
+    <div class="alert alert-success" role="alert">
+        <div class="row">
+       <div class="col-sm-11">
+                @ViewBag.Correcto
+            </div>
+        </div>
+    </div>
+}
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            
+            <div class="col-sm-11">
+                @ViewBag.Error
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+
+
+        @Html.AntiForgeryToken()
+
+
+
+
+        <div class="form-horizontal">
+            
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-10">
+
+                        <h6><b>Proyecto: </b> @Model.Proyecto.nombre_proyecto</h6>
+                        <h6><b>Area:</b> @Model.NombreArea</h6>
+                        <h6><b>Disciplina:</b> @Model.NombreDisciplina</h6>
+
+                    </div>
+                
+            </div>
+            <input type="hidden" name="ProyectoId" value="@Model.Proyecto.Id" class="form-control" />
+            <input type="hidden" name="OfertaId" value="@Model.Oferta.Id" class="form-control" />
+            <input type="hidden" name="AreaId" value="@Model.AreaId" class="form-control" />
+            <input type="hidden" name="DisciplinaId" value="@Model.DisciplinaId" class="form-control" />
+
+            <div class="form-group">
+                Elemento:
+
+                @Html.DropDownListFor(model => model.ElementoId, new SelectList(Model.Elementos, "Id", "nombre"), "Seleccione Elemento", new { @class = "form-control", id = "normaldropdowne", name = "ElementoId", required = "required" })
+                @Html.ValidationMessageFor(model => model.ElementoId, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                Actividad:
+
+
+                @Html.DropDownListFor(model => model.ActividadId, Model.Actividades, "Seleccione Actividad", new { @class = "form-control", id = "normaldropdowna", name = "ActividadId", required = "required" })
+
+
+                @Html.ValidationMessageFor(model => model.ActividadId, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        Item:
+                        @Html.DropDownListFor(model => model.itemid, new SelectList(Model.Computo.Items, "Id", "nombre"), "Seleccione un Item", new { @class = "form-control", id = "normaldropdown", name = "itemid", required = "required"  })
+                        @Html.ValidationMessageFor(model => model.itemid, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Computo.cantidad)
+
+                        <input type="text" name="cantidad" value="@Model.Computo.cantidad" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.Computo.cantidad, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Computo.estado)
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.Computo.estado)
+                                @Html.ValidationMessageFor(model => model.Computo.estado, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </div>
+    </div>
+</div>
+
+<script>
+    
+
+</script>
+

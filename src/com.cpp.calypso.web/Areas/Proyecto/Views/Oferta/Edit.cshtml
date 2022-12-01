@@ -1,0 +1,363 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.OfertaDto
+
+@{
+    ViewBag.Title = "Editar Oferta";
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+        <div class="card">
+            <div class="card-body">
+            <h2 class="card-title">Editar datos de la oferta  @Model.codigo</h2>
+
+                <hr />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+                    @Html.HiddenFor(model => model.ProyectoId)
+                    @Html.HiddenFor(model => model.service_order)
+                    @Html.HiddenFor(model => model.RequerimientoId)
+                    @Html.HiddenFor(model => model.vigente)
+
+                    @Html.HiddenFor(model => model.codigo)
+                    @Html.HiddenFor(model => model.monto_certificado_aprobado_acumulado)
+                    @Html.HiddenFor(model => model.monto_ofertado)
+                    @Html.HiddenFor(model => model.monto_ofertado_pendiente_aprobacion)
+                    @Html.HiddenFor(model => model.monto_so_aprobado)
+                    @Html.HiddenFor(model => model.monto_so_referencia_total)
+
+                    @Html.HiddenFor(model => model.dias_emision_oferta)
+                    @Html.HiddenFor(model => model.dias_hasta_recepcion_so)
+                    @Html.HiddenFor(model => model.porcentaje_avance)
+
+                    @Html.HiddenFor(model => model.fecha_pliego)
+                    @Html.HiddenFor(model => model.fecha_primer_envio)
+                    @Html.HiddenFor(model => model.fecha_recepcion_so)
+                    @Html.HiddenFor(model => model.fecha_ultima_modificacion)
+                    @Html.HiddenFor(model => model.fecha_ultimo_envio)
+                    @Html.HiddenFor(model => model.fecha_orden_proceder)
+
+                    @Html.HiddenFor(model => model.version)
+                    @Html.HiddenFor(model => model.ProyectoId)
+
+                    @Html.HiddenFor(model => model.acta_cierre)
+                    @Html.HiddenFor(model => model.orden_proceder_enviada_por)
+                    @Html.HiddenFor(model => model.es_final)
+                    @Html.HiddenFor(model => model.codigo)
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Ingenieria)
+                                @Html.DropDownListFor(model => model.Ingenieria, new SelectList(ViewBag.ing, "Id", "nombre"), new {@class = "form-control"} )
+                                @Html.ValidationMessageFor(model => model.Ingenieria, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.tipo_Trabajo_Id)
+                                @Html.DropDownListFor(model => model.tipo_Trabajo_Id, new SelectList(ViewBag.tipotrabajo, "Id","nombre")
+                                    , null, new {@class = "form-control"} )
+                                @Html.ValidationMessageFor(model => model.tipo_Trabajo_Id, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        
+                       
+                    </div>
+                    <div class="row">
+
+                        <div class="col">
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.fecha_oferta)
+                                @Html.EditorFor(model => model.fecha_oferta, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.fecha_oferta, "", new { @class = "text-danger" })
+                            </div>
+
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.revision_Oferta)
+                                @Html.DropDownListFor(model => model.revision_Oferta, new List<SelectListItem>
+                                {
+                                    new SelectListItem {Text = "A", Value = "A", Selected = true},
+                                    new SelectListItem {Text = "B", Value = "B"},
+                                    new SelectListItem {Text = "C", Value = "C"},
+                                    new SelectListItem {Text = "D", Value = "D"},
+                                    new SelectListItem {Text = "E", Value = "E"},
+                                    new SelectListItem {Text = "F", Value = "F"},
+                                    new SelectListItem {Text = "G", Value = "G"},
+                                    new SelectListItem {Text = "H", Value = "H"},
+                                    new SelectListItem {Text = "I", Value = "I"},
+                                    new SelectListItem {Text = "J", Value = "J"},
+                                    new SelectListItem {Text = "K", Value = "K"},
+                                }, null, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.revision_Oferta, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.centro_de_Costos_Id)
+
+                                @Html.DropDownListFor(model => model.centro_de_Costos_Id, new SelectList(ViewBag.centrocostos, "Id","nombre")
+                                    , null, new {@class = "form-control"} )
+                                @Html.ValidationMessageFor(model => model.centro_de_Costos_Id, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ClaseId)
+                                @Html.DropDownListFor(model => model.ClaseId, new List<SelectListItem>
+                                {
+                                    new SelectListItem {Text = "-- Selecciona una Clase --", Value = ""},
+                                    new SelectListItem {Text = "Budgetario", Value = "1"},
+                                    new SelectListItem {Text = "Clase A", Value = "2"},
+                                    new SelectListItem {Text = "Clase B", Value = "3"},
+                                    new SelectListItem {Text = "Clase C", Value = "4"},
+                                    new SelectListItem {Text = "Clase D", Value = "5"},
+                                    new SelectListItem {Text = "Clase E", Value = "6"},
+                                    new SelectListItem {Text = "Clase F", Value = "7"},
+
+
+                                }, null, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ClaseId, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col">
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.alcance)
+
+                                @Html.DropDownListFor(model => model.alcance, new SelectList(ViewBag.alc, "Id","nombre")
+                                    , null, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.alcance, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col">
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.descripcion)
+
+                                @Html.TextAreaFor(model => model.descripcion, new { @class = "form-control", rows = "3" })
+                                @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.forma_contratacion)
+
+                                @Html.DropDownListFor(model => model.forma_contratacion, new List<SelectListItem>
+                                                    {
+                                                        new SelectListItem {Text = "Tarifas", Value = "1", Selected = true},
+                                                        new SelectListItem {Text = "Lump Sum", Value = "2"},
+
+                                                    }, null, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.forma_contratacion, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col">
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.estatus_de_Ejecucion)
+
+                                @Html.DropDownListFor(model => model.estatus_de_Ejecucion, new SelectList(ViewBag.estatusejecucion, "Id","nombre")
+                        , null, new {@class = "form-control"} )
+                                @Html.ValidationMessageFor(model => model.estatus_de_Ejecucion, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.codigo_shaya)
+
+                                @Html.EditorFor(model => model.codigo_shaya, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.codigo_shaya, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.acta_cierre)
+
+                                @Html.DropDownListFor(model => model.acta_cierre, new List<SelectListItem>
+                                   {
+                                       new SelectListItem {Text = "Si", Value = "1", Selected = true},
+                                       new SelectListItem {Text = "No", Value = "2"},
+                                       new SelectListItem {Text = "N/A", Value = "3", Selected = true},
+
+                                   }, null, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.acta_cierre, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.monto_ofertado)
+
+                                @Html.EditorFor(model => model.monto_ofertado, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.monto_ofertado, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.monto_so_aprobado)
+
+                                @Html.EditorFor(model => model.monto_so_aprobado, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.monto_so_aprobado, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.monto_ofertado_pendiente_aprobacion)
+
+                                @Html.EditorFor(model => model.monto_ofertado_pendiente_aprobacion, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.monto_ofertado_pendiente_aprobacion, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.estado)
+
+                                @Html.DropDownListFor(model => model.estado, new List<SelectListItem>
+                                {
+                                    new SelectListItem {Text = "Activo", Value = "1", Selected = true},
+                                    new SelectListItem {Text = "Inactivo", Value = "2"},
+                                    new SelectListItem {Text = "Vencido", Value = "3", Selected = true},
+
+                                }, null, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.estado_oferta)
+                                @Html.DropDownListFor(model => model.estado_oferta, new SelectList(ViewBag.estadooferta, "Id","nombre")
+                         , null, new {@class = "form-control"} )
+                                @Html.ValidationMessageFor(model => model.estado_oferta, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                @Html.EditorFor(model => model.service_request, new { htmlAttributes = new { @class = "form-check-input" } })
+                                @Html.LabelFor(model => model.service_request, new { htmlAttributes = new { @class = "form-check-label" } })
+                                @Html.ValidationMessageFor(model => model.service_request, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        @Html.CheckBoxFor(model => model.orden_proceder, new { @id = "check", @onclick = "javascript:mostrar()" })
+                        @Html.LabelFor(model => model.orden_proceder, new { htmlAttributes = new { @class = "form-check-label" } })
+                        @Html.ValidationMessageFor(model => model.orden_proceder, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.CheckBoxFor(model => model.computo_completo, new { @id = "check", @onclick = "javascript:mostrar()", @disabled = "disabled" })
+                        @Html.LabelFor(model => model.computo_completo, new { htmlAttributes = new { @class = "form-check-label" } })
+                        @Html.ValidationMessageFor(model => model.computo_completo, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="row">
+
+                        <div class="col" id="content" style="display: none;">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.fecha_orden_proceder)
+                                @Html.EditorFor(model => model.fecha_orden_proceder, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.fecha_orden_proceder, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col" id="content2" style="display: none;">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.orden_proceder_enviada_por)
+                                @Html.EditorFor(model => model.orden_proceder_enviada_por, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.orden_proceder_enviada_por, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                    @Html.ActionLink("Regresar", "Details", "Oferta", new { id = Model.Id }, new { @class = " btn btn-outline-primary", onclick = "return confirm('Al cancelar se eliminarán los cambios realizados, desea continuar'); " })
+
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            element = document.getElementById("content");
+            element2 = document.getElementById("content2");
+            check = document.getElementById("check");
+            if (check.checked) {
+                element.style.display = 'block';
+                element2.style.display = 'block';
+            }
+            else {
+                element.style.display = 'none';
+                element2.style.display = 'none';
+            }
+        });
+        function mostrar() {
+            element = document.getElementById("content");
+            element2 = document.getElementById("content2");
+            check = document.getElementById("check");
+            if (check.checked) {
+                element.style.display = 'block';
+                element2.style.display = 'block';
+            }
+            else {
+                element.style.display = 'none';
+                element2.style.display = 'none';
+            }
+        }
+    </script>
+}

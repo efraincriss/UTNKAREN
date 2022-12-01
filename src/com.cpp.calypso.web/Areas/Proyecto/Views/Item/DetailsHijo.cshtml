@@ -1,0 +1,108 @@
+﻿@model com.cpp.calypso.web.Models.ItemHijosViewModel
+
+@{
+    ViewBag.Title = "Detalles Del Item ";
+
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Detalle del Item</h4>
+                    </div>
+              
+                    <div class="col" align="right">
+                        <a href="@Request.UrlReferrer" class="btn btn-primary">
+                            Subir Un Nivel
+                        </a>
+                            
+                        @Html.ActionLink("Principal", "Index", "Item", new {id = Model.ItemPadre.Id}, new {@class = " btn btn-primary"})
+
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Código:</b> @Model.ItemPadre.codigo</h6>
+                        <h6><b>Padre:</b> @(Model.ItemPadre.item_padre=="."? ".": (Model.ItemPadre.item_padre )) </h6>
+                  
+                        
+                    </div>
+
+
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Nombre:</b> @Model.ItemPadre.nombre</h6>
+                        <h6><b>Descripción:</b> @Model.ItemPadre.descripcion</h6>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="items_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="items-tab" data-toggle="tab" href="#wbsofertas" role="tab" aria-controls="home" aria-expanded="true">SUB ITEMS</a>
+            </li>
+
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="items" role="tabpanel" aria-labelledby="items-tab">
+                <div class="col" align="right">
+                    @Html.ActionLink("Nuevo", "Create", "Item", new { id = Model.ItemPadre.Id ,padre=Model.ItemPadre.codigo  }, new { @class = "btn btn-primary" })
+                </div>
+                <hr />
+                <table class="table table-bordered table-hover display" id="items_table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Operaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ItemsHijos)
+                        {
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => item.codigo)</td>
+                                <td> @Html.DisplayFor(modelItem => item.nombre)</td>
+                                <td> @Html.DisplayFor(modelItem => item.descripcion)</td>
+                                <td style=" width:  200px;">
+                                    @Html.ActionLink("Ver", "DetailsHijo", "Item", new { id = item.Id }, new { @class = "btn btn-outline-success ", style = " float:  left; margin-right: 0.3em;" })
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-info", style = " float:  left; margin-right: 0.3em;"})
+                                    <div style="float: left">
+                                        <form action="@Url.Action("Delete","Item", new {id = item.Id})" method="post" class="form-inline">
+                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger" onclick="return confirm('Esta seguro de Eliminar este Registro?');"/>
+                                        </form>
+                                    </div>
+                                    </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                                                      <th></th>                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

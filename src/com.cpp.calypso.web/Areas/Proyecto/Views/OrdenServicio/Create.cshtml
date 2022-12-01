@@ -1,0 +1,90 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.OrdenServicioDto
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@section page_title {<i class="fa fa-unlock-alt"></i>Orden de servicio}
+
+@if (ViewBag.Msg != null)
+{
+
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-xs-12 col-md-8">
+            <div class="alert alert-danger" role="alert">
+                <div class="row">
+
+
+                    <div class="col-sm-11 align-middle">
+                        @ViewBag.Msg
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Orden de Servicio</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+            @Html.HiddenFor(model => model.vigente)
+            @Html.HiddenFor(model => model.codigo_orden_servicio, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.HiddenFor(model => model.OfertaId, new { htmlAttributes = new { @class = "form-control" } })
+
+
+
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.monto_aprobado_os)
+                @Html.EditorFor(model => model.monto_aprobado_os, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0", @step = "0.01", @value = "0" } })
+                @Html.ValidationMessageFor(model => model.monto_aprobado_os, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.version_os)
+                @Html.EditorFor(model => model.version_os, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.version_os, "", new { @class = "text-danger" })
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha_orden_servicio)
+
+                        @Html.EditorFor(model => model.fecha_orden_servicio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.fecha_orden_servicio, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+            @Html.ActionLink("Cancelar", "Index", "OrdenServicio", new { id = Model.OfertaId }, new { @class = "btn btn-outline-primary" })
+        </div>
+        }
+    </div>
+</div>
+

@@ -1,0 +1,62 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.ProcesoNotificacionDto
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Datos de la notificación</h2>
+                <hr />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.vigente)
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.nombre)
+
+                            @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.formato)
+
+                            @Html.TextAreaFor(model => model.formato, new { @class = "form-control", rows = "10" })
+                            @Html.ValidationMessageFor(model => model.formato, "", new { @class = "text-danger" })
+
+                        </div>
+                        
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Tipo)
+                            @Html.EnumDropDownListFor(model => model.Tipo, "Selecciona un tipo",  new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.formato, "", new { @class = "text-danger" })
+                        </div>
+                
+                
+                        <div class="form-check">
+                            @Html.EditorFor(model => model.estado, new { htmlAttributes = new { @class = "form-check-input" } })
+                            @Html.LabelFor(model => model.estado, new { htmlAttributes = new { @class = "form-check-label" } })
+                            @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+                        </div>
+
+
+                        <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                        @Html.ActionLink("Regresar", "Index", "ProcesoNotificacion", new { @class = "btn btn-outline-primary"})
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

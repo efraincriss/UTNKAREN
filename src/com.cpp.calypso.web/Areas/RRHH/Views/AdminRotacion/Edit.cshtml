@@ -1,0 +1,125 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.Dto.AdminRotacionDto
+
+@{
+    ViewBag.Title = "Editar Rotación";
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+}
+
+<style>
+
+    .margen {
+        margin-top: 30px;
+    }
+</style>
+
+@section page_title {<i class="fa fa-unlock-alt"></i> Administración de Rotaciones}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+        <div align="right" style="margin-bottom: 0.5em;">
+
+        </div>
+        <div id="content-editar-rotacion">
+
+        </div>
+
+    </div>
+</div>
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/editar_rotacion.js"></script>
+
+@*<div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-sm-12 col-md-8">
+            <div align="right" style="margin-bottom: 0.5em;">
+
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Administración de Rotación de Colaborador</h2>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.Id)
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        * @Html.LabelFor(model => model.codigo):
+                                        @Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                                        @Html.ValidationMessageFor(model => model.codigo, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        * @Html.LabelFor(model => model.nombre):
+                                        @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        * @Html.LabelFor(model => model.dias_laborablesC):
+                                        @Html.EditorFor(model => model.dias_laborablesC, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.dias_laborablesC, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        * @Html.LabelFor(model => model.dias_laborablesO):
+                                        @Html.EditorFor(model => model.dias_laborablesO, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.dias_laborablesO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        * @Html.LabelFor(model => model.dias_descanso):
+                                        @Html.EditorFor(model => model.dias_descanso, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.dias_descanso, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group" style="margin-top: 35px;">
+                                        <div class="checkbox">
+                                            @Html.LabelFor(model => model.vigente):&nbsp;
+                                            @Html.EditorFor(model => model.vigente)
+                                            @Html.ValidationMessageFor(model => model.vigente, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <button type="submit" class="btn btn-outline-primary fa fa-save"> Guardar</button>
+                                    @Html.ActionLink(" Cancelar", "Index", "AdminRotacion", new { @class = "btn btn-outline-primary fa fa-arrow-left", style = "margin-right: 0.3em;" })
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>*@
+

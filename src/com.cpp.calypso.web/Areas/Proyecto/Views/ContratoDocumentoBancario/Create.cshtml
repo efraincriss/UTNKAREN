@@ -1,0 +1,149 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.ContratoDocumentoBancarioDto
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+@section page_title {<i class="fa fa-unlock-alt"></i> Ingresar un Contrato Documento bancario para el contrato }
+
+<style>
+
+    .margen {
+        margin-top: 30px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+        @using (Html.BeginForm("Create","ContratoDocumentoBancario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+
+            @Html.AntiForgeryToken()
+
+            <div class="">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => Model.ContratoId, new { htmlAttributes = new { @class = "form-control" } })
+
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.codigo)
+
+                        @Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.codigo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group margen">
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.LabelFor(model => model.notificado_cliente)&nbsp;
+                                @Html.EditorFor(model => model.notificado_cliente)
+                                @Html.ValidationMessageFor(model => model.notificado_cliente, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.InstitucionFinancieraId)
+
+                @Html.DropDownListFor(model => model.InstitucionFinancieraId, new SelectList(Model.InstitucionesFinancieras, "Id", "nombre"), new { @class = "form-control" })
+
+                @Html.ValidationMessageFor(model => model.InstitucionFinancieraId, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.tipo_documento)
+
+
+                @Html.DropDownListFor(model => model.tipo_documento, new List<SelectListItem>
+               {
+                   new SelectListItem {Text = "Garantía ", Value = "1", Selected = true},
+                   new SelectListItem {Text = "Seguro", Value = "2"},
+               }, null, new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.tipo_documento, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.concepto)
+
+                @Html.EditorFor(model => model.concepto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.concepto, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha_emision)
+
+                        @Html.EditorFor(model => model.fecha_emision, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.fecha_emision, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha_vencimiento)
+
+                        @Html.EditorFor(model => model.fecha_vencimiento, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.fecha_vencimiento, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha_notificacion)
+
+                        @Html.EditorFor(model => model.fecha_notificacion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.fecha_notificacion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.estado)
+
+                        @Html.DropDownListFor(model => model.estado, new List<SelectListItem>
+                        {
+                            new SelectListItem {Text = "Activo", Value = "1", Selected = true},
+                            new SelectListItem {Text = "Inactivo", Value = "2"}, new SelectListItem {Text = "Vencido", Value = "3"}
+                        }, null, new {@class = "form-control"})
+
+                        @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    Archivo:<br />
+                    <input type="file" name="UploadedFile" required=""  accept="file_extension|media_type"  data-val-required="Seleccione un Archivo" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                
+                    <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                    @Html.ActionLink("Cancelar", "Details", "Contrato", new { id = Model.ContratoId }, new { @class = " btn btn-outline-primary" })
+                
+            </div>
+
+        }
+
+    </div>
+
+</div>

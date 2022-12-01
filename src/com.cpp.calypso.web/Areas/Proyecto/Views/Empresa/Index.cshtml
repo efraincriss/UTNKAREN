@@ -1,0 +1,80 @@
+﻿@model  List<Empresa>
+
+@{
+    ViewBag.Title = "Empresas";
+}
+
+<link href="~/Content/css/omega/theme.css" rel="stylesheet" />
+<link href="~/Content/css/primereact.min.css" rel="stylesheet" />
+<link href="~/Content/css/primeicons.css" rel="stylesheet" />
+<link href="~/Content/css/block-ui.css" rel="stylesheet" />
+<link href="~/Content/css/time-picker.css" rel="stylesheet" />
+
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-auto" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+
+@section page_title
+{
+    <h2>Empresas</h2>
+}
+
+@section page_toolbar {
+    <br />
+    <div class="btn-toolbar" role="toolbar">
+        <a href='@Url.Action("Create", "Empresa")' class="btn btn-primary pull-right nuc_action_create">
+            <i class="fa fa-plus"></i>
+            Crear Empresa
+        </a>
+    </div>
+}
+
+
+<table class="table table-bordered table-hover display" id="empre_tabl">
+    <thead>
+        <tr>
+            <th>Identificación</th>
+            <th>Razón Social</th>
+            <th>Operaciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.identificacion)</td>
+                <td> @Html.DisplayFor(modelItem => item.razon_social)</td>
+                <td>
+
+                    @Html.ActionLink("Ver", "Details", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-info btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                    <div style="float: left">
+                        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", new {id = item.Id})" method="post" class="form-inline">
+                            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                        </form>
+                    </div>
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Identificación</th>
+            <th>Razón Social</th>
+            <th></th>
+        </tr>
+    </tfoot>
+</table>

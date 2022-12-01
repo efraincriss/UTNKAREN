@@ -1,0 +1,242 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.Dto.CertificadoDto
+
+@{
+    ViewBag.Title = "Certificados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.Msg != null)
+{
+
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-xs-12 col-md-8">
+            <div class="alert alert-danger" role="alert">
+                <div class="row">
+
+
+                    <div class="col-sm-11 align-middle">
+                        @ViewBag.Msg
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+@section page_title {<i class="fa fa-unlock-alt"></i> Información del Certificado}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+                @Html.HiddenFor(model=>model.vigente)
+                @Html.HiddenFor(model=>model.tipo_certificado)
+                @Html.HiddenFor(model=>model.estado_actual)
+       
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EmpresaId)
+
+                            @Html.DropDownListFor(model => model.EmpresaId, new SelectList(Model.Empresas, "Id", "razon_social"), "Seleccione Empresa", new {@class = "form-control"})
+                            @Html.ValidationMessageFor(model => model.EmpresaId, "", new {@class = "text-danger"})
+
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ClienteId)
+
+                            @Html.DropDownListFor(model => model.ClienteId, new SelectList(Model.Clientes, "Id", "razon_social"), "Seleccione Cliente", new {@class = "form-control"})
+                            @Html.ValidationMessageFor(model => model.ClienteId, "", new {@class = "text-danger"})
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ContratoId)
+
+                            @Html.DropDownListFor(model => model.ContratoId, new SelectList(""), new {@class = "form-control"})
+                            @Html.ValidationMessageFor(model => model.ContratoId, "", new {@class = "text-danger"})
+
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ProyectoId)
+
+                            @Html.DropDownListFor(model => model.ProyectoId, new SelectList(""), new {@class = "form-control"})
+                            @Html.ValidationMessageFor(model => model.ProyectoId, "", new {@class = "text-danger"})
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col">   <div class="form-group">
+                        @Html.LabelFor(model => model.fecha_corte)
+         
+                        @Html.EditorFor(model => model.fecha_corte, new {htmlAttributes = new {@class = "form-control"}})
+                        @Html.ValidationMessageFor(model => model.fecha_corte, "", new {@class = "text-danger"})
+       
+                    </div></div>
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.fecha_emision)
+               
+                            @Html.EditorFor(model => model.fecha_emision, new {htmlAttributes = new {@class = "form-control"}})
+                            @Html.ValidationMessageFor(model => model.fecha_emision, "", new {@class = "text-danger"})
+              
+                        </div>
+                    </div>
+                </div>
+        
+             <div class="row">
+            
+                    <div class="col">
+                        <div class="form-group">
+                           
+                
+                            @Html.HiddenFor(model => model.numero_certificado, new {htmlAttributes = new {@class = "form-control"}})
+                            @Html.ValidationMessageFor(model => model.numero_certificado, "", new {@class = "text-danger"})
+              
+                        </div>
+
+                    </div>
+                    <div class="col">
+                 
+                    </div>
+                    </div>
+                </div>
+
+      
+
+   
+                <div class="form-group">
+         
+                    <input type="submit" value="Generar" class="btn btn-primary"/>
+                    @Html.ActionLink("Cancelar", "Index",null, new { @class = "btn btn-outline-primary" })
+         
+                </div>
+       
+        }
+    </div>
+</div>
+
+<div clas ></div>
+
+    @section Scripts {
+        <script>
+        $(document).ready(function () {
+            $("#EmpresaId").change(function () {
+                var Empresa = $(this).val();
+                if (Empresa > 0) {
+                    var ClienteIds = $(ClienteId).val();
+                    if (ClienteIds > 0) {
+
+                        $.get("/Proyecto/TransmitalCabecera/ObtenerContratosEC/?",
+                            { id: Empresa, id2: ClienteIds },
+                            function (data) {
+
+                                $("#ContratoId").empty();
+
+                                $("#ContratoId").append("<option value='0'>Seleccione Contrato</option>");
+                                $.each(JSON.parse(data),
+                                    function (index, row) {
+                                        $("#ContratoId")
+                                            .append("<option value='" + row.Id + "'>" + row.Codigo + "</option>");
+                                    });
+                            });
+                    } else {
+                        $("#ContratoId").empty();
+                        $("#ContratoId").append("<option value='0'>Seleccione Contrato</option>");
+                    }
+                }
+                else {
+                    $("#ContratoId").empty();
+                    $("#ContratoId").append("<option value='0'>Seleccione Contrato</option>");
+                }
+            })
+
+            $("#ClienteId").change(function () {
+                var Empresa = $("#EmpresaId").val();
+                var ClienteIds = $(this).val();
+                if (ClienteIds > 0) {
+                    if (Empresa > 0) {
+
+                        $.get("/TransmitalCabecera/ObtenerContratosEC/?",
+                            { id: Empresa, id2: ClienteIds },
+                            function (data) {
+
+                                $("#ContratoId").empty();
+
+                                $("#ContratoId").append("<option value='0'>Seleccione Contrato</option>");
+                                $.each(JSON.parse(data),
+                                    function (index, row) {
+                                        $("#ContratoId")
+                                            .append("<option value='" + row.Id + "'>" + row.Codigo + "</option>");
+                                    });
+                            });
+                    } else {
+                        $("#ContratoId").empty();
+                        $("#ContratoId").append("<option value='0'>Seleccione Contrato</option>");
+                    }
+                } else {
+                    $("#ContratoId").empty();
+                    $("#ContratoId").append("<option value='0'>Seleccione Contrato</option>");
+                    }
+            })
+
+          
+            $("#ContratoId").change(function() {
+                var Contrato = $("#ContratoId").val();
+                var ContratoIds = $(this).val();
+                if (ContratoIds > 0) {
+                    
+                    $.get("/Certificado/ObtenerProyectos/?",
+                        { id: ContratoIds },
+                        function (data) {
+
+                              $("#ProyectoId").empty();
+                             $("#ProyectoId").append("<option value='0'>Seleccione un Proyecto</option>");
+                            $.each(JSON.parse(data),
+                                function (index, row) {
+                                    $("#ProyectoId")
+                                        .append("<option value='" + row.Id + "'>" + row.codigo + "</option>");
+                                  
+                                 
+                                });
+                        });
+                } else {
+                    $("#ProyectoId").empty();
+                    $("#ProyectoId").append("<option value='0'>Seleccione un Proyecto</option>");
+                }
+            });
+
+            $("#ProyectoId").change(function() {
+                var Proyecto = $("#ProyectoId").val();
+                var texto = $(this).find('option:selected').text();
+               // $("#numero_certificado").val(texto + "-" + Math.floor(Math.random() * 11));
+            });
+
+
+        });
+        </script>
+    }
+

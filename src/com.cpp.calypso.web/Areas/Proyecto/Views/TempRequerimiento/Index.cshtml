@@ -1,0 +1,65 @@
+﻿
+@model com.cpp.calypso.web.Areas.Proyecto.Models.ViewModel
+@{
+    ViewBag.Title = "Migraciones";
+}
+
+@section page_title
+{
+
+    <h2>Migrar Requerimientos</h2>
+    <i class="fa fa-plus-square"></i> Crear lista de distribución
+}
+
+@if (ViewBag.msg != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @ViewBag.msg
+    </div>
+
+}
+<hr />
+<div> ACTUALIZAR NOMBRES DE LOS PROYECTOS</div>
+@using (Html.BeginForm("NPS1", "TempRequerimiento", FormMethod.Post, new
+{ enctype = "multipart/form-data" }))
+{
+    @Html.TextBoxFor(m => m.File, new { type = "file" })
+    <input type="submit" value="Procesar" class="btn btn-outline-primary" />
+}
+@*
+    <div>
+        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("ActualizarClaseRequerimiento", "TempRequerimiento")" method="post" class="form-inline">
+            <input type="submit" value="Actualizar Clase Requemientos Seguimiento Comercial" class="btn btn-outline-indigo btn-lg" />
+        </form>
+        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("ActualizarFechasUltimoEnvio", "TempRequerimiento")" method="post" class="form-inline">
+            <input type="submit" value="Actualizar Fechas Ultimo Envio" class="btn btn-outline-indigo btn-lg" />
+        </form>
+        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("ActualizarMontosAProbados", "TempRequerimiento")" method="post" class="form-inline">
+            <input type="submit" value="Actualizar Montos Aprobados Ofertas Principales" class="btn btn-outline-indigo btn-lg" />
+        </form>
+        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("CargarProyectosAsync", "TempRequerimiento")" method="post" class="form-inline">
+            <input type="submit" value="Proyectos" class="btn btn-outline-indigo btn-lg" />
+        </form>
+
+        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("CargarOfertaComercialPresupuesto", "TempRequerimiento")" method="post" class="form-inline">
+            <input type="submit" value="Migrar Relaciones" class="btn btn-outline-indigo btn-lg" />
+        </form>
+    </div>
+*@
+
+<div style="float: left">
+
+
+</div>
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+<div id="content">
+
+</div>
+
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/migracion_contratos.js"></script>

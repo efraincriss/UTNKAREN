@@ -1,0 +1,28 @@
+-----------------------------------------------------
+REQUERIMIENTO ORIGINAL: ADC0569 MONTOS: i: 0.00 ,c: 0.00, s: 0.00, sub: 0.00, T: 0.00
+REQUERIMIENTO ACTUALIZADO : ADC0569 MONTOS: i: 0.00 ,c: 1632.19, s: 0.00, sub: SN, T: 1632.19
+------------------TO-----------------------
+-----------------------------------------------------
+REQUERIMIENTO ORIGINAL: ADC0575 MONTOS: i: 0.00 ,c: 0.00, s: 0.00, sub: 0.00, T: 0.00
+REQUERIMIENTO ACTUALIZADO : ADC0575 MONTOS: i: 3235.38 ,c: 83681.79, s: 0.00, sub: SN, T: 86917.17
+------------------TO-----------------------
+-----------------------------------------------------
+REQUERIMIENTO ORIGINAL: ADC0628 MONTOS: i: 0.00 ,c: 0.00, s: 0.00, sub: 0.00, T: 0.00
+REQUERIMIENTO ACTUALIZADO : ADC0628 MONTOS: i: 1120.09 ,c: 49671.14, s: 0.00, sub: SN, T: 50791.23
+------------------TO-----------------------
+-----------------------------------------------------
+REQUERIMIENTO ORIGINAL: ADC0629 MONTOS: i: 0.00 ,c: 0.00, s: 0.00, sub: 0.00, T: 0.00
+REQUERIMIENTO ACTUALIZADO : ADC0629 MONTOS: i: 0.00 ,c: 2164.79, s: 0.00, sub: SN, T: 2164.79
+------------------TO-----------------------
+-----------------------------------------------------
+REQUERIMIENTO ORIGINAL: ADC0630 MONTOS: i: 0.00 ,c: 0.00, s: 0.00, sub: 0.00, T: 0.00
+REQUERIMIENTO ACTUALIZADO : ADC0630 MONTOS: i: 0.00 ,c: 9337.35, s: 0.00, sub: SN, T: 9337.35
+------------------TO-----------------------
+-----------------------------------------------------
+REQUERIMIENTO ORIGINAL: ADC0633 MONTOS: i: 0.00 ,c: 0.00, s: 0.00, sub: 0.00, T: 0.00
+REQUERIMIENTO ACTUALIZADO : ADC0633 MONTOS: i: 4279.57 ,c: 2672.02, s: 3850.00, sub: SN, T: 10801.59
+------------------TO-----------------------
+-----------------------------------------------------
+REQUERIMIENTO ORIGINAL: ADC0634 MONTOS: i: 0.00 ,c: 0.00, s: 0.00, sub: 0.00, T: 0.00
+REQUERIMIENTO ACTUALIZADO : ADC0634 MONTOS: i: 4150.25 ,c: 12788.17, s: 0.00, sub: SN, T: 16938.42
+------------------TO-----------------------

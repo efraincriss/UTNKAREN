@@ -1,0 +1,308 @@
+﻿@model com.cpp.calypso.web.Models.OfertaWbsComputoViewModel
+
+@{
+    ViewBag.Title = "Detalles de la Oferta";
+
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+
+            <div class="card-body">
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewBag.Error
+                    </div>
+                }
+                @if (ViewBag.Msg != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        @ViewBag.Msg
+                    </div>
+                }
+                <div class="row">
+                    <div class="col">
+
+                        <h4 class="card-title">Detalles de la Oferta</h4>
+                    </div>
+
+                    <div class="col" align="right">
+                        @Html.ActionLink("Regresar al Árbol", "EstructuraComputos", "Computo", new { id = Model.Oferta.Id }, new { @class = " btn btn-primary" })
+                        @Html.ActionLink("Salir", "Index", "Computo", new { id = Model.Oferta.Id }, new { @class = " btn btn-primary" })
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Cliente:</b> @Model.Cliente.razon_social</h6>
+                        <h6><b>Proyecto:</b> @Model.Proyecto.descripcion_proyecto </h6>
+                        <h6><b>Oferta:</b> @Model.Oferta.codigo @Model.Oferta.descripcion</h6>
+                        @*  <h6><b>Area:</b><br />@Html.DropDownListFor(m => m.AreaId, new SelectList(Model.Areas, "id", "nombre"), "Seleccione Area", new { @class = "form-control" })</h6> <br />
+
+        <h6><b>Disciplina:</b><br />@Html.DropDownListFor(m => m.DisciplinaId, new SelectList(""), "Seleccione Disciplina", new { @class = "form-control" })</h6>
+                        *@
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col" align="left">
+
+                        @*  <a href="#" class="btn btn-primary btnDetalhes" data-value="@Model.Oferta.Id">Nuevo Computo</a>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createitem">
+            Item Adicionales
+        </button>*@
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="wbsofertas_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="wbsofertas-tab" data-toggle="tab" href="#wbsofertas" role="tab" aria-controls="home" aria-expanded="true">WBS Actividades</a>
+            </li>
+
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="wbsofertas" role="tabpanel" aria-labelledby="wbsofertas-tab">
+
+                <div class="col" align="right">
+
+                    <!--<a href="#" class="btn btn-primary disabled btnDetalhes" data-value="@Model.Oferta.Id">Nuevo Computo</a>-->
+                    <!--@Html.ActionLink("Nuevo", "CreateComputo", "Computo", new {id = Model.Oferta.Id, ProyectoId = Model.Proyecto.Id, pArea = @Html.Raw(Model.AreaId), pDisciplina = @Html.Raw(Model.DisciplinaId)}, new {@class = "btn btn-primary"})-->
+                </div>
+                <table class="table table-bordered table-hover display" id="representantes_table">
+                    <thead>
+                        <tr>
+                      
+                            <th>Actividad</th>
+                            <th>Operaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.WbsOfertaDtos)
+                        {
+                            <tr>
+      
+                                <td> @Html.DisplayFor(modelItem => item.nivel_nombre)</td>
+
+                                <td style=" width: 200px;">
+
+                                    @Html.ActionLink("Ver Computos", "DetailsComputo", "Computo", new { id = item.Id }, new { @class = "btn btn-outline-success", style = " float:  left; margin-right: 0.3em;" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            
+                
+                            <th>Actividad</th>
+
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+@using (Ajax.BeginForm("CreateComputo", "Computo", new AjaxOptions() { HttpMethod = "POST", UpdateTargetId = "teste" }))
+{
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ingreso de Cómputos</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="teste"></div>
+
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary" value="Guardar" />
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@using (Ajax.BeginForm("_CreateItem", "Computo", new AjaxOptions() { HttpMethod = "POST", UpdateTargetId = "contitem" }))
+
+{
+    <div class="modal fade" id="createitem" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="contitem">
+
+                        @{
+                            Html.RenderAction("_CreateItem");
+                        }
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary" value="Guardar" />
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+                            }
+    @section Scripts {
+        <script>
+            $(document).ready(function() {
+
+                $("#cerrarmodalitem").click(function() {
+                    $("#createitem").modal("hide");
+                });
+                var OfertaIds = @Html.Raw(Model.Oferta.Id);
+                $("#AreaId").change(function() {
+                    var AreaIds = $(this).val();
+                    if (AreaIds > 0) {
+
+                        $.get("/Computo/GetStateList",
+                            { OfertaId: OfertaIds, AreaId: AreaIds },
+                            function(data) {
+
+                                $("#DisciplinaId").empty();
+
+                                $("#DisciplinaId").append("<option value='0'>Seleccione Disciplina</option>");
+                                $.each(JSON.parse(data),
+                                    function(index, row) {
+                                        $("#DisciplinaId")
+                                            .append("<option value='" + row.Id + "'>" + row.nombre + "</option>");
+                                    });
+                            });
+                    } else {
+                        $('.btnDetalhes').addClass('disabled');
+                        $("#DisciplinaId").empty();
+                        $("#DisciplinaId").append("<option value='0'>Seleccione Disciplina</option>");
+                    }
+                })
+                $("#DisciplinaId").change(function() {
+                    var ds = $(this).val();
+                    if (ds > 0) {
+                        $('.btnDetalhes').removeClass('disabled');
+                    } else {
+                        $('.btnDetalhes').addClass('disabled');
+                    }
+
+                })
+
+                $.ajaxSetup({ cache: false });
+
+                $(".btnDetalhes").click(function() {
+
+
+                    var id = $(this).data("value");
+                    var AreaIds = $("#AreaId").val();
+                    var ProyectoIds = @Html.Raw(Model.Proyecto.Id);
+                    var OfertaIds = @Html.Raw(Model.Oferta.Id);
+
+                    var DisciplinaIds = $("#DisciplinaId").val();
+
+                    if (AreaIds > 0 && DisciplinaIds>0) {
+
+                        $("#teste").load(
+                            "/Proyecto/Computo/CreateComputo/" +
+                            OfertaIds +
+                            "?ProyectoId=" +
+                            ProyectoIds +
+                            "&pArea=" +
+                            AreaIds +
+                            "&pDisciplina=" +
+                            DisciplinaIds,
+                            function() {
+                                $('#myModal').modal("show");
+
+
+                                $("#cerrarmodalc").click(function() {
+                                    $('#myModal').modal("hide");
+                                    $('.btnDetalhes').addClass('disabled');
+                                    $.get("/Computo/GetStateList",
+                                        { OfertaId: OfertaIds, AreaId: AreaIds },
+                                        function(data) {
+
+                                            $("#DisciplinaId").empty();
+
+                                            $("#DisciplinaId")
+                                                .append("<option value='0'>Seleccione Disciplina</option>");
+                                            $.each(JSON.parse(data),
+                                                function(index, row) {
+                                                    $("#DisciplinaId")
+                                                        .append(
+                                                            "<option value='" +
+                                                            row.Id +
+                                                            "'>" +
+                                                            row.nombre +
+                                                            "</option>");
+                                                });
+                                        });
+                                });
+                                $("#normaldropdowne").change(function() {
+
+                                    var AreaIds = $("#AreaId").val();
+                                    $("#AreaId").val(AreaIds);
+
+                                    var DisciplinaIds = $("#DisciplinaId").val();
+                                    var ElementoIds = $(this).val();
+                                    if (ElementoIds <= 0) {
+                                        $("#normaldropdowna").empty();
+                                    } else {
+                                        $.get("/Computo/GetStateListActividades",
+                                            {
+                                                OfertaId: OfertaIds,
+                                                AreaId: AreaIds,
+                                                DiscId: DisciplinaIds,
+                                                ElId: ElementoIds
+                                            },
+                                            function(data) {
+
+                                                $("#normaldropdowna").empty();
+
+                                                $.each(JSON.parse(data),
+                                                    function(index, row) {
+                                                        $("#normaldropdowna").append("<option value='" +
+                                                            row.Id +
+                                                            "'>" +
+                                                            row.nombre +
+                                                            "</option>");
+                                                    });
+
+
+                                            });
+                                    }
+                                });
+
+                                // $("#itemid").chosen();
+
+                            });
+                    } else {
+                        alert("Debe Seleccionar una Área y una Disciplina");
+                    }
+                });
+                $("#normaldropdown").chosen();
+
+            });
+        </script>
+    }

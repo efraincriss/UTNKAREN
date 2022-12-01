@@ -1,0 +1,91 @@
+﻿@model List<Preciario>
+
+@{
+                /**/
+
+                ViewBag.Title = "Preciarios";
+}
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-6" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+@if (ViewBag.Msg2 != null)
+{
+    <div class="alert alert-success" role="alert">
+        <div class="row">
+
+                @ViewBag.Msg2
+          
+        </div>
+    </div>
+}
+
+@section page_title
+{
+    <h2>Preciarios</h2>
+}
+
+
+@section page_toolbar {
+    <br />
+    <div class="btn-toolbar" role="toolbar">
+        <a href='@Url.Action("Create", "Preciario")' class="btn btn-primary pull-right nuc_action_create">
+            <i class="fa fa-plus"></i>
+            Crear Preciario
+        </a>
+    </div>
+}
+
+<table class="table table-bordered table-hover display" id="items_table">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Contrato</th>
+            <th>Fecha Desde </th>
+            <th>Fecha Hasta </th>
+            <th>Operaciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.Contrato.Cliente.razon_social)</td>
+                <td> @Html.DisplayFor(modelItem => item.Contrato.Codigo)</td>
+                <td> @Html.DisplayFor(modelItem => item.fecha_desde)</td>
+                <td> @Html.DisplayFor(modelItem => item.fecha_hasta)</td>
+                <td style=" width:  200px;">
+
+                    @Html.ActionLink("Ver", "Details", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                    @Html.ActionLink("Editar", "Edit", "Preciario", new { id = item.Id }, new { @class = "btn btn-outline-info btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                    <div style="float: left">
+                        <form action="@Url.Action("Delete","Preciario", new { id = item.Id })" method="post" class="form-inline" onsubmit="return confirm('Esta seguro de Eliminar este Registro?');">
+                            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                        </form>
+                    </div>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th></th>
+            <th></th>
+            <th> </th>
+            <th> </th>
+            <th></th>
+
+        </tr>
+    </tfoot>
+</table>

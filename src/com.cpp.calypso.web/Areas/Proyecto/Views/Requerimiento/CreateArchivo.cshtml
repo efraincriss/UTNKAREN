@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+        <div align="right" style="margin-bottom: 0.5em;">
+
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Información Archivo</h2>
+
+
+                @using (Html.BeginForm("CreateArchivo", "Requerimiento", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        <input type="hidden" name="RequerimientoId" value="@ViewBag.RequerimientoId" />
+                        Archivos:<br />
+                        <input type="file" name="UploadedFile" required="" accept="file_extension|media_type" multiple="" data-val-required="Seleccione un Archivo" />
+                    </div>
+                    <div class="row">
+
+                        <div class="col">
+
+                            <label for="sel1">Tipo de Arhivo:</label>
+                            <select class="form-control" id="tipo" name="tipo">
+                                <option value="1">Requerimiento</option>
+                                <option value="0">Cronograma</option>
+                            </select>
+                            
+                        </div>
+                        <div class="col">
+
+
+                        </div>
+                    </div>
+                    <br />
+                    <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+
+
+                    @Html.ActionLink("Cancelar", "DetailsArchivos", "Requerimiento", new { id = @ViewBag.RequerimientoId }, new { @class = "btn btn-outline-primary" })
+
+
+                </div>
+
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

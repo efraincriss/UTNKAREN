@@ -1,0 +1,63 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.Dto.CorreoExternoDto>
+
+@{
+    ViewBag.Title = "Correos externos";
+}
+
+@section page_title
+{
+
+    <h2>Correos Externos</h2>
+    <i class="fa fa-th-list"></i> Listado
+}
+
+
+@section page_toolbar {
+    <div class="btn-toolbar" role="toolbar">
+        @Html.ActionLink("Nuevo", "Create", "CorreoExterno", new { @class = "btn btn-outline-primary", style = "margin-top: 1em;" })
+    </div>
+}
+
+<table class="table table-bordered table-hover display">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.institucion)</th>
+            <th>@Html.DisplayNameFor(model => model.nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.correo)</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.institucion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.correo)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-primary", style = " float:  left; margin-right: 0.3em;" })
+                <div style="float: left">
+                    <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", new {id = item.Id})" method="post" class="form-inline">
+                        <input type="submit" value="Eliminar" class="btn btn-outline-danger" />
+                    </form>
+                </div>
+            </td>
+        </tr>
+    }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.institucion)</th>
+            <th>@Html.DisplayNameFor(model => model.nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.correo)</th>
+            <th></th>
+        </tr>
+    </tfoot>
+</table>

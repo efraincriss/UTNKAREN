@@ -1,0 +1,240 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.RequerimientoDto
+
+@{
+    ViewBag.Title = "Details";
+    var puede_crear_ofertas = @Model.Ofertas.Count > 0 ? false : true;
+
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Trabajo</h2>
+                    </div>
+
+                    <div class="col" align="right">
+                        @if (Model.estado == true)
+                        {
+                            <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("GetCancelarRequerimiento", "Requerimiento", new {id = Model.Id})" method="post">
+                                <input type="submit" value="Cancelar Requerimiento" class="btn btn-outline-primary" />
+                                @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+                                @Html.ActionLink("Regresar", "Details", "Proyecto", new { id = Model.ProyectoId }, new { @class = "btn btn-outline-primary" })
+                            </form>
+                        }
+                        else
+                        {
+                            <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("GetActivarRequerimiento", "Requerimiento", new {id = Model.Id})" method="post">
+                                <input type="submit" value="Activar Requerimiento" class="btn btn-outline-primary" />
+                                @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+                                @Html.ActionLink("Regresar", "Details", "Proyecto", new { id = Model.ProyectoId }, new { @class = "btn btn-outline-primary" })
+                            </form>
+                        }
+
+                    </div>
+                </div>
+                <hr />
+                @if (ViewBag.msg != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewBag.Msg
+                    </div>
+
+                }
+                else if (ViewBag.SuccessMessage != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        @ViewBag.SuccessMessage
+                    </div>
+                }
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Cliente: </b>@Model.cliente</h6>
+                        <h6><b>Proyecto: </b> @Model.Proyecto.codigo @Model.Proyecto.descripcion_proyecto</h6>
+                        <h6><b>Descripción: </b>@Model.descripcion</h6>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Fecha de Registro: </b>@(Model.fecha_recepcion.ToString().Equals("1/1/1900 00:00:00") ? "dd/mm/aa" : Model.fecha_recepcion.ToString("dd-MM-yyyy"))</h6>
+                        <h6><b>Fecha máxima de entrega oferta: </b>@Model.fecha_recepcion.AddDays(Model.dias_plazo_requerimiento).ToString("dd/MM/yyyy")</h6>
+                        <h6><b>Estado Requerimiento: </b>@(Model.estado == true ? "Activo" : "Cancelado")</h6>
+                    </div>
+                    <div class="col-sm-12">
+
+                        <h6><b>Estado Presupuesto: </b>@Model.estado_presupuesto_actual</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="empresa_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="ofertas-tab" data-toggle="tab" href="#ofertas" role="tab" aria-controls="profile">RDO</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="novedades-tab" data-toggle="tab" href="#novedades" role="tab" aria-controls="home" aria-expanded="true">Novedades</a>
+            </li>
+        </ul>
+
+
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="novedades" role="tabpanel" aria-labelledby="novedades-tab">
+                <div class="col" align="right">
+                    @Html.ActionLink("Nuevo", "Create", "Novedad", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+                </div>
+                <hr />
+                <table class="table table-bordered table-hover display">
+                    <thead>
+                        <tr>
+                            <th class="align-middle text-center">Reporte</th>
+                            <th class="align-middle text-center">Solución</th>
+                            <th class="align-middle text-center">Fecha Reporte</th>
+                            <th class="align-middle text-center">Fecha Atención</th>
+                            <th class="align-middle text-center">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Novedades)
+                        {
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => item.descripcion)</td>
+                                <td> @Html.DisplayFor(modelItem => item.solucion)</td>
+                                <td> @Html.DisplayFor(modelItem => item.fecha_novedad)</td>
+                                <td> @Html.DisplayFor(modelItem => item.fecha_solucion)</td>
+                                <td style=" width:  300px;">
+                                    @Html.ActionLink("Ver", "Details", "Novedad", new { id = item.Id }, new { @class = "btn btn-outline-success", style = " float:  left; margin-right: 0.3em;" })
+                                    @Html.ActionLink("Editar", "Edit", "Novedad", new { id = item.Id }, new { @class = "btn btn-outline-primary", style = " float:  left; margin-right: 0.3em;" })
+                                    <div style="float: left">
+                                        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", "Novedad", new {id = item.Id})" method="post" class="form-inline">
+                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger" />
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Reporte</th>
+                            <th>Solución</th>
+                            <th>Fecha de Reporte</th>
+                            <th>Fecha Atención</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="tab-pane fade show active" id="ofertas" role="tabpanel" aria-labelledby="ofertas-tab">
+                <div class="col" align="right">
+                    @if (puede_crear_ofertas)
+                    {
+                        <div class="row">
+
+                            <div class="col" align="right">
+                                <div id="content-rdo" align="right">
+
+                                </div>
+                                @Html.ActionLink("Cargar Presupuesto", "CrearBaseRdoInicial", "Oferta", new { id = Model.Id }, new { @class = "btn btn-outline-primary", id = "Block" })
+
+
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div id="content-rdo" align="right">
+
+                        </div>
+                        @Html.ActionLink("Nueva Versión", "NuevaVersion", "Oferta", new { id = Model.Id }, new { @class = "btn btn-outline-primary", style = "margin-left: 0.3em", id = "NuevaVersion" })
+                        @Html.ActionLink("Actualizar Datos", "ActualizarCantidadesRdoActual", "Oferta", new { id = Model.Id}, new { @class = "btn btn-outline-primary", style = "margin-left: 0.3em", onclick = "return confirm('Esta acción actualizará  las cantidades budget del PRESUPUESTO actual a los rubros relacionados de su base RDO Esta Seguró? ');" })
+                        @Html.ActionLink("Actualizar Estructura", "ActualizarRdo", "Oferta", new { id = Model.Id }, new { @class = "btn btn-outline-primary", style = "margin-left: 0.3em" })
+                    }
+
+                </div>
+                <hr />
+                <table class="table table-bordered table-hover display" style="font-size: 11px">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Código</th>
+                            <th>Versión</th>
+                            <th>Definitiva</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Ofertas)
+                        {
+                            <tr>
+                                <td> @(item.fecha_registro.ToString().Equals("") ? "dd/mm/aa" : item.fecha_registro.GetValueOrDefault().ToString("dd-MM-yyyy"))</td>
+                                <td> @Html.DisplayFor(modelItem => item.codigo)</td>
+                                <td> @Html.DisplayFor(modelItem => item.version)</td>
+                                <td> @Html.DisplayFor(modelItem => item.es_final)</td>
+                                <td style=" width:  200px;">
+                                    @Html.ActionLink("WBS", "Index", "Wbs", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-left: 0.3em;" })
+                                    @Html.ActionLink("Computos", "EstructuraComputos", "Computo", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-left: 0.3em;" })
+                                    <div style="float: right">
+                                        <form onsubmit="return confirm('Estás seguro de eliminar la base rdo?');" action="@Url.Action("DeleteOferta", "Requerimiento", new {id = item.Id})" method="post" class="form-inline">
+                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                                        </form>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Código</th>
+                            <th>Versión</th>
+                            <th>Definitiva</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+<div id="Id" class="@Model.Id" />
+
+
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/base_rdo_presupuesto.js"></script>
+
+<!--<script src="~/Scripts/jquery.blockUI.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#Block').click(function () {
+            $.blockUI();
+        });
+        $('#NuevaVersion').click(function () {
+            $.blockUI();
+        });
+    });
+</script>
+    -->

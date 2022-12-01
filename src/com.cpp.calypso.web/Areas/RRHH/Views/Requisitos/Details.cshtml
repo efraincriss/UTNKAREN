@@ -1,0 +1,55 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.Dto.RequisitosDto
+
+@{
+    ViewBag.Title = "DETALLES REQUISITO";
+}
+
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Detalles Requisito</h4>
+                    </div>
+                    <div class="col" align="right">
+                        @Html.ActionLink(" Editar", "Edit", "Requisitos", new { id = Model.Id }, new { @class = "btn btn-outline-primary fa fa-edit", style = "margin-right: 0.3em;" })
+                        @Html.ActionLink(" Cancelar", "Index", "Requisitos", new { @class = "btn btn-outline-primary fa fa-arrow-left", style = "margin-right: 0.3em;" })
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>@Html.DisplayNameFor(model => model.cat_requisito_id):</b> @Html.DisplayFor(model => model.cat_requisito_id)</h6>
+                        <h6><b>@Html.DisplayNameFor(model => model.codigo):</b> @Html.DisplayFor(model => model.codigo)</h6>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>@Html.DisplayNameFor(model => model.nombre):</b> @Html.DisplayFor(model => model.nombre)</h6>
+                        <h6><b>@Html.DisplayNameFor(model => model.descripcion):</b> @Html.DisplayFor(model => model.descripcion)</h6>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>@Html.DisplayNameFor(model => model.caducidad):</b> @Html.DisplayFor(model => model.nombre_caducidad)</h6>
+                        <h6 id="t_vigencia"><b>@Html.DisplayNameFor(model => model.tiempo_vigencia)</b>: @Html.DisplayFor(model => model.tiempo_vigencia)</h6>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var aux = '@Model.nombre_caducidad';
+
+            if (aux == 'SI') {
+                $("#t_vigencia").show();
+            } else if (aux == 'NO'){
+                $("#t_vigencia").hide();
+            }
+
+        });
+    </script>
+}

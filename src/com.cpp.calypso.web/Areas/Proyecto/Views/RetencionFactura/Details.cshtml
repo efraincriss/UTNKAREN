@@ -1,0 +1,57 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.RetencionFacturaDto
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Información Retencion</h2>
+                    </div>
+
+                    <div class="col" align="right">
+                        @Html.ActionLink("Regresar", "Details", "Factura", new { id = Model.FacturaId }, new { @class = "btn btn-outline-primary" })
+                    </div>.
+                </div>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FacturaId)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Factura.numero_documento)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TipoImpuestoId)
+                    </dt>
+
+                    <dd>
+                        @(Model.TipoImpuestoId== 1 ? "Impuesto R" : "Impuesto I")
+
+<dt>
+                        @Html.DisplayNameFor(model => model.porcentaje)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.porcentaje)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.valor)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.valor)
+                    </dd>
+
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

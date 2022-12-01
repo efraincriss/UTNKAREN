@@ -1,0 +1,150 @@
+﻿@model  AuditoriaViewModel
+
+@{
+    if (IsAjax)
+    {
+        @Result()
+        return;
+    }
+    string pageTitle = Titulos.Auditoria_PageTitle;
+    ViewBag.Title = pageTitle;
+}
+
+@section page_title 
+{
+    @Html.Icon("fa fa-users", pageTitle) 
+}
+
+<div class="panel panel-default">
+
+    @using (Ajax.BeginForm("Index", null, new AjaxOptions { UpdateTargetId = "pnlToUpdate" }, new { id = "frmBusqueda" }))
+    {
+        using (Html.BeginPanelBody())
+        {
+
+
+            @Html.ValidationSummary(true)
+
+            <div class="form-group col-sm-6">
+
+                @Html.LabelFor(model => model.Criteria.Identificador, new { @class = "col-md-3 " + CssClass.Form.Label })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Criteria.Identificador, new { htmlAttributes = new { @class = CssClass.Form.Control } })
+                    @Html.ValidationMessageFor(model => model.Criteria.Identificador, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+
+                @Html.LabelFor(model => model.Criteria.Usuario, new { @class = "col-md-3 " + CssClass.Form.Label })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Criteria.Usuario, new { htmlAttributes = new { @class = CssClass.Form.Control } })
+                    @Html.ValidationMessageFor(model => model.Criteria.Usuario, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+
+                @Html.LabelFor(model => model.Criteria.Funcionalidad, new { @class = "col-md-3 " + CssClass.Form.Label })
+                <div class="col-md-9">
+                    @Html.DropDownListFor(model => model.Criteria.Funcionalidad, null, "", new { @class = CssClass.Form.Control })
+                    @Html.ValidationMessageFor(model => model.Criteria.Funcionalidad, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+
+                @Html.LabelFor(model => model.Criteria.Accion, new { @class = "col-md-3 " + CssClass.Form.Label })
+                <div class="col-md-9">
+                    @Html.DropDownListFor(model => model.Criteria.Accion, new SelectList(new string[0]), "", new { @class = CssClass.Form.Control })
+                    @Html.ValidationMessageFor(model => model.Criteria.Accion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group col-sm-6">
+
+                @Html.LabelFor(model => model.Criteria.FechaInicio, new { @class = "col-md-3 " + CssClass.Form.Label })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Criteria.FechaInicio, new { htmlAttributes = new { @class = CssClass.Form.Control, data_date_language = "es", data_date_format = "dd/mm/yyyy", data_date_today_btn = "linked", data_date_autoclose = "true", data_date_today_highlight = "true" } })
+                    @Html.ValidationMessageFor(model => model.Criteria.FechaInicio)
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+
+                @Html.LabelFor(model => model.Criteria.FechaFinal, new { @class = "col-md-3 " + CssClass.Form.Label })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Criteria.FechaFinal, new { htmlAttributes = new { @class = CssClass.Form.Control, data_date_language = "es", data_date_format = "dd/mm/yyyy", data_date_today_btn = "linked", data_date_autoclose = "true", data_date_today_highlight = "true" } })
+                    @Html.ValidationMessageFor(model => model.Criteria.FechaFinal)
+                </div>
+            </div>
+
+
+        }
+        using (@Html.BeginPanelFooter())
+        {
+            <div class="btn-toolbar">
+                @Html.BsButton(Titulos.Button_Search, CssClass.Button.Primary, CssClass.Icon.Search, "submit", new { name = "btn", value = "search" })
+                @Html.BsButton(Titulos.Button_Print, CssClass.Button.Primary, CssClass.Icon.Print, "submit", new { name = "btn", value = "print" })
+            </div>
+        }
+    }
+</div>
+
+
+<div id="pnlToUpdate">
+    
+    @Result()
+
+</div>
+
+@helper Result()
+{
+    if (Convert.ToBoolean(ViewBag.ModelError))
+    {
+        return;
+    }
+    if (Convert.ToBoolean(ViewBag.Print))
+    {
+        @Report()
+        return;
+    }
+    @Grid()
+}
+
+@helper Grid()
+{
+    if (Model.Auditorias != null)
+    {
+        @Html.Partial("_Index_Item", Model)
+    }
+}
+@helper Report()
+{
+    @Html.Partial("_ReporteAuditoria", Model.Criteria)
+}
+
+@section Scripts {
+
+
+    <script>
+        function PanelOnComplete(obj) {
+            console.log(obj);
+        }
+
+        $(document).ready(function () {
+            var funSelector = "#@Html.IdFor(x => x.Criteria.Funcionalidad)", $fun = $(funSelector);
+            var actSelector = "#@Html.IdFor(x => x.Criteria.Accion)", $act = $(actSelector);
+            var getActionsUrl = "@Url.HttpRouteUrl("ActionApi", new {controller = "Search", action = "GetAcciones"})";
+            $fun.on("change", function () {
+                var fun = $fun.val();
+                if ($.trim(fun).length) {
+                    $.getJSON(getActionsUrl, { funcionalidad: fun }, function (data) {
+                        window.UdlaUtils.fillSelect($act, data);
+                    });
+                } else {
+                    window.UdlaUtils.fillSelect($act, []);
+                }
+            });
+        });
+
+    </script>
+}

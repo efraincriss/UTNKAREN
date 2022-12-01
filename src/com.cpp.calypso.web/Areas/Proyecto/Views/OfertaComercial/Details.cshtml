@@ -1,0 +1,28 @@
+﻿@model com.cpp.calypso.proyecto.dominio.OfertaComercial
+@{
+    ViewBag.Title = "Detalle Oferta Comercial";
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+
+
+<div id="OfertaComercialId" class="@Model.Id" />
+<div class="Oferta" id="TipoProceso"></div>
+<div class="row">
+
+
+    <div id="content">
+
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/build/vendors.js"></script>
+    <script src="~/Scripts/build/detalle_oferta_comercial.js"></script>
+    @*<script src="~/Scripts/build/notificacion.js"></script>*@
+
+}
+

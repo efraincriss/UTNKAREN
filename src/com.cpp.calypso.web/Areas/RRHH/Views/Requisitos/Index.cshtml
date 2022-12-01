@@ -1,0 +1,104 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.Dto.RequisitosDto>
+
+@{
+	ViewBag.Title = "Requisitos";
+}
+
+@section page_title
+{
+	<h2>Administración de Requisitos</h2>
+}
+
+@section css {
+	@Styles.Render("~/Content/bundle_css_react")
+}
+
+@section page_toolbar {
+	<br />
+	<div class="btn-toolbar" role="toolbar" style="float: right; margin-right: 2em;">
+		@Html.ActionLink("  Nuevo", "Create", "Requisitos", new { @class = "btn btn-primary pull-right fa fa-plus" })
+	</div>
+}
+
+<div id="content-requisitos"></div>
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/requisitos.js"></script>
+
+@*<table class="table table-bordered table-hover display">
+		<thead>
+			<tr>
+				<th class="align-middle text-center" style="width: 8%;">
+					no.
+				</th>
+				<th class="align-middle text-center">
+					@html.displaynamefor(model => model.codigo)
+				</th>
+				<th class="align-middle text-center">
+					@html.displaynamefor(model => model.nombre)
+				</th>
+				<th class="align-middle text-center">
+					@html.displaynamefor(model => model.cat_requisito_id)
+				</th>
+				<th class="align-middle text-center">
+					estado
+				</th>
+				<th class="align-middle text-center" style="width: 18%;">
+					opciones
+				</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			@foreach (var item in model)
+			{
+				<tr>
+					<td class="align-middle text-center">
+						@html.displayfor(modelitem => item.nro)
+					</td>
+					<td class="align-middle text-center">
+						@html.displayfor(modelitem => item.codigo)
+					</td>
+					<td>
+						@html.displayfor(modelitem => item.nombre)
+					</td>
+					<td>
+						@html.displayfor(modelitem => item.nombre_requisito)
+					</td>
+					<td class="align-middle text-center">
+						@html.displayfor(modelitem => item.nombre_estado)
+					</td>
+					<td>
+						@html.actionlink("ver", "details", "requisitos", new { id = item.id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.2em;" })
+						@html.actionlink("editar", "edit", "requisitos", new { id = item.id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+
+						<div>
+							<form onsubmit="return confirm('estás seguro?');" action="@url.action("delete", "requisitos", new {id = item.id})" method="post" class="form-inline">
+								<button type="submit" class="btn btn-outline-danger btn-sm" style="margin-right: 0.3em;">eliminar</button>
+							</form>
+						</div>
+					</td>
+				</tr>
+			}
+		</tbody>
+
+		<tfoot>
+			<tr>
+				<th>
+					@html.displaynamefor(model => model.nro)
+				</th>
+				<th>
+					@html.displaynamefor(model => model.codigo)
+				</th>
+				<th>
+					@html.displaynamefor(model => model.nombre)
+				</th>
+				<th>
+					@html.displaynamefor(model => model.cat_requisito_id)
+				</th>
+				<th>
+					@html.displaynamefor(model => model.nombre_estado)
+				</th>
+				<th></th>
+			</tr>
+		</tfoot>
+	</table>*@

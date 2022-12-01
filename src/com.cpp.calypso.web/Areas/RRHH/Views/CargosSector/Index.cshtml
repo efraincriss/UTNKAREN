@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Configuración de Cargos por Sector";
+}
+
+
+@section page_title {
+<h2>Configuración de Cargos por Sector</h2>
+}
+
+@section page_toolbar {
+<br />
+<div class="btn-toolbar" role="toolbar" style="float: right; margin-right: 2em;">
+    @Html.ActionLink("  Nuevo", "Create", "CargosArea", new { @class = "btn btn-primary pull-right fa fa-plus" })
+</div>
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+}
+
+<div class="row">
+    <div style="width: 100%;">
+        <div class="card-body">
+            <div class="row">
+                <div id="content-CargosSector"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/cargosSector.js"></script>

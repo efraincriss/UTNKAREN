@@ -1,0 +1,23 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.CartaDto>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.tipo_destinatario)</td>
+                <td> @Html.DisplayFor(modelItem => item.Empresa.razon_social)</td>
+                <td> @Html.DisplayFor(modelItem => item.numero_carta)</td>
+                <td> @Html.DisplayFor(modelItem => item.fecha_envio)</td>
+                <td> @Html.DisplayFor(modelItem => item.asunto)</td>
+                <td> @Html.DisplayFor(modelItem => item.estado)</td>
+                <td style=" width:  200px;">
+                    @Html.ActionLink("Ver", "Details", "Carta", new { id = item.Id }, new { @class = "btn btn-outline-success", style = " float:  left; margin-right: 0.3em;" })
+                    @Html.ActionLink("Editar", "Edit", "Carta", new { id = item.Id }, new { @class = "btn btn-outline-primary", style = " float:  left; margin-right: 0.3em;" })
+                    <div style="float: left">
+                        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", "Carta", new {id = item.Id})" method="post" class="form-inline">
+                            <input type="submit" value="Eliminar" class="btn btn-outline-danger" />
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        }
+  

@@ -1,0 +1,26 @@
+﻿@model PresupuestoDto
+@{
+    ViewBag.Title = "Actualizar Estructura";
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+
+<div id="OfertaId" class="@ViewBag.OfertaId"></div>
+<div id="PresupuestoId" class="@ViewBag.PresupuestoId"></div>
+<div id="RequerimientoId" class="@ViewBag.RequerimientoId"></div>
+<div id="ContratoId" class="@ViewBag.ContratoId"></div>
+<div id="FechaOfertaId" class="@Model.fecha_registro"></div>
+
+
+<div id="content-main-presupuesto">
+    
+
+</div>
+
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/actualizar_wbs.js"></script>
+

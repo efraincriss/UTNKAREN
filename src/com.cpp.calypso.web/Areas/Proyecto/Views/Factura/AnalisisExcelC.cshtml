@@ -1,0 +1,26 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.FacturaDto
+
+
+@{
+    ViewBag.Title = "Facturas";
+}
+@section page_title {<i class="fa fa-unlock-alt"></i> Archivo Excel Cobros}
+<link href="~/Content/css/omega/theme.css" rel="stylesheet" />
+<link href="~/Content/css/primereact.min.css" rel="stylesheet" />
+<link href="~/Content/css/primeicons.css" rel="stylesheet" />
+<link href="~/Content/css/block-ui.css" rel="stylesheet" />
+<link href="~/Content/css/time-picker.css" rel="stylesheet" />
+@section css {
+
+    <link href="~/Content/css/react_bt2/react-bootstrap-table2.min.css" rel="stylesheet" />
+    <link href="~/Content/css/react_bt2/react-bootstrap-table2-filter.min.css" rel="stylesheet" />
+    <link href="~/Content/css/react_bt2/react-bootstrap-table2-paginator.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+
+
+<div id="content_cobro"></div>
+
+<script src="~/Scripts/build/vendors.js"></script>
+@*<script src="~/Scripts/build/subir_factura.js"></script>*@
+<script src="~/Scripts/build/cargacobro.js"></script>

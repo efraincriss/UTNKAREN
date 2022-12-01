@@ -1,0 +1,78 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.dominio.GrupoItem>
+
+@{
+    ViewBag.Title = "Grupo Items";
+}
+
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-6" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+@section page_title
+{
+    <i class="fa fa-tag"></i> Listado
+    <h2>Grupo Items</h2>
+}
+@section page_toolbar {
+    <div class="btn-toolbar" role="toolbar">
+
+        <a href='@Url.Action("Create", "GrupoItem")' class="btn btn-primary pull-right nuc_action_create">
+            <i class="fa fa-plus"></i>
+           Crear Grupo
+
+        </a>
+    </div>
+}
+
+
+<table class="table table-bordered table-hover display" id="grupos_table">
+
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+       
+        <th>Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td  style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td style="width: 200px;">
+                    @Html.ActionLink("Ver", "Details", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-info btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                    <div style="float: left">
+                        <form action="@Url.Action("Delete","GrupoItem", new {id = item.Id})" method="post" class="form-inline" onsubmit="return confirm('Esta seguro de Eliminar este Registro?');">
+                            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm"  />
+                        </form>
+                    </div>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot> <tr>
+        <th>
+            Descripción
+        </th>
+       
+        <th></th>
+    </tr>
+    </tfoot>
+
+    </table>

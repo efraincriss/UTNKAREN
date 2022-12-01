@@ -1,0 +1,79 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.DetallePreciarioDto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Información detalle Preciario</h2>
+                    </div>
+
+                    <div class="col" align="right">
+                        @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+                        @Html.ActionLink("Regresar", "Details", "Preciario", new { id = Model.PreciarioId }, new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <dl class="dl-horizontal col-sm-6">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.PreciarioId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Preciario.Id)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Preciario.fecha_desde)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Preciario.fecha_desde)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Preciario.fecha_hasta)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Preciario.fecha_hasta)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ItemId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Item.nombre)
+                        </dd>
+
+                    </dl>
+                    <dl class="dl-horizontal col-sm-6">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.precio_unitario)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.precio_unitario)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.comentario)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.comentario)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

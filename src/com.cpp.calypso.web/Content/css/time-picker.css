@@ -1,0 +1,318 @@
+﻿.rc-time-picker {
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.rc-time-picker * {
+    box-sizing: border-box;
+}
+
+.rc-time-picker-input {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    padding: 4px 7px;
+    height: 28px;
+    cursor: text;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+    .rc-time-picker-input[disabled] {
+        color: #ccc;
+        background: #f7f7f7;
+        cursor: not-allowed;
+    }
+
+.rc-time-picker-panel {
+    z-index: 1070;
+    width: 170px;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+    .rc-time-picker-panel * {
+        box-sizing: border-box;
+    }
+
+.rc-time-picker-panel-inner {
+    display: inline-block;
+    position: relative;
+    outline: none;
+    list-style: none;
+    font-size: 12px;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px #ccc;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    line-height: 1.5;
+}
+
+.rc-time-picker-panel-narrow {
+    max-width: 113px;
+}
+
+.rc-time-picker-panel-input {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    cursor: auto;
+    line-height: 1.5;
+    outline: 0;
+    border: 1px solid transparent;
+}
+
+.rc-time-picker-panel-input-wrap {
+    box-sizing: border-box;
+    position: relative;
+    padding: 6px;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.rc-time-picker-panel-input-invalid {
+    border-color: red;
+}
+
+.rc-time-picker-panel-clear-btn {
+    position: absolute;
+    right: 6px;
+    cursor: pointer;
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    top: 6px;
+    margin: 0;
+}
+
+    .rc-time-picker-panel-clear-btn:after {
+        content: "x";
+        font-size: 12px;
+        color: #aaa;
+        display: inline-block;
+        line-height: 1;
+        width: 20px;
+        transition: color 0.3s ease;
+    }
+
+    .rc-time-picker-panel-clear-btn:hover:after {
+        color: #666;
+    }
+
+.rc-time-picker-panel-select {
+    float: left;
+    font-size: 12px;
+    border: 1px solid #e9e9e9;
+    border-width: 0 1px;
+    margin-left: -1px;
+    box-sizing: border-box;
+    width: 56px;
+    max-height: 144px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.rc-time-picker-panel-select-active {
+    overflow-y: auto;
+}
+
+.rc-time-picker-panel-select:first-child {
+    border-left: 0;
+    margin-left: 0;
+}
+
+.rc-time-picker-panel-select:last-child {
+    border-right: 0;
+}
+
+.rc-time-picker-panel-select ul {
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.rc-time-picker-panel-select li {
+    list-style: none;
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0 0 0 16px;
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    text-align: left;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.rc-time-picker-panel-select li:hover {
+    background: #edfaff;
+}
+
+li.rc-time-picker-panel-select-option-selected {
+    background: #f7f7f7;
+    font-weight: bold;
+}
+
+li.rc-time-picker-panel-select-option-disabled {
+    color: #ccc;
+}
+
+li.rc-time-picker-panel-select-option-disabled:hover {
+    background: transparent;
+    cursor: not-allowed;
+}
+
+
+.react-bs-table .react-bs-container-header .sort-column, td.react-bs-table-expand-cell, th.react-bs-table-expand-cell > div {
+    cursor: pointer
+}
+
+.react-bs-table-container .react-bs-table-search-form {
+    margin-bottom: 0
+}
+
+.react-bs-table-bordered {
+    border: 1px solid #ddd;
+    border-radius: 5px
+}
+
+.react-bs-table table {
+    margin-bottom: 0;
+    table-layout: fixed
+}
+
+.react-bs-table table td, .react-bs-table table th {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.react-bs-table-pagination {
+    margin-top: 10px
+}
+
+.react-bs-table-tool-bar {
+    margin-bottom: 5px
+}
+
+.react-bs-container-footer, .react-bs-container-header {
+    overflow: hidden;
+    width: 100%
+}
+
+.react-bs-container-body {
+    overflow: auto;
+    width: 100%
+}
+
+.react-bootstrap-table-page-btns-ul {
+    float: right;
+    margin-top: 0
+}
+
+.react-bs-table .table-bordered {
+    border: 0;
+    outline: 0 !important
+}
+
+.react-bs-table .table-bordered > thead > tr > td, .react-bs-table .table-bordered > thead > tr > th {
+    border-bottom-width: 2px
+}
+
+.react-bs-table .table-bordered > tbody > tr > td {
+    outline: 0 !important
+}
+
+.react-bs-table .table-bordered > tbody > tr > td.default-focus-cell {
+    outline: #6495ed solid 3px !important;
+    outline-offset: -1px
+}
+
+.react-bs-table .table-bordered > tfoot > tr > td, .react-bs-table .table-bordered > tfoot > tr > th {
+    border-top-width: 2px;
+    border-bottom-width: 0
+}
+
+.react-bs-table .table-bordered > tbody > tr > td:first-child, .react-bs-table .table-bordered > tbody > tr > th:first-child, .react-bs-table .table-bordered > tfoot > tr > td:first-child, .react-bs-table .table-bordered > tfoot > tr > th:first-child, .react-bs-table .table-bordered > thead > tr > td:first-child, .react-bs-table .table-bordered > thead > tr > th:first-child {
+    border-left-width: 0
+}
+
+.react-bs-table .table-bordered > tbody > tr > td:last-child, .react-bs-table .table-bordered > tbody > tr > th:last-child, .react-bs-table .table-bordered > tfoot > tr > td:last-child, .react-bs-table .table-bordered > tfoot > tr > th:last-child, .react-bs-table .table-bordered > thead > tr > td:last-child, .react-bs-table .table-bordered > thead > tr > th:last-child {
+    border-right-width: 0
+}
+
+.react-bs-table .table-bordered > thead > tr:first-child > td, .react-bs-table .table-bordered > thead > tr:first-child > th {
+    border-top-width: 0
+}
+
+.react-bs-table .table-bordered > tfoot > tr:last-child > td, .react-bs-table .table-bordered > tfoot > tr:last-child > th {
+    border-bottom-width: 0
+}
+
+.react-bs-table .react-bs-container-footer > table > thead > tr > th, .react-bs-table .react-bs-container-header > table > thead > tr > th {
+    vertical-align: middle
+}
+
+    .react-bs-table .react-bs-container-footer > table > thead > tr > th .filter, .react-bs-table .react-bs-container-header > table > thead > tr > th .filter {
+        font-weight: 400
+    }
+
+        .react-bs-table .react-bs-container-header > table > thead > tr > th .filter::-webkit-input-placeholder, .react-bs-table .react-bs-container-header > table > thead > tr > th .number-filter-input::-webkit-input-placeholder, .react-bs-table .react-bs-container-header > table > thead > tr > th .select-filter option[value=''], .react-bs-table .react-bs-container-header > table > thead > tr > th .select-filter.placeholder-selected {
+            color: #d3d3d3;
+            font-style: italic
+        }
+
+        .react-bs-table .react-bs-container-footer > table > thead > tr > th .filter::-webkit-input-placeholder, .react-bs-table .react-bs-container-footer > table > thead > tr > th .number-filter-input::-webkit-input-placeholder, .react-bs-table .react-bs-container-footer > table > thead > tr > th .select-filter option[value=''], .react-bs-table .react-bs-container-footer > table > thead > tr > th .select-filter.placeholder-selected {
+            color: #d3d3d3;
+            font-style: italic
+        }
+
+            .react-bs-table .react-bs-container-footer > table > thead > tr > th .select-filter.placeholder-selected option:not([value='']), .react-bs-table .react-bs-container-header > table > thead > tr > th .select-filter.placeholder-selected option:not([value='']) {
+                color: initial;
+                font-style: initial
+            }
+
+    .react-bs-table .react-bs-container-footer > table > thead > tr > th .date-filter, .react-bs-table .react-bs-container-footer > table > thead > tr > th .number-filter, .react-bs-table .react-bs-container-header > table > thead > tr > th .date-filter, .react-bs-table .react-bs-container-header > table > thead > tr > th .number-filter {
+        display: flex
+    }
+
+    .react-bs-table .react-bs-container-footer > table > thead > tr > th .date-filter-input, .react-bs-table .react-bs-container-footer > table > thead > tr > th .number-filter-input, .react-bs-table .react-bs-container-header > table > thead > tr > th .date-filter-input, .react-bs-table .react-bs-container-header > table > thead > tr > th .number-filter-input {
+        margin-left: 5px;
+        float: left;
+        width: calc(100% - 67px - 5px)
+    }
+
+    .react-bs-table .react-bs-container-footer > table > thead > tr > th .date-filter-comparator, .react-bs-table .react-bs-container-footer > table > thead > tr > th .number-filter-comparator, .react-bs-table .react-bs-container-header > table > thead > tr > th .date-filter-comparator, .react-bs-table .react-bs-container-header > table > thead > tr > th .number-filter-comparator {
+        width: 67px;
+        float: left
+    }
+
+.react-bs-container .textarea-save-btn {
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    top: -21px
+}
+
+.react-bs-table-no-data {
+    text-align: center
+}
+
+.ui-multiselect-header .ui-multiselect-filter-container {
+    width: 90%;
+}
+

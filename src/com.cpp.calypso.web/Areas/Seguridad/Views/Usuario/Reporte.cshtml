@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Reporte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section page_title
+{
+
+    <i class="fa fa-tag"></i>REPORTES
+}
+<div class="row">
+    <div class="col">
+        <h5>Usuarios Móviles</h5>
+
+        @Html.ActionLink("Descargar", "GetReporteSeguimientoOferta", "Usuario", null, new { @class = "btn btn-outline-primary btn-sm", style = "margin-left: 0.3em" })
+
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="col">
+        <h5>Última Sincronización de Proveedores</h5>
+
+        @Html.ActionLink("Descargar", "GetReporteSeguimientoMovil", "Usuario", null, new { @class = "btn btn-outline-primary btn-sm", style = "margin-left: 0.3em" })
+
+    </div>
+</div>
+
+<br/>
+<div class="row">
+    <div class="col">
+        <h5>Colaboradores con Validación Cédula</h5>
+
+        @Html.ActionLink("Descargar", "GetReporteValidacionCedula", "Usuario", null, new { @class = "btn btn-outline-primary btn-sm", style = "margin-left: 0.3em" })
+
+    </div>
+</div>
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+
+<hr />
+<div class="row">
+    <div class="col">
+        <div id="content">
+
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/reporteSincronizacion.js"></script>
+

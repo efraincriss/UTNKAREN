@@ -1,0 +1,88 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.DetalleAvanceProcuraDto
+
+<div class="row">
+<div style="width:  100%;">
+<div class="card">
+<div class="card-body">
+    <div class="row">
+        <div class="col">
+            <h2 class="card-title">Información Detalle Avance Procura</h2>
+        </div>
+
+        <div class="col" align="right">
+           @Html.ActionLink("Regresar", "Details", "AvanceProcura", new {id = Model.AvanceProcuraId}, new {@class = "btn btn-outline-primary"})
+        </div>
+    </div>
+        <dl class="dl-horizontal">
+          <dt>
+                @Html.DisplayNameFor(model => model.DetalleOrdenCompra.OrdenCompra.nro_pedido_compra)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DetalleOrdenCompra.OrdenCompraId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.fecha_real)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.fecha_real)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.cantidad)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.cantidad)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.precio_unitario)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.precio_unitario)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.valor_real)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.valor_real)
+            </dd>
+    
+          
+            <dt>
+                @Html.DisplayNameFor(model => model.ingreso_acumulado)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ingreso_acumulado)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.calculo_diario)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.calculo_diario)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.calculo_anterior)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.calculo_anterior)
+            </dd>
+    
+          
+    
+        </dl>
+    </div>
+        </div>
+    </div>
+</div>

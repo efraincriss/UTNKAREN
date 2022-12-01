@@ -1,0 +1,86 @@
+﻿
+
+
+@model FormModelView
+
+@{
+
+    var title = string.Format("Nuevo {0}", Html.Title(Model).Singularize());
+
+    ViewBag.Title = title;
+}
+
+@section page_title { @title }
+
+
+@section view_form {
+
+<div class="nuc_form_view">
+
+        @using (Html.BeginForm(null, null, null, FormMethod.Post, new { @id = "nuc_frm_create" }))
+        {
+            @Html.AntiForgeryToken()
+
+            using (Html.BeginPanel())
+            {
+
+                using (Html.BeginPanelBody())
+                {
+
+                    <div class="form-compact">
+
+                        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+                        @Html.Partial("FormDynamic/FormView.Create")
+                    </div>
+                }
+                using (Html.BeginPanelFooter())
+                {
+                    <button class="btn btn-primary" type="submit" id="nuc_btn_create">
+                        <i class="fa fa-save"></i>
+                        Crear
+                    </button>
+                    @Html.ActionLink("Cancelar", "Index", new object { }, new { @class = "btn btn-default" })
+
+                }
+            }
+        }
+
+
+    </div>
+
+}
+
+
+
+@section Scripts {
+<script type="application/javascript">
+    (function (w, $, undefined) {
+
+        var _$form = $('form[id=nuc_frm_create]');
+
+         _$form.find("#nuc_btn_create").click(function (e) {
+
+            e.preventDefault();
+
+            if (!_$form.valid()) {
+                    return;
+            }
+
+             $.blockUI();
+             
+             //_$form.block(/* options here if needed */);
+
+            _$form.submit();
+
+         });
+
+
+    }) (window, jQuery);
+
+
+</script>
+
+
+}
+

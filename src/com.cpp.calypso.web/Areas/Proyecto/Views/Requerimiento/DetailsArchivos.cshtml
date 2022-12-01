@@ -1,0 +1,141 @@
+﻿@model com.cpp.calypso.web.Areas.Proyecto.Models.RequerimientoArchivos
+
+
+@{
+    ViewBag.Title = "Details";
+
+}
+
+@section css {
+
+    @Styles.Render("~/Content/bundle_css_react_primereact_v3")
+}
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Trabajo</h2>
+                    </div>
+   
+                    <div class="col" align="right">
+
+                        @Html.ActionLink("Regresar", "Details", "Proyecto", new { id = Model.Requerimiento.ProyectoId }, new { @class = "btn btn-outline-primary" })
+
+                    </div>
+                </div>
+                <hr />
+                @if (ViewBag.msg != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewBag.Msg
+                    </div>
+
+                }
+                else if (ViewBag.SuccessMessage != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        @ViewBag.SuccessMessage
+                    </div>
+                }
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Cliente: </b>@Model.Requerimiento.cliente</h6>
+                        <h6><b>Proyecto: </b> @Model.Requerimiento.Proyecto.codigo @Model.Requerimiento.Proyecto.descripcion_proyecto</h6>
+                        <h6><b>Descripción: </b>@Model.Requerimiento.descripcion</h6>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Fecha de Registro: </b>@(Model.Requerimiento.fecha_recepcion.ToString().Equals("1/1/1900 00:00:00") ? "dd/mm/aa" : Model.Requerimiento.fecha_recepcion.ToString("dd-MM-yyyy"))</h6>
+                        <h6><b>Fecha máxima de entrega oferta: </b>@Model.Requerimiento.fecha_recepcion.AddDays(Model.Requerimiento.dias_plazo_requerimiento).ToString("dd/MM/yyyy")</h6>
+                        <h6><b>Estado Requerimiento: </b>@(Model.Requerimiento.estado == true ? "Activo" : "Cancelado")</h6>
+                    </div>
+                    <div class="col-sm-12">
+
+                        <h6><b>Estado Presupuesto: </b>@Model.Requerimiento.estado_presupuesto_actual</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="empresa_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="ofertas-tab" data-toggle="tab" href="#ofertas" role="tab" aria-controls="profile">Archivos</a>
+            </li>
+
+        </ul>
+
+
+
+        <div class="tab-content" id="myTabContent">
+
+            <div class="tab-pane fade show active" id="ofertas" role="tabpanel" aria-labelledby="ofertas-tab">
+
+                <div align="right">
+                    <div id="content-button" style="display: inline-block;"></div>
+                    <div style="display: inline-block;">
+                        @Html.ActionLink("Nuevo", "CreateArchivo", "Requerimiento", new { id = Model.Requerimiento.Id }, new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+
+                <hr />
+                <table class="table table-bordered table-hover display">
+                    <thead>
+                        <tr>
+                            <th class="align-middle text-center">Codigo </th>
+                            <th class="align-middle text-center">Decripción</th>
+                            <th class="align-middle text-center">Adjunto</th>
+                            <th class="align-middle text-center">Tipo Archivo</th>
+                            <th class="align-middle text-center">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ListaArchivos)
+                        {
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => item.Archivo.codigo)</td>
+                                <td style=" width: 300px;"> @Html.DisplayFor(modelItem => item.Archivo.nombre)</td>
+                                <td align="center">
+
+                                    <a href="@Url.Action("descargararchivo", "Requerimiento", new {id = item.ArchivoId})">
+                                        <i class="fa fa-file-archive-o fa-lg "></i>
+
+                                    </a>
+                                </td>
+                                <td> @(item.tipo == true ? "REQUERIMIENTO" : "CRONOGRAMA")</td>
+                                <td style=" width:  170px;">
+                                    @Html.ActionLink("Editar", "EditarArchivo", "Requerimiento", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                    <div style="float: left">
+                                        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("DeleteArchivo", "Requerimiento", new {id = item.Id})" method="post" class="form-inline">
+                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                                        </form>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th class="align-middle text-center">Codigo </th>
+                            <th class="align-middle text-center">Decripción</th>
+                            <th class="align-middle text-center">Adjunto</th>
+                            <th class="align-middle text-center">Tipo</th>
+                            <th class="align-middle text-center">Opciones</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div><div id="Id" class="@Model.Requerimiento.Id" />
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/enviarrequ.js"></script>

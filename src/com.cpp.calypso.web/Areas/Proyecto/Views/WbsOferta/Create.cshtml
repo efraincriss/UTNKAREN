@@ -1,0 +1,109 @@
+﻿@model com.cpp.calypso.web.Areas.Proyecto.Models.WbsOfertaCatalogoViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@section page_title {<i class="fa fa-unlock-alt"></i>Wbs}
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-xs-12 col-md-6">
+        
+        @if (ViewBag.Msg != null)
+        {
+    
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.Msg
+            </div>
+        }
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Wbs Oferta</h4>
+                <hr/>
+                @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+
+                @Html.HiddenFor(model => model.wbs.OfertaId, new {htmlAttributes = new {@class = "form-control"}})
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.wbs.AreaId)
+
+                    @Html.DropDownListFor(model => model.wbs.AreaId, new SelectList(Model.areas, "Id", "nombre"), "Selecciona un área", new {@class = "form-control"})
+
+                    @Html.ValidationMessageFor(model => model.wbs.AreaId, "", new {@class = "text-danger"})
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.wbs.DisciplinaId)
+
+                    @Html.DropDownListFor(model => model.wbs.DisciplinaId, new SelectList(Model.disciplinas, "Id", "nombre"), "Selecciona una disciplina", new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.wbs.DisciplinaId, "", new {@class = "text-danger"})
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.wbs.ElementoId)
+                    @Html.DropDownListFor(model => model.wbs.ElementoId, new SelectList(Model.elementos, "Id", "nombre"), "Selecciona un elemento", new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.wbs.ElementoId, "", new {@class = "text-danger"})
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.wbs.ActividadId)
+                    @Html.DropDownListFor(model => model.wbs.ActividadId, new SelectList(Model.actividades, "Id", "nombre"), "Selecciona una actividad", new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.wbs.ActividadId, "", new {@class = "text-danger"})
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.wbs.estado)
+                    @Html.DropDownListFor(model => model.wbs.estado,
+                        new List<SelectListItem>
+                        {
+                            new SelectListItem {Text = "Activo", Value = "1"},
+                            new SelectListItem {Text = "Inactivo", Value = "2"},
+                        },
+                        null, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.wbs.estado, "", new {@class = "text-danger"})
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.wbs.observaciones)
+
+                    @Html.TextAreaFor(model => model.wbs.observaciones, new {@class = "form-control", rows = "3"})
+                    @Html.ValidationMessageFor(model => model.wbs.observaciones, "", new {@class = "text-danger"})
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.wbs.fecha_inicio)
+
+                            @Html.EditorFor(model => model.wbs.fecha_inicio, new {htmlAttributes = new {@class = "form-control"}})
+                            @Html.ValidationMessageFor(model => model.wbs.fecha_inicio, "", new {@class = "text-danger"})
+
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.wbs.fecha_fin)
+
+                            @Html.EditorFor(model => model.wbs.fecha_fin, new {htmlAttributes = new {@class = "form-control"}})
+                            @Html.ValidationMessageFor(model => model.wbs.fecha_fin, "", new {@class = "text-danger"})
+
+                        </div>
+                    </div>
+                </div>
+
+                <input type="submit" value="Guardar" class="btn btn-outline-primary"/>
+                @Html.ActionLink("Regresar", "Index", "WbsOferta", new {id = Model.wbs.OfertaId}, new {@class = "btn btn-outline-primary"})
+            </div>
+        }
+    </div>
+</div>

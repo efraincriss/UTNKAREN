@@ -1,0 +1,55 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.PorcentajeIncrementoDto
+
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+        <div align="right" style="margin-bottom: 0.5em;">
+
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Información Porcentaje</h2>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                      
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Id)
+                        @Html.HiddenFor(model => model.vigente)
+                        <div class="row">
+                            <div class="col">     <div class="form-group">
+                                @Html.LabelFor(model => model.descripcion)
+                    
+                                @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+                    
+                            </div></div>
+                            <div class="col">       <div class="form-group">
+                                @Html.LabelFor(model => model.valor)
+                  
+                                @Html.EditorFor(model => model.valor, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.valor, "", new { @class = "text-danger" })
+                
+                            </div></div>
+                        </div>
+           
+                     
+                        <div class="form-group">
+                            <input type="submit" value="Guardar" class="btn btn-primary" />
+                            @Html.ActionLink("Regresar", "Index",null, new { @class = "btn btn-outline-primary" })
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

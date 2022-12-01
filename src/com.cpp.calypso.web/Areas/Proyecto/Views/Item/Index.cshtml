@@ -1,0 +1,133 @@
+﻿@model List<Item>
+
+@section page_title
+{
+    <i class="fa fa-tag"></i> Listado de items
+    <h2>Principales</h2>
+}
+@Html.ActionLink("Crear Item", "CreatePadre", "Item", new { padre = "." }, new { @class = "btn btn-primary", style = " float:  left; margin-right: 0.3em;" })
+@Html.ActionLink("Jerarquía", "JsTreeDemo", "Item", new { @class = "btn btn-primary", style = " float:  left; margin-right: 0.3em;" })
+@*@Html.ActionLink("Carga Masiva", "","",new { @id = "mio", @class = "btn btn-primary", data_toggle = "modal", data_target = "#myModal" })*@
+
+<br />
+<br />
+<!--<table class="table table-bordered table-hover display" id="items_table">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Operaciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.codigo)</td>
+                <td> @Html.DisplayFor(modelItem => item.nombre)</td>
+                <td> @Html.DisplayFor(modelItem => item.descripcion)</td>
+                <td>
+
+                    @Html.ActionLink("Ver", "DetailsHijo", new { id = item.Id }, new { @class = "btn btn-outline-success", style = " float:  left; margin-right: 0.3em;" })
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-info", style = " float:  left; margin-right: 0.3em;" })
+                    <div style="float: left">
+                        <form action="@Url.Action("Delete", new {id = item.Id})" method="post" class="form-inline">
+                            <input type="submit" value="Eliminar" class="btn btn-outline-danger" onclick="return confirm('Esta seguro de Eliminar este Registro?');" />
+                        </form>
+                    </div>
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+
+    <tr>
+        <th>Código</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th></th>
+
+    </tr>
+    </tfoot>
+</table>
+
+-->
+<table class="table table-bordered table-hover display" id="items_table">
+    <thead>
+        <tr>
+            <th>Código Item</th>
+            <th>Código Padre</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Operaciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.codigo)</td>
+                <td> @Html.DisplayFor(modelItem => item.item_padre)</td>
+                <td> @Html.DisplayFor(modelItem => item.nombre)</td>
+                <td> @Html.DisplayFor(modelItem => item.descripcion)</td>
+                <td style="width:200px">
+
+                    @Html.ActionLink("Ver", "DetailsHijo", new { id = item.Id }, new { @class = "btn btn-outline-success", style = " float:  left; margin-right: 0.3em;" })
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-info", style = " float:  left; margin-right: 0.3em;" })
+                    <div style="float: left ">
+                        <form action="@Url.Action("Delete", new {id = item.Id})" method="post" class="form-inline">
+                            <input type="submit" value="Eliminar" class="btn btn-outline-danger" onclick="return confirm('Esta seguro de Eliminar este Registro?');" />
+                        </form>
+                    </div>
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+
+        <tr>
+            <th>CódigoPadre</th>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th></th>
+
+        </tr>
+    </tfoot>
+</table>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Cargar Items desde archivo Excel</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("CargaExcel", "Preciario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" name="postedFile" /><br />
+                    <br />
+
+                
+                }
+
+            </div>
+            <div id="divid">
+
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="Cargar" class="btn btn-primary"/>
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+
+            </div>
+        </div>
+    </div>
+</div>

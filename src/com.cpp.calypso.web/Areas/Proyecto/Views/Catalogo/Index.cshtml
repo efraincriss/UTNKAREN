@@ -1,0 +1,93 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.CatalogoDto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section page_title
+{
+    <h2>Item Catálogo</h2>
+}
+
+
+<div class="card">
+    <div class="card-body">
+
+
+        <div class="col" align="right">
+            @Html.ActionLink("Nuevo Item", "Create", "Catalogo", new { id = ViewBag.Id }, new { @class = "btn btn-outline-primary" })
+            @Html.ActionLink("Regresar", "Index", "TipoCatalogo", new { id = ViewBag.Id }, new { @class = "btn btn-outline-primary" })
+        </div>
+        <hr />
+
+
+        <table class="table table-bordered table-hover display">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TipoCatalogoId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.descripcion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.codigo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.predeterminado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ordinal)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TipoCatalogo.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.codigo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.predeterminado)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ordinal)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-info btn-sm" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </tfoot>
+
+        </table>
+
+    </div>
+</div>

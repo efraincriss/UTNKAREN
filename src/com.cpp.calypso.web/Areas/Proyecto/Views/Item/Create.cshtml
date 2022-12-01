@@ -1,0 +1,116 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.ItemDto
+@{
+    ViewBag.Title = "Crear Item";
+}
+
+@section page_title {<i class="fa fa-unlock-alt"></i> Crear Item}
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-6" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col">
+     
+                            @Html.LabelFor(model => model.item_padre)<br/>
+                            <b>@Html.DisplayTextFor(model => model.item_padre)</b>
+                     
+                    </div>
+                    <div class="col">
+    
+                            @Html.LabelFor(model => model.codigo)
+                            <div class="row">
+                               
+                                <b>@Html.DisplayTextFor(model => model.item_padre)</b>
+                                <div class="col">
+                                    @Html.EditorFor(model => model.codigo, new {htmlAttributes = new {@class = "form-control", @style= " height:22px" }, @value = ""})
+                              
+                                </div>
+                                @Html.ValidationMessageFor(model => model.codigo, "", new {@class = "text-danger"})
+                            </div>
+                             
+                    </div>
+                </div>
+              <div class="form-group">
+                    @Html.LabelFor(model => model.nombre)
+
+                    @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.descripcion)
+
+                    @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.para_oferta)
+                    <div class="col-md-10">
+                        <div class="editor-checkbox-field">
+                            @Html.CheckBoxFor(model => model.para_oferta, new { @id = "check", @onclick = "javascript:showContent()" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" id="content" style="display: none;">
+                    @Html.LabelFor(model => model.UnidadId)
+                    @Html.DropDownListFor(model => model.UnidadId, new List<SelectListItem>
+                          {
+                              new SelectListItem {Text = "Día", Value = "1", Selected = true},
+                              new SelectListItem {Text = "Global", Value = "2"},
+                              new SelectListItem {Text = "Henrio (eléctrica)", Value = "3"},
+                              new SelectListItem {Text = "Hectárea", Value = "4"},
+                              new SelectListItem {Text = "Hora Hombre)", Value = "5"},
+                                     new SelectListItem {Text = "Kilogramo", Value = "6"},
+                              new SelectListItem {Text = "Kilometro", Value = "7"},
+                              new SelectListItem {Text = "Metro", Value = "8"},
+                                       new SelectListItem {Text = "Metro Cuadrado", Value = "9"},
+                                     new SelectListItem {Text = "Metro Cúbico", Value = "10"},
+                              new SelectListItem {Text = "metro cúbico / Kilometro", Value = "11"},
+                              new SelectListItem {Text = "paquete", Value = "12"},
+                              new SelectListItem {Text = "pulgada / metro", Value = "13"},
+                              new SelectListItem {Text = "Tonelada", Value = "14"},
+                              new SelectListItem {Text = "Unidad", Value = "15"},
+                          }, null, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.UnidadId, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Guardar" class="btn btn-primary" />
+                        @Html.ActionLink("Cancelar", "Index", "", new { @class = "btn btn-outline-primary" })
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

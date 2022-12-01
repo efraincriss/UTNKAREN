@@ -1,0 +1,134 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.ComputoDto
+
+
+@{
+    ViewBag.Title = "Editar Computo";
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+        <div align="right" style="margin-bottom: 0.5em;">
+
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Información Computo</h2>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Id)
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <b> Area:</b>
+                                    @Html.DisplayFor(model => model.nombrearea)
+
+                                </div>
+                           
+                                <div class="form-group">
+                                  <b>Disciplina:</b>
+                                    @Html.DisplayFor(model => model.nombrediciplina)
+
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <b>Elemento:</b>
+                                        @Html.DisplayFor(model => model.nombreelemento)
+
+                                </div>
+                                <div class="form-group">
+                                    <b>  Actividad:</b>
+                                    @Html.DisplayFor(model => model.nombreactividad)
+
+                                </div>
+                            </div>
+                        </div>
+                    
+                          
+                  
+                        <div class="form-group">
+
+
+                            @Html.HiddenFor(model => model.WbsOfertaId, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.WbsOfertaId, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ItemId)
+
+                            @Html.DropDownListFor(model => model.ItemId, new SelectList(Model.Items, "Id", "nombre"), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ItemId, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.cantidad)
+
+                            @Html.EditorFor(model => model.cantidad, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.cantidad, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+                            <!--  @Html.LabelFor(model => model.precio_unitario)-->
+
+                            @Html.HiddenFor(model => model.precio_unitario, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.precio_unitario, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.estado)
+                            <div class="col-md-10">
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.estado)
+                                    @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            @Html.HiddenFor(model => model.WbsOfertaId, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.WbsOfertaId, "", new { @class = "text-danger" })
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            @Html.HiddenFor(model => model.vigente, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.vigente, "", new { @class = "text-danger" })
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <input type="submit" value="Guardar" class="btn btn-primary" />
+                            @Html.ActionLink("Regresar", "DetailsComputo", "Computo", new { id = Model.WbsOfertaId }, new { @class = " btn btn-outline-primary" })
+
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $("#ItemId").chosen();
+        });
+
+    </script>
+}

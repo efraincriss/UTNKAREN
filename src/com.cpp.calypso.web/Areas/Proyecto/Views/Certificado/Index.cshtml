@@ -1,0 +1,122 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.Dto.CertificadoDto>
+
+
+@{
+    ViewBag.Title = "Certificados";
+}
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-6" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+
+
+@section page_title
+{
+    <h2>Certificados</h2>
+}
+
+
+@section page_toolbar {
+    <br />
+    <div class="btn-toolbar" role="toolbar">
+        <a href='@Url.Action("Details", "Certificado")' class="btn btn-primary pull-right nuc_action_create">
+            <i class="fa fa-plus"></i>
+            Crear Certificado
+        </a>
+    </div>
+}
+<table class="table table-bordered table-hover display" id="certificado_table">
+    <thead>
+        <tr>
+
+            <th>Proyecto </th>
+            <th>Número Certificado</th>
+            <th>Fecha Corte</th>
+            <th>Fecha Emisión</th>
+            <th> Tipo</th>
+            <th> Estado</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Proyecto.codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numero_certificado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_corte)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_emision)
+                </td>
+                <td>
+                    @if (item.tipo_certificado == 1)
+                    {
+                        <p>Ingenieria</p>
+                    }
+                    @if (item.tipo_certificado == 2)
+                    {
+                        <p>Construcción</p>
+                    }
+                    @if (item.tipo_certificado == 3)
+                    {
+                        <p>Procura</p>
+                    }
+                </td>
+                <td>
+                    @(item.estado_actual == 1 ? "Aprobado" : "No Aprobado")
+                </td>
+                <td style="width: 200px">
+
+                    @Html.ActionLink("Ver", "DetailsCertificado", new { id = item.Id }, new { @class = "btn btn-outline-success  btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-info  btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                    
+                  
+                    <div style="float: left">
+                        @if (item.estado_actual == 0)
+                        {
+                            <form onsubmit="return confirm('¿Está seguro de eliminar los registros del Certificado?');" action="@Url.Action("Delete", new { id = item.Id })" method="post" class="form-inline">
+                                <input type="submit" value="Eliminar" class="btn btn-outline-danger  btn-sm" />
+                            </form>
+                        }
+                        else
+                        {
+                            <form onsubmit="return confirm('¿Está seguro de eliminar los registros del Certificado?');" action="@Url.Action("Delete", new { id = item.Id })" method="post" class="form-inline">
+                                <input type="submit" value="Eliminar" class="btn btn-outline-danger  btn-sm" disabled="disabled"   title="No se puede Eliminar el Certificado Aprobado" />
+                            </form>
+                        }
+                    </div>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+
+            <th>Proyecto </th>
+            <th>Número Certificado</th>
+            <th>Fecha</th>
+            <th>Fecha Emisión</th>
+            <th> Tipo</th>
+            <th> Estado</th>
+            <th></th>
+        </tr>
+    </tfoot>
+</table>

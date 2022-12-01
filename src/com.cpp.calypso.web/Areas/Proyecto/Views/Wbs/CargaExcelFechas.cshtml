@@ -1,0 +1,53 @@
+﻿
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Carga Excel Fechas Wbs RDO</h2>
+
+
+
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        <div class="row">
+
+                            @ViewBag.Error
+                        </div>
+                    </div>
+
+                }
+                @if (ViewBag.Msg != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        @ViewBag.Msg
+                    </div>
+                }
+               
+                @using (Html.BeginForm("CargaExcelFechas", "Wbs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                <div class="row">
+                    <div class="col-2" align="left">
+                        <b><td>Archivo:</td></b><br />
+                        <input type="hidden" name="id" value="@ViewBag.idoferta" required="" />
+                        <div class="form-group">
+                            <input type="file" name="UploadedFile" required="" />
+                        </div>
+                            <input type="submit" value="Cargar" class="btn btn-primary" />
+
+                        </div>
+                        <div class="col-10" align="right">
+
+
+
+                            @Html.ActionLink("Regresar", "Index", "Wbs", new { id = @ViewBag.idoferta }, new { @class = " btn btn-primary" })
+                        </div>
+                    </div>
+                        }
+                    </div>
+                </div>
+                 </div>
+</div>

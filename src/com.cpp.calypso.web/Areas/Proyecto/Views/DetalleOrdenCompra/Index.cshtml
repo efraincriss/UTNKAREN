@@ -1,0 +1,148 @@
+﻿@using System.Globalization
+@model com.cpp.calypso.web.Areas.Proyecto.Models.IndexDetalleOrdenCompraViewModel
+
+@{
+    ViewBag.Title = "Detalle Orden Compra";
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Orden de  Compra</h4>
+                    </div>
+                    
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger" style="text-align: center" role="alert">
+                            @ViewBag.Error
+                        </div>
+                    }
+                    <div class="col" align="right">
+                        @Html.ActionLink("Regresar", "Index", "OrdenCompra", new { id = Model.OrdenCompraDto.OfertaId }, new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+
+                        
+                        
+                        <div class="col-md-6">
+                            <h6><b>Nro de Pedido:</b> @Model.OrdenCompraDto.nro_pedido_compra</h6>
+                            <h6><b>Fecha de Registro:</b> @Model.OrdenCompraDto.fecha_presentacion.ToString("dd/MM/yyyy")</h6>
+                            <h6><b>Monto Total:</b> $ @String.Format(CultureInfo.InvariantCulture, "{0:0,0.00}", Model.OrdenCompraDto.valor_pedido_compra)</h6>
+                        
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-md-6">
+
+                        <h6><b>Proyecto: </b>@Model.OrdenCompraDto.Oferta.Proyecto.codigo @Model.OrdenCompraDto.Oferta.Proyecto.descripcion_proyecto </h6>
+                        <h6><b>Oferta: </b> @Model.OrdenCompraDto.Oferta.codigo -@Model.OrdenCompraDto.Oferta.version- @Model.OrdenCompraDto.Oferta.descripcion</h6>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="empresa_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="novedades-tab" data-toggle="tab" href="#novedades" role="tab" aria-controls="home" aria-expanded="true">Detalles</a>
+            </li>
+
+        </ul>
+
+
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="novedades" role="tabpanel" aria-labelledby="novedades-tab">
+                <div class="col" align="right">
+                    @Html.ActionLink("Nuevo", "Create", "DetalleOrdenCompra", new { id = ViewBag.Id }, new { @class = "btn btn-outline-primary" })
+
+
+                </div>
+                <hr />
+
+                <table class="table table-bordered table-hover display" style="font-size: 11px">
+                    <thead>
+                        <tr>
+
+                            <th style="text-align: center">Codigo Item</th>
+                            <th style="text-align: center">Descripcion Item</th>
+                            <th style="text-align: center">Fecha</th>
+                            <th style="text-align: center">Tipo de Registro</th>
+                            <th style="text-align: center">Porcentaje</th>
+                            <th style="text-align: center">Cantidad Calculada</th>
+                            <th style="text-align: center">Estado</th>
+                            <th style="text-align: center">Opciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model.DetalleOrdenServicioDto)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Computo.Item.codigo)
+                                </td>
+                                <td style="width: 250px; text-align: justify">
+                                    @Html.DisplayFor(modelItem => item.Computo.Item.nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.fecha)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.tipoFecha)
+                                </td>
+                                <td style="text-align: right">
+                                    @Html.DisplayFor(modelItem => item.porcentaje)%
+                                </td>
+                                <td style="text-align: right">
+                                    @String.Format(CultureInfo.InvariantCulture, "{0:0,0.00}", item.valor)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.estado)
+                                </td>
+                                <td style="width: 200px;">
+                                    @Html.ActionLink("Editar", "Edit", "DetalleOrdenCompra", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                    <div style="float: left">
+                                        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", "DetalleOrdenCompra", new {id = item.Id})" method="post" class="form-inline">
+                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger  btn-sm" />
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th>Codigo Item</th>
+                            <th>Descripcion Item</th>
+                            <th>Fecha</th>
+                            <th>Tipo Fecha</th>
+                            <th>Porcentaje</th>
+                            <th>Valor</th>
+                            <th>Estado</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

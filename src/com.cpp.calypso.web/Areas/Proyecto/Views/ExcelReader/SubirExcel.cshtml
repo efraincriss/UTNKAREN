@@ -1,0 +1,100 @@
+﻿@model List<com.cpp.calypso.web.Areas.Proyecto.Models.AvanceIngenieriaExcelModel>
+
+@section page_title
+{
+    <i class="fa fa-tag"></i> Carga de Archivo XLS
+    <h2>Avance Ingeniería</h2>
+}
+
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+           
+            @ViewBag.Error
+        </div>
+    </div>
+   
+}
+@using (Html.BeginForm("SubirExcel", "ExcelReader", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <td>Archivo:</td>
+
+    <input type="file" name="UploadedFile" />
+
+    <input type="submit" name="Submit" value="Subir" />
+
+
+}
+<br />
+<div class="row">
+    <div style="width: 100%;">
+        <div class="card">
+
+            <div class="card-header">
+                <b>Datos Avance de Ingeniería :</b>
+            </div><br />
+            <div class="table-responsive">
+                <table table class="table table-responsive-lg table-bordered table-hover display" id="contratos_table"
+                       style="font-size: 12px">
+
+                    <thead>
+                        <tr>
+                            <th>Count</th>
+                            <th>Tipo de Registro</th>
+                            <th>Wo</th>
+                            <th>HH</th>
+                            <th>Ejecutante</th>
+                            <th>Fecha</th>
+                            <th>Observaciones</th>
+                            <th>Etapa</th>
+                            <th>Proyecto</th>
+                            <th>Código Proyecto</th>
+                            <th>Especialidad</th>
+                            <th style="display: none"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.count</td>
+                                <td>@item.tipo_registro</td>
+                                <td>@item.wo</td>
+                                <td>@item.hh</td>
+                                <td>@item.ejecutante</td>
+                                <td>@item.fecha</td>
+                                <td>@item.observaciones</td>
+                                <td>@item.etapa</td>
+                                <td>@item.proyecto</td>
+                                <td>@item.codigoproyecto</td>
+                                <td>@item.especialidad</td>
+                                <td style="display: none"></td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Count</th>
+                            <th>Tipo de Registro</th>
+                            <th>Wo</th>
+                            <th>HH</th>
+                            <th>Ejecutante</th>
+                            <th>Fecha</th>
+                            <th>Observaciones</th>
+                            <th>Etapa</th>
+                            <th>Proyecto</th>
+                            <th>Código Proyecto</th>
+                            <th>Especialidad</th>
+                            <th style="display: none"></th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>

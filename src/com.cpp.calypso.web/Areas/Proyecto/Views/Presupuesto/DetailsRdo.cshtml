@@ -1,0 +1,275 @@
+﻿@model com.cpp.calypso.web.Models.BaseWbsComputoViewModel
+
+@{
+                /**/
+
+                /**/
+
+                ViewBag.Title = "Detalles de la Oferta";
+
+}
+@section page_toolbar {
+
+
+
+}<link href="~/Content/css/omega/theme.css" rel="stylesheet" />
+<link href="~/Content/css/primereact.min.css" rel="stylesheet" />
+<link href="~/Content/css/primeicons.css" rel="stylesheet" />
+<link href="~/Content/css/block-ui.css" rel="stylesheet" />
+<link href="~/Content/css/time-picker.css" rel="stylesheet" />
+<div class="row" style="border:none">
+    <div style="width:  100%;">
+        <div class="card" style="border:none">
+            <div class="card-body" style="border:none">
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewBag.Error
+                    </div>
+                }
+                @if (ViewBag.Msg != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        @ViewBag.Msg
+                    </div>
+                }
+                <div class="row">
+
+
+                    <div class="col" align="right">
+
+                        @*<div id="content-clone-presupuesto" class="@Model.Oferta.Id"></div>*@
+                        @Html.ActionLink("Matriz Prespuesto", "GenerarPrespuestoRdo", "Presupuesto", new { OfertaId = Model.Oferta.Id }, new { @class = " btn btn-info" })
+                        @Html.ActionLink("Regresar", "Index", "Presupuesto", new { id = Model.Oferta.Id }, new { @class = "btn btn-outline-primary" })
+
+                    </div>
+
+                </div>
+                <h4 class="card-title"></h4>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Cliente:</b> @Model.Cliente.razon_social</h6>
+                        <h6><b>Proyecto:</b> @Model.Proyecto.codigo - @Model.Proyecto.descripcion_proyecto </h6>
+                        <h6><b>Requerimiento:</b> @Model.Oferta.Requerimiento.codigo -  @Model.Oferta.Requerimiento.descripcion</h6>
+
+
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Oferta:</b> @Model.Oferta.codigo -  @Model.Oferta.version - @Model.Oferta.descripcion</h6>
+                        <h6><b>Fecha Oferta:</b> @Model.Oferta.fecha_oferta.GetValueOrDefault().ToString("dd/MM/yyyy")</h6>
+                        <h6><b>Preciario Desde:</b> @Model.Preciario.fecha_desde.ToString("dd/MM/yyyy")- <b>Hasta:</b> @Model.Preciario.fecha_hasta.ToString("dd/MM/yyyy")</h6>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        @* <h6><b>Monto Ingenieria:</b>0.00</h6>
+                            <h6><b>Monto Construccion:</b>0.00</h6>
+                            <h6><b>Monto Procura:</b>0.00</h6>
+                        *@
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-xs-12" style="align-content: center">
+                    <div class="center-block">
+                        <form action="@Url.Action("ActualizarCostosRdo", new {contratoId = Model.Contrato.Id, oferta = Model.Oferta.Id})" method="post" class="form-inline">
+                            <input type="submit" value="Generar Presupuesto" onclick="return confirm('Esta seguro de generar presupuestos con los datos mostrados')" class="btn btn-outline-primary" id="btngenerar" disabled="disabled" />
+
+                            @Html.ActionLink("Cancelar", "Index", "Presupuesto", new { id = Model.Oferta.Id }, new { @class = "btn btn-outline-primary" })
+
+                        </form>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div style="width: 100%;">
+                        <div class="card">
+
+                            <div class="card-header">
+                                <b> Validado para Generar Cálculos(SI/NO) :</b>
+
+                                <div class="col-md-10">
+
+                                    @Html.CheckBoxFor(model => model.activado)
+
+                                </div>
+
+                            </div><br />
+                            <div class="table-responsive">
+                                <table class="table table-responsive-lg table-bordered table-hover display" id="contratos_table"
+                                       style="font-size: 11px">
+                                    <thead>
+                                        <tr>
+                                            <th style="height: 50px">Actividad</th>
+                                            <th style="height: 50px">Código Padre</th>
+                                            <th style="height: 50px">Item Padre</th>
+                                            <th style="height: 50px">Código Item</th>
+                                            <th style="height: 50px">Item</th>
+                                            <th style="height: 50px">P.U.Costo Directo</th>
+                                            <th style="height: 50px">P.U. Ajust</th>
+                                            <th style="height: 50px">P.U. AIU</th>
+                                            <th style="height: 50px">TipoPrecio</th>
+                                            <th style="height: 50px">Cantidad</th>
+                                            <th style="height: 50px">P.U</th>
+                                            <th style="height: 50px">Total</th>
+                                            <th>Opción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.Computo)
+                                        {
+
+                                            <tr>
+                                                <td> @Html.DisplayFor(modelItem => item.Wbs.nivel_nombre)</td>
+                                                <td> @Html.DisplayFor(modelItem => item.Item.item_padre)</td>
+                                                <td> @Html.DisplayFor(modelItem => item.item_padre_nombre)</td>
+                                                <td> @Html.DisplayFor(modelItem => item.Item.codigo)</td>
+                                                <td> @Html.DisplayFor(modelItem => item.Item.nombre)</td>
+                                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.precio_base)</td>
+                                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.precio_ajustado)</td>
+                                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.precio_incrementado)</td>
+                                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.precio_aplicarse)</td>
+                                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.cantidad)</td>
+                                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.precio_unitario)</td>
+                                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.costo_total)</td>
+
+                                                <td style="width: 30px;">
+                                                    <a href="#" class="create" data-value="@item.Id"><i class="fa fa-edit" style="font-size: 24px"></i></a>
+
+                                                </td>
+
+                                            </tr>
+                                        }
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Actividad</th>
+                                            <th>Código Padre</th>
+                                            <th>Item Padre</th>
+                                            <th>Código Item</th>
+                                            <th>Item</th>
+                                            <th>P.U.Costo Directo</th>
+                                            <th>P.U. Ajust</th>
+                                            <th>P.U. AIU</th>
+                                            <th>Tipo Precio</th>
+                                            <th>Cantidad</th>
+                                            <th>P.U</th>
+                                            <th>Total</th>
+                                            <th></th>
+
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+
+
+    .modal-dialog {
+        max-width: none;
+        width: 50%;
+        padding: 0;
+    }
+
+    .modal-content {
+        height: 99%;
+    }
+</style>
+
+<div class="modal fade" id="ver" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Item no Válidos</h5>
+
+            </div>
+            <div class="modal-body">
+
+
+                <div id="veritem"></div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editarprecio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="edicionitem"></div>
+                <input type="text" value="precio" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="teste2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="~/Scripts/build/clonarpresupuesto.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $.ajaxSetup({ cache: false });
+
+            $(".btnItems").click(function () {
+                $('#ver').modal("show");
+                $(".editarnovalido").click(function () {
+                    $('#editarprecio').modal("show");
+                    $("#cerrarmodalv").click(function () {
+                        $('#ed').modal("hide");
+                    });
+                });
+            });
+            $('#activado').click(function () {
+                if ($(this).is(':checked')) {
+
+                    $('#btngenerar').removeAttr('disabled');
+                } else {
+                    $('#btngenerar').attr('disabled', 'disabled');
+                }
+            });
+            $(".create").click(function () {
+                var id = $(this).data("value");
+                $("#teste2").load("/Proyecto/Presupuesto/Edit/" + id,
+                    function () {
+                        $('#myCreate').modal("show");
+                        $("#cerrarmodal").click(function () {
+                            $('#myCreate').modal("hide");
+                        });
+                    });
+
+            });
+
+        });
+
+    </script>
+
+}

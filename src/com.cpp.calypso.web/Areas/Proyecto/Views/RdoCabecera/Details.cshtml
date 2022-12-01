@@ -1,0 +1,130 @@
+﻿@model com.cpp.calypso.web.Areas.Proyecto.Models.RdoViewModel
+
+@{
+    ViewBag.Title = "Rdo";
+}
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+
+<div id="content">
+
+</div>
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">RDO</h4>
+                    </div>
+
+                    <div class="col" align="right">
+                        @if (ViewBag.avance > 0)
+                        {
+                            @Html.ActionLink("Regresar", "Details", "AvanceObra", new { id = ViewBag.avance }, new { @class = " btn btn-outline-primary" })
+                        }
+                        else if(ViewBag.RequerimientoId>0)
+                        {
+                            @Html.ActionLink("Regresar", "Requerimiento", "Details", new { id = ViewBag.RequerimientoId }, new { @class = " btn btn-outline-primary" })
+                        }
+                        else {
+                        @Html.ActionLink("Editar", "Edit", "RdoCabecera", new { id = Model.RdoCabeceraDto.Id }, new { @class = " btn btn-outline-primary" })
+                        } <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("EmitirRdo", "RdoCabecera", new {id = Model.RdoCabeceraDto.Id})" method="post" class="form-inline" style="float: right; margin-left: 0.3em">
+                            <input type="submit" value="Emitir" class="btn btn-outline-primary" />
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <hr />
+                @if (ViewBag.msg != null)
+                {
+                    <div class="alert alert-info" role="alert">
+                        @ViewBag.msg
+                    </div>
+
+                }
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Proyecto: </b>@Model.RdoCabeceraDto.Proyecto.codigo</h6>
+                        <h6><b>Nombre del Proyecto: </b>@Model.RdoCabeceraDto.Proyecto.nombre_proyecto</h6>
+                        <h6><b>Fecha Rdo:</b> @Model.RdoCabeceraDto.fecha_rdo</h6>
+                        <h6><b>Emitido: </b> @Html.DisplayFor(model => model.RdoCabeceraDto.emitido)</h6>
+                        <h6><b>Observaciones: </b> @Model.RdoCabeceraDto.observacion</h6>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="redo_detalles_tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active " id="eac-tab" data-toggle="tab" href="#eac" role="tab" aria-controls="home" aria-expanded="true">Detalles EAC</a>
+            </li>
+
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="eac" role="tabpanel" aria-labelledby="eac-tab">
+                @if (Model.DetallesEac.Count > 0)
+                {
+                    <div class="col" align="right">
+                        @Html.ActionLink("Descargar RDO", "GetRdoEac", "RdoCabecera", new { id = Model.RdoCabeceraDto.Id }, new { @class = "btn btn-outline-primary" })
+                    </div>
+                }
+                <hr />
+                <table class="table table-bordered table-hover display" style="font-size: 10px">
+                    <thead>
+                        <tr>
+                            <th class="align-middle">Código</th>
+                            <th class="align-middle">Nombre</th>
+                            <th class="align-middle">Budget</th>
+                            <th class="align-middle">C.EAC</th>
+                            <th class="align-middle">Costo Budget</th>
+                            <th class="align-middle">Costo EAC</th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.DetallesEac)
+                        {
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => item.Item.codigo)</td>
+                                <td> @Html.DisplayFor(modelItem => item.Item.nombre)</td>
+                                <td align="right"> @Html.DisplayFor(modelItem => item.presupuesto_total)</td>
+                                <td align="right"> @Html.DisplayFor(modelItem => item.cantidad_eac)</td>
+                                <td align="right"> @Html.DisplayFor(modelItem => item.costo_presupuesto)</td>
+                                <td align="right"> @Html.DisplayFor(modelItem => item.costo_eac)</td>
+                                <th></th>
+
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th class="align-middle">Código</th>
+                            <th class="align-middle">Nombre</th>
+                            <th class="align-middle">Budget</th>
+                            <th class="align-middle">C.EAC</th>
+                            <th class="align-middle">Costo Budget</th>
+                            <th class="align-middle">Costo EAC</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

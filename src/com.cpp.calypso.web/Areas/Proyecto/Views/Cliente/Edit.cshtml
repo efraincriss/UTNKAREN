@@ -1,0 +1,228 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.ClienteDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@if (ViewBag.Msg != null)
+{
+
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-xs-12 col-md-8">
+            <div class="alert alert-danger" role="alert">
+                <div class="row">
+
+
+                    <div class="col-sm-11 align-middle">
+                        @ViewBag.Msg
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Información del Cliente</h2>
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.codigoasignado)
+
+                                @Html.EditorFor(model => model.codigoasignado, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.codigoasignado, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.tipo_contribuyente)
+
+                                @Html.DropDownListFor(model => model.tipo_contribuyente, new List<SelectListItem>
+                                {
+                                    new SelectListItem {Text = "Contribuyente Normal", Value = "Normal", Selected = true},
+                                    new SelectListItem {Text = "Constribuyente Especial", Value = "Especial"},
+                                }, null, new {@class = "form-control"})
+                                @Html.ValidationMessageFor(model => model.tipo_contribuyente, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.tipo_identificacion)
+
+                                @Html.DropDownListFor(model => model.tipo_identificacion, new List<SelectListItem>
+                                {
+                                    new SelectListItem {Text = "Cédula", Value = "Cedula", Selected = true},
+                                    new SelectListItem {Text = "Ruc", Value = "Ruc"},
+                                    new SelectListItem {Text = "Pasaporte", Value = "Passaporte"},
+                                }, null, new {@class = "form-control"})
+                                @Html.ValidationMessageFor(model => model.tipo_identificacion, "", new { @class = "text-danger" })
+                            </div>
+                        </div>   <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.identificacion)
+
+                                @Html.EditorFor(model => model.identificacion, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.identificacion, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.razon_social)
+
+                        @Html.EditorFor(model => model.razon_social, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.razon_social, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.telefono)
+
+                                @Html.EditorFor(model => model.telefono, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.telefono, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.correo)
+
+                                @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.correo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.direccion)
+
+                        @Html.EditorFor(model => model.direccion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.direccion, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.fecha_registro)
+
+                                @Html.EditorFor(model => model.fecha_registro, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.fecha_registro, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.fecha_fin)
+
+                                @Html.EditorFor(model => model.fecha_fin, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.fecha_fin, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.es_grupo)
+                                <div class="col-md-10">
+                                    <div class="checkbox">
+                                        @Html.EditorFor(model => model.es_grupo)
+                                        @Html.ValidationMessageFor(model => model.es_grupo, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.tiene_contrato)
+                                <div class="col-md-10">
+                                    <div class="checkbox">
+                                        @Html.EditorFor(model => model.tiene_contrato)
+                                        @Html.ValidationMessageFor(model => model.tiene_contrato, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.representate_legal)
+
+                        @Html.EditorFor(model => model.representate_legal, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.representate_legal, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.projectmanager)
+
+                        @Html.EditorFor(model => model.projectmanager, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.projectmanager, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.estado)
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.estado)
+                                @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!--  @Html.LabelFor(model => model.vigente)-->
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.HiddenFor(model => model.vigente)
+                                @Html.ValidationMessageFor(model => model.vigente, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.lider_operaciones)
+
+                        @Html.EditorFor(model => model.lider_operaciones, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.lider_operaciones, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                            @Html.ActionLink("Cancelar", "Index", "", new { @class = "btn btn-outline-primary" })
+                        </div>
+                    </div>
+                </div>
+                    }
+
+
+                </div>
+
+        </div>
+    </div>
+
+</div>

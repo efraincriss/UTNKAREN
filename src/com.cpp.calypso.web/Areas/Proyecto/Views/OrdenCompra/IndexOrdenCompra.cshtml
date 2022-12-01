@@ -1,0 +1,74 @@
+﻿@model List<Oferta>
+
+@{
+    ViewBag.Title = "Ofertas Orden Compra";
+}
+
+@section page_title
+{
+    <i class="fa fa-tag"></i> Listado de Ofertas Definitivas}
+@section page_toolbar {
+
+}
+<table class="table table-bordered table-hover display" id="ofertas_procura" style="font-size: 12px">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Proyecto </th>
+            <th>Código Requerimiento</th>
+            <th>Código oferta</th>
+            <th>Versión</th>
+            <th>Fecha Oferta</th>
+            <th> Estado</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Requerimiento.Proyecto.Contrato.Cliente.razon_social)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Requerimiento.Proyecto.codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Requerimiento.codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.version)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_oferta)
+                </td>
+                <td>
+                    @(item.estado == 1 ? "Activo" : "Inactivo")
+                </td>
+                <td>
+                    @Html.ActionLink("Ver", "Index", new { id = item.Id }, new { @class = "btn btn-outline-success  btn-sm", style = " float:  left; margin-right: 0.3em;" })
+
+              
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Cliente</th>
+            <th>Proyecto </th>
+            <th>Código Requerimiento</th>
+
+            <th>Código oferta</th>
+            <th>Versión</th>
+            <th>Fecha Oferta</th>
+            <th> Estado</th>
+            <th></th>
+        </tr>
+    </tfoot>
+</table>
+

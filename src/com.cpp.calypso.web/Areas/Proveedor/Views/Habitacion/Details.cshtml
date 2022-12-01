@@ -1,0 +1,35 @@
+﻿@model FormReactModelView
+@{
+    var title = Html.Title(Model);
+    if (!string.IsNullOrEmpty(Model.Title))
+    {
+        title = Model.Title;
+    }
+
+    ViewBag.Title = title;
+
+    var controllerName = ViewContext.RouteData.Values["controller"].ToString();
+
+    var elementContenedorId = "detalle_habitacion_component";
+
+    string pathComponent = Url.Content(Model.ReactComponent);
+}
+
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+
+<div>
+
+    <div id="@elementContenedorId">
+
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/Scripts/build/vendors.js"></script>
+    <script src="@pathComponent"></script>
+}
+

@@ -1,0 +1,859 @@
+CREADA-3808-B-SP-000001Servicios Suplementarios13/01/2020
+CREADA-3808-B-SP-000002Propuesta de Trabajos para Plataforma Auca Sur 213/01/2020
+CREADA-3808-B-SP-000003Propuesta de Trabajos para Plataforma Auca 2813/01/2020
+CREADA-3808-B-SP-000004Propuesta de Trabajos para Plataforma Cononaco 5313/01/2020
+CREADA-3808-B-SP-000005Propuesta de Trabajos para Jaulas Protectoras - Campo AUCA13/01/2020
+CREADA-3808-B-SP-000006Propuesta de Trabajos para Calicatas y Detección Tuberías - Oficinas SHAYA13/01/2020
+CREADA-3808-B-SP-000007Propuesta de Servicio de Topografía para Campamento13/01/2020
+CREADA-3808-B-SP-000008Propuesta de Trabajos para Plataforma AUCA 2713/01/2020
+CREADA-3808-B-SP-000009Propuesta de Trabajos para Plataforma AUCA 5113/01/2020
+CREADA-3808-B-SP-000010Ampliación capacidad de transferencia de fluidos de Cononaco 53 a Cononaco 613/01/2020
+CREADA-3808-B-SP-000011Propuesta de Trabajos para Tanque Empernado 6700 Auca Sur 113/01/2020
+CREADA-3808-B-SP-000012Conexionado Tanques AUCA SUR 1 (500 gls)13/01/2020
+CREADA-3808-B-SP-000013Interconexión tanque de almacenamiento de crudo (10 kbbl) Estación Auca Sur13/01/2020
+CREADA-3808-B-SP-000014Servicios de Ingenierías Eléctricas13/01/2020
+CREADA-3808-B-SP-000015Interconexión y comisionamiento sistema de bombeo Auca 12313/01/2020
+CREADA-3808-B-SP-000016Propuesta de Trabajos para Trabajos Adicionales I Enero, Febrero y Marzo 201613/01/2020
+CREADA-3808-B-SP-000017Mantenimiento vial Cononaco 5313/01/2020
+CREADA-3808-B-SP-000018Propuesta de Trabajos para Plataforma AUCA 14213/01/2020
+CREADA-3808-B-SP-000019FACILIDADES INTELLIZONE CONONACO 53, POZO CNOF-5413/01/2020
+CREADA-3808-B-SP-000020AUCA 142 - ANEXO CAMPAMENTO13/01/2020
+CREADA-3808-B-SP-000021Obras Requeridas perforacion pozos nuevos en localizacion existente Cononaco 113/01/2020
+CREADA-3808-B-SP-000022Trabajos para Facilidades de Pozo en Plataforma Chonta Sur 113/01/2020
+CREADA-3808-B-SP-0000238 (Ocho) Jaulas protectoras de cabezal13/01/2020
+CREADA-3808-B-SP-000024Línea de Tubería Roscada de Cononaco 27 a Estación Cononaco13/01/2020
+CREADA-3808-B-SP-000025Levantamiento LIDAR Facilidades Bloque 6113/01/2020
+CREADA-3808-B-SP-000026Campamento Shaya - INGENIERÍA BÁSICA13/01/2020
+CREADA-3808-B-SP-000027Colector de recolección desde Cononaco 13 hasta Estación Cononaco (Variante de San Francisco)13/01/2020
+CREADA-3808-B-SP-000028Reparacion tres separadores de produccion Estacion Auca Sur13/01/2020
+CREADA-3808-B-SP-000029Reparación del tanque de surgencia (16 kbbl) en Estación Auca Sur13/01/2020
+CREADA-3808-B-SP-000030Instalación de Facilidades definitivas de producción - Desgasificación -Almacenamiento-Bombeo en Auca 2713/01/2020
+CREADA-3808-B-SP-000031Tendido de Línea eléctrica de Yuca Central a Yuca 26 y Yuca 27 (Antes Cononaco 25 a Cononaco 53)13/01/2020
+CREADA-3808-B-SP-000032Tendido línea eléctrica desde Auca 56 hasta Auca 5113/01/2020
+CREADA-3808-B-SP-000033Tendido de Línea eléctrica 13.8 Kv desde Auca 137 hasta Auca 12313/01/2020
+CREADA-3808-B-SP-000034Tendido de Línea Eléctrica Alimentación Auca 26 al Auca 4513/01/2020
+CREADA-3808-B-SP-000035Tendido de línea eléctrica de Auca 15-Auca Sur 02 con derivación a Auca 64 y Auca 14213/01/2020
+CREADA-3808-B-SP-000036Cambio de manifold e Interconexión separador de producción nuevo Estación Auca Central13/01/2020
+CREADA-3808-B-SP-000037Interconexión separador de producción nuevo Estación Auca Sur13/01/2020
+CREADA-3808-B-SP-000038Reparacion de lineas de flujo criticas13/01/2020
+CREADA-3808-B-SP-000039Instalación válvulas check en líneas de pozos Auca 6 y Auca 5113/01/2020
+CREADA-3808-B-SP-000040Repotenciación de Inyeccion de Agua Campo Auca- Segunda Fase (Auca 45)13/01/2020
+CREADA-3808-B-SP-000041Mejora Facilidades para recibir fluidos incrementales Culebra 513/01/2020
+CREADA-3808-B-SP-000042Interconexión tanque de almacenamiento de 10kbbl Estacion Auca Central13/01/2020
+CREADA-3808-B-SP-000043Reparación Separador de Producción Yulebra13/01/2020
+CREADA-3808-B-SP-000044Incremento capacidad manejo de fluidos CULEBRA13/01/2020
+CREADA-3808-B-SP-000045Obras Requeridas perforacion pozos nuevos en localizacion existente Pitalala13/01/2020
+CREADA-3808-B-SP-000046Obras Requeridas perforacion pozos nuevos en localizacion existente Culebra 813/01/2020
+CREADA-3808-B-SP-000047Obras Requeridas perforacion pozos nuevos en localizacion existente CONONACO 3413/01/2020
+CREADA-3808-B-SP-000048Obras Requeridas perforacion pozos nuevos en localizacion existente AUCA 12313/01/2020
+CREADA-3808-B-SP-000049Obras Requeridas perforacion pozos nuevos en localizacion existente ANACONDA 01 (ANTES AUCA 89)13/01/2020
+CREADA-3808-B-SP-000050FC2.14 Obras Requeridas perforacion pozos nuevos en localizacion existente AUCA 5313/01/2020
+CREADA-3808-B-SP-000051Obras Requeridas perforacion pozos nuevos en localizacion existente AUCA SUR 10 (ANTES AUCA 6)13/01/2020
+CREADA-3808-B-SP-000052Obras Requeridas perforacion pozos nuevos en localizacion existente YUCA 713/01/2020
+CREADA-3808-B-SP-000053Desarrollo de Chonta Sur y Rumiyacu13/01/2020
+CREADA-3808-B-SP-000054Línea de Flujo de Culebra 08 a Culebra 0113/01/2020
+CREADA-3808-B-SP-000055Incremento en capacidad de bombeo de agua a inyección Estación Cononaco13/01/2020
+CREADA-3808-B-SP-000056Planta de Inyeccion de Agua de 7.5 kBPWD en Auca Sur13/01/2020
+CREADA-3808-B-SP-000057Instalación de nuevo separador de Auca Sur 113/01/2020
+CREADA-3808-B-SP-000058Manejo de Fluidos en Culebra13/01/2020
+CREADA-3808-B-SP-000059Evaluacion Manejo de Agua del campo Auca13/01/2020
+CREADA-3808-B-SP-000060Sistema de transferencia de Auca 14213/01/2020
+CREADA-3808-B-SP-000061Incremento capacidad de Bombeo en Estación AUCA SUR 13/01/2020
+CREADA-3808-B-SP-000062Incremento capacidad de tratamiento Auca Sur 113/01/2020
+CREADA-3808-B-SP-000063Manejo de fluidos Chonta Este - Auca Sur 1 13/01/2020
+CREADA-3808-B-SP-000064Ampliación capacidad Estación Rumiyacu 13/01/2020
+CREADA-3808-B-SP-000065Monitoreo y Analisis en tiempo real del campo a traves del centro digitalizado MIA en Quito13/01/2020
+CREADA-3808-B-SP-000066Instrumentación de presión en cabeza de pozos13/01/2020
+CREADA-3808-B-SP-000067Mejoras al sistema de instrumentación Estación Auca Central 13/01/2020
+CREADA-3808-B-SP-000068Mejoras al sistema de instrumentación Estación Auca Sur13/01/2020
+CREADA-3808-B-SP-000069Centro de monitoreo Estacion Central13/01/2020
+CREADA-3808-B-SP-000070CONSTRUCCIÓN DE TANQUE DE LAVADO DE 30 KBLS (antes Reparacion tanque de lavado 50 kbbl) Estacion Auca Sur13/01/2020
+CREADA-3808-B-SP-000071Actualizacion unidades de medicion de crudo en estaciones de Auca13/01/2020
+CREADA-3808-B-SP-000072Medicion multifasica (Vx)13/01/2020
+CREADA-3808-B-SP-000073Red de Gas de Anulares13/01/2020
+CREADA-3808-B-SP-000074Construcción Nuevas localizaciónes Requeridas perforación pozos nuevos13/01/2020
+CREADA-3808-B-SP-000075Alcantarilla Puente PAD Auca 1713/01/2020
+CREADA-3808-B-SP-000076PLATAFORMAS DE CARGA Y DESCARGA DE FLUIDO  AUCA 64 Y AUCA SUR 0113/01/2020
+CREADA-3808-B-SP-000077Obras Requeridas para emergencia eléctrica PAD Culebra 613/01/2020
+CREADA-3808-B-SP-000078Adicional - Losa y Shelter Variadores y bayoneta en Auca Sur 213/01/2020
+CREADA-3808-B-SP-000079Topografía13/01/2020
+CREADA-3808-B-SP-000080Control de Erosión Alcantarilla PAD Auca 1713/01/2020
+CREADA-3808-B-SP-000082Adicional - Losa y Shelter Variadores y tie-in manifold en Auca 2813/01/2020
+CREADA-3808-B-SP-000083Obras Requeridas perforacion pozos nuevos en localizacion existente AUCA 613/01/2020
+CREADA-3808-B-SP-000084Obras Requeridas perforacion pozos nuevos en localizacion existente AUCA SUR 213/01/2020
+CREADA-3808-B-SP-000085Obras Requeridas perforacion pozos nuevos en localizacion existente YUCA 1713/01/2020
+CREADA-3808-B-SP-000086Obras Requeridas perforacion pozos nuevos en localizacion existente CHONTA SUR 113/01/2020
+CREADA-3808-B-SP-000087Recuperacion Secundaria Culebra 0813/01/2020
+CREADA-3808-B-SP-000088EDIFICACIONES (CAMPAMENTO)13/01/2020
+CREADA-3808-B-SP-000089CONONACO 3213/01/2020
+CREADA-3808-B-SP-000090CONONACO 3413/01/2020
+CREADA-3808-B-SP-000091AUCA SUR 0113/01/2020
+CREADA-3808-B-SP-000092AUCA 5113/01/2020
+CREADA-3808-B-SP-000093AUCA 2713/01/2020
+CREADA-3808-B-SP-000094YUCA 1513/01/2020
+CREADA-3808-B-SP-000095ESTACIÓN CONONACO13/01/2020
+CREADA-3808-B-SP-000096AUCA 12313/01/2020
+CREADA-3808-B-SP-000097CONONACO 1313/01/2020
+CREADA-3808-B-SP-000098AUCA 5213/01/2020
+CREADA-3808-B-SP-000099Conexionado Trampas LF Chonta Sur y Rumiyacu13/01/2020
+CREADA-3808-B-SP-000100Cabezales de hormigón PAD Auca 1713/01/2020
+CREADA-3808-B-SP-000101Realización Hot Taps Auca Sur 113/01/2020
+CREADA-3808-B-SP-000102Anura 01 (bayoneta, via de acceso y material petreo)13/01/2020
+CREADA-3808-B-SP-000103Cononaco 33 (reconformación plataforma y reparacion de bayoneta)13/01/2020
+CREADA-3808-B-SP-000104Cononaco 30 (Fabricación y Montaje de Bayoneta)13/01/2020
+CREADA-3808-B-SP-000105WO CHS-01 CHONTA SUR 0113/01/2020
+CREADA-3808-B-SP-000106Obras Requeridas perforacion 2 pozos nuevos en localizacion existente CHONTA SUR 113/01/2020
+CREADA-3808-B-SP-000107Auca 8 R113/01/2020
+CREADA-3808-B-SP-000108Adicional por Talud en Yuca 0713/01/2020
+CREADA-3808-B-SP-000109Adicionales CAPEX Yuca 0713/01/2020
+CREADA-3808-B-SP-000110Reconformación adicional Culebra 813/01/2020
+CREADA-3808-B-SP-000111Elevar nivel de PAD Auca Sur 1013/01/2020
+CREADA-3808-B-SP-000112Movilización separador adicional Estación Rumiyacu13/01/2020
+CREADA-3808-B-SP-000113Adicionales Mejora Facilidades Fluidos Incrementales Culebra 513/01/2020
+CREADA-3808-B-SP-000114Adicional Tie-in Linea Roscada13/01/2020
+CREADA-3808-B-SP-000115Adicionales AUCA 5313/01/2020
+CREADA-3808-B-SP-000116ADICIONALES TANQUE AUCA SUR13/01/2020
+CREADA-3808-B-SP-000117Construcción de Tanque de Lavado de 30 KBLS en Estación Auca Sur13/01/2020
+CREADA-3808-B-SP-000118Adicionales Tanque Estación Auca Central13/01/2020
+CREADA-3808-B-SP-000119Adicionales Separadores Estación Auca Sur13/01/2020
+CREADA-3808-B-SP-000120Perforación tres pozos nuevos en AUCA 3913/01/2020
+CREADA-3808-B-SP-000121Fabricación de Tanque de Lavado de 30 KBBLS para Estación Auca Sur13/01/2020
+CREADA-3808-B-SP-000122Adicional Tie-in Reparación Líneas de Flujo Críticas13/01/2020
+CREADA-3808-B-SP-000123Construcción de 3 pozos nuevos en PAD Auca 8913/01/2020
+CREADA-3808-B-SP-000124Ingeniería Básica Líneas de Flujo Culebra13/01/2020
+CREADA-3808-B-SP-000125Ingeniería Básica Manejo de Fluidos Chonta Este - Auca Sur 113/01/2020
+CREADA-3808-B-SP-000126Ingeniería Básica Sistema de Transferencia de Auca 14213/01/2020
+CREADA-3808-B-SP-000127Ingeniería Básica Instalación Nuevo Separador Auca Sur 113/01/2020
+CREADA-3808-B-SP-000128Ingeniería Básica Construcción Tanque 30 KBLS Estación Auca Sur13/01/2020
+CREADA-3808-B-SP-000129Ingeniería Básica Incremento Capacidad Tratamiento Auca Sur 113/01/2020
+CREADA-3808-B-SP-000130Ingeniería Básica Recuperación Secundaria Culebra13/01/2020
+CREADA-3808-B-SP-000131Facilidades para 2 pozos nuevos en Auca 613/01/2020
+CREADA-3808-B-SP-000132Facilidades para 1 pozo nuevo en Auca Sur 213/01/2020
+CREADA-3808-B-SP-000133Adicionales Capex Fiscalizable FC2.09 Pad Auca 2713/01/2020
+CREADA-3808-B-SP-000134Adicionales Capex Fiscalizable FC10.23 Culebra 0613/01/2020
+CREADA-3808-B-SP-000135Adicionales Capex Fiscalizable FC2.03 Auca 2813/01/2020
+CREADA-3808-B-SP-000136Adicionales Capex Fiscalizable FC2.13 Anaconda A13/01/2020
+CREADA-3808-B-SP-000137Adicionales Capex Fiscalizable FC9.06 Spool13/01/2020
+CREADA-3808-B-SP-000138Adicionales Capex Fiscalizable FC4.01 Tendido de cable adicional de baja tensión13/01/2020
+CREADA-3808-B-SP-000139Adicionales Capex Fiscalizable FC9.11 Interconexión Auca 142 con Auca 2713/01/2020
+CREADA-3808-B-SP-000140Adicional por Reparación segundo fondo del tanque de surgencia Estación Auca Sur13/01/2020
+CREADA-3808-B-SP-000141Adicionales Capex Fiscalizable FC9.08 By-Pass líneas 4" y 6" en área variadores13/01/2020
+CREADA-3808-B-SP-000142Repotenciación de Inyeccion de Agua Campo Auca- Segunda Fase (Auca 45)13/01/2020
+CREADA-3808-B-SP-000143Adicional Capex Fiscalizable por Adicionales Tendido de Cable y Conexionado de Línea Existente13/01/2020
+CREADA-3808-B-SP-000144Adicional Capex Fiscalizable por Acometida de baja tensión13/01/2020
+CREADA-3808-B-SP-000145Adicional Capex Fiscalizable por Acometida de baja tensión13/01/2020
+CREADA-3808-B-SP-000146Adicional OPEX por Carga y Transporte de Arena de Auca Central hacia Cononaco 1513/01/2020
+CREADA-3808-B-SP-000147Reconformación de Plataforma en Auca 12313/01/2020
+CREADA-3808-B-SP-000148Adicionales Capex Fiscalizable en Cononaco 5313/01/2020
+CREADA-3808-B-SP-000149Adicionales en Instalación Válvulas Check Auca 6 y Auca 5113/01/2020
+CREADA-3808-B-SP-000150Cubeto de Combustible y Bomba de Agua en Auca Sur 10 (RIG 156)13/01/2020
+CREADA-3808-B-SP-000151Adicionales Capex Fiscalizable Desarrollo Chonta Sur y Rumiyacu13/01/2020
+CREADA-3808-B-SP-000152Adicionales Capex Fiscalizable Auca 14213/01/2020
+CREADA-3808-B-SP-000153Adicionales Capex Fiscalizable Auca 5113/01/2020
+CREADA-3808-B-SP-000154Adicionales Capex Fiscalizable Chonta Sur 01 (1er ingreso)13/01/2020
+CREADA-3808-B-SP-000155Adicionales Capex Fiscalizable Chonta Sur 01 (2do ingreso)13/01/2020
+CREADA-3808-B-SP-000156Adicionales Capex Fiscalizable LF Cononaco 53 a Cononaco 0613/01/2020
+CREADA-3808-B-SP-000157Adicionales Capex Fiscalizable Anaconda 01 Soportes13/01/2020
+CREADA-3808-B-SP-000158Adicionales Capex Fiscalizable Yuca 7 Inyección Químicos13/01/2020
+CREADA-3808-B-SP-000159Plataforma Anaconda 01 Pozo ANCA-01013/01/2020
+CREADA-3808-B-SP-000160Adicional CAPEX por Prueba Hidrostática Tanque de 1.50013/01/2020
+CREADA-3808-B-SP-000161Adicionales CAPEX Actividades previas al ingreso Taladro en Auca 5313/01/2020
+CREADA-3808-B-SP-000162Adicionales Auca Sur 02 Punchlist y Gasket13/01/2020
+CREADA-3808-B-SP-000163Adicionales CAPEX Reconformación WIW 1D/4D13/01/2020
+CREADA-3808-B-SP-000164Trabajos CAPEX Plataforma Auca 2813/01/2020
+CREADA-3808-B-SP-000165Trabajos CAPEX Chonta Sur 01 Pozo CHSA-006D13/01/2020
+CREADA-3808-B-SP-000166Trabajos CAPEX Auca 51 Pozo ACAG-05113/01/2020
+CREADA-3808-B-SP-000167Trabajos OPEX Reconformación área de Apoyo de Taladro Auca 4613/01/2020
+CREADA-3808-B-SP-000168Trabajos OPEX Reconformación y Compactación Auca 0913/01/2020
+CREADA-3808-B-SP-000169Trabajos CAPEX Auca 2713/01/2020
+CREADA-3808-B-SP-000170Trabajos CAPEX Culebra 0813/01/2020
+CREADA-3808-B-SP-000171Adicional Desgasificación Auca 8913/01/2020
+CREADA-3808-B-SP-000172Trabajos CAPEX Cononaco 34 Pozo CNCO-02913/01/2020
+CREADA-3808-B-SP-000173Trabajos Adicionales Capex Fiscalizable Proyecto FC2.25 Auca 89 Movimiento de Materiales13/01/2020
+CREADA-3808-B-SP-000174Trabajos Adicionales Capex Fiscalizable Proyecto FC2.18 Auca Sur 2 Movimiento de Materiales13/01/2020
+CREADA-3808-B-SP-000175Adicional Ingeniería Evaluación OLGA - simulación dinámica13/01/2020
+CREADA-3808-B-SP-000176Adicional por Montaje de Tomamuestras13/01/2020
+CREADA-3808-B-SP-000177Adicional por válvulas13/01/2020
+CREADA-3808-B-SP-000178Adicionales CAPEX para facilidades para Taladro SINOPEC 119 en Auca 3913/01/2020
+CREADA-3808-B-SP-000179Manejo de Fluidos en Plataforma Yulebra13/01/2020
+CREADA-3808-B-SP-000180Costos Incurridos a Diciembre 201613/01/2020
+CREADA-3808-B-SP-000181Compra de LLI (Bombas, Variadores y Trafos) para Inyección Culebra13/01/2020
+CREADA-3808-B-SP-000182Adicional por Provisión de Válvulas Gate 150# de 8" para Hot Tap13/01/2020
+CREADA-3808-B-SP-000183Trabajos CAPEX en Cononaco 48 Pozo CNOA-04813/01/2020
+CREADA-3808-B-SP-000184Adicional por Relevamiento Topográfico y Estudios de Suelos Adelantados13/01/2020
+CREADA-3808-B-SP-000185Trabajos CAPEX en Cononaco 20 Pozo CNCO-02013/01/2020
+CREADA-3808-B-SP-000186Trabajos CAPEX en Cononaco 51 Pozo CNOA-05113/01/2020
+CREADA-3808-B-SP-000187Adicionales CAPEX FISCALIZABLE en PAD AUCA 5313/01/2020
+CREADA-3808-B-SP-000188Trabajos CAPEX en Auca 06 Pozo ACAI-10913/01/2020
+CREADA-3808-B-SP-000189Adicionales Reparación de Talud en Culebra 613/01/2020
+CREADA-3808-B-SP-000190Adicionales Capex Fiscalizable Auca 89 - Anulares y Tanque13/01/2020
+CREADA-3808-B-SP-000191Adicionales Capex Fiscalizable Chonta Sur 0113/01/2020
+CREADA-3808-B-SP-000192Adicionales Capex Fiscalizable Auca Sur 1013/01/2020
+CREADA-3808-B-SP-000193Adicionales Capex Fiscalizable FC2.09 Pad Auca 2713/01/2020
+CREADA-3808-B-SP-000194Fabricación de Soportes para Tubería de PAM13/01/2020
+CREADA-3808-B-SP-000195Adicionales Capex Fiscalizable PAD Auca 5313/01/2020
+CREADA-3808-B-SP-000196Adicionales Capex Fiscalizable Culebra 0513/01/2020
+CREADA-3808-B-SP-000197Adicionales Capex Fiscalizable Transferencia Auca 14213/01/2020
+CREADA-3808-B-SP-000198Adicionales para RIG SINOPEC-11913/01/2020
+CREADA-3808-B-SP-000199Excavación de Líneas unidad MTU 53 en Chonta Sur 0113/01/2020
+CREADA-3808-B-SP-000200Relevamiento Topográfico Anaconda B y Anaconda C13/01/2020
+CREADA-3808-B-SP-000201Adicionales Capex Fiscalizable en Tanque Auca 2713/01/2020
+CREADA-3808-B-SP-000202Adicionales Capex Fiscalizable Culebra 0813/01/2020
+CREADA-3808-B-SP-000203Trabajos CAPEX en Plataforma Auca 56 Pozo ACAP-17813/01/2020
+CREADA-3808-B-SP-000204Adicionales CAPEX en Plataforma Auca 8913/01/2020
+CREADA-3808-B-SP-000205Trabajos OPEX en Plataforma Yuca 30 Pozo YCAC-04813/01/2020
+CREADA-3808-B-SP-000206Relevamiento Topográfico Chonta Este 113/01/2020
+CREADA-3808-B-SP-000207Relevamiento Topográfico Chonta Sur 113/01/2020
+CREADA-3808-B-SP-000208Adicionales de Capex Fiscalizable para Línea Eléctrica de Yuca Central a Yuca 2613/01/2020
+CREADA-3808-B-SP-000209Adicionales de Capex Fiscalizable por Materiales provistos por CGA13/01/2020
+CREADA-3808-B-SP-000210Emergentes Extraordinarios por Reparación de Líneas Eléctricas en Yulebra13/01/2020
+CREADA-3808-B-SP-000211Adicionales de Capex Fiscalizable por Materiales provistos por CGA13/01/2020
+CREADA-3808-B-SP-000212Adicionales de Capex Fiscalizable por Materiales provistos por CGA13/01/2020
+CREADA-3808-B-SP-000213Adicionales Capex en Chonta Sur 1 por retiro de cubeto13/01/2020
+CREADA-3808-B-SP-000214Adicionales de Capex Fiscalizable para Línea Eléctrica de Auca 137 a Auca 12313/01/2020
+CREADA-3808-B-SP-000215Adicionales de Capex Fiscalizable para Línea Eléctrica de Yuca Central a Yuca 2613/01/2020
+CREADA-3808-B-SP-000216Adicionales de Capex Fiscalizable para Línea Eléctrica de Auca 15/02 hacia Auca 64/14213/01/2020
+CREADA-3808-B-SP-000217Adicionales Capex Fiscalizable Auca 89 - Trampa Grasas y Línea Desgasificación13/01/2020
+CREADA-3808-B-SP-000218Adicionales Tanque Estación Auca Central13/01/2020
+CREADA-3808-B-SP-000219Adicionales Capex Fiscalizable LF Cononaco 53 a Cononaco 0613/01/2020
+CREADA-3808-B-SP-000220Adicionales de Capex Fiscalizable para Línea Eléctrica de Auca 137 a Auca 12313/01/2020
+CREADA-3808-B-SP-000221Adicionales de Capex Fiscalizable para Línea Eléctrica de Auca 56 hasta Auca 5113/01/2020
+CREADA-3808-B-SP-000222Facilidades para 3 pozos nuevos en localización existente AUCA 5313/01/2020
+CREADA-3808-B-SP-000223Instalacion de bomba en plataforma de Cononaco 5313/01/2020
+CREADA-3808-B-SP-000224Adicionales de Capex Fiscalizable por cerramiento MNFD y cunetas PAD13/01/2020
+CREADA-3808-B-SP-000225Adicionales de Capex Fiscalizable por reforzamiento de talud13/01/2020
+CREADA-3808-B-SP-000226Adicionales de Capex Fiscalizable por Sumidero y Válvulas13/01/2020
+CREADA-3808-B-SP-000227Adicional por Reparación de anillos adicionales y desalojo de lodos contaminados en tanque de surgencia Estación Auca Sur13/01/2020
+CREADA-3808-B-SP-000228Adicionales de Capex Fiscalizable por modificación de alcance Auca 613/01/2020
+CREADA-3808-B-SP-000229Adicionales de Capex Fiscalizable en Tanque de Surgencia en Estación Auca Sur13/01/2020
+CREADA-3808-B-SP-000230Adicionales de Capex Fiscalizable para Línea Eléctrica de Auca 15/02 hacia Auca 64/14213/01/2020
+CREADA-3808-B-SP-000231Adicionales de Capex Fiscalizable por Tablero y Trafo en Auca 613/01/2020
+CREADA-3808-B-SP-000232Trabajos OPEX por Trabajos en plataforma Culebra 08 Pozo CLBB-03413/01/2020
+CREADA-3808-B-SP-000233Trabajos OPEX en plataforma Culebra 04 Pozo CLBB-00413/01/2020
+CREADA-3808-B-SP-000234Adicionales CAPEX por Trabajos en plataforma Auca 2713/01/2020
+CREADA-3808-B-SP-000235Trabajos CAPEX en plataforma Auca 89 Pozo ACAJ-20213/01/2020
+CREADA-3808-B-SP-000236Facilidades para 2 pozos nuevos en PAD Yuca 713/01/2020
+CREADA-3808-B-SP-000237Facilidades para 2 pozos nuevos en PAD Anaconda A13/01/2020
+CREADA-3808-B-SP-000238Facilidades para 2 pozos nuevos en PAD Chonta Sur 1 (fase 1)13/01/2020
+CREADA-3808-B-SP-000239Facilidades para 2 pozos nuevos en PAD Chonta Este13/01/2020
+CREADA-3808-B-SP-000240Adicionales de Capex Fiscalizable para Línea Eléctrica de Auca 26 hacia Auca 4513/01/2020
+CREADA-3808-B-SP-000241Adicionales de Capex Fiscalizable para Línea Eléctrica de Auca 137 a Auca 12313/01/2020
+CREADA-3808-B-SP-000242Adicionales de Capex Fiscalizable para Línea Eléctrica de Auca 56 hasta Auca 5113/01/2020
+CREADA-3808-B-SP-000243Elaboración de cantidades de obra13/01/2020
+CREADA-3808-B-SP-000244Plataforma Nueva Tortuga Sur 0113/01/2020
+CREADA-3808-B-SP-000245Adicionales de Capex Fiscalizable para Plataforma Culebra 0513/01/2020
+CREADA-3808-B-SP-000246Adicionales de Capex Fiscalizable por Facilidades para pozo Auca 613/01/2020
+CREADA-3808-B-SP-000247Compra de Long Lead Items para Incremento de Capacidad Auca Sur 113/01/2020
+CREADA-3808-B-SP-000248Adicionales de Capex Fiscalizable para Defensa Metálica en Cononaco 2713/01/2020
+CREADA-3808-B-SP-000249Adicional Capex Fiscalizable por Estudio de Suelos para Reforzamiento de Talud en Chonta Sur a Rumiyacu13/01/2020
+CREADA-3808-B-SP-000250Migración de RDOs13/01/2020
+CREADA-3808-B-SP-000251Repotenciación de Inyeccion de Agua Campo Auca-Segunda Fase (Auca 45)13/01/2020
+CREADA-3808-B-SP-000252Adicional Capex Fiscalizable por IPC y Reparación de Tanque de Lavado en Culebra13/01/2020
+CREADA-3808-B-SP-000253Adicional Capex Fiscalizable por Facilidades Adicionales en Auca Central13/01/2020
+CREADA-3808-B-SP-000254Montaje de Tanques en Yulebra (Fase 2)13/01/2020
+CREADA-3808-B-SP-000255Adicional Capex Fiscalizable por Tanque en Auca Sur 113/01/2020
+CREADA-3808-B-SP-000256AUCA 27 Adicional por Instalación de Tanque de SCI13/01/2020
+CREADA-3808-B-SP-000257Migración de Ofertas de Adicionales 2016 de Lump Sum a Precios Unitarios13/01/2020
+CREADA-3808-B-SP-000258Trabajos OPEX en Plataforma Auca 4513/01/2020
+CREADA-3808-B-SP-000259Adicional Capex Fiscalizable por tendido de cable de baja tensión robado13/01/2020
+CREADA-3808-B-SP-000260Facilidades de Inyección para Auca Sur Fase 113/01/2020
+CREADA-3808-B-SP-000261Facilidades para 3 pozos nuevos en Plataforma existente Yuca 1713/01/2020
+CREADA-3808-B-SP-000262Facilidades para 3 pozos nuevos en Plataforma existente Chonta Sur 113/01/2020
+CREADA-3808-B-SP-000263Compra de Bombas de Transferencia Sistema de Transferencia Auca 14213/01/2020
+CREADA-3808-B-SP-000264Adicional Capex Fiscalizable para LE Auca Sur 0213/01/2020
+CREADA-3808-B-SP-000265Compra de Bombas de Transferencia Manejo de Fluidos Chonta Este13/01/2020
+CREADA-3808-B-SP-000266Compra de Bombas de Transferencia Sistema de Bombeo Culebra 813/01/2020
+CREADA-3808-B-SP-000267Facilidades para 3 pozos nuevos en Plataforma Existente Auca 3513/01/2020
+CREADA-3808-B-SP-000268Trabajos CAPEX por Fabricación y montaje de Bayoneta para pozo ACAG-075 en Auca 5113/01/2020
+CREADA-3808-B-SP-000269Adicionales CAPEX en Plataforma Chonta Este 113/01/2020
+CREADA-3808-B-SP-000270Facilidades para pozos nuevos en Plataforma Auca 51 - Segundo Ingreso13/01/2020
+CREADA-3808-B-SP-000271Adicionales por Conexionado de Tablero reubicado por PAM13/01/2020
+CREADA-3808-B-SP-000272Verificación de capacidad de transformador principal en Plataforma Auca Sur 1013/01/2020
+CREADA-3808-B-SP-000273Inclusión variadores de frecuencia en Bombas e inclusión de área de Botas y Tanques en Ingeniería13/01/2020
+CREADA-3808-B-SP-000274Trabajos CAPEX en Plataforma Auca 06 Pozo ACAI-19713/01/2020
+CREADA-3808-B-SP-000275Inclusión de variadores de frecuencia en Bombas de Transferencia Plataforma Auca 14213/01/2020
+CREADA-3808-B-SP-000276Adicionales CAPEX en Plataforma Auca 3513/01/2020
+CREADA-3808-B-SP-000277Adicional por Materiales no provistos para Etapa 1 en Separador Auca Central13/01/2020
+CREADA-3808-B-SP-000278Derrocamiento de Base de Tanque Desnatador existente y Construcción de nueva Base13/01/2020
+CREADA-3808-B-SP-000279Inspección y Reparación de Línea de Culebra 1 a Yulebra13/01/2020
+CREADA-3808-B-SP-000280Estudio de Captación de Agua en Yulebra13/01/2020
+CREADA-3808-B-SP-000281Inclusión de variadores de frecuencia en Bombas de Transferencia e Inclusión de Tanque en Plataforma Chonta Este 113/01/2020
+CREADA-3808-B-SP-000282IPC por Sistema de Bombeo en Plataforma Culebra13/01/2020
+CREADA-3808-B-SP-000283Cambio de las especificaciones del equipo de bombeo en Culebra13/01/2020
+CREADA-3808-B-SP-000284Emisión de sumario de reparaciones de Separador en Estación Yulebra13/01/2020
+CREADA-3808-B-SP-000285Cambios en medio para cruces con líneas existentes LE Auca 15 hacia Auca Sur 213/01/2020
+CREADA-3808-B-SP-000286Verificación de nuevo DDV y Cambios en medio para cruces con líneas existentes LE Auca 137 hacia Auca 12313/01/2020
+CREADA-3808-B-SP-000287Verificación de nuevo DDV y Cambios en medio para cruces con líneas existentes LE Auca 56 hacia Auca 5113/01/2020
+CREADA-3808-B-SP-000288Estudios de coordinación de protecciones para puesta en marcha de la línea13/01/2020
+CREADA-3808-B-SP-000289Asistencia de cuadrilla de topografía para relevamientos en campo13/01/2020
+CREADA-3808-B-SP-000290Tableros Switchgear de Baja Tensión para Plataformas13/01/2020
+CREADA-3808-B-SP-000291Adicional por Acondicionamiento de área previo a tie-ins en LF Auca 1 a Auca Sur13/01/2020
+CREADA-3808-B-SP-000292Adicional por Bayonetas y Líneas de Recirculación en Variante San Francisco13/01/2020
+CREADA-3808-B-SP-000293Adicional por Mantenimiento e Instalación de Válvulas de Vacío en Tanque Auca Sur13/01/2020
+CREADA-3808-B-SP-000294Adicionales Línea de Flujo Culebra13/01/2020
+CREADA-3808-B-SP-000295Compra de Bombas HPS13/01/2020
+CREADA-3808-B-SP-000296IPC Planta de Tratamiento de Agua en Auca Sur 113/01/2020
+CREADA-3808-B-SP-000297Costos Incurridos IPC Centralización Eléctrica de Estación Cononaco con Rumiyacu y Chonta Sur 113/01/2020
+CREADA-3808-B-SP-000298Adicionales en Separador en Estación Auca Sur13/01/2020
+CREADA-3808-B-SP-000299Estudio de coordinación de protecciones en Culebra 813/01/2020
+CREADA-3808-B-SP-000300Estudio de coordinación de protecciones en Yuca 713/01/2020
+CREADA-3808-B-SP-000301Suministro e instalación de equipos para reemplazo de facilidades temporales13/01/2020
+CREADA-3808-B-SP-000302Estudio de coordinación de protecciones en Auca 6 Pozo ACAI-19713/01/2020
+CREADA-3808-B-SP-000303Estudio de coordinación de protecciones en Chonta Este13/01/2020
+CREADA-3808-B-SP-000304Adicional por Bayoneta en Auca 5313/01/2020
+CREADA-3808-B-SP-000305Adicional por revegetación de taludes13/01/2020
+CREADA-3808-B-SP-000306Adicional por Bandejas Portacable en Culebra 813/01/2020
+CREADA-3808-B-SP-000307Línea de Flujo en Yuca 1713/01/2020
+CREADA-3808-B-SP-000308Adicionales Habilitación Generador en Auca 3513/01/2020
+CREADA-3808-B-SP-000309Suministro e instalación de equipos para reemplazo de facilidades temporales - Bombas HPS13/01/2020
+CREADA-3808-B-SP-000310Facilidades para dos pozos nuevos y un futuro en localización existente Auca 5113/01/2020
+CREADA-3808-B-SP-000311Inspección técnica de SWG de Media Tensión para Auca 4513/01/2020
+CREADA-3808-B-SP-000312Interconexión de Tableros de Baja y Media Tensión en Plataformas Existentes13/01/2020
+CREADA-3808-B-SP-000313Relevamiento Topográfico Plataforma Nueva Auca 12613/01/2020
+CREADA-3808-B-SP-000314Relevamiento Topográfico para Plataforma Chonta Este B13/01/2020
+CREADA-3808-B-SP-000315Construcción de vía de acceso lastrada para la Comunidad de Nantip13/01/2020
+CREADA-3808-B-SP-000316Servicios de topografía para proyectos varios13/01/2020
+CREADA-3808-B-SP-000317Estudio de coordinación de protecciones en Auca 3913/01/2020
+CREADA-3808-B-SP-000318Estudio de coordinación de protecciones en Auca 5313/01/2020
+CREADA-3808-B-SP-000319Estudio de coordinación de protecciones en Culebra 813/01/2020
+CREADA-3808-B-SP-000320Inclusión del sistema de almacenamiento de tanques y elaborados nuevos en Líneas de Flujo Culebra13/01/2020
+CREADA-3808-B-SP-000321Cambios a Memoria Hidráulica Variante San Francisco13/01/2020
+CREADA-3808-B-SP-000322Personal en Cononaco 14 por emergencia de derrame de crudo13/01/2020
+CREADA-3808-B-SP-000323Suministro de equipos para reemplazo de facilidades temporales13/01/2020
+CREADA-3808-B-SP-000324Adicional por Protector Vehicular en línea de interconexión a Plataforma13/01/2020
+CREADA-3808-B-SP-000325Adicional CAPEX por Instalación de Alcantarilla en Comunidad La Western13/01/2020
+CREADA-3808-B-SP-000326Adicionales para el Sistema Contra Incendios en Auca 2713/01/2020
+CREADA-3808-B-SP-000327Adicionales CAPEX en Auca 5113/01/2020
+CREADA-3808-B-SP-000328Adicionales CAPEX en Auca 3513/01/2020
+CREADA-3808-B-SP-000329Adicional en Culebra 8 por Protector Vehicular13/01/2020
+CREADA-3808-B-SP-000330Adicionales CAPEX en Chonta Sur 113/01/2020
+CREADA-3808-B-SP-000331Adicional en Auca 6 por Cambio de Alcance13/01/2020
+CREADA-3808-B-SP-000332Adicional en Auca 35 por Magnetización de Transformador13/01/2020
+CREADA-3808-B-SP-000333Relevamiento Topográfico y Desarrollo de Ingeniería para Plataformas Nueva13/01/2020
+CREADA-3808-B-SP-000334Inspección, Pruebas Hidrostáticas y Flushing en el tanque de Surgencia 16KBLS en Auca Sur13/01/2020
+CREADA-3808-B-SP-000335Ensayos de Presión de Vapor (FC3.9, FC9.11, FC9.14 y FC9.15)13/01/2020
+CREADA-3808-B-SP-000336Interconexionado de 40 tanques13/01/2020
+CREADA-3808-B-SP-000337Trabajos adicionales para Tanque de Auca Central13/01/2020
+CREADA-3808-B-SP-000338Provisión de Transformadores de 3.5MVA13/01/2020
+CREADA-3808-B-SP-000339Relevamiento Topográfico para Plataforma Chonta Sur B13/01/2020
+CREADA-3808-B-SP-000340Facilidades de Inyección para Auca Norte13/01/2020
+CREADA-3808-B-SP-000341Comisionamiento y arranque del separador V020013/01/2020
+CREADA-3808-B-SP-000342Adicionales CAPEX para Plataforma Auca 5113/01/2020
+CREADA-3808-B-SP-000343Adicionales Auca 5313/01/2020
+CREADA-3808-B-SP-000344Adicionales Auca 8913/01/2020
+CREADA-3808-B-SP-000345Trabajos OPEX en Plataforma Auca 06 Pozo ACAI-19813/01/2020
+CREADA-3808-B-SP-000346Adicionales LE Yuca Central a Yuca 2613/01/2020
+CREADA-3808-B-SP-000347Cambio de implantación de Switchgear en Chonta Sur 113/01/2020
+CREADA-3808-B-SP-000348Provisión de Sistema de Control para Proyectos FC3.9, FC9.11 y FC9.1513/01/2020
+CREADA-3808-B-SP-000349Facilidades para 2 pozos nuevos en Plataforma Existente Auca 8913/01/2020
+CREADA-3808-B-SP-000350Facilidades para 2 pozos nuevos en Plataforma Existente Auca 613/01/2020
+CREADA-3808-B-SP-000351Alquiler de generador para Auca 613/01/2020
+CREADA-3808-B-SP-000352Reubicacion de toa de vaccum, puerta y pasarela en Culebra 813/01/2020
+CREADA-3808-B-SP-000353Desconexión de puentes  aéreos energizados y  retiro de tramo en red de 13,8 kv en Auca 613/01/2020
+CREADA-3808-B-SP-000354Estudio de Captación de Agua en Auca 2713/01/2020
+CREADA-3808-B-SP-000355Estudio de Captación de Agua en Auca Sur 113/01/2020
+CREADA-3808-B-SP-000356Adicionales para Tanques de 500 BBL13/01/2020
+CREADA-3808-B-SP-000357Conversión Estación Auca Sur 1 a Estación de Deshidratación13/01/2020
+CREADA-3808-B-SP-000358Sistema de Bombeo para Plataforma Anaconda 113/01/2020
+CREADA-3808-B-SP-000359Modificaciones al alcance original, nuevas especificaciones de equipos y nuevos valores para válvulas13/01/2020
+CREADA-3808-B-SP-000360Cambio de capacidad de tratamiento del Tanque de Lavado en Auca Sur13/01/2020
+CREADA-3808-B-SP-000361Inclusión de Instalación del Separador de Producción13/01/2020
+CREADA-3808-B-SP-000362Inclusión de Tanque SCI Empernado13/01/2020
+CREADA-3808-B-SP-000363Adicionales Tanque Surgencia en Estación Auca Sur13/01/2020
+CREADA-3808-B-SP-000364Adicionales por Punchlist13/01/2020
+CREADA-3808-B-SP-000365Facilidades para 2 pozos nuevos y 1 existente en Plataforma existente Pitalala 113/01/2020
+CREADA-3808-B-SP-000366Interconexión de bota V-1760 a línea de venteo de gas de baja13/01/2020
+CREADA-3808-B-SP-000367Propuesta de Trabajos Adicionales CAPEX para Taladro Sinopec 119 en Tortuga 113/01/2020
+CREADA-3808-B-SP-000368Facilidades para 2 pozos nuevos en Plataforma Existente Chonta Sur 113/01/2020
+CREADA-3808-B-SP-000369Facilidades para 2 pozos nuevos en Plataforma Existente Culebra 613/01/2020
+CREADA-3808-B-SP-000370Sistema de Bombeo en Plataforma Culebra 813/01/2020
+CREADA-3808-B-SP-000371Sistema de Inyección en Auca Central13/01/2020
+CREADA-3808-B-SP-000372Aumento de Capacidad del Sistema de Transferencia de Agua y Crudo en Auca Sur13/01/2020
+CREADA-3808-B-SP-000373Ingeniería desarrollada por CGA13/01/2020
+CREADA-3808-B-SP-000374Ingeniería desarrollada por CGA13/01/2020
+CREADA-3808-B-SP-000375Ingeniería desarrollada por CGA13/01/2020
+CREADA-3808-B-SP-000376Propuesta de Trabajos Adicionales CAPEX para Taladro Sinopec 156 en Auca 8913/01/2020
+CREADA-3808-B-SP-000377Provisión de Heater Treaters para Auca Sur 113/01/2020
+CREADA-3808-B-SP-000378Provisión de Flares para Auca 2713/01/2020
+CREADA-3808-B-SP-000379Ingeniería para Facilidades para 1 pozo nuevo en Culebra 813/01/2020
+CREADA-3808-B-SP-000380Ingeniería para Facilidades para 3 pozo nuevo en Auca 13713/01/2020
+CREADA-3808-B-SP-000381Ingeniería para Facilidades para 3 pozo nuevo en Auca 12613/01/2020
+CREADA-3808-B-SP-000382Facilidades para 1 pozo nuevo y Sistema de Bombeo en Plataforma existente Culebra 813/01/2020
+CREADA-3808-B-SP-000383Facilidades 3 pozos en Plataforma nueva Auca 12613/01/2020
+CREADA-3808-B-SP-000384Facilidades para 4 pozos nuevos en Plataforma existente Auca 12313/01/2020
+CREADA-3808-B-SP-000385Facilidades para 4 pozos nuevos en Plataforma existente Yulebra 313/01/2020
+CREADA-3808-B-SP-000386Facilidades para 2 pozos nuevos en Plataforma existente Auca 2813/01/2020
+CREADA-3808-B-SP-000387Facilidades para 2 pozos nuevos en Plataforma existente Tortuga Sur13/01/2020
+CREADA-3808-B-SP-000388Facilidades para 3 pozos nuevos en Plataforma existente Auca 13713/01/2020
+CREADA-3808-B-SP-000389Línea de Flujo y Línea Eléctrica de Rumiyacu a Cononaco13/01/2020
+CREADA-3808-B-SP-000390Línea de Flujo y Línea Eléctrica de Auca 126 a Auca 2113/01/2020
+CREADA-3808-B-SP-000391Sistema de Re-inyección en Plataforma Auca 8913/01/2020
+CREADA-3808-B-SP-000392Repotenciación de Sistema de Bombeo en Auca Central13/01/2020
+CREADA-3808-B-SP-000393Repotenciación de Sistema de Bombeo en Auca 5113/01/2020
+CREADA-3808-B-SP-000394Trabajos CAPEX por Provisión de Material Pétreo en Plataforma Auca 613/01/2020
+CREADA-3808-B-SP-000395Comisionamiento de Separador en Auca Sur 113/01/2020
+CREADA-3808-B-SP-000396Instalación de tensores en bota de gas en Auca Central13/01/2020
+CREADA-3808-B-SP-000397Adicional por Cabezales de hormigón, bayoneta, revegetación, vías acceso, items Punch List, adicionales Red Line13/01/2020
+CREADA-3808-B-SP-000398Plataforma Anaconda 01 Pozo ANCA-01113/01/2020
+CREADA-3808-B-SP-000399Trabajos CAPEX Cononaco 34 Pozo CNCO-04113/01/2020
+CREADA-3808-B-SP-000400Trabajos CAPEX Chonta Sur 01 Pozo CHSA-01213/01/2020
+CREADA-3808-B-SP-000401Trabajos CAPEX Auca 06 Pozo ACAI-10813/01/2020
+CREADA-3808-B-SP-000402Preservación de Bombas de Transferencia y Bombas HPS13/01/2020
+CREADA-3808-B-SP-000403Adicional por Inspección y Acondicionamiento de SWG en Plataforma Auca 4513/01/2020
+CREADA-3808-B-SP-000404Adicional por Reubicacion de panel TOAS en Plataforma Auca 613/01/2020
+CREADA-3808-B-SP-000405Adicionales para Sistema Contra Incendios13/01/2020
+CREADA-3808-B-SP-000406Relevamiento Topográfico y Desarrollo de Ingeniería para Plataformas Nueva13/01/2020
+CREADA-3808-B-SP-000407Tablero arrancador bomba de transferencia CONONACO 5313/01/2020
+CREADA-3808-B-SP-000408Adicional Revisión Integral y Validación Funcionamiento de Válvulas13/01/2020
+CREADA-3808-B-SP-000409Adicional Magnetización de Transformador & Retiro de Interferencias - Auca 8913/01/2020
+CREADA-3808-B-SP-000410Construcción de un sistema de captación de agua de río13/01/2020
+CREADA-3808-B-SP-000411Trabajos Adicionales Varios en Plataforma Pitalala13/01/2020
+CREADA-3808-B-SP-000412Trabajos Adicionales Varios en Locación Auca 2813/01/2020
+CREADA-3808-B-SP-000413Construcción de plataforma para acceso a conexiones de transformador para mantenimiento para el Proyecto FC02.1413/01/2020
+CREADA-3808-B-SP-000414Trabajos Adicionales Varios en Locación Auca 06 Pozo ACAI 003 WIW13/01/2020
+CREADA-3808-B-SP-000415Suministro de 4 bases para transformadores en Chonta Sur 1 Pozos CHSA-015 Y CHSA-01613/01/2020
+CREADA-3808-B-SP-000416Construcción de una línea de desgasificación de pozos13/01/2020
+CREADA-3808-B-SP-000417Trabajos CAPEX para Pozo ANCA-013 en las Locaciones ANACONDA 1/YULEBRA 0413/01/2020
+CREADA-3808-B-SP-000418Adicionales Varios para Pozo PTLA-01 en la Locación Pitalala 0113/01/2020
+CREADA-3808-B-SP-000419Adicionales Varios para Pozo PTLA-02 en la Locación Pitalala 0113/01/2020
+CREADA-3808-B-SP-000420Adicionales Varios para Pozo TTSA-002 en la Locación Tortuga 0113/01/2020
+CREADA-3808-B-SP-000421Movimiento de Tanques de Tortuga Sur 01 a Auca Sur 0313/01/2020
+CREADA-3808-B-SP-000422Spools Echometer para pozos AUCA SUR 0113/01/2020
+CREADA-3808-B-SP-000423Retiro de sedimentos y conformación de cubeto en locación CHONTA SUR 113/01/2020
+CREADA-3808-B-SP-000424Ensayos de Presión de Vapor13/01/2020
+CREADA-3808-B-SP-000425Provisión de Un Switchgear de Media Tensión13/01/2020
+CREADA-3808-B-SP-000426Provisión de Dos (2) Switchgear de Media Tensión13/01/2020
+CREADA-3808-B-SP-000427Provisión de Un Switchgear de Media Tensión13/01/2020
+CREADA-3808-B-SP-000428Facilidades para 1 pozo nuevo en Plataforma Existente Auca 2713/01/2020
+CREADA-3808-B-SP-000429Facilidades para 1 pozo nuevos en Plataforma Existente Auca Sur 1013/01/2020
+CREADA-3808-B-SP-000430Facilidades para 6 pozo nuevos en Locación Nueva Culebra 2113/01/2020
+CREADA-3808-B-SP-000431Facilidades para 2 pozos nuevos en Plataforma Existente Yulebra 213/01/2020
+CREADA-3808-B-SP-000432Línea de Flujo y Línea Eléctrica de Tortuga Sur 1 a Chonta Este13/01/2020
+CREADA-3808-B-SP-000433Facilidades para dos pozos en Locación Cononaco 1813/01/2020
+CREADA-3808-B-SP-000434Línea de Flujo y Línea Eléctrica Culebra 21 a Culebra 113/01/2020
+CREADA-3808-B-SP-000435	Fabricación e instalación de la bayoneta final del WO#513/01/2020
+CREADA-3808-B-SP-000436Cubeto para Equipo SINOPEC 16813/01/2020
+CREADA-3808-B-SP-000437Provisión de Switchgear Varios Proyectos
+(FC2.21, FC2.30, FC2.37, FC2.39)13/01/2020
+CREADA-3808-B-SP-000438Cuadrillas civiles y de Soldadura para mejora en plataformas existentes13/01/2020
+CREADA-3808-B-SP-000439Construcción e Interconexión Subestaciones Cononaco-Rumiyacu13/01/2020
+CREADA-3808-B-SP-000440Trabajos por reubicación de puerta de acceso13/01/2020
+CREADA-3808-B-SP-000441AUCA 35 (Reconformación y Nivelación CHEA-001)13/01/2020
+CREADA-3808-B-SP-000442Construcción e Interconexión de Subestación 69 kV Auca 123 y Alimentadores 13.8 kV13/01/2020
+CREADA-3808-B-SP-000443Incorporación de dos pozos a sistema de desgasificación13/01/2020
+CREADA-3808-B-SP-000444Traslado y pruebas en carretes13/01/2020
+CREADA-3808-B-SP-000445Procura de Repuestos para bombas HPS para locación Auca 4513/01/2020
+CREADA-3808-B-SP-000446Construcción y adecuación de cercas y accesos13/01/2020
+CREADA-3808-B-SP-000447Trabajos para puesta en Marcha13/01/2020
+CREADA-3808-B-SP-000448Facilidades para Pozo ACAI - 20513/01/2020
+CREADA-3808-B-SP-000449Trabajos en Separador13/01/2020
+CREADA-3808-B-SP-000450Construcciónd de Cubetos y provisión de material pétreo para pozo ACAE 096 en locación existente Auca 3513/01/2020
+CREADA-3808-B-SP-000451Adicionales para cierre de Punch List en Locación Chonta Sur 113/01/2020
+CREADA-3808-B-SP-000452Adicionales para cierre de Punch List en Locación Auca 3513/01/2020
+CREADA-3808-B-SP-000453Adicionales para cierre de Punch List en Chonta Este 113/01/2020
+CREADA-3808-B-SP-000454Instalación de pasarelas y protecciones para SWG en Locaciones Auca 28, Auca 89 y Auca 0613/01/2020
+CREADA-3808-B-SP-000455Adicionales para cierre de Punch List en Auca 0613/01/2020
+CREADA-3808-B-SP-000456Provisión Geomembrana para Locación Culebra 613/01/2020
+CREADA-3808-B-SP-000457Reparación Vial para Pitalala 113/01/2020
+CREADA-3808-B-SP-000458Construcción de Cubetos y provisión de material pétreo para pozo ACAC 167 en locación existente Auca 2713/01/2020
+CREADA-3808-B-SP-000459Incremento de Altura de Pull Box Existentes13/01/2020
+CREADA-3808-B-SP-000460Incremento de Altura de Pull Box Existentes13/01/2020
+CREADA-3808-B-SP-000461Incremento de Altura de Pull Box Existentes13/01/2020
+CREADA-3808-B-SP-000462Reconformación Vial13/01/2020
+CREADA-3808-B-SP-000463Reconformación, nivelación y compactación en PAD Yuca 9 y vía13/01/2020
+CREADA-3808-B-SP-000464Reparación Vial en By Pass de Dayuma13/01/2020
+CREADA-3808-B-SP-000465Adicionales Varios para instalación de tanques13/01/2020
+CREADA-3808-B-SP-000466Acceso a cubeto de bomba de agua13/01/2020
+CREADA-3808-B-SP-000467Reparación de Grating en Nuevo Puente de Tortuga13/01/2020
+CREADA-3808-B-SP-000468Adicionales Auca 13713/01/2020
+CREADA-3808-B-SP-000469Migración de dos pozos en locación Anaconda 0113/01/2020
+CREADA-3808-B-SP-000470Adicionales Pintura para Cierre de Punch List13/01/2020
+CREADA-3808-B-SP-000471Adicionales Yulebra 313/01/2020
+CREADA-3808-B-SP-000472Adicionales Cierre de Punch List13/01/2020
+CREADA-3808-B-SP-000473Impermeabilización de cubeto en Locación Yulebra13/01/2020
+CREADA-3808-B-SP-000474KIT Reparación de Sistema Contra Incendios13/01/2020
+CREADA-3808-B-SP-000475Llenado Tanque Sistema Contra Incendios13/01/2020
+CREADA-3808-B-SP-000476Actualización Production Control Room13/01/2020
+CREADA-3808-B-SP-000477Trabajos Adicionales Varios en Locación Auca 06 Pozo ACAI 003 WIW13/01/2020
+CREADA-3808-B-SP-000478Instalación de Pantallas Atrapalimos13/01/2020
+CREADA-3808-B-SP-000479Trabajos para Desnatado de Tanques13/01/2020
+CREADA-3808-B-SP-000480Adicionales Varios en Locación Auca 2813/01/2020
+CREADA-3808-B-SP-000481Adicionales Iluminación13/01/2020
+CREADA-3808-B-SP-000482Construcción y montaje de una Bayoneta para pozo ACAC063 en locación Auca 2713/01/2020
+CREADA-3808-B-SP-000483Trabajos en bayoneta para Pozo ACAF087 en Locación AUCA 3913/01/2020
+CREADA-3808-B-SP-000484Obras en Auca 28 para Equipo Hilong13/01/2020
+CREADA-3808-B-SP-000485Movilización de Tanques13/01/2020
+CREADA-3808-B-SP-000486Adecuación Plataforma en Locación Auca 5313/01/2020
+CREADA-3808-B-SP-000487Arreglo vial en locación Pitalala13/01/2020
+CREADA-3808-B-SP-000488Sistema de Captación de Agua en locación Yulebra13/01/2020
+CREADA-3808-B-SP-000489Construcción de un sistema de captación de agua en Auca Sur 0113/01/2020
+CREADA-3808-B-SP-000490Adicionales para cierre de Punch List en Locación Auca 8913/01/2020
+CREADA-3808-B-SP-000491Adicionales para cierre de Punch List en Locación Auca 0613/01/2020
+CREADA-3808-B-SP-000492Adicionales para cierre de Punch List en Locación Auca 5313/01/2020
+CREADA-3808-B-SP-000493Adicionales para cierre de Punch List en Locación Auca Sur 1013/01/2020
+CREADA-3808-B-SP-000494Adicionales para cierre de Punch List en Locación Tortuga Sur 0113/01/2020
+CREADA-3808-B-SP-000495Adicionales para cierre de Punch List en Locación Chonta Sur 0113/01/2020
+CREADA-3808-B-SP-000496Adicionales para cierre de Punch List en Locación Yulebra 0213/01/2020
+CREADA-3808-B-SP-000497Adicionales para cierre de Punch List en Locación Yuca 0713/01/2020
+CREADA-3808-B-SP-000498Facilidades Nuevas para Pozos Re Entries13/01/2020
+CREADA-3808-B-SP-000499Adicionales para cierre de Punch List en Locación Auca 0613/01/2020
+CREADA-3808-B-SP-000500Adicionales para cierre de Punch List en Locación Anaconda 113/01/2020
+CREADA-3808-B-SP-000501Procura de Heater Treater13/01/2020
+CREADA-3808-B-SP-000502Adicionales para cierre de Punch List en Locación Auca 3513/01/2020
+CREADA-3808-B-SP-000503Trabajos complementarios para provisión de Heater Treaters13/01/2020
+CREADA-3808-B-SP-000504Facilidades Plataforma Nueva Chonta Este B13/01/2020
+CREADA-3808-B-SP-000505Fibra Óptica Cononaco a Rumiyacu13/01/2020
+CREADA-3808-B-SP-000506Retiro de Facilidades Eléctricas13/01/2020
+CREADA-3808-B-SP-000507Modificación de Tanques de Pitalala13/01/2020
+CREADA-3808-B-SP-000508Trabajos en Línea de 6" en Culebra y Yulebra13/01/2020
+CREADA-3808-B-SP-000509Reparación Vial de Tramos Intervenidos13/01/2020
+CREADA-3808-B-SP-000510Provisión de Panel View y arreglo de valvulas de control13/01/2020
+CREADA-3808-B-SP-000511Línea de Recirculación13/01/2020
+CREADA-3808-B-SP-000512Trabajos para nuevo cellar13/01/2020
+CREADA-3808-B-SP-000513Procura de un Switchgear de Baja Tensión13/01/2020
+CREADA-3808-B-SP-000514Facilidades Nuevas para Workover Bloque 6113/01/2020
+CREADA-3808-B-SP-000515Reubicación de Equipos en Auca 2813/01/2020
+CREADA-3808-B-SP-000516Trabajos de Anclaje13/01/2020
+CREADA-3808-B-SP-000517Material Pétro para Ingreso de Taladro13/01/2020
+CREADA-3808-B-SP-000518Trabajos para Ingreso del Taladro en Yulebra 3 y Yulebra 413/01/2020
+CREADA-3808-B-SP-000519	Mantenimiento de acceso a by pass de Dayuma en sentido norte – sur13/01/2020
+CREADA-3808-B-SP-000520Cambio de Bulk Tank en locación Auca 8913/01/2020
+CREADA-3808-B-SP-000521Instalación de una Bomba de Transferencia en la locación Auca 12313/01/2020
+CREADA-3808-B-SP-000522Líneas de Transferencia para el Campo Culebra13/01/2020
+CREADA-3808-B-SP-000523Trabajos para Pozo CLBA 036 WDW13/01/2020
+CREADA-3808-B-SP-000524Trabajos para Pozo ACAH-168H13/01/2020
+CREADA-3808-B-SP-000525Línea de Transferencia de Auca Sur a Auca 1713/01/2020
+CREADA-3808-B-SP-000526Interconexiones de Flujo y Eléctricas13/01/2020
+CREADA-3808-B-SP-000527Reubicación de Equipos de Superficie en PAD J13/01/2020
+CREADA-3808-B-SP-000528Fabricación de Bayoneta para Pozo ACAF-08813/01/2020
+CREADA-3808-B-SP-000529Adecuación de Bayoneta para Pozo ACAC-05813/01/2020
+CREADA-3808-B-SP-000530Procura de Equipos de Superficie para Varios Pozos13/01/2020
+CREADA-3808-B-SP-000531Trabajos para Pozo YLBA-02613/01/2020
+CREADA-3808-B-SP-000532Trabajos para Pozo ACAK-12313/01/2020
+CREADA-3808-B-SP-000533Trabajos para Pozo CHSA-01413/01/2020
+CREADA-3808-B-SP-000534Construcción de Spool de 4"13/01/2020
+CREADA-3808-B-SP-000535Ampliación de Toma de Vacuum13/01/2020
+CREADA-3808-B-SP-000536Trabajos de Limpieza y Readecuación13/01/2020
+CREADA-3808-B-SP-000537Procura de Equipos de Superficie para Varios Pozos13/01/2020
+CREADA-3808-B-SP-000538Conexionado de Químicos13/01/2020
+CREADA-3808-B-SP-000539Conexionado de Químicos en Auca 14213/01/2020
+CREADA-3808-B-SP-000540Completación de Cerramiento Perimetral13/01/2020
+CREADA-3808-B-SP-000541Trabajos Varios en Locación Auca Sur 1013/01/2020
+CREADA-3808-B-SP-000542Trabajos para Cierre de Proyecto en Auca Central13/01/2020
+CREADA-3808-B-SP-000543Traslado de Tapas de Trampas API de Auca 28 a Yulebra 0213/01/2020
+CREADA-3808-B-SP-000544Trabajos para Cierre de Proyectos13/01/2020
+CREADA-3808-B-SP-000545Sistema de Venteo de baja en Yulebra13/01/2020
+CREADA-3808-B-SP-000546Transporte y Montaje de una Torre Autosoportada en Auca 2713/01/2020
+CREADA-3808-B-SP-000547Suministro e Instalación de Aislamiento Térmico13/01/2020
+CREADA-3808-B-SP-000548Instalación de KOD y red de anulares13/01/2020
+CREADA-3808-B-SP-000549Pruebas al SCI en Auca 2713/01/2020
+CREADA-3808-B-SP-000550Suministro e Instalación de Cable para Guardianía13/01/2020
+CREADA-3808-B-SP-000551Cellar para Pozo ACAC-02713/01/2020
+CREADA-3808-B-SP-000552Procura de Aislamiento Térmico para SWG13/01/2020
+CREADA-3808-B-SP-000553Procura de Aislamiento Térmico para SWG13/01/2020
+CREADA-3808-B-SP-000554Procura de Aislamiento Térmico para SWG13/01/2020
+CREADA-3808-B-SP-000555Acondicionamiento de Variadores de Bombas de Transferencia13/01/2020
+CREADA-3808-B-SP-000556Instalación de un Sumidero de Crudo13/01/2020
+CREADA-3808-B-SP-000557Trabajos para Cierre de Punch List13/01/2020
+CREADA-3808-B-SP-000558Construcción de Losas de Hormigón13/01/2020
+CREADA-3808-B-SP-000559Mantenimiento Correctivo y Modificación de Intake13/01/2020
+CREADA-3808-B-SP-000560Procura de Transformador de Servicios Auxiliares Tipo Seco13/01/2020
+CREADA-3808-B-SP-000561Procura de Repotenciación UPS-3005 Existente13/01/2020
+CREADA-3808-B-SP-000562Procura de UPS 1.5 Kva13/01/2020
+CREADA-3808-B-SP-000563Procura de Garita Auca 12613/01/2020
+CREADA-3808-B-SP-000564Procura de Transformador de Distribución Trifásico Tipo Sub-Estación13/01/2020
+CREADA-3808-B-SP-000565Procura de Acondicionamiento de Variadores y Paneles13/01/2020
+CREADA-3808-B-SP-000566Procura de Bombas Booster de Transferencia de Crudo13/01/2020
+CREADA-3808-B-SP-000567Suministro y montaje de extintores de CO213/01/2020
+CREADA-3808-B-SP-000568Reconformación vial Culebra 21 a Culebra 0113/01/2020
+CREADA-3808-B-SP-000569Prueba Hidrostatica de Línea de Flujo Auca 45-Auca 8913/01/2020
+CREADA-3808-B-SP-000570Trabajos para Sistemas de Químicos y Bayoneta (ACAG-223)13/01/2020
+CREADA-3808-B-SP-000571Sistema de Inyección de Químicos Culebra 0813/01/2020
+CREADA-3808-B-SP-000572Procura de Electric Distribution Panel y Separador Trifásico13/01/2020
+CREADA-3808-B-SP-000573Procura deTransformador Reductor S.E. 34,513,8 kV13/01/2020
+CREADA-3808-B-SP-000574Línea de flujo y bayoneta (ACAH-091)13/01/2020
+CREADA-3808-B-SP-000575Trabajos Varios para Pozo ACAE-21113/01/2020
+CREADA-3808-B-SP-000576Bayoneta en Pozo CHSA-01413/01/2020
+CREADA-3808-B-SP-000577Conversión de Pozo ACAE-005 WDW a Productor13/01/2020
+CREADA-3808-B-SP-000578Trabajos para el Pozo ACSD-02213/01/2020
+CREADA-3808-B-SP-000579Trabajos para Locación Auca 13713/01/2020
+CREADA-3808-B-SP-000580Construcción Tramo de Dique para Cubetos13/01/2020
+CREADA-3808-B-SP-000581Trabajos para Sistemas de Químicos y Bayoneta (CNO-017)13/01/2020
+CREADA-3808-B-SP-000582Pruebas de Sincronismo Chonta Este13/01/2020
+CREADA-3808-B-SP-000583Repotenciación del Sistema de Transferencia Auca 2713/01/2020
+CREADA-3808-B-SP-000584Construcción de Accesos a Propiedades Aledañas13/01/2020
+CREADA-3808-B-SP-000585Análisis de Integridad Mecánica Líneas de Flujo13/01/2020
+CREADA-3808-B-SP-000586Trabajos Varios en Locación Pitalala 0113/01/2020
+CREADA-3808-B-SP-000587Reubicación de SWG de Bajo Voltaje Auca 2713/01/2020
+CREADA-3808-B-SP-000588Integridad Mecánica de Línea Existente13/01/2020
+CREADA-3808-B-SP-000589Mejoramiento y Construcción de Vía13/01/2020
+CREADA-3808-B-SP-000590Suministro y Montaje de 3ra Bomba de Transferencia de Agua13/01/2020
+CREADA-3808-B-SP-000591Comisionamiento de Equipos en Yulebra13/01/2020
+CREADA-3808-B-SP-000592Instalación de Protección Catódica13/01/2020
+CREADA-3808-B-SP-000593Construcción de Nuevo Cellar13/01/2020
+CREADA-3808-B-SP-000594Trabajos Varios en Locación Auca 12313/01/2020
+CREADA-3808-B-SP-000595Trabajos Varios en Locación Auca Sur 0213/01/2020
+CREADA-3808-B-SP-000596Reemplazo de Indicadores de Presión13/01/2020
+CREADA-3808-B-SP-000597Desmontaje y Transporte de Shelter13/01/2020
+CREADA-3808-B-SP-000598Aire Acondicionado Cuarto de Control13/01/2020
+CREADA-3808-B-SP-000599Ampliación de Shelter de Manifold Pozo ACAQ-6413/01/2020
+CREADA-3808-B-SP-000600Instalación Planchas Antideslizantes y Modificación de Manifold13/01/2020
+CREADA-3808-B-SP-000601Disposición de Suelo para Excavación13/01/2020
+CREADA-3808-B-SP-000602Construcción de Vía para Guillermo Rojas13/01/2020
+CREADA-3808-B-SP-000603Nuevas Bombas de Transferencia de Agua13/01/2020
+CREADA-3808-B-SP-000604Modificación de Bayoneta para Pozo ANCA-00113/01/2020
+CREADA-3808-B-SP-000605Facilidades Temporales Arranque Pozo ACAR-12813/01/2020
+CREADA-3808-B-SP-000606Accesos Mantenimiento T-129713/01/2020
+CREADA-3808-B-SP-000607Trabajos Post Prueba Hidrostática13/01/2020
+CREADA-3808-B-SP-000608Líneas de Interconexión13/01/2020
+CREADA-3808-B-SP-000609Sistema de Drenaje13/01/2020
+CREADA-3808-B-SP-000610Excavación en Puntos de Inspección para Fibra Óptica13/01/2020
+CREADA-3808-B-SP-000611Trabajos para Cierre Punch List13/01/2020
+CREADA-3808-B-SP-000612Pintura de Rombo de Seguridad13/01/2020
+CREADA-3808-B-SP-000613Trabajos para Propietarios de la Comunidad13/01/2020
+CREADA-3808-B-SP-000614Bombas para Re-inyección de Agua13/01/2020
+CREADA-3808-B-SP-000615Suministro y Montaje de Equipos de Superficie13/01/2020
+CREADA-3808-B-SP-000616Fabricación e Instalación de Bayoneta para pozo ACAF08613/01/2020
+CREADA-3808-B-SP-000617Facilidades para Plataforma nueva Yulebra E13/01/2020
+CREADA-3808-B-SP-000618Facilidades para Plataforma Nueva Anaconda C13/01/2020
+CREADA-3808-B-SP-000619Desalojo y Transporte de Material de Auca 28 a Rumipamba13/01/2020
+CREADA-3808-B-SP-000620Trabajos para Ingreso de Taladro a CLBC-040 WIW13/01/2020
+CREADA-3808-B-SP-000621Trabajos de Manejo de Aguas en la Locación Auca 5313/01/2020
+CREADA-3808-B-SP-000622Trabajos de Manejo de Aguas en Locación Auca 3513/01/2020
+CREADA-3808-B-SP-000623Trabajos de Manejo de Aguas en Locación Auca 2813/01/2020
+CREADA-3808-B-SP-000624Obras requeridas en la Locación Auca Sur 0113/01/2020
+CREADA-3808-B-SP-000625Trabajos Comunitarios13/01/2020
+CREADA-3808-B-SP-000626Trabajos para Facilidades de Químicos13/01/2020
+CREADA-3808-B-SP-000627Jaulas para Válvulas y Soportes de Hormigón para el Proyecto FC08.0713/01/2020
+CREADA-3808-B-SP-000628	Desarrollo de ingeniería básica fase civil para la vía y plataforma del PAD Yulebra E13/01/2020
+CREADA-3808-B-SP-000629Desarrollo de ingeniería básica fase civil para la vía y plataforma del PAD Anaconda C13/01/2020
+CREADA-3808-B-SP-000630Procura Rack de Comunicaciones Principal13/01/2020
+CREADA-3808-B-SP-000631Procura Rack de Comunicaciones13/01/2020
+CREADA-3808-B-SP-000632Procura Transformador trifásico seco13/01/2020
+CREADA-3808-B-SP-000633Procura de Panel Toas y Sistema 24 VDC13/01/2020
+CREADA-3808-B-SP-000634Trabajos para cierre de Punch List13/01/2020
+CREADA-3808-B-SP-000635Procura de plataforma y escalera de acceso13/01/2020
+CREADA-3808-B-SP-000636Procura de Plataforma y Escalera de Acceso13/01/2020
+CREADA-3808-B-SP-000637Procura de plataforma y escalera de acceso13/01/2020
+CREADA-3808-B-SP-000638Procura de plataformas y escaleras de acceso13/01/2020
+CREADA-3808-B-SP-000639 Asistencia al comisionado y puesta en marcha de switchgear13/01/2020
+CREADA-3808-B-SP-000640Conexión de Heaters del Motor en Área de Bombas13/01/2020
+CREADA-3808-B-SP-000641Sumidero Área de Bombas de Transferencia13/01/2020
+CREADA-3808-B-SP-000642Construcción de Calicatas en Vía Tortuga Sur 0113/01/2020
+CREADA-3808-B-SP-000643 Trabajos para Losa de Bombas Booster13/01/2020
+CREADA-3808-B-SP-000644Instalación de válvulas y Hot Tap en Locación Pitalala 113/01/2020
+CREADA-3808-B-SP-000645Alquiler de Grúa para Desmontaje de Shelter13/01/2020
+CREADA-3808-B-SP-000646Trabajos para ingreso de Workover en locación Auca 5213/01/2020
+CREADA-3808-B-SP-000647Facilidades para Pozo ACAG-051 Dual13/01/2020
+CREADA-3808-B-SP-000648Instalación de un tomamuestras de ¾” en la línea de descarga del tanque T-1297.13/01/2020
+CREADA-3808-B-SP-000649Instalación de Válvulas13/01/2020
+CREADA-3808-B-SP-000650Instalación de Válvulas Full Port13/01/2020
+CREADA-3808-B-SP-000651Instalación de un tomamuestras13/01/2020
+CREADA-3808-B-SP-000652Procura de Equipos13/01/2020
+CREADA-3808-B-SP-000653Cambio de línea de conducción CON-1713/01/2020
+CREADA-3808-B-SP-000654Instalación de Equipos Adicionales13/01/2020
+CREADA-3808-B-SP-000655Cambio de línea de conducción CON-1713/01/2020
+CREADA-3808-B-SP-000656Trabajos por Salida de Pozo13/01/2020
+CREADA-3808-B-SP-000657Procura de un Switchgear de Sincronismo de 480V13/01/2020
+CREADA-3808-B-SP-000658Obras requeridas en Anaconda A13/01/2020
+CREADA-3808-B-SP-000659Trabajos para Reparación de Interruptor13/01/2020
+CREADA-3808-B-SP-000660Trabajos para Interconexión de Línea de Reinyección13/01/2020
+CREADA-3808-B-SP-000661Construcción de Campamento13/01/2020
+CREADA-3808-B-SP-000662Suministro e instalación de codos en bajantes de agua lluvia13/01/2020
+CREADA-3808-B-SP-000663Traslado de tubería existente desde Auca 27 hasta Auca 5513/01/2020
+CREADA-3808-B-SP-000664Instalación de Instrumentos en LF de Culebra 1 a Yulebra13/01/2020
+CREADA-3808-B-SP-000665Instalación de iluminación en Plataforma Anaconda13/01/2020
+CREADA-3808-B-SP-000666Reparación de línea de conducción de 4in de Auca 25 a Auca Sur13/01/2020
+CREADA-3808-B-SP-000667Facilidades para un Pozo Adicional13/01/2020
+CREADA-3808-B-SP-000668Mantenimiento Preventivo de 2 Bombas HPS13/01/2020
+CREADA-3808-B-SP-000669Manejo de Fluidos en Auca 5313/01/2020
+CREADA-3808-B-SP-000670Cuadrillas de topografía13/01/2020
+CREADA-3808-B-SP-000671Construcción de Bordillo de Hormigón13/01/2020
+CREADA-3808-B-SP-000672Trabajos Comunitarios para los Sres. César Barragán y Paquito Guerrero13/01/2020
+CREADA-3808-B-SP-000673Montaje de Grating en Pozos Existentes13/01/2020
+CREADA-3808-B-SP-000674Reparación de Acceso Ángel Armijos13/01/2020
+CREADA-3808-B-SP-000675Procura e Instalación de Aire Acondicionado13/01/2020
+CREADA-3808-B-SP-000676Trabajos para Toma de Presiones13/01/2020
+CREADA-3808-B-SP-000677Instalación de calicatas para verificación de facilidades13/01/2020
+CREADA-3808-B-SP-000678Trabajos en cuellos de línea de Culebra 1 a Yulebra13/01/2020
+CREADA-3808-B-SP-000679Desalojo de arcilla hacia Auca 1313/01/2020
+CREADA-3808-B-SP-000680Construcción de plataforma y vía de acceso provisional13/01/2020
+CREADA-3808-B-SP-000681Construcción de un comedor temporal13/01/2020
+CREADA-3808-B-SP-000682Suministro y paso de cable de 5kV desde cellar hasta losa de vent box13/01/2020
+CREADA-3808-B-SP-000683Instalación de facilidad para tomamuestra en trampa recibidora13/01/2020
+CREADA-3808-B-SP-000684Suministro y montaje de 02 cabezales en las bombas de químicos13/01/2020
+CREADA-3808-B-SP-000685Mantenimiento de A/C13/01/2020
+CREADA-3808-B-SP-000686Limpieza de drenaje y protección de talud13/01/2020
+CREADA-3808-B-SP-000687Suministro e instalación de 2 extintores PQS de 125 lb.13/01/2020
+CREADA-3808-B-SP-000688Extensión de Vía Comunidad Rumipamba13/01/2020
+CREADA-3808-B-SP-000689Desarrollo de Ingeniería Básica para perforación de 4 Pozos13/01/2020
+CREADA-3808-B-SP-000690Trabajos varios13/01/2020
+CREADA-3808-B-SP-000691Mejoramiento de canal y estero13/01/2020
+CREADA-3808-B-SP-000692Transporte y entrega de una volqueta de lastre fino13/01/2020
+CREADA-3808-B-SP-000693Facilidades para Intervención de Pozos Cononaco 17 y Auca 1813/01/2020
+CREADA-3808-B-SP-000694Suministro de arena fina para área de aterrizaje13/01/2020
+CREADA-3808-B-SP-000695Instalación de planchas para deshabilitación de trampa API13/01/2020
+CREADA-3808-B-SP-000696Servicio de reparación e instalación de la cámara de empuje de la unidad HPS PCF 172013/01/2020
+CREADA-3808-B-SP-000697Inspección de turbina de flujo FQI-ACA-114C13/01/2020
+CREADA-3808-B-SP-000698Construcción de 4 nuevos cellar y sus facilidades13/01/2020
+CREADA-3808-B-SP-000699Construcción de cerca perimétrica13/01/2020
+CREADA-3808-B-SP-000700Obras requeridas para cierre de Punch List13/01/2020
+CREADA-3808-B-SP-000701Facilidades para Instalación de Medidor VX13/01/2020
+CREADA-3808-B-SP-000702Facilidades para Instalación de Medidor VX13/01/2020
+CREADA-3808-B-SP-000703Provisión de una volqueta de material mixto13/01/2020
+CREADA-3808-B-SP-000704Bayoneta para el Pozo YLBA-02013/01/2020
+CREADA-3808-B-SP-000705Procura de Equipos de Superficie13/01/2020
+CREADA-3808-B-SP-000706Procura de Equipos de Superficie13/01/2020
+CREADA-3808-B-SP-000707Cambio de transformador de 3.5 MVA a 3.0MVA13/01/2020
+CREADA-3808-B-SP-000708Construcción y montaje de bayoneta13/01/2020
+CREADA-3808-B-SP-000709Construcción de una nueva línea de agua13/01/2020
+CREADA-3808-B-SP-000710Montaje Torre Autosoportada en Auca 2713/01/2020
+CREADA-3808-B-SP-000711Bayoneta para Pozo Yulebra 1513/01/2020
+CREADA-3808-B-SP-000712Programa BL13/01/2020
+CREADA-3808-B-SP-000713Instalación de válvula en cubeto para tanques de control de fluido13/01/2020
+CREADA-3808-B-SP-000714Sistema de descargas de Protección Atmosférica13/01/2020
+CREADA-3808-B-SP-000715Transporte de material de excavación no contaminado13/01/2020
+CREADA-3808-B-SP-000716Instalación de tomamuestras varios puntos13/01/2020
+CREADA-3808-B-SP-000717Procura de Equipos de Superficie Auca-15413/01/2020
+CREADA-3808-B-SP-000718Cambio del tipo de fluido en registros de las tablas de calibración de los tanques de 500 BBL13/01/2020
+CREADA-3808-B-SP-000719Mantenimiento correctivo para bomba de químicos13/01/2020
+CREADA-3808-B-SP-000720Tendido, instalación y prueba de cables13/01/2020
+CREADA-3808-B-SP-000721Nivelación y compactación de área13/01/2020
+CREADA-3808-B-SP-000722Construcción de acceso a patio de bombas HPS13/01/2020
+CREADA-3808-B-SP-000723Retiro de Drip Pot13/01/2020
+CREADA-3808-B-SP-000724Cambio de acometida de sistema de distribución13/01/2020
+CREADA-3808-B-SP-000725Desarmado de cubeto13/01/2020
+CREADA-3808-B-SP-000726Facilidades para migración de cargas13/01/2020
+CREADA-3808-B-SP-000727Reposición de Cable Eléctrico13/01/2020
+CREADA-3808-B-SP-000728Entrega de material pétreo13/01/2020
+CREADA-3808-B-SP-000729Transporte de arcilla13/01/2020
+CREADA-3808-B-SP-000730Construcción de cubierta provisional para bomba booster existente13/01/2020
+CREADA-3808-B-SP-000731Instalación de medidor tipo turbina13/01/2020
+CREADA-3808-B-SP-000732Construcción de losa para bombas HPS y Equipos Eléctricos13/01/2020
+CREADA-3808-B-SP-000733Construcción de bayoneta para el Pozo ACAE 20713/01/2020
+CREADA-3808-B-SP-000734Obras requeridas para cierre de ítems de Punch List13/01/2020
+CREADA-3808-B-SP-000735Conexiones temporales para inyección de químicos del pozo ACAH-16013/01/2020
+CREADA-3808-B-SP-000736Obras requeridas en Yulebra 0313/01/2020
+CREADA-3808-B-SP-000737Servicio de inspección y reparación de bomba de químicos de 8 cabezales13/01/2020
+CREADA-3808-B-SP-000738Drenaje y Desmontaje del Manifold13/01/2020
+CREADA-3808-B-SP-000739Cierre de Ítems de Punch List fuera de alcance13/01/2020
+CREADA-3808-B-SP-000740Cierre de ítems de Punch List13/01/2020
+CREADA-3808-B-SP-000741Cotización de Balizas13/01/2020
+CREADA-3808-B-SP-000742Construcción de una nueva línea de agua desde el pozo ACAJ-154 hacia el pozo ACAJ-20313/01/2020
+CREADA-3808-B-SP-000743Aislamiento en Pisos de los Cuartos de Aire Acondicionado13/01/2020
+CREADA-3808-B-SP-000744Interconexión de bombas booster hacia bomba de transferencia13/01/2020
+CREADA-3808-B-SP-000745Retiro de material compuesto y alquiler de Frac Tank13/01/2020
+CREADA-3808-B-SP-000746Nuevo shelter para bombas de transferencia13/01/2020
+CREADA-3808-B-SP-000747Obras requeridas en pozos inyectores y productores13/01/2020
+CREADA-3808-B-SP-000748Obras Requeridas en Localización Existente Auca 8913/01/2020
+CREADA-3808-B-SP-000749Obras Requeridas en Localización Existente Auca 56 (2 POZOS)13/01/2020
+CREADA-3808-B-SP-000750Loseta para contención de trampa lanzadora Auca 12613/01/2020
+CREADA-3808-B-SP-000751Línea de Flujo de 10" Auca 51 - Auca Central (6Km)13/01/2020
+CREADA-3808-B-SP-000752Facilidades para Inyección13/01/2020
+CREADA-3808-B-SP-000753Arreglo y reconformación de vía13/01/2020
+CREADA-3808-B-SP-000754Cambio de manómetros13/01/2020
+CREADA-3808-B-SP-000755Trabajos para cierre de Punch List13/01/2020
+CREADA-3808-B-SP-000756Reemplazo del Rack existente en Cononaco Estación13/01/2020
+CREADA-3808-B-SP-000757Construcción de bayoneta en Auca 89 (pozo ACAJ-089)13/01/2020
+CREADA-3808-B-SP-000758Obras requeridas para cierre de ítems de Punch List13/01/2020
+CREADA-3808-B-SP-000759Reubicación de bombas existentes en Auca 2813/01/2020
+CREADA-3808-B-SP-000760Instalación de Cable Eléctrico y Fibra Óptica13/01/2020
+CREADA-3808-B-SP-000761Desalojo de Material de Excavaciones13/01/2020
+CREADA-3808-B-SP-000762Reubicación de generador e instalación de SWG de sincronismo13/01/2020
+CREADA-3808-B-SP-000763Facilidades de Desgasificación y Deshidratación Tempranas en Culebra 2113/01/2020
+CREADA-3808-B-SP-000764Instalación de bomba electrosumergible controlada mediante PLC13/01/2020
+CREADA-3808-B-SP-000765Construcción de 1 nuevo cellar13/01/2020
+CREADA-3808-B-SP-000766Direccionamiento de línea de alivio13/01/2020
+CREADA-3808-B-SP-000767Construcción de Cerramiento13/01/2020
+CREADA-3808-B-SP-000768Obras requeridas en la locación Anaconda A (Dos pozos)13/01/2020
+CREADA-3808-B-SP-000769Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-SP-000770Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-SP-000771Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-SP-000772Reubicación del Sistema de Reinyección de Rumiyacu a Cononaco13/01/2020
+CREADA-3808-B-SP-000773Sistema de Calentamiento y Repotenciación del Sistema de Transferencia de Crudo en Estación Yulebra13/01/2020
+CREADA-3808-B-SP-000774Sistema de Desgasificación y Transferencia Rumiyacu, Auca 126 y Tortuga Sur 113/01/2020
+CREADA-3808-B-SP-000775Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-SP-000776Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-SP-000777Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-SP-000778Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-SP-000779Construcción de cubeto con geomembrana13/01/2020
+CREADA-3808-B-SP-000780Seteo de los switch de presión a 2700 PSI13/01/2020
+CREADA-3808-B-SP-000781Cambio bomba de químicos13/01/2020
+CREADA-3808-B-SP-000782Servicio de revisión y/o reparación de las dos bombas neumáticas del KOD V-191413/01/2020
+CREADA-3808-B-SP-000783Desalojo de material excedente en Auca 13713/01/2020
+CREADA-3808-B-SP-000784Sistema de Reinyección Auca Sur 1 (Auca 20)13/01/2020
+CREADA-3808-B-SP-000785Reemplazo de Tanque de 10.000 BBL para Cononaco 613/01/2020
+CREADA-3808-B-SP-000786Reemplazo de conductores en acometidas de tablero AICO EDP-YLP-00113/01/2020
+CREADA-3808-B-SP-000787Provisión de Material Triturado13/01/2020
+CREADA-3808-B-SP-000788Mejoras Civiles en PAD´S13/01/2020
+CREADA-3808-B-SP-000789Limpieza de Cellar y Construcción de base de cemento de Cellar Pozo ACAJ-09413/01/2020
+CREADA-3808-B-SP-000790Limpieza de Cellar y Construcción de base de cemento de Cellar Pozo ACAJ-15413/01/2020
+CREADA-3808-B-SP-000791Procura de cable de aluminio de 3x250MCM, 35kV13/01/2020
+CREADA-3808-B-SP-000792Repotenciación Culebra 0513/01/2020
+CREADA-3808-B-SP-000793Modificación de Líneas para el Proyecto FC08.0813/01/2020
+CREADA-3808-B-SP-000794Modificación líneas alta presión13/01/2020
+CREADA-3808-B-SP-000795Campamento y Oficinas Fase 2 (Acabados)13/01/2020
+CREADA-3808-B-SP-000796Implementación de Antorchas Encapsuladas en Plataformas13/01/2020
+CREADA-3808-B-SP-000797Trabajos de inclusión al alcance13/01/2020
+CREADA-3808-B-SP-000798Corte, relleno y reconformación de plataforma PAD Auca1613/01/2020
+CREADA-3808-B-SP-000799Facilidades 6 pozos workover nuevos13/01/2020
+CREADA-3808-B-SP-000800Facilidades para intervención del Pozo Auca 2013/01/2020
+CREADA-3808-B-SP-000801Trabajos para Humberto Gordillo13/01/2020
+CREADA-3808-B-SP-000802Precomisionado de bombas HPS (por ALS)13/01/2020
+CREADA-3808-B-SP-000803Desmontaje de cables de instrumentación y potencia para instalación de HUB13/01/2020
+CREADA-3808-B-SP-000804Cambio de potencia de bomba en locación Auca 8913/01/2020
+CREADA-3808-B-SP-000805Instalación de transmisor de presión diferencial en tk de 1500 bls13/01/2020
+CREADA-3808-B-SP-000806Reemplazo de cable 15 KV sustraído en el DDV - Chonta Sur 0113/01/2020
+CREADA-3808-B-SP-000807Muestreo de suelo para análisis TPH13/01/2020
+CREADA-3808-B-SP-000808Desconexión y retiro de tubería roscada de 5 1/2"13/01/2020
+CREADA-3808-B-SP-000809Reubicación de chatarra para construcción de cuneta perimetral en Plataforma Auca 5513/01/2020
+CREADA-3808-B-SP-000810Facilidades Nuevas para Actividades de Workover (Fase 2)13/01/2020
+CREADA-3808-B-SP-000811Reubicación Transformador de Auca 28 a Cononaco 2113/01/2020
+CREADA-3808-B-SP-000812Trabajos para propietarios y reconformación de vía de acceso para proyecto13/01/2020
+CREADA-3808-B-SP-000813Obras requeridas en locación Auca 12313/01/2020
+CREADA-3808-B-SP-000814Procura de equipos de superficie Chonta Sur-00513/01/2020
+CREADA-3808-B-SP-000815Emisión de Nuevas Tablas de Calibración de Tanques13/01/2020
+CREADA-3808-B-SP-000816Análisis de Tierra y Desalojo para el Proyecto13/01/2020
+CREADA-3808-B-SP-000817Desalojo de tierras13/01/2020
+CREADA-3808-B-SP-000818Desalojo de tierras13/01/2020
+CREADA-3808-B-SP-000819Toma de muestra de suelo según Tabla 6 y movimiento de suelos hacia disposición final13/01/2020
+CREADA-3808-B-SP-000820Toma de muestra de suelo según Tabla 6 y movimiento de suelos hacia disposición final13/01/2020
+CREADA-3808-B-SP-000821Toma de muestra de suelo según Tabla 6 y movimiento de suelos hacia disposición final13/01/2020
+CREADA-3808-B-SP-000822Toma de muestra de suelo según Tabla 6 y movimiento de suelos hacia disposición final13/01/2020
+CREADA-3808-B-SP-000823Toma de muestra de suelo según Tabla 6 y movimiento de suelos hacia disposición final13/01/2020
+CREADA-3808-B-SP-000824Servicio de alquiler de retroexcavadora13/01/2020
+CREADA-3808-B-SP-000825Toma de muestra de suelo según Tabla 6 y movimiento de suelos hacia disposición final13/01/2020
+CREADA-3808-B-SP-000826Toma de muestra de suelo según Tabla 6 y movimiento de suelos hacia disposición final13/01/2020
+CREADA-3808-B-SP-000827Toma de muestra de suelo según Tabla 6 y movimiento de suelos para proyecto FC02.5313/01/2020
+CREADA-3808-B-SP-000828Reubicación de alambre de púas a las nuevas áreas indemnizadas según requerimiento de Sr. Paquito Guerrero13/01/2020
+CREADA-3808-B-SP-000829Toma de muestra de suelo según Tabla 6 y movimiento de suelos para proyecto FC09.3413/01/2020
+CREADA-3808-B-SP-000830Provisión de Terminales de Ojo13/01/2020
+CREADA-3808-B-SP-000831Provisión de Materiales previo al arranque línea de flujo13/01/2020
+CREADA-3808-B-SP-000832Facilidad para Secuestrante de Oxígeno13/01/2020
+CREADA-3808-B-SP-000833Reconformación y Construcción de Acceso Peatonal13/01/2020
+CREADA-3808-B-SP-000834Modificación para los armarios metálicos de los UPS para CNO-07 y CNO-2113/01/2020
+CREADA-3808-B-SP-000835Modificación para los armarios metálicos de los UPS Auca Sur13/01/2020
+CREADA-3808-B-SP-000836Instalación de redundancia a la válvula de recirculación13/01/2020
+CREADA-3808-B-SP-000837Retiro de tuberías existentes13/01/2020
+CREADA-3808-B-SP-000838Provisión de Material Triturado Fino y Arena13/01/2020
+CREADA-3808-B-SP-000839Reconformación de vía de acceso desde
+Culebra 21 hacia Culebra 01 Abs. 3+80013/01/2020
+CREADA-3808-B-SP-000840Interconexión del Tablero de Sincronismo y Nuevo SWG13/01/2020
+CREADA-3808-B-SP-000841Procura e instalación de tarjeta para aire del variador del PCR13/01/2020
+CREADA-3808-B-SP-000842Montaje de Válvulas13/01/2020
+CREADA-3808-B-SP-000843Cambio en la estrategia de Inyección del PAD Culebra 2113/01/2020
+CREADA-3808-B-SP-000844Reconformación de plataforma Yuca 15 para ingreso de Workover13/01/2020
+CREADA-3808-B-SP-000845Actualización de ingeniería para desplazamiento de facilidades dentro del límite ambiental13/01/2020
+CREADA-3808-B-SP-000846Arreglo vía de acceso Cononaco 07 y provisión de material13/01/2020
+CREADA-3808-B-SP-000847Retageo y certificación ASME de KOD de alta y baja de Yulebra13/01/2020
+CREADA-3808-B-SP-000848Reconformación de vía de acceso a Culebra 2113/01/2020
+CREADA-3808-B-SP-000849Procura de transformador 850KVA 3PH para ACAG-19113/01/2020
+CREADA-3808-B-SP-000850Material Pétreo Culebra 2113/01/2020
+CREADA-3808-B-SP-000851Obras requeridas en Estación Yulebra13/01/2020
+CREADA-3808-B-SP-000852Reinstalación de medidor de Auca Sur a Auca 5113/01/2020
+CREADA-3808-B-SP-000853Instalación de control con válvula autoreguladora para Cononaco13/01/2020
+CREADA-3808-B-SP-000854Retiro y bodegaje de tableros13/01/2020
+CREADA-3808-B-SP-000855Recalibración de Instrumentos13/01/2020
+CREADA-3808-B-SP-000856Tablas de calibración de tanques de Yuca T1349 y T1350 de 500 bls c/u.13/01/2020
+CREADA-3808-B-SP-000857Reconformación Vial Culebra 1 Culebra 2113/01/2020
+CREADA-3808-B-SP-000858Trabajos adicionales en Cononaco 20 y Cononaco 2413/01/2020

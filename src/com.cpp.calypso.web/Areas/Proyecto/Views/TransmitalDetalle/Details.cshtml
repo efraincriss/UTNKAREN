@@ -1,0 +1,79 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.Dto.TransmitalDetalleDto
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Transmital Adjunto Información</h2>
+                    </div>
+
+                    <div class="col" align="right">
+                        @Html.ActionLink("Regresar", "Details", "TransmitalCabecera", new { id = Model.Transmital.Id }, new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <dl class="dl-horizontal col-sm-6">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TransmitalId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Transmital.descripcion)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.codigo_detalle)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.codigo_detalle)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.descripcion)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.descripcion)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.version)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.version)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.nro_hojas)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.nro_hojas)
+                        </dd>
+                    </dl>
+                    <dl class="dl-horizontal col-sm-6">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.nro_copias)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.nro_copias)
+                        </dd>
+
+                        
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

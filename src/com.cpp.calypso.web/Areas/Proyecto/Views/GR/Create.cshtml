@@ -1,0 +1,58 @@
+﻿@model com.cpp.calypso.web.Areas.Proyecto.Models.CreateGrViewModel
+
+@{
+    ViewBag.Title = "GR";
+}
+
+@section page_title {<i class="fa fa-unlock-alt"></i>GR}
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Gr.monto_ingenieria)
+                @Html.HiddenFor(model => model.Gr.monto_construccion)
+                @Html.HiddenFor(model => model.Gr.monto_suministros)
+                @Html.HiddenFor(model => model.Gr.monto_total)
+                @Html.HiddenFor(model => model.Gr.vigente)
+                @Html.HiddenFor(model => model.Gr.Id)
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Gr.ProyectoId)
+
+                    @Html.DropDownListFor(model => model.Gr.ProyectoId, new SelectList(Model.Proyectos, "Id", "codigo"), "Selecciona un proyecto", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Gr.ProyectoId, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Gr.fecha_registro)
+                            @Html.EditorFor(model => model.Gr.fecha_registro, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Gr.fecha_registro, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Gr.numero_gr)
+                            @Html.EditorFor(model => model.Gr.numero_gr, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Gr.numero_gr, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                @Html.ActionLink("Regresar", "Index", "GR", null, new { @class = "btn btn-outline-primary" })
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,200 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.Dto.RequisitosDto
+
+@{
+	ViewBag.Title = "Editar Requisito";
+}
+
+@section css {
+	@Styles.Render("~/Content/bundle_css_react")
+}
+
+<style>
+
+	.margen {
+		margin-top: 30px;
+	}
+</style>
+
+@section page_title {<i class="fa fa-unlock-alt"></i> Administración de Requisito}
+
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-sm-12 col-md-8">
+		<div align="right" style="margin-bottom: 0.5em;">
+
+		</div>
+		<div id="content-editar-requisitos">
+
+		</div>
+
+	</div>
+</div>
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/editar_requisitos.js"></script>
+
+@*<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-sm-12 col-md-8">
+			<div align="right" style="margin-bottom: 0.5em;">
+
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h2 class="card-title">Administración de Requisito</h2>
+
+					@using (Html.BeginForm())
+					{
+						@Html.AntiForgeryToken()
+
+					<div class="form-horizontal">
+
+
+						@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+						@Html.HiddenFor(model => model.Id)
+
+						<div class="row">
+							<div class="col">
+								<div class="form-group">
+									* @Html.LabelFor(model => model.cat_requisito_id):
+									@Html.DropDownListFor(model => model.cat_requisito_id, new SelectList(""), new { @class = "form-control" })
+									@Html.ValidationMessageFor(model => model.cat_requisito_id, "", new { @class = "text-danger" })
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-group">
+									* @Html.LabelFor(model => model.codigo):
+									@Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @class = "form-control" } })
+									@Html.ValidationMessageFor(model => model.codigo, "", new { @class = "text-danger" })
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<div class="form-group">
+									* @Html.LabelFor(model => model.nombre):
+									@Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+									@Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-group">
+									* @Html.LabelFor(model => model.responsable_id):
+									@Html.DropDownListFor(model => model.responsable_id, new SelectList(""), new { @class = "form-control" })
+									@Html.ValidationMessageFor(model => model.responsable_id, "", new { @class = "text-danger" })
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<div class="form-group">
+									* @Html.LabelFor(model => model.descripcion):
+									@Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
+									@Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-group" style="margin-top: 35px;">
+									* @Html.LabelFor(model => model.caducidad):&nbsp;
+									@Html.EditorFor(model => model.caducidad)
+									@Html.ValidationMessageFor(model => model.caducidad, "", new { @class = "text-danger" })
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+							</div>
+							<div class="col">
+								<div class="form-group" id="t_vigencia">
+									* @Html.LabelFor(model => model.tiempo_vigencia):
+									@Html.EditorFor(model => model.tiempo_vigencia, new { htmlAttributes = new { @class = "form-control" } })
+									@Html.ValidationMessageFor(model => model.tiempo_vigencia, "", new { @class = "text-danger" })
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-md-offset-2 col-md-10">
+								<button type="submit" class="btn btn-outline-primary fa fa-save"> Guardar</button>
+								@Html.ActionLink(" Cancelar", "Index", "Requisitos", new { @class = "btn btn-outline-primary fa fa-arrow-left", style = "margin-right: 0.3em;" })
+
+							</div>
+						</div>
+					</div>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	@section Scripts {
+		<script>
+			$(document).ready(function () {
+				var id_requisito = '3017';
+				var id_responsable = '3018';
+
+				if ($("#caducidad").is(':checked')) {
+					//console.log('checked'); // checked
+					$("#t_vigencia").show();
+				} else {
+					//console.log('no');
+					$("#t_vigencia").hide();
+				}
+
+				console.log(@Model.cat_requisito_id);
+
+				// Cargar requisitos
+				$.get("/Requisitos/GetCatalogosPorTipoApi/?",
+					{ Id: id_requisito },
+					function (data) {
+
+						$("#cat_requisito_id").empty();
+
+						$("#cat_requisito_id").append("<option value=''>Seleccione Requisito</option>");
+
+						$.each(jQuery.parseJSON(data),
+							function (index, row) {
+								//console.log(index, row);
+								$("#cat_requisito_id")
+									.append("<option value='" + row.Id + "'>" + row.nombre + "</option>");
+							});
+
+						$("#cat_requisito_id option[value=" + @Model.cat_requisito_id + "]").attr("selected", true);
+
+					});
+
+				// Cargar responsable de requisito 3018
+				$.get("/Requisitos/GetCatalogosPorTipoApi/?",
+					{ Id: id_responsable },
+					function (data) {
+
+						$("#responsable_id").empty();
+
+						$("#responsable_id").append("<option value=''>Seleccione Responsable de requisito</option>");
+
+						$.each(jQuery.parseJSON(data),
+							function (index, row) {
+								//console.log(index, row);
+								$("#responsable_id")
+									.append("<option value='" + row.Id + "'>" + row.nombre + "</option>");
+							});
+
+						$("#responsable_id option[value=" + @Model.responsable_id + "]").attr("selected", true);
+					});
+
+				// Verificar si existe o no caducidad
+				$("#caducidad").change(function () {
+
+					if ($("#caducidad").is(':checked')) {
+						//console.log('checked'); // checked
+						$("#t_vigencia").show();
+					} else {
+						//console.log('no');
+						$("#t_vigencia").hide();
+					}
+
+				});
+
+			});
+		</script>
+	}*@

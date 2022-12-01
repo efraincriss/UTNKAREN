@@ -1,0 +1,21 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.Dto.RequisitoServicioDto>
+
+@section page_title
+{
+	<h2>Administración de Requisitos por Servicio</h2>
+}
+
+@section css {
+	@Styles.Render("~/Content/bundle_css_react")
+}
+
+@section page_toolbar {
+	<br />
+	<div class="btn-toolbar" role="toolbar" style="float: right; margin-right: 2em;">
+		@Html.ActionLink("  Nuevo", "Create", "RequisitoServicio", new { @class = "btn btn-primary pull-right fa fa-plus" })
+	</div>
+}
+
+<div id="content-requisitos-servicio"></div>
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/requisitos_servicio.js"></script>

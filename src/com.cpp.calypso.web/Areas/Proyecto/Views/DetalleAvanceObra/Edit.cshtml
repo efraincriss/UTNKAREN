@@ -1,0 +1,55 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.DetalleAvanceObraDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Avance de Obra</h2>
+                <hr />
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+                    @Html.HiddenFor(model => model.AvanceObraId)
+                    @Html.HiddenFor(model => model.ComputoId)
+                    @Html.HiddenFor(model => model.precio_unitario)
+                    @Html.HiddenFor(model => model.vigente)
+                    @Html.HiddenFor(model => model.total)
+                    @Html.HiddenFor(model => model.cantidad_acumulada_anterior)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.cantidad_acumulada)
+                        @Html.EditorFor(model => model.cantidad_acumulada, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.cantidad_acumulada, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha_registro)
+                        @Html.EditorFor(model => model.fecha_registro, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.fecha_registro, "", new { @class = "text-danger" })
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                        @Html.ActionLink("Regresar", "Details", "AvanceObra", new { id = Model.AvanceObraId }, new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

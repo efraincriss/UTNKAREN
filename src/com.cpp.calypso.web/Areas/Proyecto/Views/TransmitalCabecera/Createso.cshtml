@@ -1,0 +1,332 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.TransmitalCabeceraDto
+
+@{
+    ViewBag.Title = "Createso";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.Msg != null)
+{
+
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-xs-12 col-md-8">
+            <div class="alert alert-danger" role="alert">
+                <div class="row">
+
+
+                    <div class="col-sm-11 align-middle">
+                        @ViewBag.Msg
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+@section page_title {<i class="fa fa-unlock-alt"></i> Informacion del Transmital}
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                @Html.HiddenFor(model => model.codigo_carta)
+                @Html.HiddenFor(model => model.fecha_ultima_modificacion)
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EmpresaId)
+
+                            @Html.DropDownListFor(model => model.EmpresaId, new SelectList(Model.Empresas, "Id", "razon_social"), "Seleccione Empresa", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.EmpresaId, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ClienteId)
+
+                            @Html.DropDownListFor(model => model.ClienteId, new SelectList(Model.Clientes, "Id", "razon_social"), "Seleccione Cliente", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ContratoId)
+
+                            @Html.DropDownListFor(model => model.ContratoId, new SelectList(""), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ContratoId, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.OfertaComercialId)
+
+                            @Html.DropDownListFor(model => model.OfertaComercialId, new SelectList(""), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.OfertaComercialId, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col">
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.codigo_transmital)
+                            @Html.DisplayFor(model => model.codigo_transmital)
+                            @Html.EditorFor(model => model.codigo_transmital, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.codigo_transmital, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.estado)
+
+                            @Html.DropDownListFor(model => model.estado, new List<SelectListItem>
+                            {
+                                new SelectListItem {Text = "Generado", Value ="1"},
+                                new SelectListItem {Text = "Enviado", Value = "2"},
+                                new SelectListItem {Text = "Anulado", Value = "3"}
+                            },"Seleccione Estado", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.fecha_emision)
+
+                            @Html.EditorFor(model => model.fecha_emision, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.fecha_emision, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.fecha_recepcion)
+
+                            @Html.EditorFor(model => model.fecha_recepcion, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.fecha_recepcion, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.descripcion)
+
+                    @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+
+                        <div class="form-group">
+                           
+                            @Html.LabelFor(model => model.enviado_por)
+
+                            @Html.EditorFor(model => model.enviado_por, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.enviado_por, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.dirigido_a)
+                         
+                            @Html.EditorFor(model => model.dirigido_a, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.dirigido_a, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    @Html.LabelFor(model => model.copia_a)
+
+                    @{ var group1 = new SelectListGroup() { Name = "CPP" };
+
+
+                        var group2 = new SelectListGroup() { Name = "Shaya" };}
+                        @Html.DropDownListFor(model => model.SelectedValues, new List<SelectListItem>
+                       {
+
+
+                                new SelectListItem {Text = "Jhonathan Nayir", Value ="Jhonathan Nayir",Group = group1  },
+                                new SelectListItem {Text = "Claudio Perillo", Value = "Claudio Perillo",Group = group1},
+                                new SelectListItem {Text = "Juan Ignacio Campo", Value = "Juan Ignacio Campo",Group = group1},
+
+
+                                new SelectListItem {Text = "Juan Jose Alvo", Value ="Juan Jose Alvo",Group = group2  },
+                                new SelectListItem {Text = "Omar Rodriguez", Value = "Omar Rodriguez",Group = group2},
+                                new SelectListItem {Text = "Xavier Tapia", Value = "Xavier Tapia",Group = group2}
+                            }, new {@class = "form-control", multiple = "multiple" })
+                            @Html.ValidationMessageFor(model => model.copia_a, "", new { @class = "text-danger" })
+
+                        </div>
+
+                <div class="form-group">
+                    @* @Html.LabelFor(model => model.archivos)*@
+
+                    @Html.HiddenFor(model => model.archivos, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.archivos, "", new { @class = "text-danger" })
+
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                    @Html.ActionLink("Cancelar", "IndexTransmital", "TransmitalCabecera", new { id = Model.OfertaId }, new { @class = "btn btn-outline-primary" })
+                              </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#EmpresaId").change(function () {
+                var Empresa = $(this).val();
+                if (Empresa > 0) {
+                    var ClienteIds = $(ClienteId).val();
+                    if (ClienteIds > 0) {
+
+                        $.get("/Proyecto/TransmitalCabecera/ObtenerContratosEC/?",
+                            { id: Empresa, id2: ClienteIds },
+                            function (data) {
+
+                                $("#ContratoId").empty();
+
+                                $("#ContratoId").append("<option value='0'>Seleccione Contrato</option>");
+                                $.each(JSON.parse(data),
+                                    function (index, row) {
+                                        $("#ContratoId")
+                                            .append("<option value='" + row.Id + "'>" + row.Codigo + "</option>");
+                                    });
+                            });
+                    } else {
+                        $("#ContratoId").empty();
+                        $("#ContratoId").append("<option value='0'>Seleccione Contrato</option>");
+                    }
+                }
+                else {
+                    $("#ContratoId").empty();
+                    $("#ContratoId").append("<option value='0'>Seleccione Contrato</option>");
+                }
+            })
+
+            $("#ClienteId").change(function () {
+                var Empresa = $("#EmpresaId").val();
+                var ClienteIds = $(this).val();
+                if (ClienteIds > 0) {
+                    if (Empresa > 0) {
+
+                        $.get("/TransmitalCabecera/ObtenerContratosEC/?",
+                            { id: Empresa, id2: ClienteIds },
+                            function (data) {
+
+                                $("#ContratoId").empty();
+
+                                $("#ContratoId").append("<option value='0'>Seleccione Contrato</option>");
+                                $.each(JSON.parse(data),
+                                    function (index, row) {
+                                        $("#ContratoId")
+                                            .append("<option value='" + row.Id + "'>" + row.Codigo + "</option>");
+                                    });
+                            });
+                    } else {
+                        $("#ContratoId").empty();
+                        $("#ContratoId").append("<option value='0'>Seleccione Contrato</option>");
+                    }
+                } else {
+                    $("#ContratoId").empty();
+                    $("#ContratoId").append("<option value='0'>Seleccione Contrato</option>");
+                    }
+            })
+
+
+            $("#ContratoId").change(function () {
+                var Contrato = $("#ContratoId").val();
+                var ContratoIds = $(this).val();
+                if (ContratoIds > 0) {
+
+                    $.get("/TransmitalCabecera/ObtenerOfertas/?",
+                        { id: ContratoIds },
+                        function (data) {
+
+                            $("#OfertaId").empty();
+
+                            $("#OfertaId").append("<option value='0'>Seleccione Oferta</option>");
+                            $.each(JSON.parse(data),
+                                function (index, row) {
+                                    $("#OfertaId")
+                                        .append("<option value='" + row.Id + "'>" + row.codigo + "</option>");
+                                });
+                        });
+                } else {
+                    $("#OfertaId").empty();
+                    $("#OfertaId").append("<option value='0'>Seleccione Oferta</option>");
+                }
+            })
+
+
+            $("#OfertaId").change(function () {
+                var codigotransmital = $("#codigo_transmital").val();
+                var ofe = $(this).val();
+               
+                if (ofe > 0) {
+            
+                    $.get("/TransmitalCabecera/DetalleOferta/?",
+                        { id: ofe },
+                        function (data) {
+                            var objeto = JSON.parse(data);
+                            console.log(objeto)
+                           
+                            $("#codigo_transmital").val(objeto['contrato'] + "-B-TD-" + objeto['contador']);
+                            $("#descripcion").val(objeto['descripcionoferta'] );
+                        });
+                   
+                } else {
+                    $("#codigo_transmital").val("");
+                    $("#descripcion").val("");
+                }
+            })
+        });
+    </script>
+}
+

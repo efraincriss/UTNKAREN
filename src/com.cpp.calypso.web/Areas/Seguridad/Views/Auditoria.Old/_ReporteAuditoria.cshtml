@@ -1,0 +1,11 @@
+﻿@model AuditoriaCriteria
+@Html.ReportViewer("Auditoria", new
+{
+    IdentificacionUsuario = Model.Identificador, 
+    Usuario = Model.Usuario, 
+    Funcionalidad = Model.Funcionalidad, 
+    Accion = Model.Accion, 
+    FechaInicio = Model.FechaInicio, 
+    FechaFin = Model.FechaFinal,
+    UsuarioLoguin = ViewBag.CurrentUser
+})

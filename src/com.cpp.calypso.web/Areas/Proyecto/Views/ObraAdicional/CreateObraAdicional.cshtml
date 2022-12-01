@@ -1,0 +1,51 @@
+﻿@model com.cpp.calypso.web.Areas.Proyecto.Models.CreateObraAdicionalViewModel
+
+@{
+    ViewBag.Title = "CreateObraAdicional";
+}
+
+<link href="~/Content/css/omega/theme.css" rel="stylesheet" />
+<link href="~/Content/css/primereact.min.css" rel="stylesheet" />
+<link href="~/Content/css/primeicons.css" rel="stylesheet" />
+<link href="~/Content/css/block-ui.css" rel="stylesheet" />
+<link href="~/Content/css/time-picker.css" rel="stylesheet" />
+<div id="OfertaId" class="@Model.OfertaId"></div>
+<div id="AvanceId" class="@Model.AvanceObraId"></div>
+
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h4 class="card-title">Registro de obras adicionales</h4>
+                    </div>
+                    <div class="col" align="right">
+                        @Html.ActionLink("Regresar", "Details", "AvanceObra", new { id = Model.AvanceObraId }, new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Código Avance de Obra:</b>  @Model.codigo_avance_obra</h6>
+                        <h6><b>Fecha Presentación:</b> @Model.fecha_presentacion</h6>
+                        <h6><b>Nombre Proyecto:</b> @Model.nombre_proyecto</h6>
+                    </div>
+                </div>
+
+                <hr />
+                <div class="row">
+                    <div class="col">
+                        <div id="content-obra-adicional">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/build/obra_adicional.js"></script>
+

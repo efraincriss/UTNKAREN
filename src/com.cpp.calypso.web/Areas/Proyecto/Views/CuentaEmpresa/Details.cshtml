@@ -1,0 +1,70 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.CuentaEmpresaDto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Detallles de la cuenta</h2>
+                    </div>
+
+                    <div class="col" align="right">
+                        @Html.ActionLink("Editar", "Edit", "CuentaEmpresa", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+                        @Html.ActionLink("Regresar", "Details", "Empresa", new { id = Model.EmpresaId }, new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+                <hr />
+                
+                <div>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.tipo_cuenta)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.tipo_cuenta)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.numero_cuenta)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.numero_cuenta)
+                        </dd>
+
+                        <dt>
+                            Empresa
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Empresa.identificacion)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.InstitucionFinancieraId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.InstitucionFinanciera.nombre)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.estado)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.estado)
+                        </dd>
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

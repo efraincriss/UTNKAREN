@@ -1,0 +1,41 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.Dto.HorarioDto
+
+@{
+    ViewBag.Title = "Detalles Horario";
+}
+
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Detalles Horario</h4>
+                    </div>
+                    <div class="col" align="right">
+                        @Html.ActionLink(" Editar", "Edit", "Horario", new { id = Model.Id }, new { @class = "btn btn-outline-primary fa fa-edit", style = "margin-right: 0.3em;" })
+                        @Html.ActionLink(" Cancelar", "Index", "Horario", new { @class = "btn btn-outline-primary fa fa-arrow-left", style = "margin-right: 0.3em;" })
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>@Html.DisplayNameFor(model => model.codigo):</b> @Html.DisplayFor(model => model.codigo)</h6>
+                        <h6><b>@Html.DisplayNameFor(model => model.nombre):</b> @Html.DisplayFor(model => model.nombre)</h6>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>@Html.DisplayNameFor(model => model.hora_inicio):</b> @Html.DisplayFor(model => model.h_inicio)</h6>
+                        <h6><b>@Html.DisplayNameFor(model => model.hora_fin):</b> @Html.DisplayFor(model => model.h_fin)</h6>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>@Html.DisplayNameFor(model => model.vigente):</b> @Html.DisplayFor(model => model.nombre_estado)</h6>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

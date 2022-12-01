@@ -1,0 +1,62 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.TipoCatalogoDto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@section page_title
+{
+    <h2>Catálogos</h2>
+}
+
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-bordered table-hover display">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.codigo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.tipo_ordenamiento)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.codigo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.tipo_ordenamiento)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Items", "Index", "Catalogo", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,344 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.ProyectoDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Información del Proyecto</h2>
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+                    @Html.HiddenFor(model => model.centroCostosId)
+                    @Html.HiddenFor(model => model.codigo_generado)
+                    @Html.HiddenFor(model => model.es_RSO)
+                    @Html.HiddenFor(model => model.certificable_ingenieria)
+                    @Html.HiddenFor(model => model.orden_timesheet)
+                    @Html.HiddenFor(model => model.ProyectoCerrado)
+                    @Html.HiddenFor(model => model.UbicacionId)
+                    @Html.HiddenFor(model => model.PortafolioId)
+                    @Html.HiddenFor(model => model.anio_certificacion_ingenieria)
+
+                    <div class="form-group">
+                        <!-- @Html.LabelFor(model => model.contratoId)-->
+
+                        @Html.HiddenFor(model => model.contratoId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.contratoId, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.codigo)
+
+                                @Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.codigo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.nombre_proyecto)
+
+                        @Html.EditorFor(model => model.nombre_proyecto, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nombre_proyecto, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.descripcion_proyecto)
+
+                        @Html.EditorFor(model => model.descripcion_proyecto, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.descripcion_proyecto, "", new { @class = "text-danger" })
+
+                    </div> <div class="form-group">
+                        @Html.LabelFor(model => model.alcance_basico)
+
+                        @Html.EditorFor(model => model.alcance_basico, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.alcance_basico, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    @*
+          <div class="form-group">
+              @Html.LabelFor(model => model.centroCostosId)
+
+              @Html.DropDownListFor(model => model.centroCostosId, new SelectList(ViewBag.centrocostos, "Id","nombre")
+        , null, new {@class = "form-control"} )
+              @Html.ValidationMessageFor(model => model.centroCostosId, "", new { @class = "text-danger" })
+
+          </div>
+                    *@
+
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.monto_ofertado)<br />
+                                @Html.DisplayTextFor(model => model.monto_ofertado)
+                                @Html.HiddenFor(model => model.monto_ofertado, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.monto_ofertado, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.monto_aprobado_orden_trabajo)<br />
+                                @Html.DisplayTextFor(model => model.monto_aprobado_orden_trabajo)
+                                @Html.HiddenFor(model => model.monto_aprobado_orden_trabajo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.monto_aprobado_orden_trabajo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.monto_certificado_orden_trabajo)<br />
+                                @Html.DisplayTextFor(model => model.monto_certificado_orden_trabajo)
+                                @Html.HiddenFor(model => model.monto_certificado_orden_trabajo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.monto_certificado_orden_trabajo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.monto_facturado)<br />
+                                @Html.DisplayTextFor(model => model.monto_facturado)
+                                @Html.HiddenFor(model => model.monto_facturado, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.monto_facturado, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.monto_cobrado)<br />
+                                @Html.DisplayTextFor(model => model.monto_cobrado)
+                                @Html.HiddenFor(model => model.monto_cobrado, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.monto_cobrado, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.periodo_garantia)<br />
+                                @Html.EditorFor(model => model.periodo_garantia, new { htmlAttributes = new { @class = "form-control", @id = "garantia" } })
+                                @Html.ValidationMessageFor(model => model.periodo_garantia, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.fecha_estimada_inicio)
+
+                                @Html.EditorFor(model => model.fecha_estimada_inicio, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.fecha_estimada_inicio, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.fecha_acta_entrega)
+
+                                @Html.EditorFor(model => model.fecha_acta_entrega, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.fecha_acta_entrega, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.fecha_estimada_fin)
+
+                                @Html.EditorFor(model => model.fecha_estimada_fin, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.fecha_estimada_fin, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.fecha_recepcion_provisoria)
+
+                                @Html.EditorFor(model => model.fecha_recepcion_provisoria, new { htmlAttributes = new { @class = "form-control", @id = "mob-gig-date-gteq" } })
+                                @Html.ValidationMessageFor(model => model.fecha_recepcion_provisoria, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.fecha_recepcion_definitiva)
+
+                                @Html.EditorFor(model => model.fecha_recepcion_definitiva, new { htmlAttributes = new { @class = "form-control", @id = "mob-gig-date-gted" } })
+                                @Html.ValidationMessageFor(model => model.fecha_recepcion_definitiva, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.estado_proyecto)
+                                <div class="col-md-10">
+                                    <div class="checkbox">
+                                        @Html.EditorFor(model => model.estado_proyecto)
+                                        @Html.ValidationMessageFor(model => model.estado_proyecto, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.codigo_ingenieria)
+
+                                @Html.EditorFor(model => model.codigo_ingenieria, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.codigo_ingenieria, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.responsable)
+
+                                @Html.DropDownListFor(model => model.responsable,
+                                    new SelectList(Enum.GetValues(typeof(Proyecto.Reponsable))), "Seleccione Estado", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.responsable, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.codigo_reporte_RDO)
+
+                                @Html.EditorFor(model => model.codigo_reporte_RDO, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.codigo_reporte_RDO, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.codigo_reporte_certificacion)
+
+                                @Html.EditorFor(model => model.codigo_reporte_certificacion, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.codigo_reporte_certificacion, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.codigo_interno)
+
+                                @Html.EditorFor(model => model.codigo_interno, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.codigo_interno, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.codigo_cliente)
+
+                                @Html.EditorFor(model => model.codigo_cliente, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.codigo_cliente, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.locacion)
+
+                                @Html.EditorFor(model => model.locacion, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.locacion, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <!-- @Html.LabelFor(model => model.vigente, htmlAttributes: new { @class = "control-label col-md-2" })-->
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.HiddenFor(model => model.vigente)
+                                @Html.ValidationMessageFor(model => model.vigente, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.periodo_curva)
+
+                                @Html.EditorFor(model => model.periodo_curva, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.periodo_curva, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.usar_logo_prederminado)
+                                <div class="col-md-10">
+                                    <div class="checkbox">
+                                        @Html.EditorFor(model => model.usar_logo_prederminado)
+                                        @Html.ValidationMessageFor(model => model.usar_logo_prederminado, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <input type="submit" value="Guardar" class="btn btn-outline-primary" onclick="return confirm('Esta seguro de Guardar este Registro?');" />
+
+                        @Html.ActionLink("Regresar", "Details", "Contrato", new { id = Model.contratoId }, new { @class = "btn btn-outline-primary", @onclick = "return confirm('Esta seguro de Cancelar este Registro?');" })
+
+
+                    </div>
+                </div>
+                    }
+
+                </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $("#garantia").blur(function () {
+        var date = new Date($("#mob-gig-date-gteq").val());
+        console.log(date, 'change')
+        console.log(moment.locale());
+        console.log(moment(date).format("YYYY-MM-DD"));
+        $('#mob-gig-date-gted').val(moment(date).add($("#garantia").val(), 'M').add(1, 'd').format("YYYY-MM-DD"));
+    });
+    $('#mob-gig-date-gteq').change(function () {
+        var date = new Date($("#mob-gig-date-gteq").val());
+        console.log(date, 'change')
+        console.log(moment.locale());
+        console.log(moment(date).format("YYYY-MM-DD"));
+        $('#mob-gig-date-gted').val(moment(date).add($("#garantia").val(), 'M').add(1, 'd').format("YYYY-MM-DD"));
+    });
+
+</script>

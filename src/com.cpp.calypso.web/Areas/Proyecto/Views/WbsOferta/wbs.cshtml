@@ -1,0 +1,48 @@
+﻿@model List<string[]>
+@{
+    ViewBag.Title = "wbs";
+}
+
+<div class="row">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-sm-12 col-md-8" align="right" style="padding-right: 0.4em; padding-bottom: 1em;">
+        @Html.ActionLink("Regresar", "Index", new {id = ViewBag.WbsOfertaId}, new {@class = "btn btn-outline-primary"})
+
+    </div>
+</div>
+
+<div class="row">
+    <div style="width: 100%;">
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th class="text-center">@ViewBag.Descripcion</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                @foreach (var r in Model)
+                                {
+                                    <td style="@r[2]" class="@r[1]">@r[0]</td>
+                                }
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+    </div>
+</div>
+

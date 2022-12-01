@@ -1,0 +1,187 @@
+﻿@using System.Globalization
+@model com.cpp.calypso.web.Areas.Proyecto.Models.CertificadoDetalleViewModel
+
+
+
+@{
+    /**/
+
+    ViewBag.Title = "Certificado";
+}
+
+@section css {
+
+    @Styles.Render("~/Content/bundle_css_react_primereact_v3")
+}
+<div id="Id" class="@Model.Certificado.Id" />
+
+@if (ViewBag.Error != null)
+{
+
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-xs-12 col-md-8">
+            <div class="alert alert-danger" role="alert">
+                <div class="row">
+
+
+                    <div class="col-sm-11 align-middle">
+                        @ViewBag.Error
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
+@if (ViewBag.Msg != null)
+{
+
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-xs-12 col-md-8">
+            <div class="alert alert-success" role="alert">
+                <div class="row">
+
+
+                    <div class="col-sm-11 align-middle">
+                        @ViewBag.Msg
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
+
+<div class="row">
+    <div style="width: 100%;">
+        <div class="card">
+
+            <div class="card-body">
+
+
+                <div class="row">
+                    <div class="col-4">
+                        <h4 class="card-title">Información Certificado</h4>
+                    </div>
+                    <div class="col-5" align="right">
+                        @Html.ActionLink("Descargar Certificación", "IndexExcel", "Certificado", new { id = Model.Certificado.Id, id2 = Model.Certificado.ProyectoId }, new { @class = "btn btn-outline-primary btn-sm", style = "margin-left: 0.3em" })
+
+                        @if (Model.Certificado.estado_actual == 0)
+                        {
+                            <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Aprobar", "DetalleCertificado", new {id = Model.Certificado.Id})" method="post" class="d-inline">
+                                <input type="submit" value="Aprobar" class="btn btn-outline-primary btn-sm" style="margin-left: 0.3em;" />
+                                @* @Html.ActionLink("Editar", "Edit", new { id = Model.Certificado.Id }, new { @class = "btn btn-outline-primary btn-sm", style = "margin-right: 0.3em;" })
+                                    @Html.ActionLink("Regresar", "Index", "Certificado", null, new { @class = "btn btn-outline-primary btn-sm", style = "margin-right: 0.3em;" })*@
+                            </form>
+                        }
+
+
+
+
+                    </div>
+
+                    <div id="cabecera" class="col-3" align="left">
+
+                    </div>
+
+                </div>
+                <hr />
+
+                <div class="row">
+                    <div class="col-xs-12 col">
+                        <h6><b>Proyecto: </b>@Model.Certificado.Proyecto.codigo -@Model.Certificado.Proyecto.descripcion_proyecto </h6>
+                        <h6><b>Certificado: </b>@Model.Certificado.numero_certificado </h6>
+                        <h6><b>Monto Certificado Total Sin AIU: </b>$ @String.Format(CultureInfo.InvariantCulture, "{0:0,0.00}", Model.montoTotalSinAIU) </h6>
+                        <h6><b>Monto Certificado Total Con AIU: </b>$ @String.Format(CultureInfo.InvariantCulture, "{0:0,0.00}", Model.montoTotalAIU) </h6>
+                    </div>
+
+                    <div class="col-xs-12 col">
+                        <h6><b>Estado: </b>  @(Model.Certificado.estado_actual == 1 ? "APROBADO" : "NO APROBADO")</h6>
+                        <h6><b>Fecha de Emisión: </b>  @Model.Certificado.fecha_emision.ToShortDateString()</h6>
+                        <h6><b>Fecha de Corte: </b>  @Model.Certificado.fecha_corte.ToShortDateString()</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="card" style="border: none;width:  100%;">
+        <div class="card-body">
+
+            <table class="table table-bordered table-hover display" style="font-size: 11px">
+                <thead>
+                    <tr>
+                        <th>Oferta</th>
+                        <th>Versión</th>
+                        <th>Item</th>
+                        <th>Descripción</th>
+                        <th>Monto Certificado</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model.detalles)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Oferta.codigo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Oferta.version)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Item.codigo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Item.descripcion)
+                            </td>
+                            <td style="text-align: right">
+                                $ @String.Format(CultureInfo.InvariantCulture, "{0:0,0.00}", item.monto_a_certificar)
+                            </td>
+
+                            <td style="width: 200px;">
+                                <div style="float: left">
+                                    <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", "DetalleCertificado", new {id = item.Id})" method="post" class="form-inline">
+                                        <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <th>Oferta</th>
+                        <th>Versión</th>
+                        <th>Nro Compra</th>
+                        <th>Fecha</th>
+                        <th>Valor</th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+
+            </table>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/new_cabecera.js"></script>

@@ -1,0 +1,82 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.Dto.NovedadDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm-12 col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Datos de la novedad</h2>
+                <hr />
+                @using (Html.BeginForm())
+                {
+
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.RequerimientoId)
+                @Html.HiddenFor(model => model.vigente)
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.descripcion)
+                    @Html.TextAreaFor(model => model.descripcion, new { @class = "form-control", rows = "3" })
+                    @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+
+                </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.fecha_novedad)
+
+                                @Html.EditorFor(model => model.fecha_novedad, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.fecha_novedad, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.fecha_solucion)
+
+                                @Html.EditorFor(model => model.fecha_solucion, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.fecha_solucion, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.solucion)
+
+                    @Html.TextAreaFor(model => model.solucion, new { @class = "form-control", rows = "3" })
+                    @Html.ValidationMessageFor(model => model.solucion, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.version, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.version, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.version, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-check">
+                    @Html.EditorFor(model => model.solucionada)
+                    @Html.LabelFor(model => model.solucionada)
+                    @Html.ValidationMessageFor(model => model.solucionada, "", new { @class = "text-danger" })
+                </div>
+
+                    <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                    @Html.ActionLink("Regresar", "Details", "Requerimiento", new { id = Model.RequerimientoId }, new { @class = " btn btn-outline-primary" })
+
+                }
+            </div>
+        </div>
+    </div>
+</div>

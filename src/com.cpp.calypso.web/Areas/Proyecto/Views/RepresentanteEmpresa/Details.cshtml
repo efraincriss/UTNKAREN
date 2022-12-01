@@ -1,0 +1,88 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.RepresentanteEmpresaDto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Representante legal</h2>
+                    </div>
+
+                    <div class="col" align="right">
+                        @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-primary" }) 
+                        @Html.ActionLink("Regresar", "Details", "Empresa", new { id = Model.EmpresaId}, new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+                <hr />
+                
+                <div>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.tipo_identificacion)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.tipo_identificacion)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.identificacion)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.identificacion)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.nombre)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.nombre)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.fecha_inicio)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.fecha_inicio)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.fecha_fin)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.fecha_fin)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.tipo_representante)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.tipo_representante)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.estado_representante)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.estado_representante)
+                        </dd>
+
+                    </dl>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+</div>

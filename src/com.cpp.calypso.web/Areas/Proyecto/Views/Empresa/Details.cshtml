@@ -1,0 +1,167 @@
+﻿@model com.cpp.calypso.web.Areas.Proyecto.Models.EmpresaRepresentanteCuentaViewModel
+
+@{
+    ViewBag.Title = "Detalles de la empresa";
+    var estado = Model.Empresa.estado == true ? "Activo" : "Inactivo";
+    var es_principal = Model.Empresa.es_principal == true ? "Es principal" : "No es principal";
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Detalles de la empresa</h4>
+                    </div>
+                
+                    <div class="col" align="right">
+                        @Html.ActionLink("Regresar", "Index", "Empresa", new { id = Model.Empresa.Id }, new { @class = " btn btn-outline-primary" })
+                        @Html.ActionLink("Editar Datos", "Edit", "Empresa", new { id = Model.Empresa.Id }, new { @class = " btn btn-outline-primary" })
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Identificación:</b> @Model.Empresa.identificacion</h6>
+                        <h6><b>Tipo Contribuyente:</b> @Model.Empresa.tipo_contribuyente</h6>
+                        <h6><b>Dirección:</b> @Model.Empresa.direccion</h6>
+                        <h6><b>Correo:</b> @Model.Empresa.correo</h6>
+                        <h6><b>Teléfono:</b> @Model.Empresa.telefono</h6>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Razón Social:</b> @Model.Empresa.razon_social</h6>
+                        <h6><b>Tipo Identificación:</b> @Model.Empresa.tipo_identificacion</h6>
+                        <h6><b>Estado:</b> @estado</h6>
+                        <h6><b>Tipo de Sociedad:</b> @Model.Empresa.tipo_sociedad</h6>
+                        <h6><b>Es Principal:</b> @es_principal</h6>
+                    </div>
+
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div style="width:  100%;">
+        
+        <ul class="nav nav-tabs" id="empresa_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="representantes-tab" data-toggle="tab" href="#representantes" role="tab" aria-controls="home" aria-expanded="true">Representantes de la Empresa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="cuentas-tab" data-toggle="tab" href="#cuentas" role="tab" aria-controls="profile">Cuentas de la Empresa</a>
+            </li>
+        </ul>
+        
+        
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="representantes" role="tabpanel" aria-labelledby="representantes-tab">
+                <div class="col" align="right">
+                    @Html.ActionLink("Nuevo", "Create", "RepresentanteEmpresa", new { id = Model.Empresa.Id }, new { @class = "btn btn-outline-primary" })
+                </div>
+                <hr />
+                <table class="table table-bordered table-hover display" id="representantes_table">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>Estado</th>
+                        <th>Operaciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model.RepresentnatesEmpresa)
+                    {
+                        <tr>
+                            <td> @Html.DisplayFor(modelItem => item.nombre)</td>
+                            <td> @Html.DisplayFor(modelItem => item.fecha_inicio)</td>
+                            <td> @Html.DisplayFor(modelItem => item.fecha_fin)</td>
+                            <td> @(item.estado_representante == true ? "Activo" : "Inactivo") </td>
+                            <td style=" width:  200px;">
+                                @Html.ActionLink("Ver", "Details", "RepresentanteEmpresa", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                @Html.ActionLink("Editar", "Edit", "RepresentanteEmpresa", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                <div style="float: left">
+                                    <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", "RepresentanteEmpresa", new {id = item.Id})" method="post" class="form-inline">
+                                        <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                                    </form>
+                                </div>
+                               
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Fin</th>
+                            <th>Estado</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            
+            
+            
+
+            <div class="tab-pane fade" id="cuentas" role="tabpanel" aria-labelledby="cuentas-tab">
+                <div class="col" align="right">
+                    @Html.ActionLink("Nuevo", "Create", "CuentaEmpresa", new { id = Model.Empresa.Id }, new { @class = "btn btn-outline-primary" })
+                </div>               
+                <hr/>
+                <table class="table table-bordered table-hover display" id="cuentas_empresa_table">
+                    <thead>
+                    <tr>
+                        <th>Banco</th>
+                        <th>Tipo de Cuenta</th>
+                        <th>Número de Cuenta</th>
+                        <th>Estado</th>
+                        <th>Opciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model.CuentasEmpresa)
+                    {
+                        <tr>
+                            <td> @Html.DisplayFor(modelItem => item.nombre_banco)</td>
+                            <td> @Html.DisplayFor(modelItem => item.tipo_cuenta)</td>
+                            <td> @Html.DisplayFor(modelItem => item.numero_cuenta)</td>
+                            <td> @(item.estado == true ? "Activo" : "Inactivo") </td>
+                            <td style=" width:  200px;">
+                                @Html.ActionLink("Ver", "Details", "CuentaEmpresa", new {id = item.Id}, new {@class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;"})
+                                @Html.ActionLink("Editar", "Edit", "CuentaEmpresa", new {id = item.Id}, new {@class = "btn btn-outline-info btn-sm", style = " float:  left; margin-right: 0.3em;"})
+                                <div style="float: left">
+                                    <form  onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", "CuentaEmpresa", new {id = item.Id})" method="post" class="form-inline">
+                                        <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm"/>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            
+        </div>
+
+
+    </div>
+
+</div>

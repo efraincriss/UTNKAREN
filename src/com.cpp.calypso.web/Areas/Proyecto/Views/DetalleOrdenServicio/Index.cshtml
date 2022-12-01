@@ -1,0 +1,144 @@
+﻿@using System.Globalization
+@model com.cpp.calypso.web.Areas.Proyecto.Models.IndexDetalleOrdenServicioViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div style="width:97%; margin: auto;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Orden de Servicio</h4>
+                    </div>
+
+                    <div class="col" align="right">
+                        @if (@ViewBag.Principal > 0)
+                        {
+                            @Html.ActionLink("Regresar ", "IndexOfertasComerciales", "OrdenServicio", null,new { @class = "btn btn-outline-primary" })
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Regresar", "Details", "OfertaComercial", new { id = ViewBag.OfertaId }, new { @class = "btn btn-outline-primary" })
+
+                        }
+
+
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                      
+                        <h6><b>Código:</b> @Model.OrdenServicioDto.codigo_orden_servicio</h6>
+                        <h6><b>Fecha de Registro:</b> @Model.OrdenServicioDto.fecha_orden_servicio</h6>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="callout callout-info">
+                            <small class="text-muted">Monto Ingeniería</small><br />
+                            <strong class="h4">
+                               $  @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", Model.OrdenServicioDto.monto_aprobado_ingeniería)
+                            </strong>
+                        </div>
+
+
+                    </div>
+                        <div class="col">
+                            <div class="callout callout-danger">
+                                <small class="text-muted">Monto Construcción</small><br />
+                                <strong class="h4">
+                                  $  @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", Model.OrdenServicioDto.monto_aprobado_construccion)
+                                </strong>
+                            </div>
+                        </div>
+
+
+                        <div class="col">
+                            <div class="callout callout-warning">
+                                <small class="text-muted">Monto Suministros</small><br />
+                                <strong class="h4">
+                                   $ @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", Model.OrdenServicioDto.monto_aprobado_suministros)
+                                </strong>
+                            </div>
+                        </div>
+                            <div class="callout callout-success">
+                                <small class="text-muted">Monto Aprobado</small><br />
+                                <strong class="h4">
+                                 $   @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", Model.OrdenServicioDto.monto_aprobado_os)
+                                </strong>
+                            </div>
+
+                        </div>
+                    
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" >
+    <div class="card-body">
+        <div class="col" align="right">
+            @Html.ActionLink("Nuevo", "Create", "DetalleOrdenServicio", new { id = ViewBag.Id }, new { @class = "btn btn-outline-primary" })
+            
+
+        </div>
+        <hr />
+        
+        <table class="table table-bordered table-hover display" style="width:  100%;">
+            <thead>
+                <tr align="center">
+                    <th>Grupo</th>
+                     <th>Código Proyecto</th>
+                    <th>Proyecto</th>
+                    <th>Valor Orden de Servicio</th>
+                    <th></th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                @foreach (var item in Model.DetalleOrdenServicioDto)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrupoItemId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.codigo_proyecto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombre_proyecto)
+                    </td>
+                    <td align="right">
+                        @String.Format(CultureInfo.InvariantCulture, "$ {0:0,0.0}", item.valor_os)
+                    </td>
+                    <td style="width: 200px;">
+                        @Html.ActionLink("Editar", "Edit", "DetalleOrdenServicio", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                        <div style="float: left">
+                            <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", "DetalleOrdenServicio", new {id = item.Id})" method="post" class="form-inline">
+                                <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+
+                    <th>Grupo</th>
+                    <th>Código Proyecto</th>
+                    <th>Proyecto</th>
+                    <th>Valor</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+</div>

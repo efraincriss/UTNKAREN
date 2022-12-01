@@ -1,0 +1,40 @@
+﻿@model AuditoriaViewModel
+
+
+@using PagedList.Mvc;
+
+<div class="panel panel-default">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>@Titulos.AuditoriaItem_Identificacion_DisplayName</th>
+                <th>@Titulos.AuditoriaItem_Usuario_DisplayName</th>
+                <th>@Titulos.AuditoriaItem_Funcionalidad_DisplayName</th>
+                <th>@Titulos.AuditoriaItem_Accion_DisplayName</th>
+                <th>@Titulos.AuditoriaItem_Fecha_DisplayName</th>
+                <th>@Titulos.AuditoriaItem_Registro_DisplayName</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Auditorias)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Identificacion)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Usuario)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Funcionalidad)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Accion)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Mensaje)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+    <!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
+    @Html.PagedListPager(Model.Metadatos, page => Url.Action("Index", new { page }) + "&" + Model.Criteria.ToQueryString(),
+        PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "pnlToUpdate", OnComplete = "PanelOnComplete" }))
+
+

@@ -1,0 +1,177 @@
+﻿@using System.Globalization
+@model com.cpp.calypso.web.Areas.Proyecto.Models.FacturaViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+
+}
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-6" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+<div id="FacturaId" class="@Model.factura.Id"></div>
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Detalles de la Factura</h4>
+                    </div>
+
+                    <div class="col" align="right">
+                        @if (@ViewBag.dc > 0)
+                        {
+                            @Html.ActionLink("Volver al Cobro", "DetailsCobros", "Factura", new { id = ViewBag.dc }, new { @class = " btn btn-outline-success" })
+                        }
+                        <div align="right">
+                            <form onsubmit="return confirm('¿Está seguro de Anular la Factura?');" action="@Url.Action("Anular", "Factura", new {id = Model.factura.Id})" method="post" class="fa-align-right">
+
+
+                                <input type="submit" value="Anular" class="btn btn-outline-primary" />
+                                @Html.ActionLink("Regresar", "Index", "Factura", new { id = Model.factura.Id }, new { @class = " btn btn-outline-primary" })
+                            </form>
+                        </div>
+                      
+
+                    </div>
+                    <div>
+
+
+                    </div>
+                </div>
+                <hr />
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+
+                        <h6><b>Nro Factura: </b> @Model.factura.numero_documento</h6>
+                        <h6><b>Fecha Emisión: </b> @Model.factura.fecha_emision.ToString("dd/MM/yyyy")</h6>
+                        <h6><b>Tipo Documento: </b> @Model.factura.tipo_documento</h6>
+                        <h6><b>Valor  Importe: </b>$ @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", Model.factura.valor_importe)</h6>
+                        <h6><b>Valor  Iva: </b>$ @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", Model.factura.valor_iva)</h6>
+                        <h6><b>Valor Total: </b>$ @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", Model.factura.valor_total)</h6>
+
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                            <h6><b>Empresa: </b> @Model.factura.Empresa.razon_social</h6>
+                            <h6><b>Cliente:</b> @Model.factura.Cliente.razon_social</h6>
+                            @*<h6><b>Fecha emisión:</b> @Model.factura.fecha_emision.ToString("dd/MM/yyyy")</h6>*@
+            <h6><b>Código Principal:</b>@Model.factura.os</h6>
+            <h6><b>Código Auxiliar:</b>@Model.factura.ov</h6>
+        @*<h6><b>Valor  a Cobrar: </b>$ @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", Model.factura.valor_a_cobrar)</h6>*@
+                        <h6><b>Valor  Cobrado: </b>$ @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", Model.factura.valor_cobrado)</h6>
+                    </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div style="width:  100%;">
+                <ul class="nav nav-tabs" id="empresa_tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="representantes-tab" data-toggle="tab" href="#representantes" role="tab" aria-controls="home" aria-expanded="true">Cobros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="cuentas-tab" data-toggle="tab" href="#cuentas" role="tab" aria-controls="profile">Certificados</a>
+                    </li>
+                </ul>
+
+
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="representantes" role="tabpanel" aria-labelledby="representantes-tab">
+                        <div id="content-cobrofactura"></div>
+                    </div>
+
+                    <div class="tab-pane fade" id="cuentas" role="tabpanel" aria-labelledby="cuentas-tab">
+
+                        <table class="table table-bordered table-hover display">
+                            <thead>
+                                <tr>
+                                    <th>?</th>
+                                    <th>?</th>
+                                    <th>?</th>
+                                    <th>?</th>
+                                    <th>?</th>
+
+                                    <th>?</th>
+                                    <th>?</th>
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.certificados)
+                                {
+                                    <tr>
+                                        <td> @Html.DisplayFor(modelItem => item.CertificadoId)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Factura.numero_documento)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.CertificadoId)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Factura.numero_documento)</td>
+
+                                        <td> @Html.DisplayFor(modelItem => item.Factura.numero_documento)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Factura.numero_documento)</td>
+
+                                        <td> @Html.DisplayFor(modelItem => item.Factura.numero_documento)</td>
+                                        <td style=" width:  200px;">
+                                            @Html.ActionLink("Ver", "Details", "CertificadoFactura", new { id = item.Id }, new { @class = "btn btn-outline-success", style = " float:  left; margin-right: 0.3em;" })
+                                            @*   @Html.ActionLink("Editar", "Edit", "Oferta", new { id = item.Id }, new { @class = "btn btn-outline-primary", style = " float:  left; margin-right: 0.3em;" })
+                                                <div style="float: left">
+                                                    <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", "Oferta", new {id = item.Id})" method="post" class="form-inline">
+                                                        <input type="submit" value="Eliminar" class="btn btn-outline-danger" />
+                                                    </form>
+                                                </div>
+                        *@
+                        </td>
+                        </tr>
+                        }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Fecha de cobro</th>
+                                <th>Nro referencia</th>
+                                <th>Fecha de carga</th>
+                                <th>Valor</th>
+                                <th>Usuario_ Carga</th>
+
+                                <th>Valor del Cobro</th>
+                                <th>Valor Aplicado</th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                        </table>
+
+
+                    </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+@section Scripts{
+
+    <script src="~/Scripts/build/vendors.js"></script>
+    <script src="~/Scripts/build/vercobrofactura.js"></script>
+}

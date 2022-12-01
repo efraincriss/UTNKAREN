@@ -1,0 +1,48 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.OfertaDto>
+
+@{
+    ViewBag.Title = "IndexOfertas";
+}
+
+<h2>Ofertas</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Cliente</th>
+        <th>Proyecto</th>
+        <th>Código de Oferta</th>
+        <th>Fecha de Oferta</th>
+        <th>Estado Oferta</th>
+        <th>Operaciones</th>       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cliente_razon_social)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proyecto_codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_oferta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado_oferta)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            
+        </td>
+    </tr>
+}
+
+</table>

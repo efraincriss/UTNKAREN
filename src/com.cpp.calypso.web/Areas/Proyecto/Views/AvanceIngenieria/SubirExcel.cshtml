@@ -1,0 +1,112 @@
+﻿@model com.cpp.calypso.web.Areas.Proyecto.Models.AvanceIngenieriaExcelViewModel
+
+@section page_title
+{
+    <i class="fa fa-tag"></i> Carga de Archivo XLS
+    <h2>Avance Ingeniería</h2>
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+
+            @ViewBag.Error
+        </div>
+    </div>
+
+}
+
+
+@using (Html.BeginForm("SubirExcel", "AvanceIngenieria", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="row">
+
+            <div class="col">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.fechapresentacion)
+
+                    @Html.EditorFor(model => model.fechapresentacion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fechapresentacion, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.fechadesde)
+
+                    @Html.EditorFor(model => model.fechadesde, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fechadesde, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+            <div class="col">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.fechahasta)
+
+                    @Html.EditorFor(model => model.fechahasta, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.fechahasta, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            <td>Archivo:</td><br />
+
+            <input type="file" name="UploadedFile" id="@Model.UploadedFile" required="" />
+        </div>
+
+        <div class="form-group">
+
+            <input type="submit" value="Subir" class="btn btn-outline-primary" />
+
+
+
+        </div>
+
+    </div>
+}
+@Html.DisplayFor(model=>Model)
+@using (Html.BeginForm("GuardarDetallesExcel", "AvanceIngenieria", FormMethod.Post, new {l=Model}))
+{
+          <input type="submit" value="Guardar"  class="btn btn-outline-success" />
+}
+   
+
+
+
+    <div id="productList">
+
+
+
+
+        @{Html.RenderPartial("TablaExcel", Model.ListaAvanceIngenieria);}
+    </div>
+
+    @section Scripts{
+
+        <script>
+
+
+            $("#fechapresentacion").change(function () {
+
+                var ofe = $(this).val();
+                $("#fechadesde").val(ofe);
+                $("#fechahasta").val(ofe);
+
+
+            });
+
+        </script>
+    }
+

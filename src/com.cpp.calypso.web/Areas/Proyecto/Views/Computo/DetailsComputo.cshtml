@@ -1,0 +1,123 @@
+﻿@model com.cpp.calypso.web.Models.WbsOfertaComputoViewModel
+
+
+@{
+    ViewBag.Title = "Detalles del Computo";
+
+}
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Msg
+    </div>
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">WBS seleccionado</h4>
+                    </div>
+
+                    <div class="col" align="right">
+                        @Html.ActionLink("Regresar", "Details", "Computo", new { id = Model.WbsOferta.OfertaId, pa = 0, pd = 0 }, new { @class = " btn btn-primary" })
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Actividad:</b> @Model.WbsOferta.nivel_nombre</h6>
+                        
+                        <h6><b>Observaciones:</b> @Model.WbsOferta.observaciones</h6>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="computos_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="computos-tab" data-toggle="tab" href="#computos" role="tab" aria-controls="home" aria-expanded="true">Registro de Computos</a>
+
+            </li>
+
+        </ul>
+
+
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="computos" role="tabpanel" aria-labelledby="representantes-tab">
+                <div class="col" align="right">
+                    @Html.ActionLink("Nuevo", "Create", "Computo", new { id = Model.WbsOferta.Id, ContratoId=Model.Contrato.Id,ofertaId=Model.Oferta.Id}, new { @class = "btn btn-primary" })
+                </div>
+                <hr />
+  
+                <table class="table table-bordered table-hover display" id="representantes_table">
+                    <thead>
+                    <tr>
+                        <th>Item Padre</th>
+                        <th>Nombre Padre</th>
+                        <th>Item Código</th>
+                        <th>Nombre Item</th>
+                        <th>Cantidad</th>
+                        <th>Operaciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Computo)
+                        {
+
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => item.Item.item_padre)</td>
+                                <td> @Html.DisplayFor(modelItem => item.nombreitem)</td>
+                                <td> @Html.DisplayFor(modelItem => item.Item.codigo)</td>
+                  <td> @Html.DisplayFor(modelItem => item.Item.nombre)</td>
+
+                                <td> @Html.DisplayFor(modelItem => item.cantidad)</td>
+
+
+                                <td style="width: 200px;">
+
+                                    @Html.ActionLink("Ver", "DetailsDatos", "Computo", new {id = item.Id}, new {@class = "btn btn-outline-success ", style = " float:  left; margin-right: 0.3em;"})
+
+                                    @Html.ActionLink("Editar", "Edit", "Computo", new {id = item.Id}, new {@class = "btn btn-outline-primary ", style = " float:  left; margin-right: 0.3em;"})
+
+                                    <div style="float: left">
+
+                                        <form action="@Url.Action("Delete", "Computo", new {id = item.Id})" method="post" class="form-inline">
+                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger " onclick="return confirm('Esta seguro de Eliminar este Registro?')"/>
+                                        </form>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>Item Padre</th>
+                        <th>Nombre Padre</th>
+                        <th>Item Código</th>
+                        <th>Item</th>
+                        <th>Cantidad</th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

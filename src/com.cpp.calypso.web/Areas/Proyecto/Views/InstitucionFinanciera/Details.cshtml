@@ -1,0 +1,80 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.InstitucionFinancieraDto
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+@section page_title
+{
+    <i class="fa fa-tag"></i> Institución Financiera
+    <h2>Detalles</h2>
+}
+
+    <div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <dl class="dl-horizontal row">
+                    <dt class="col-sm-1"></dt>
+                    <dt class="col-sm-2">
+                        Nombre:
+                    </dt>
+
+                    <dd class="col-sm-3">
+                        @Html.DisplayFor(model => model.nombre)
+                    </dd>
+
+                    <dt class="col-sm-2">
+                        Dirección:
+                    </dt>
+
+                    <dd class="col-sm-3">
+                        @Html.DisplayFor(model => model.direccion)
+                    </dd>
+                    <dt class="col-sm-1"></dt>
+                    <dt class="col-sm-1"></dt>
+                    <dt class="col-sm-2">
+                        Telefóno:
+                    </dt>
+
+                    <dd class="col-sm-3">
+                        @Html.DisplayFor(model => model.telefono)
+                    </dd>
+
+                    <dt class="col-sm-2">
+                        Presona Contrato:
+                    </dt>
+
+                    <dd class="col-sm-3">
+                        @Html.DisplayFor(model => model.persona_contrato)
+                    </dd>
+                    <dt class="col-sm-1"></dt>
+                    <dt class="col-sm-1"></dt>
+                    <dt class="col-sm-2">
+                        Concepto:
+                    </dt>
+
+                    <dd class="col-sm-3">
+                        @Html.DisplayFor(model => model.concepto)
+                    </dd>
+                </dl>
+
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+       
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        @Html.ActionLink("Editar", "Edit", "InstitucionFinanciera", new { @class = "btn btn-outline-primary" })
+                        @Html.ActionLink("Regresar", "Index", "InstitucionFinanciera", new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+
+    </div>
+

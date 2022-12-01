@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Colaboradores";
+}
+
+
+@section page_title {
+    <h2>Servicios Colaboradores</h2>
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+
+<div class="row">
+    <div style="width: 100%;">
+        <div class="card-body">
+            <div class="row">
+                <div id="content-servicios"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/servicios_colaborador.js"></script>

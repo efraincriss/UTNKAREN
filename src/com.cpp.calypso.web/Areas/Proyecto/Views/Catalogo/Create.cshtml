@@ -1,0 +1,133 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.CatalogoDto
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@section page_title
+{
+    <h2>Catálogo</h2>
+}
+
+<style>
+    .margen {
+        margin: 3px;
+    }
+</style>
+
+<div class="card">
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                @Html.HiddenFor(model => model.TipoCatalogoId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.HiddenFor(model => model.vigente)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nombre)
+
+                    @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.descripcion)
+
+                    @Html.TextAreaFor(model => model.descripcion, new { @class = "form-control", rows = "3" })
+                    @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.codigo)
+
+                    @Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.codigo, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <div class="checkbox">
+                            @Html.Label("Predeterminado")&nbsp;
+                            <span class="margen">
+                                @Html.EditorFor(model => model.predeterminado)
+                                @Html.ValidationMessageFor(model => model.predeterminado, "", new { @class = "text-danger" })
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ordinal)
+
+                    @Html.EditorFor(model => model.ordinal, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ordinal, "", new { @class = "text-danger" })
+
+                </div>
+                @if (Model.NombreTipoCatalogo != null && Model.NombreTipoCatalogo == "WBSLEVELCOLOR")
+                {
+                    <div class="form-group">
+                        @Html.Label("Color")&nbsp;
+                        <input type="color" name="valor_texto" id="valor_texto" value="@Model.valor_texto">
+                    </div>
+                }
+                else
+                {
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.valor_texto)
+
+                                @Html.EditorFor(model => model.valor_texto, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.valor_texto, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.valor_binario)
+
+                                @Html.EditorFor(model => model.valor_binario, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.valor_binario, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.valor_numerico)
+
+                                @Html.EditorFor(model => model.valor_numerico, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.valor_numerico, "", new { @class = "text-danger" })
+
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.valor_fecha)
+
+                                @Html.EditorFor(model => model.valor_fecha, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.valor_fecha, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+
+                }
+                <div class="form-group ">
+                    <div class="checkbox">
+                        @Html.LabelFor(model => model.visualiza_movil, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.visualiza_movil)
+                        @Html.ValidationMessageFor(model => model.visualiza_movil, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                @Html.ActionLink("Cancelar", "Index", "Catalogo", new { id = Model.TipoCatalogoId }, new { @class = "btn btn-outline-primary" })
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,96 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.Dto.HorarioDto
+
+@{
+	ViewBag.Title = "Crear Horario";
+}
+@section css {
+	@Styles.Render("~/Content/bundle_css_react")
+}
+
+
+@section page_title {<i class="fa fa-unlock-alt"></i> Administración de Horarios}
+
+
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-xs-12 col-md-8">
+		<div id="content-crear-horario">
+
+		</div>
+	</div>
+</div>
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/crear_horario.js"></script>
+
+
+@*<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-xs-12 col-md-8">
+
+			@using (Html.BeginForm())
+			{
+				@Html.AntiForgeryToken()
+
+			<div class="form-horizontal">
+
+				@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							* @Html.LabelFor(model => model.codigo):
+							@Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @class = "form-control", @Value = "" } })
+							@Html.ValidationMessageFor(model => model.codigo, "", new { @class = "text-danger" })
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							* @Html.LabelFor(model => model.nombre):
+							@Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							* @Html.LabelFor(model => model.hora_inicio):
+							@Html.EditorFor(model => model.h_inicio, new { htmlAttributes = new { @class = "form-control", @type = "time" } })
+							@Html.ValidationMessageFor(model => model.h_inicio, "", new { @class = "text-danger" })
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							* @Html.LabelFor(model => model.hora_fin):
+							@Html.EditorFor(model => model.h_fin, new { htmlAttributes = new { @class = "form-control", @type = "time" } })
+							@Html.ValidationMessageFor(model => model.hora_fin, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<div class="checkbox">
+								@Html.LabelFor(model => model.vigente):&nbsp;
+								@Html.EditorFor(model => model.vigente)
+								@Html.ValidationMessageFor(model => model.vigente, "", new { @class = "text-danger" })
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-5">
+						<button type="submit" class="btn btn-outline-primary fa fa-save"> Guardar</button>
+						@Html.ActionLink(" Cancelar", "Index", "Horario", new { @class = "btn btn-outline-primary fa fa-arrow-left", style = "margin-right: 0.3em;" })
+					</div>
+				</div>
+
+			</div>
+				}
+			</div>
+	</div>*@
+

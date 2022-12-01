@@ -1,0 +1,89 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.InstitucionFinancieraDto>
+
+@{
+    ViewBag.Title = "Registros";
+}
+
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-auto" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+
+@section page_title
+{
+    <i class="fa fa-tag"></i> Institución Financiera
+    <h2>Registros</h2>
+}
+
+@section page_toolbar {
+    <div class="btn-toolbar" role="toolbar">
+
+        <a href='@Url.Action("Create", "InstitucionFinanciera")' class="btn btn-primary pull-right nuc_action_create">
+            <i class="fa fa-plus"></i>
+            Nueva Intitución
+        </a>
+    </div>
+}
+
+<table class="table table-bordered table-hover display" id="institucion_financiera_table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Dirección
+            </th>
+            <th>
+                Teléfono
+            </th>
+            <th>
+                Persona Contrato
+            </th>
+            <th>
+                Concepto
+            </th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="font-size:10px">
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td style="font-size:10px">
+                    @Html.DisplayFor(modelItem => item.direccion)
+                </td>
+                <td style="font-size:10px">
+                    @Html.DisplayFor(modelItem => item.telefono)
+                </td>
+                <td style="font-size:10px">
+                    @Html.DisplayFor(modelItem => item.persona_contrato)
+                </td>
+                <td style="font-size:10px">
+                    @Html.DisplayFor(modelItem => item.concepto)
+                </td>
+                <td style="font-size:10px">
+                    @Html.ActionLink("Ver", "Details", "InstitucionFinanciera", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                    <div style="float: left">
+                        <form onsubmit="return confirm('¿Estás seguro de Eliminar el Registro?');" action="@Url.Action("Delete", "InstitucionFinanciera", new {id = item.Id})" method="post" class="form-inline">
+                            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

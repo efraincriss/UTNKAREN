@@ -1,0 +1,69 @@
+﻿@model  TreeReactModelView
+
+@{
+    /**/
+
+
+    var title = Html.Title(Model);
+    if (!string.IsNullOrEmpty(Model.Title))
+    {
+        title = Model.Title;
+    }
+
+    ViewBag.Title = title;
+
+    var controllerName = ViewContext.RouteData.Values["controller"].ToString();
+
+
+    var elementContenedorId = "nuc_tree_body";
+    if (!string.IsNullOrWhiteSpace(Model.Id))
+    {
+        elementContenedorId = elementContenedorId + "_" + @Model.Id;
+    }
+
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+}
+
+
+@section page_title
+{
+    <i class="fa fa-tag"></i> @title
+}
+
+
+@section page_toolbar {
+
+
+}
+
+
+@if (!string.IsNullOrWhiteSpace(Model.Mensaje.Texto))
+{
+    @Html.Partial("_ShowAlert", Model.Mensaje)
+}
+
+
+<div id="nuc_pnl_ToUpdate">
+
+    <div class="nuc_tree_view col-lg-12">
+            <div id="@elementContenedorId">
+            </div>
+    </div>
+
+</div>
+ 
+
+
+
+
+@section Scripts {
+
+    <script src="~/Scripts/build/vendors.js"></script>
+    <script src="~/Scripts/build/distribucionVianda.js"></script>
+
+}
+
+

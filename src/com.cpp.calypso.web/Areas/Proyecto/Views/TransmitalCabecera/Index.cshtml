@@ -1,0 +1,56 @@
+﻿@model com.cpp.calypso.web.Areas.Proyecto.Models.OfertaTranmitalCabeceraViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+}
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-auto" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Generación de Transmittals</h2>
+                    </div>
+
+                    <div class="col" align="right">
+
+                        @Html.ActionLink("Salir", "IndexTransmital", "TransmitalCabecera", new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+                <hr />
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Código Oferta: </b>@Model.Oferta.codigo</h6>
+                        <h6><b>Descripcion: </b> @Model.Oferta.descripcion</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="content">
+
+</div>
+
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/transmittal.js"></script>

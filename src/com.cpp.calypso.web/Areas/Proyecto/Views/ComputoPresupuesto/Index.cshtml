@@ -1,0 +1,111 @@
+﻿@model com.cpp.calypso.web.Areas.Proyecto.Models.OfertaPresupuestoComputoViewModel
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+}
+<div id="PresupuestoId" class="@Model.Oferta.Id"></div>
+
+<div id="ContratoId" class="@Model.Contrato.Id"></div>
+<div id="FId" class="@ViewBag.Formato"></div>
+<div id="FechaOfertaId" class="@Model.Oferta.fecha_registro"></div>
+
+@{
+    ViewBag.Title = "Estructura Computos";
+}
+
+<div class="row">
+    <div style="width: 100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Cómputos Presupuestos</h2>
+                    </div>
+                    <div class="col" align="right">
+
+                        @* @Html.ActionLink("Exportar Excel", "ExportarE", "OfertaPresupuesto", new { id = Model.Oferta.Id }, new { @class = "btn btn-outline-primary", style = "margin-bottom: 1em; margin-left: 0.4em" })*@
+                        @*  @Html.ActionLink("Subir Excel", "SubirExcel", "OfertaPresupuesto", new { id = Model.Oferta.Id }, new { @class = "btn btn-outline-primary", style = "margin-bottom: 1em;  margin-left: 0.4em" })*@
+                        @if (ViewBag.Principal > 0)
+                        {
+                            @Html.ActionLink("Regresar", "IndexPresupuesto", "ComputoPresupuesto", null, new { @class = "btn btn-outline-primary", style = "float: right;margin-bottom: 1em; margin-left: 0.4em" })
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Regresar", "Details", "OfertaPresupuesto", new { id = Model.Oferta.Id }, new { @class = "btn btn-outline-primary", style = "float: right;margin-bottom: 1em; margin-left: 0.4em" })
+                        }
+                        @if (Model.Oferta.computo_completo)
+                        {
+                            <div style="float: right; margin-left: 0.4em">
+                                <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("CambiarComputoAprobado", "OfertaPresupuesto", new {id = Model.Oferta.Id})" method="post" class="form-inline">
+                                    <input type="submit" value="Desaprobar Computos" class="btn btn-outline-primary" />
+                                </form>
+                            </div>
+                        }
+                        else
+                        {
+                            <div style="float: right; margin-left: 0.4em">
+                                <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("CambiarComputoAprobado", "OfertaPresupuesto", new {id = Model.Oferta.Id})" method="post" class="form-inline">
+                                    <input type="submit" value="Aprobar Computos" class="btn btn-outline-primary" />
+                                </form>
+                            </div>
+                        }
+
+
+
+
+                    </div>
+                </div>
+                <hr />
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewBag.Error
+                    </div>
+                }
+                @if (ViewBag.Msg != null)
+                {
+
+                    <div class="alert alert-success" role="alert">
+                        @ViewBag.Msg
+                    </div>
+                }
+
+                <div class="row">
+                    <div class="col">
+                        <h6><b>Proyecto:</b> @Model.Oferta.Proyecto.codigo  - @Model.Oferta.Proyecto.descripcion_proyecto</h6>
+                        <h6><b>Contrato:</b> @Model.Contrato.Codigo @Model.Contrato.objeto</h6>
+                        <h6><b>Aprobado?:</b> @Html.DisplayFor(model => model.Oferta.computo_completo)</h6>
+                    </div>
+                    <div class="col">
+                        <h6><b>Presupuesto:</b> @Model.Oferta.codigo - @Model.Oferta.version - @Model.Oferta.descripcion    </h6>
+                        <h6><b>Fecha Registros:</b> @Model.Oferta.fecha_registro.GetValueOrDefault().ToString("dd/MM/yyyy")</h6>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div style="width: 100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="col">
+                    <div id="content-computos">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/build/vendors.js"></script>
+
+<script src="~/Scripts/build/computos_presupuesto.js"></script>
+
+
+

@@ -1,0 +1,21 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.Dto.ColaboradorBajaDto>
+@{
+    ViewBag.Title = "Colaboradores Bajas";
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+
+
+}
+
+@section page_title { <i class="fa fa-unlock-alt"></i> Bajas de Colaborador}
+<div class="row">
+    @*<div class="col-md-2"></div>*@
+    <div class="col-xs-12 col-md-12">
+        <div id="content-crear-bajas"></div>
+    </div>
+</div>
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/crear_colaboradores_bajas.js"></script>

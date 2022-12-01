@@ -1,0 +1,187 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.DetalleOrdenCompraDto
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@section page_title {<i class="fa fa-unlock-alt"></i>Detalle Orden de Compra}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" style="text-align: center" role="alert">
+        @ViewBag.Error
+    </div>
+}
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-success" style="text-align: center"  role="alert">
+        @ViewBag.Msg
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.OrdenCompraId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.HiddenFor(model => model.vigente, new { htmlAttributes = new { @class = "form-control" } })
+
+            <div class="row">
+                <div class="col-xs-12 col">
+                    <h6><b>Proyecto: </b>@Model.OrdenCompra.Oferta.Proyecto.codigo-@Model.OrdenCompra.Oferta.Proyecto.descripcion_proyecto </h6>
+
+                </div>
+
+                <div class="col-xs-12 col">
+                    <h6><b>Oferta: </b> @Model.OrdenCompra.Oferta.codigo - @Model.OrdenCompra.Oferta.version- @Model.OrdenCompra.Oferta.descripcion</h6>
+
+                </div>
+            </div> <div class="row">
+                <div class="col-xs-12 col">
+                    <h6><b>Pedido de Compra: </b>@Model.OrdenCompra.nro_pedido_compra </h6>
+
+
+                </div>
+
+                <div class="col-xs-12 col">
+                    <h6><b>Fecha Pedido De Compra: </b> @Model.OrdenCompra.fecha_presentacion.ToString("dd/MM/yyyy")</h6>
+
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ComputoId)
+
+                @Html.DropDownListFor(model => model.ComputoId, new SelectList(Model.ItemsOrdenCompra, "Id", "nombreitem"), "Seleccione Item", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ComputoId, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label>Costo Presupuestado:</label>
+                        <input type="number" class="form-control" id="cantidadcomputo" >
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.estado)
+
+                        @Html.DropDownListFor(model => model.estado,
+                            new SelectList(Enum.GetValues(typeof(DetalleOrdenCompra.EstadoDetalleOrdenCompra))), new {@class = "form-control" , @disabled="disabled"})
+
+                        @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.porcentaje)
+
+                        @Html.EditorFor(model => model.porcentaje, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.porcentaje, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.valor)
+
+                        @Html.EditorFor(model => model.valor, new { htmlAttributes = new { @class = "form-control"} })
+
+
+                        @Html.ValidationMessageFor(model => model.valor, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.tipoFecha)
+
+                        @Html.DropDownListFor(model => model.tipoFecha,
+                            new SelectList(Enum.GetValues(typeof(DetalleOrdenCompra.TipoFecha))),"Seleccione Tipo Registro",new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.tipoFecha, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha)
+
+                        @Html.EditorFor(model => model.fecha, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.fecha, "", new { @class = "text-danger" })
+
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                @Html.ActionLink("Cancelar", "Index", "DetalleOrdenCompra", new { id = Model.OrdenCompraId }, new { @class = "btn btn-outline-primary" })
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+@section Scripts{
+
+    <script>
+        $(function () {
+            $("#ComputoId").chosen();
+        });
+
+        $("#porcentaje").focusout(function () {
+           
+                $("#valor").val((($("#porcentaje").val() / 100) * $("#cantidadcomputo").val()).toFixed(2));
+            
+
+
+        });
+        $("#ComputoId").change(function () {
+
+            var ofe = $("#ComputoId").val();
+            var cantidad = 0;
+            if (ofe > 0) {
+
+                $.get("/Proyecto/DetalleAvanceProcura/DetalleComputo/?",
+                    { id: ofe },
+                    function (data) {
+                        var objeto = JSON.parse(data);
+                        cantidad = objeto['costo_total'];
+                   
+                        $("#cantidadcomputo").val(cantidad);
+                       
+                    });
+            
+                $("#valor").val((($("#porcentaje").val() / 100) * $("#cantidadcomputo").val()).toFixed(2));
+            } else {
+                $("#porcentaje").val(0);
+                $("#valor").val(0);
+                $("#cantidadcomputo").val(0);
+            }
+        });
+
+
+    </script>
+}

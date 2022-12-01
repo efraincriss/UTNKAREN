@@ -1,0 +1,13 @@
+﻿
+@if (ViewBag.ruta != null)
+{
+    <ol class="breadcrumb">
+        @foreach (var ruta in ViewBag.ruta)
+        {
+        <li class="breadcrumb-item text-gray-500">@(ruta)</li>
+        }
+    </ol>
+
+}
+    
+

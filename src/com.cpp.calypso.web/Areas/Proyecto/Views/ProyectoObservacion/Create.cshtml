@@ -1,0 +1,41 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.ProyectoObservacionDto
+
+@{
+    ViewBag.Title = "Insertar Observaciones";
+}
+
+@section page_title
+{
+
+    <h2>Proyecto Observaciones</h2>
+    <i class="fa fa-plus-square"></i> Registrar Observaciones
+}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+        @using (Html.BeginForm("Create", "ProyectoObservacion"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.ProyectoId)
+            @Html.HiddenFor(model => model.vigente)
+            @Html.HiddenFor(model => model.FechaObservacion)
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Observacion)
+                    @Html.EditorFor(model => model.Observacion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Observacion, "", new { @class = "text-danger" })
+                </div>
+
+
+                <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                @Html.ActionLink("Regresar", "Index", "ProyectoObservacion", new {id=Model.ProyectoId}, new { @class = "btn btn-outline-primary" })
+            </div>
+         }
+    </div>
+</div>
+
+
+
+

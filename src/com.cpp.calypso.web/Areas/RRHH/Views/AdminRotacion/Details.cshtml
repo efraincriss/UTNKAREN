@@ -1,0 +1,44 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.Dto.AdminRotacionDto
+
+@{
+    ViewBag.Title = "DETALLES ROTACIÓN";
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Detalles Rotación de Colaborador</h4>
+                    </div>
+                    <div class="col" align="right">
+                        @Html.ActionLink(" Editar", "Edit", "AdminRotacion", new { id = Model.Id }, new { @class = "btn btn-outline-primary fa fa-edit", style = "margin-right: 0.3em;" })
+                        @Html.ActionLink(" Cancelar", "Index", "AdminRotacion", new { @class = "btn btn-outline-primary fa fa-arrow-left", style = "margin-right: 0.3em;" })
+
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>@Html.DisplayNameFor(model => model.codigo):</b> @Html.DisplayFor(model => model.codigo)</h6>
+                        <h6><b>@Html.DisplayNameFor(model => model.nombre):</b> @Html.DisplayFor(model => model.nombre)</h6>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>@Html.DisplayNameFor(model => model.dias_laborablesC):</b> @Html.DisplayFor(model => model.dias_laborablesC)</h6>
+                        <h6><b>@Html.DisplayNameFor(model => model.dias_laborablesO):</b> @Html.DisplayFor(model => model.dias_laborablesO)</h6>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>@Html.DisplayNameFor(model => model.dias_descanso):</b> @Html.DisplayFor(model => model.dias_descanso)</h6>
+                        <h6><b>@Html.DisplayNameFor(model => model.vigente)</b>: @Html.DisplayFor(model => model.nombre_estado)</h6>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
+
+        </div>
+
+    </div>

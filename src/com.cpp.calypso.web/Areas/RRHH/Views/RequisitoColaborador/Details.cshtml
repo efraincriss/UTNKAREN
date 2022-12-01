@@ -1,0 +1,51 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.Dto.RequisitoColaboradorDto
+
+@{
+    ViewBag.Title = "Detalles Requisito";
+}
+
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Detalles Requisito</h4>
+                    </div>
+                    <div class="col" align="right">
+                        @Html.ActionLink(" Editar", "Edit", "Requisito", new { id = Model.Id }, new { @class = "btn btn-outline-primary fa fa-edit", style = "margin-right: 0.3em;" })
+                        @Html.ActionLink(" Cancelar", "Index", "Requisito", new { @class = "btn btn-outline-primary fa fa-arrow-left", style = "margin-right: 0.3em;" })
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>@Html.DisplayNameFor(model => model.tipo_usuarioId):</b> @Html.DisplayFor(model => model.usuario)</h6>
+                        <h6><b>@Html.DisplayNameFor(model => model.requisito_id):</b> @Html.DisplayFor(model => model.requisito)</h6>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>@Html.DisplayNameFor(model => model.idRol):</b> @Html.DisplayFor(model => model.nombre_rol)</h6>
+                        <h6><b>@Html.DisplayNameFor(model => model.descripcion):</b> @Html.DisplayFor(model => model.descripcion)</h6>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>@Html.DisplayNameFor(model => model.obligatorio):</b> @Html.DisplayFor(model => model.nombre_obligatorio)</h6>
+                        <h6><b>@Html.DisplayNameFor(model => model.requiere_archivo):</b> @Html.DisplayFor(model => model.nombre_requiere)</h6>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>@Html.DisplayNameFor(model => model.caducidad):</b> @Html.DisplayFor(model => model.nombre_caducidad)</h6>
+                        <h6><b>@Html.DisplayNameFor(model => model.vigente):</b> @Html.DisplayFor(model => model.nombre_estado)</h6>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    

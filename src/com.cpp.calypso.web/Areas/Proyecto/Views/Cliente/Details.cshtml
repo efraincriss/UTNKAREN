@@ -1,0 +1,136 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.ClienteDto
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="row">
+<div style="width:  100%;">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h2 class="card-title">Información Cliente</h2>
+                </div>
+                <div class="col" align="right">
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+                    @Html.ActionLink("Regresar", "Index", "Cliente", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+                </div>
+            </div>
+
+            <hr />
+
+            <dl class="dl-horizontal">
+
+                <div class="row">
+
+                    <div class="col">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.codigoasignado)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.codigoasignado)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.representate_legal)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.representate_legal)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.projectmanager)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.projectmanager)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.identificacion)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.identificacion)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.razon_social)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.razon_social)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.fecha_registro)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.fecha_registro)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.fecha_fin)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.fecha_fin)
+                        </dd>
+                    </div>
+
+                    <div class="col">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.telefono)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.telefono)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.direccion)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.direccion)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.correo)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.correo)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.es_grupo)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.es_grupo)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.tiene_contrato)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.tiene_contrato)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.estado)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.estado)
+                        </dd>
+                    </div>
+                </div>
+
+            </dl>
+        </div>
+    </div>
+</div>
+</div>

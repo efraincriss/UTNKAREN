@@ -1,0 +1,128 @@
+﻿@using System.Globalization
+@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.AvanceObraDto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v3")
+
+}
+<div id="OfertaId" class="@ViewBag.idOferta"></div>
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-auto" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div style="width: 100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Avance de Obra</h2>
+                    </div>
+                    <div class="col">
+                        @Html.ActionLink("Carga Masiva IDs Rubros", "GetExcelCargaIDS", "DetalleAvanceObra", new { id = ViewBag.IdOferta }, new { @class = " btn btn-outline-primary btn-sm", style = " margin-left: 0.2em", id = "ExcelAvance" })
+                        <div id="content-subir-excel" style="display: inline-block"></div>
+                        @Html.ActionLink("Regresar", "IndexSeleccion", "Oferta", new { tipo = "AvanceObra" }, new { @class = "btn btn-outline-primary  btn-sm", style = "margin-bottom: 1em; float: right" })
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col">
+                        <h6><b>Proyecto Código - Descripción: </b>@ViewBag.proyecto</h6>
+                    </div>
+                    <div class="col">
+                        <h6><b>Código Oferta - Versión: </b>@ViewBag.oferta</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <div class="col" align="right">
+                @Html.ActionLink("Nuevo Avance de Obra", "Create", "AvanceObra", new { id = ViewBag.Id }, new { @class = "btn btn-outline-primary" })
+
+            </div>
+            <hr />
+
+            <table class="table table-bordered table-hover display" style="font-size: 11px;">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.alcance)</th>
+                        <th>@Html.DisplayNameFor(model => model.descripcion)</th>
+                        <th>@Html.DisplayNameFor(model => model.fecha_presentacion)</th>
+                        <th>@Html.DisplayNameFor(model => model.fecha_desde)</th>
+                        <th>@Html.DisplayNameFor(model => model.fecha_hasta)</th>
+                        <th>@Html.DisplayNameFor(model => model.aprobado)</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.alcance)</td>
+                            <td>@Html.DisplayFor(modelItem => item.descripcion)</td>
+                            <td>@Html.DisplayFor(modelItem => item.fecha_presentacion)</td>
+                            <td>@Html.DisplayFor(modelItem => item.fecha_desde)</td>
+                            <td>@Html.DisplayFor(modelItem => item.fecha_hasta)</td>
+                            <td>@Html.DisplayFor(modelItem => item.aprobado)</td>
+                            <td style=" width:  200px;">
+                                @Html.ActionLink("Ver", "Details", "AvanceObra", new { id = item.Id }, new { @class = "btn btn-sm btn-outline-success", style = " float:  left; margin-right: 0.3em;" })
+                                @Html.ActionLink("Editar", "Edit", "AvanceObra", new { id = item.Id }, new { @class = "btn btn-sm btn-outline-primary", style = " float:  left; margin-right: 0.3em;" })
+                                <div style="float: left">
+                                    <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", new {id = item.Id})" method="post" class="form-inline">
+                                        <input type="submit" value="Eliminar" class="btn btn-sm btn-outline-danger" />
+                                    </form>
+                                </div>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+
+            </table>
+
+
+
+        </div>
+    </div>
+
+</div>
+
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/cargaIdsRDO.js"></script>
+

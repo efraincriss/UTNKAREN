@@ -1,0 +1,39 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.RdoCabeceraDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@section page_title {<i class="fa fa-unlock-alt"></i> Registro de Observaciones}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>RdoCabeceraDto</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.ProyectoId)
+        @Html.HiddenFor(model => model.codigo_rdo)
+        @Html.HiddenFor(model => model.fecha_rdo)
+        @Html.HiddenFor(model => model.fecha_envio)
+        @Html.HiddenFor(model => model.version)
+        @Html.HiddenFor(model => model.es_definitivo)
+        @Html.HiddenFor(model => model.vigente)
+        @Html.HiddenFor(model => model.estado)
+        @Html.HiddenFor(model => model.emitido)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.observacion, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextAreaFor(model => model.observacion, new { @class = "form-control", rows = "3" })
+            @Html.ValidationMessageFor(model => model.observacion, "", new { @class = "text-danger" })
+        </div>
+
+
+
+        <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+        @Html.ActionLink("Cancelar", "Details", "RdoCabecera", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+    </div>
+}

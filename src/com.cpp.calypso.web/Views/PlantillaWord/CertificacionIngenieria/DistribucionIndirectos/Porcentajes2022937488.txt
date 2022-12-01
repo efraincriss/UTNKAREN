@@ -1,0 +1,9 @@
+ColaboradoresEnCampo
+
+FC1.1	0	0	0	0	0
+
+FC10.28	0	0	0	0	0
+
+FC5.2	0	0	0	0	0
+
+FC8.14	0	0	0	0	0

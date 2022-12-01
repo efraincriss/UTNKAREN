@@ -1,0 +1,100 @@
+﻿@using System.Globalization
+@model com.cpp.calypso.proyecto.aplicacion.CobroFacturaDto
+
+
+@{
+    ViewBag.Title = "Details";
+}
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+
+}
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-6" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+<div id="FacturaId" class="@Model.CobroId"></div>
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Detalles de los Cobros</h4>
+                    </div>
+
+                    <div class="col" align="right">
+
+                        @Html.ActionLink("Regresar", "VistaCobros", "Factura", new { id = Model.Factura.Id }, new { @class = " btn btn-outline-primary" })
+                        @* @Html.ActionLink("Editar Datos", "Edit", "Proyecto", new { id = Model}, new { @class = " btn btn-outline-primary" })*@
+                    </div>
+                    <div>
+
+
+                    </div>
+                </div>
+                <hr />
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h6><b>Empresa: </b> @Model.Factura.Empresa.razon_social</h6>
+                        <h6><b>Cliente:</b> @Model.Factura.Cliente.razon_social</h6>
+                        <h6><b>Tipo Documento: </b>Cobros</h6>
+                        <h6><b>Descripción:</b> @Model.Cobro.descripcion</h6>
+
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+
+                        <h6><b>Documento Compensación: </b> @Model.Cobro.documento_compensacion</h6>
+                        <h6><b>Documento SAP: </b>@Model.Cobro.documento_sap</h6>
+                        <h6><b>Fecha Emisión: </b> @Model.Factura.fecha_emision.ToString("dd/MM/yyyy")</h6>
+                        <h6><b>Monto Total: </b>$ @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", Model.Cobro.monto)</h6>
+                        <h6><b>Monto Aplicado: </b>$ @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", Model.Cobro.monto_detalle)</h6>
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div style="width:  100%;">
+        <ul class="nav nav-tabs" id="empresa_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="representantes-tab" data-toggle="tab" href="#representantes" role="tab" aria-controls="home" aria-expanded="true">Facturas</a>
+            </li>
+
+        </ul>
+
+
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="representantes" role="tabpanel" aria-labelledby="representantes-tab">
+
+                <div id="content-facturacobro"></div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+@section Scripts{
+
+    <script src="~/Scripts/build/vendors.js"></script>
+    <script src="~/Scripts/build/verfacturacobro.js"></script>
+}

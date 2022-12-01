@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Migraciones";
+}
+
+@section page_title
+{
+
+    <h2>Migrar Ofertas</h2>
+    <i class="fa fa-plus-square"></i> Migraciones de ofertas
+}
+
+@if (ViewBag.msg != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @ViewBag.msg
+    </div>
+
+}
+<div style="float: left">
+    <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("CargarOfertas", "TempOferta")" method="post" class="form-inline">
+        <input type="submit" value="Migrar" class="btn btn-outline-indigo btn-lg" />
+    </form>
+    <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("CargarOfertas2", "TempOferta")" method="post" class="form-inline">
+        <input type="submit" value="Migrar Partes2" class="btn btn-outline-indigo btn-lg" />
+    </form>
+</div>
+

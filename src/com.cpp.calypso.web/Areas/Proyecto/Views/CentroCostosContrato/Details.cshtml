@@ -1,0 +1,62 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.CentrocostosContratoDto
+
+@{
+    ViewBag.Title = "Centro de Costos de Contrato";
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Detalle Centro de Costos de Contrato</h2>
+                    </div>
+
+                    <div class="col" align="right">
+                        @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+                        @Html.ActionLink("Regresar", "Details", "Contrato", new { id = Model.ContratoId }, new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+                <div>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.ContratoId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Contrato.Codigo)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.id_centrocostos)
+                        </dt>
+
+                        <dd>
+                            @(Model.id_centrocostos == 1 ? "Costos de Seguro" : "Costos de Mantenimiento")
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.observaciones)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.observaciones)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.estado)
+                        </dt>
+
+                        <dd>
+                            @(Model.estado == true ? "Activo" : "Inactivo")
+                        </dd>
+
+                    </dl>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

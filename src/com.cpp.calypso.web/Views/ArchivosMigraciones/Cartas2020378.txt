@@ -1,0 +1,10 @@
+CREADA-ERRORAUCA-B-LT-00000113/01/2020-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+CREADA-ERRORAUCA-B-LT-00000213/01/2020-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+CREADA-ERRORAUCA-B-LT-00000313/01/2020-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+CREADA-ERRORAUCA-B-LT-00000413/01/2020-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+CREADA-ERROR3808-B-LT-00000513/01/2020-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+CREADA-ERROR3808-B-LT-00000613/01/2020-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+CREADA-ERROR3808-B-LT-00000713/01/2020-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+CREADA-ERROR3808-B-LT-00000813/01/2020-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+CREADA-ERROR3808-B-LT-00000913/01/2020-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+CREADA-ERROR3808-B-LT-00001013/01/2020-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.

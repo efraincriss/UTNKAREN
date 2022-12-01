@@ -1,0 +1,331 @@
+CREADA-3808-B-TD-001199FC02.42 Mantenimiento correctivo para bomba de químicos13/01/2020
+CREADA-3808-B-TD-001200FC02.44 Tendido, instalación y prueba de cables13/01/2020
+CREADA-3808-B-TD-001201FC01.03 Transporte de material de excavación no contaminado13/01/2020
+CREADA-3808-B-TD-001202FC02.60 Facilidades para Instalación de Medidor VX13/01/2020
+CREADA-3808-B-TD-001203CAPEX Nivelación y compactación de área13/01/2020
+CREADA-3808-B-TD-001204FC08.07 Construcción de acceso a patio de bombas HPS13/01/2020
+CREADA-3808-B-TD-001205FC01.03 Retiro de Drip Pot13/01/2020
+CREADA-3808-B-TD-001206FC01.03 Desalojo de arcilla hacia Auca 1313/01/2020
+CREADA-3808-B-TD-001207FC09.34 Cambio de acometida de sistema de distribución13/01/2020
+CREADA-3808-B-TD-001208FC02.43 Desarmado de cubeto13/01/2020
+CREADA-3808-B-TD-001209FC02.38 Facilidades para migración de cargas13/01/2020
+CREADA-3808-B-TD-001210FC02.63 Reposición Cable Eléctrico13/01/2020
+CREADA-3808-B-TD-001211Certificaciones mayo 201913/01/2020
+CREADA-3808-B-TD-001212RSO 27-05-201913/01/2020
+CREADA-3808-B-TD-001213FC09.21 Entrega de material pétreo13/01/2020
+CREADA-3808-B-TD-001214Entrega soportes Acta Stand By Enero-Abril 201913/01/2020
+CREADA-3808-B-TD-001215FC04.19 Entrega de material pétreo13/01/2020
+CREADA-3808-B-TD-001216FC09.30 Construcción de cubierta provisional para bomba booster existente13/01/2020
+CREADA-3808-B-TD-001217RSO 03-06-201913/01/2020
+CREADA-3808-B-TD-001218FC09.21 Conversión Estación Auca Sur 1 a Estación de Deshidratación13/01/2020
+CREADA-3808-B-TD-001219FC09.31 Instalación de medidor tipo turbina13/01/2020
+CREADA-3808-B-TD-001220FC09.21 Construcción de losa para bombas HPS y Equipos Eléctricos13/01/2020
+CREADA-3808-B-TD-001221Acta de Recepción Provisoria FC02.63-05-RGT-025-02-001-01 Cononaco 1713/01/2020
+CREADA-3808-B-TD-001222Acta de Recepción Provisoria FC02.48-05-RGT-025-02-001-01 Auca 2813/01/2020
+CREADA-3808-B-TD-001223OPEX Construcción de bayoneta para el Pozo ACAE 20713/01/2020
+CREADA-3808-B-TD-001224FC02.21 Obras requeridas para cierre de ítems de Punch List13/01/2020
+CREADA-3808-B-TD-001225FC08.08 Obras requeridas para cierre de ítems de Punch List13/01/2020
+CREADA-3808-B-TD-001226RSO 10-06-201913/01/2020
+CREADA-3808-B-TD-001227Acta de Recepción Provisoria FC08.08-05-RGT-025-02-001-01 Auca 2813/01/2020
+CREADA-3808-B-TD-001228Acta de Recepción Provisoria FC08.08-05-RGT-025-02-001-01 Auca 27.13/01/2020
+CREADA-3808-B-TD-001229CAPEX Construcción de bayoneta para el Pozo ACAE 20713/01/2020
+CREADA-3808-B-TD-001230Acta de Recepción Provisoria FC02.58-05-RGT-025-02-001-01 Yulebra 213/01/2020
+CREADA-3808-B-TD-001231Acta de Recepción Provisoria FC08.07-05-RGT-025-02-001-01 Auca 89.13/01/2020
+CREADA-3808-B-TD-001232FC02.21 Obras requeridas para cierre de ítems de Punch List13/01/2020
+CREADA-3808-B-TD-001233FC02.44 Obras requeridas en Yulebra 0313/01/2020
+CREADA-3808-B-TD-001234FC08.06 Servicio de inspección y reparación de bomba de químicos de 8 cabezales13/01/2020
+CREADA-3808-B-TD-001235FC03.20 Drenaje y Desmontaje del Manifold13/01/2020
+CREADA-3808-B-TD-001236FC02.44 Obras requeridas en Yulebra 0313/01/2020
+CREADA-3808-B-TD-001237FC09.33 Cierre de Ítems de Punch List fuera de alcance13/01/2020
+CREADA-3808-B-TD-001238FC02.48 Cierre de Ítems de Punch List13/01/2020
+CREADA-3808-B-TD-001239FC02.59 Cotización de Balizas13/01/2020
+CREADA-3808-B-TD-001240FC08.08 Construcción de una nueva línea de agua desde el pozo ACAJ-154 hacia el pozo ACAJ-20313/01/2020
+CREADA-3808-B-TD-001241RSO 17-06-201913/01/2020
+CREADA-3808-B-TD-001242FC09.23 Aislamiento en Pisos de los Cuartos de Aire Acondicionado13/01/2020
+CREADA-3808-B-TD-001243FC09.31 Interconexión de bombas booster hacia bomba de transferencia13/01/2020
+CREADA-3808-B-TD-001244RSO 24-06-201913/01/2020
+CREADA-3808-B-TD-001245Certificaciones junio 201913/01/2020
+CREADA-3808-B-TD-001246Entrega soportes Acta Stand By mayo 201913/01/2020
+CREADA-3808-B-TD-001247FC09.31 Repotenciación de Sistema de Bombeo en Auca 5113/01/2020
+CREADA-3808-B-TD-001248FC02.38 Facilidades para dos pozos nuevos y un futuro en localización existente Auca 5113/01/2020
+CREADA-3808-B-TD-001249FC02.40 Facilidades para 1 pozo nuevo y Sistema de Bombeo en Plataforma existente Culebra 813/01/2020
+CREADA-3808-B-TD-001250RSO 01-07-201913/01/2020
+CREADA-3808-B-TD-001251FC09.21 Retiro de material compuesto y alquiler de Frac Tank13/01/2020
+CREADA-3808-B-TD-001252FC09.30 Nuevo Shelter para bombas de transferencia13/01/2020
+CREADA-3808-B-TD-001253FC03.11 Línea de Flujo y Línea Eléctrica de Rumiyacu a Cononaco13/01/2020
+CREADA-3808-B-TD-001254FC02.48 Facilidades para 2 pozos nuevos en Plataforma existente Auca 2813/01/2020
+CREADA-3808-B-TD-001255FC02.53 Facilidades para 2 pozos nuevos y 1 existente en Plataforma existente Pitalala 113/01/2020
+CREADA-3808-B-TD-001256FC02.60 Facilidades para 1 pozo nuevos en Plataforma Existente Auca Sur 1013/01/2020
+CREADA-3808-B-TD-001257FC01.03 Facilidades 3 pozos en Plataforma nueva Auca 12613/01/2020
+CREADA-3808-B-TD-001258FC01.04 Facilidades para 6 pozo nuevos en Locación Nueva Culebra 2113/01/2020
+CREADA-3808-B-TD-001259FC03.20 Línea de Flujo y Línea Eléctrica de Auca 126 a Auca 2113/01/2020
+CREADA-3808-B-TD-001260FC08.08 Obras requeridas en pozos inyectores y productores13/01/2020
+CREADA-3808-B-TD-001261FC08.07 Sistema de Re-inyección en Plataforma Auca 8913/01/2020
+CREADA-3808-B-TD-001262FC09.14 Incremento capacidad de tratamiento Auca Sur 113/01/2020
+CREADA-3808-B-TD-001263FC02.64 Obras Requeridas en Localización Existente Auca 8913/01/2020
+CREADA-3808-B-TD-001264FC03.20 Loseta para contención de trampa lanzadora Auca 12613/01/2020
+CREADA-3808-B-TD-001265FC02.65 Obras Requeridas en Localización Existente Auca 56 (2 POZOS)13/01/2020
+CREADA-3808-B-TD-001266FC03.27 Línea de Flujo de 10" Auca 51 - Auca Central (6Km)13/01/2020
+CREADA-3808-B-TD-001267FC09.21 Arreglo y reconformación de vía13/01/2020
+CREADA-3808-B-TD-001268FC08.09 Facilidades para Inyección13/01/2020
+CREADA-3808-B-TD-001269FC09.33 Interconexionado de 40 tanques13/01/2020
+CREADA-3808-B-TD-001270FC02.44 Facilidades para 4 pozos nuevos en Plataforma existente Yulebra 313/01/2020
+CREADA-3808-B-TD-001271RSO 08-07-201913/01/2020
+CREADA-3808-B-TD-001272FC02.41 Facilidades para 2 pozos nuevos en Plataforma Existente Culebra 613/01/2020
+CREADA-3808-B-TD-001273FC02.58 Facilidades para 2 pozos nuevos en Plataforma Existente Yulebra 213/01/2020
+CREADA-3808-B-TD-001274FC08.08 Reubicación de bombas existentes en Auca 2813/01/2020
+CREADA-3808-B-TD-001275FC03.21 Línea de Flujo y Línea Eléctrica de Tortuga Sur 1 a Chonta Este13/01/2020
+CREADA-3808-B-TD-001276FC04.07 Interconexión de Tableros de Baja y Media Tensión en Plataformas Existentes13/01/2020
+CREADA-3808-B-TD-001277FC02.21 Facilidades para 2 pozos nuevos en PAD Anaconda A13/01/2020
+CREADA-3808-B-TD-001278FC09.31 Cambio de manómetros13/01/2020
+CREADA-3808-B-TD-001279FC03.22 Línea de Flujo y Línea Eléctrica Culebra 21 a Culebra 113/01/2020
+CREADA-3808-B-TD-001280FC09.30 Aumento de Capacidad del Sistema de Transferencia de Agua y Crudo en Auca Sur13/01/2020
+CREADA-3808-B-TD-001281FC03.23 Línea de Transferencia de Auca Sur a Auca 1713/01/2020
+CREADA-3808-B-TD-001282FC02.41 Trabajos para cierre de Punch List13/01/2020
+CREADA-3808-B-TD-001283FC04.19 Reemplazo del Rack existente en Cononaco Estación13/01/2020
+CREADA-3808-B-TD-001284CAPEX Construcción de bayoneta en Auca 89 (pozo ACAJ-089)13/01/2020
+CREADA-3808-B-TD-001285FC08.06 Obras requeridas para cierre de ítems de Punch List13/01/2020
+CREADA-3808-B-TD-001286Entrega soportes Acta Stand By junio 201913/01/2020
+CREADA-3808-B-TD-001287FC02.62 Facilidades Nuevas para Pozos Re Entries13/01/2020
+CREADA-3808-B-TD-001288FC02.43 Facilidades para 4 pozos nuevos en Plataforma existente Auca 12313/01/2020
+CREADA-3808-B-TD-001289FC09.23 Repotenciación de Sistema de Bombeo en Auca Central13/01/2020
+CREADA-3808-B-TD-001290FC02.57 Facilidades para 3 pozos nuevos en Plataforma existente Auca 13713/01/2020
+CREADA-3808-B-TD-001291FC02.50 Facilidades para 2 pozos nuevos en Plataforma existente Tortuga Sur13/01/2020
+CREADA-3808-B-TD-001292FC09.34 Instalación de Equipos Adicionales13/01/2020
+CREADA-3808-B-TD-001293FC02.59 Instalación de Cable Eléctrico y Fibra Óptica13/01/2020
+CREADA-3808-B-TD-001294FC02.62 Desalojo de Material de Excavaciones13/01/2020
+CREADA-3808-B-TD-001295RSO 15-07-201913/01/2020
+CREADA-3808-B-TD-001296FC09.21 Obras requeridas en la Locación Auca Sur 0113/01/2020
+CREADA-3808-B-TD-001297FC02.59 Facilidades para 1 pozo nuevo en Plataforma Existente Auca 2713/01/2020
+CREADA-3808-B-TD-001298FC02.53 Reubicación de generador e instalación de SWG de sincronismo13/01/2020
+CREADA-3808-B-TD-001299FC02.59 Facilidades para 1 pozo nuevo en Plataforma Existente Auca 2713/01/2020
+CREADA-3808-B-TD-001300RSO 22-07-201913/01/2020
+CREADA-3808-B-TD-001301FC05.03 Facilidades de Desgasificación y Deshidratación Tempranas en Culebra 2113/01/2020
+CREADA-3808-B-TD-001302Entrega soportes Acta HSE / Cambio de Ley13/01/2020
+CREADA-3808-B-TD-001303Certificación mes de Julio 201913/01/2020
+CREADA-3808-B-TD-001304FC02.53 Reubicación de generador e instalación de SWG de sincronismo13/01/2020
+CREADA-3808-B-TD-001305FC04.19 Instalación de bomba electrosumergible controlada mediante PLC13/01/2020
+CREADA-3808-B-TD-001306FC01.04 Construcción de 1 nuevo cellar13/01/2020
+CREADA-3808-B-TD-001307FC09.19 Direccionamiento de línea de alivio13/01/2020
+CREADA-3808-B-TD-001308FC01.03 Facilidades 3 pozos en Plataforma nueva Auca 12613/01/2020
+CREADA-3808-B-TD-001309FC01.04 Facilidades para 6 pozo nuevos en Locación Nueva Culebra 2113/01/2020
+CREADA-3808-B-TD-001310FC02.38 Facilidades para dos pozos nuevos y un futuro en localización existente Auca 5113/01/2020
+CREADA-3808-B-TD-001311FC02.53 Facilidades para 2 pozos nuevos y 1 existente en Plataforma existente Pitalala 113/01/2020
+CREADA-3808-B-TD-001312FC02.60 Facilidades para 1 pozo nuevos en Plataforma Existente Auca Sur 1013/01/2020
+CREADA-3808-B-TD-001313FC03.11 Línea de Flujo y Línea Eléctrica de Rumiyacu a Cononaco13/01/2020
+CREADA-3808-B-TD-001314FC03.20 Línea de Flujo y Línea Eléctrica de Auca 126 a Auca 2113/01/2020
+CREADA-3808-B-TD-001315RSO13/01/2020
+CREADA-3808-B-TD-001316FC10.25 Construcción de Cerramiento13/01/2020
+CREADA-3808-B-TD-001317FC02.21 Obras requeridas en la locación Anaconda A (Dos pozos)13/01/2020
+CREADA-3808-B-TD-001318FC09.21 Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-TD-001319FC08.08 Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-TD-001320FC10.27 Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-TD-001321FC08.12 Reubicación del Sistema de Reinyección de Rumiyacu a Cononaco13/01/2020
+CREADA-3808-B-TD-001322FC09.38 Sistema de Calentamiento y Repotenciación del Sistema de Transferencia de Crudo en Estación Yulebra13/01/2020
+CREADA-3808-B-TD-001323FC09.39 Sistema de Desgasificación y Transferencia Rumiyacu, Auca 126 y Tortuga Sur 113/01/2020
+CREADA-3808-B-TD-001324FC03.11 Línea de Flujo y Línea Eléctrica de Rumiyacu a Cononaco13/01/2020
+CREADA-3808-B-TD-001325FC02.53 Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-TD-001326FC09.34 Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-TD-001327FC02.41 Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-TD-001328FC02.40 Análisis de la Tabla 6 de la RAOHE (Evaluación de los hidrocarburos totales de petróleo (TPH))13/01/2020
+CREADA-3808-B-TD-001329CAPEX Construcción de cubeto con geomembrana13/01/2020
+CREADA-3808-B-TD-001330FC08.08 Seteo de los switch de presión a 2700 PSI13/01/2020
+CREADA-3808-B-TD-001331FC08.12 Reubicación del Sistema de Reinyección de Rumiyacu a Cononaco13/01/2020
+CREADA-3808-B-TD-001332Anexo C y Anexo G - Acuerdo SHY-SCS-DC-112-201913/01/2020
+CREADA-3808-B-TD-001333FC02.63 Facilidades Nuevas para Workover Bloque 6113/01/2020
+CREADA-3808-B-TD-001334FC09.21 Cambio bomba de químicos13/01/2020
+CREADA-3808-B-TD-001335RSO13/01/2020
+CREADA-3808-B-TD-001336 Servicio de revisión o reparación de las dos bomba13/01/2020
+CREADA-3808-B-TD-001337Desalojo de material excedente en Auca 13713/01/2020
+CREADA-3808-B-TD-001338FC08.11 Sistema de Reinyección Auca Sur 1 (Auca 20)13/01/2020
+CREADA-3808-B-TD-001339Reemplazo de Tanque de 10.000 BBL para Cononaco 613/01/2020
+CREADA-3808-B-TD-001340FC4.19 Interconexión Subestaciones Cononaco-Rumiyacu13/01/2020
+CREADA-3808-B-TD-001341RSO13/01/2020
+CREADA-3808-B-TD-001342FC09.21 Obras requeridas en la Locación Auca Sur 0113/01/2020
+CREADA-3808-B-TD-001343FC09.34 Reemplazo de conductores en acometidas de tablero AICO EDP-YLP-00113/01/2020
+CREADA-3808-B-TD-001344CAPEX Provisión de Material Triturado13/01/2020
+CREADA-3808-B-TD-001345RSO13/01/2020
+CREADA-3808-B-TD-001346FC03.21 Procura de cable de aluminio de 3x250MCM, 35kV13/01/2020
+CREADA-3808-B-TD-001347CAPEX Limpieza de Cellar y Construcción de base de cemento de Cellar Pozo ACAJ-09413/01/2020
+CREADA-3808-B-TD-001348CAPEX Limpieza de Cellar y Construcción de base de cemento de Cellar Pozo ACAJ-15413/01/2020
+CREADA-3808-B-TD-001349FC09.40 Repotenciación Culebra 0513/01/2020
+CREADA-3808-B-TD-001350Certificación mes de Agosto 201913/01/2020
+CREADA-3808-B-TD-001351FC4.18 Construcción e Interconexión Subestación 69kV a Alimentadores 13.8 kV13/01/2020
+CREADA-3808-B-TD-001352FC08.08 Modificación de Líneas para el Proyecto FC08.0813/01/2020
+CREADA-3808-B-TD-001353FC01.04 Modificación líneas alta presión13/01/2020
+CREADA-3808-B-TD-001354FC02.63 Trabajos de inclusión al alcance13/01/2020
+CREADA-3808-B-TD-001355CAPEX Corte, relleno y reconformación de plataforma PAD Auca1613/01/2020
+CREADA-3808-B-TD-001356FC09.21 Obras requeridas en la Locación Auca Sur 0113/01/2020
+CREADA-3808-B-TD-001357FC10.28 Implementación de Antorchas Encapsuladas en Plataformas13/01/2020
+CREADA-3808-B-TD-001358FC02.63 Facilidades 6 pozos workover nuevos13/01/2020
+CREADA-3808-B-TD-001359Entrega de Procedimientos HSE de CPP13/01/2020
+CREADA-3808-B-TD-001360FC02.63 Trabajos de inclusión al alcance13/01/2020
+CREADA-3808-B-TD-001361FC02.63 Facilidades para intervención del Pozo Auca 2013/01/2020
+CREADA-3808-B-TD-001362FC02.57 Desalojo de material excedente en Auca 13713/01/2020
+CREADA-3808-B-TD-001363FC03.11 Trabajos para Humberto Gordillo13/01/2020
+CREADA-3808-B-TD-001364RSO13/01/2020
+CREADA-3808-B-TD-001365FC08.08 Precomisionado de bombas HPS (por ALS)13/01/2020
+CREADA-3808-B-TD-001366FC09.23 Desmontaje de cables de instrumentación y potencia para instalación de HUB13/01/2020
+CREADA-3808-B-TD-001367RSO13/01/2020
+CREADA-3808-B-TD-001368FC08.08 Cambio de potencia de bomba en locación Auca 8913/01/2020
+CREADA-3808-B-TD-001369FC09.34 Instalación de transmisor de presión diferencial en tk de 1500 bls13/01/2020
+CREADA-3808-B-TD-001370FC04.19 Reemplazo de cable 15 KV sustraído en el DDV - Chonta Sur 0113/01/2020
+CREADA-3808-B-TD-001371FC02.63 Muestreo de suelo para análisis TPH13/01/2020
+CREADA-3808-B-TD-001372RSO13/01/2020
+CREADA-3808-B-TD-001373FC09.34 Instalación de transmisor de presión diferencial en tk de 1500 bls13/01/2020
+CREADA-3808-B-TD-001374FC04.19 Desconexión y retiro de tubería roscada de 5 1/2"13/01/2020
+CREADA-3808-B-TD-001375Reunión de Seguimiento de Proyectos 18-Sep-201913/01/2020
+CREADA-3808-B-TD-001376RSO13/01/2020
+CREADA-3808-B-TD-001377Certificación Septiembre 201913/01/2020
+CREADA-3808-B-TD-001378FC10.25 Reubicación de chatarra para construcción de cuneta perimetral en Plataforma Auca 5513/01/2020
+CREADA-3808-B-TD-001379FC02.53 Reubicación de generador e instalación de SWG de sincronismo13/01/2020
+CREADA-3808-B-TD-001380FC02.66 Facilidades Nuevas para Actividades de Workover (Fase 2)13/01/2020
+CREADA-3808-B-TD-001381Certificación FC08.09 con soporte de cantidades parciales de obra13/01/2020
+CREADA-3808-B-TD-001382RSO13/01/2020
+CREADA-3808-B-TD-001383FC08.08 Reubicación Transformador de Auca 28 a Cononaco 2113/01/2020
+CREADA-3808-B-TD-001384Presupuesto Clase 2 FC03.2013/01/2020
+CREADA-3808-B-TD-001385Presupuesto Clase 1 FC08.0713/01/2020
+CREADA-3808-B-TD-001386Envío de Minuta de Reunión 20-Sept-201913/01/2020
+CREADA-3808-B-TD-001387Presupuesto Clase 1 - FC02.2113/01/2020
+CREADA-3808-B-TD-001388Presupuesto Clase 1 - FC02.4013/01/2020
+CREADA-3808-B-TD-001389Presupuesto Clase 1 - FC02.6013/01/2020
+CREADA-3808-B-TD-001390FC08.09 Facilidades para Inyección13/01/2020
+CREADA-3808-B-TD-001391FC04.18 Construcción e Interconexión de Subestación 69 kV Auca 123 y Alimentadores 13.8 kV13/01/2020
+CREADA-3808-B-TD-001392FC05.02 Procura de Heater Treater13/01/2020
+CREADA-3808-B-TD-001393Presupuesto Clase 1 - FC02.3813/01/2020
+CREADA-3808-B-TD-001394Presupuesto Clase 1 - FC04.0713/01/2020
+CREADA-3808-B-TD-001395Presupuesto Clase 1 - FC02.4113/01/2020
+CREADA-3808-B-TD-001396Presupuesto Clase 1 - FC03.2113/01/2020
+CREADA-3808-B-TD-001397Presupuesto Clase 1- FC02.48 Facilidades para 2 pozos nuevos en Plataforma Auca 2813/01/2020
+CREADA-3808-B-TD-001398Presupuesto Clase 1 - FC2.44 Obras Yulebra 313/01/2020
+CREADA-3808-B-TD-001399Presupuesto Clase 1 - FC8.06 Sistema de Inyección Auca Norte13/01/2020
+CREADA-3808-B-TD-001400Presupuesto Clase II - FC02.58 Plataforma Existente Yulebra 213/01/2020
+CREADA-3808-B-TD-001401RSO13/01/2020
+CREADA-3808-B-TD-001402Sistema de Gestión CPP13/01/2020
+CREADA-3808-B-TD-001403Actualización Presupuesto Clase 1 - FC09.3013/01/2020
+CREADA-3808-B-TD-001404FC9.34 Instalación de Equipos Adicionales13/01/2020
+CREADA-3808-B-TD-001405FC03.27 Línea de Flujo de 10pulg Auca 51 - Auca Central13/01/2020
+CREADA-3808-B-TD-001406Envío de cronogramas13/01/2020
+CREADA-3808-B-TD-001407Envío de cronogramas para fin de semana (confirmar)13/01/2020
+CREADA-3808-B-TD-001408FC10.28 Implementación de Antorchas Encapsuladas13/01/2020
+CREADA-3808-B-TD-001409Presupuesto Clase 1 - FC09.21 CONVERSION ESTACION AUCA SUR 1 A ESTACION DE DESHIDRATACION13/01/2020
+CREADA-3808-B-TD-001410Presupuesto Clase 1 - FC01.03 Auca 12613/01/2020
+CREADA-3808-B-TD-001411Presupuesto Clase 1 - FC02.5913/01/2020
+CREADA-3808-B-TD-001412Presupuesto Clase 1 - FC09.3013/01/2020
+CREADA-3808-B-TD-001413Solicitud de cambio para proyecto FC05.02 - No. CPP-SC-00000513/01/2020
+CREADA-3808-B-TD-001414FC04.18 Trabajos a propietarios y reconformación de vía de acceso para proyecto FC04.1813/01/2020
+CREADA-3808-B-TD-001415RSO13/01/2020
+CREADA-3808-B-TD-001416FC02.43 Obras requeridas en locación Auca 12313/01/2020
+CREADA-3808-B-TD-001417Certificación Octubre 201913/01/2020
+CREADA-3808-B-TD-001418FC08.09 Procura equipos de superficie Chonta Sur-00513/01/2020
+CREADA-3808-B-TD-001419RSO con corte 25 de octubre de 201913/01/2020
+CREADA-3808-B-TD-001420Envío Plan de Calidad Acuerdo SHY-SCS-DC-112-201913/01/2020
+CREADA-3808-B-TD-001421FC09.23 Repotenciación de Sistema de Bombeo en Auca Central13/01/2020
+CREADA-3808-B-TD-001422OPEX Emisión de Nuevas Tablas de Calibración de Tanques13/01/2020
+CREADA-3808-B-TD-001423Entrega soportes Acta Stand By julio - septiembre 201913/01/2020
+CREADA-3808-B-TD-001424FC11.01 Construcción de Campamento13/01/2020
+CREADA-3808-B-TD-001425Envío parcial de actualización de cronogramas de 20 de octubre de 201913/01/2020
+CREADA-3808-B-TD-001426Actualización Cronogramas Proyectos 2016-2018 y 201913/01/2020
+CREADA-3808-B-TD-001427RSO13/01/2020
+CREADA-3808-B-TD-001428Cantidades de Obra Parciales  - Octubre FC8.0913/01/2020
+CREADA-3808-B-TD-001429FC03.23 - Análisis de Tierra y Desalojo para el proyecto13/01/2020
+CREADA-3808-B-TD-001430FC03.11 - Desalojo de tierras13/01/2020
+CREADA-3808-B-TD-001431FC 03.21 Desalojo de tierras13/01/2020
+CREADA-3808-B-TD-001432Acta de Recepción Provisoria FC8.8-05-RGT-025-02-001-01 Cononaco 5313/01/2020
+CREADA-3808-B-TD-001433Acta de Recepción Provisoria FC8.8-05-RGT-025-02-001-01 Auca 8913/01/2020
+CREADA-3808-B-TD-001434Acta de Recepción Provisoria FC9.21-05-RGT-025-02-001-01 Sumidero y Drenajes13/01/2020
+CREADA-3808-B-TD-001435Acta de Recepción Provisoria FC1.4-05-RGT-025-02-001-01 Culebra 21 Pozo 4213/01/2020
+CREADA-3808-B-TD-001436Acta de Recepción Provisoria FC8.9-05-RGT-025-02-001-01 Auca 2713/01/2020
+CREADA-3808-B-TD-001437FC01.04 Toma de muestra de suelo según Tabla 6 y movimiento de suelos hacia disposición final13/01/2020
+CREADA-3808-B-TD-001438FC10.25 Toma de muestra de suelo según Tabla 6 y movimiento de suelos hacia disposición final13/01/2020
+CREADA-3808-B-TD-001439Rubros en Excel para nuevo contrato13/01/2020
+CREADA-3808-B-TD-001440FC04.19 Toma de muestra de suelo según Tabla 6 y movimiento de suelos hacia disposición final13/01/2020
+CREADA-3808-B-TD-001441FC08.08 Toma de muestra de suelo según Tabla 6 y movimiento de suelos hacia disposición final13/01/2020
+CREADA-3808-B-TD-001442FC09.21 Toma de muestra de suelo según Tabla 6 y movimiento de suelos hacia disposición final13/01/2020
+CREADA-3808-B-TD-001443FC02.63 Servicio de alquiler de retroexcavadora13/01/2020
+CREADA-3808-B-TD-001444RSO13/01/2020
+CREADA-3808-B-TD-001445Acta de Recepción Provisoria FC2.57-05-RGT-025-02-001-01 AUCA 13713/01/2020
+CREADA-3808-B-TD-001446Acta de Recepción Provisoria FC8.9-05-RGT-025-02-001-01 AUCA 3713/01/2020
+CREADA-3808-B-TD-001447FC02.57 Toma de muestra de suelo según Tabla 6 y movimiento de suelos13/01/2020
+CREADA-3808-B-TD-001448FC02.63 Toma de muestra de suelo según Tabla 6 y movimiento de suelos13/01/2020
+CREADA-3808-B-TD-001449FC02.53 Toma de muestra de suelo según Tabla 6 y movimiento de suelos13/01/2020
+CREADA-3808-B-TD-001450FC05.02 Reubicación de cerca de alambre de púas para el Proyecto FC05.0213/01/2020
+CREADA-3808-B-TD-001451FC05.99 Trabajos varios, reasignación de adicional de proyecto FC09.21 a FC05.99 por pedido de LP (sin efecto).13/01/2020
+CREADA-3808-B-TD-001452FC09.34 Toma de muestra de suelo según Tabla 6 y movimiento de suelos13/01/2020
+CREADA-3808-B-TD-001453RSO13/01/2020
+CREADA-3808-B-TD-001454FC04.19 Provisión de Terminales de Ojo13/01/2020
+CREADA-3808-B-TD-001455FC03.23 Provisión de Materiales previo al arranque línea de flujo13/01/2020
+CREADA-3808-B-TD-001456Certificación Octubre FC08.09, Septiembre y Octubre FC10.2713/01/2020
+CREADA-3808-B-TD-001457Minuta de reunión de seguimiento de 07 de noviembre de 201913/01/2020
+CREADA-3808-B-TD-001458FC09.30 Facilidad para Secuestrante de Oxígeno13/01/2020
+CREADA-3808-B-TD-001459Envío de presentación de Seguimiento de Proyectos 21 nov 201913/01/2020
+CREADA-3808-B-TD-001460RSO13/01/2020
+CREADA-3808-B-TD-001461Certificación Noviembre13/01/2020
+CREADA-3808-B-TD-001462FC08.08 Reconformación y Construcción de Acceso Peatonal13/01/2020
+CREADA-3808-B-TD-001463FC08.09 Actualización Oferta Clase 3. Rev D13/01/2020
+CREADA-3808-B-TD-001464FC02.64 Obras Requeridas en Localización Existente Auca 8913/01/2020
+CREADA-3808-B-TD-001465Actualización cronogramas13/01/2020
+CREADA-3808-B-TD-001466FC05.02 - Actualzización de oferta Rev. E, en función OC.13/01/2020
+CREADA-3808-B-TD-001467RSO13/01/2020
+CREADA-3808-B-TD-001468FC08.08 - Modificación UPS13/01/2020
+CREADA-3808-B-TD-001469FC09.30 - Modificación UPS13/01/2020
+CREADA-3808-B-TD-001470FC02.64 Instalación de redundancia a la válvula de recirculación13/01/2020
+CREADA-3808-B-TD-001471RSO13/01/2020
+CREADA-3808-B-TD-001472FC08.11 - Retiro de tuberías existentes13/01/2020
+CREADA-3808-B-TD-001473Acta de Recepción Provisoria FC10.25 - Auca Central 213/01/2020
+CREADA-3808-B-TD-001474FC04.19 Provisión de Material Triturado Fino y Arena Rev. B13/01/2020
+CREADA-3808-B-TD-001475FC04.19 Provisión de Material Triturado Fino y Arena Rev. C13/01/2020
+CREADA-3808-B-TD-001476FC05.02 Reconformación de vía de acceso desde
+Culebra 21 hacia Culebra 01 Abs. 3+80013/01/2020
+CREADA-3808-B-TD-001477FC08.09 Interconexión del Tablero de Sincronismo y Nuevo SWG13/01/2020
+CREADA-3808-B-TD-001478FC09.23 Procura e instalación de tarjeta para aire del variador de PCR13/01/2020
+CREADA-3808-B-TD-001479RSO corte a 13 de diciembre de 2019.13/01/2020
+CREADA-3808-B-TD-001480FC09.23 Montaje de Válvulas13/01/2020
+CREADA-3808-B-TD-001481FC08.08 Cambio en la estrategia de Inyección del PAD Culebra 2113/01/2020
+CREADA-3808-B-TD-001482FC08.08 Cambio en la estrategia de Inyección del PAD Culebra 2113/01/2020
+CREADA-3808-B-TD-001483FC02.63 Reconformación de plataforma Yuca 15 para ingreso de Workover13/01/2020
+CREADA-3808-B-TD-001484FC05.02 Actualización de ingeniería para desplazamiento de facilidades dentro del límite ambiental13/01/2020
+CREADA-3808-B-TD-001485FC08.09 Interconexión del Tablero de Sincronismo y Nuevo SWG13/01/2020
+CREADA-3808-B-TD-001486RSO con corte a 20 de diciembre de 201913/01/2020
+CREADA-3808-B-TD-001487FC09.23 Montaje de Válvulas13/01/2020
+CREADA-3808-B-TD-001488FC08.08 Arreglo vía de acceso Cononaco 07 y provisión de material13/01/2020
+CREADA-3808-B-TD-001489FC02.63 Reconformación de plataforma Yuca 15 para ingreso de Workover13/01/2020
+CREADA-3808-B-TD-001490Presentación de reunión de seguimiento de proyectos 19 dic 201913/01/2020
+CREADA-3808-B-TD-001491FC09.34 Retageo y certificación ASME de KOD de alta y baja de Yulebra13/01/2020
+CREADA-3808-B-TD-001492FC05.02 Retageo y certificación ASME de KOD de alta y baja de Yulebra13/01/2020
+CREADA-3808-B-TD-001493FC08.09 Procura de transformador 850KVA 3PH para ACAG-19113/01/2020
+CREADA-3808-B-TD-001494CAPEX Material Pétreo Culebra 2113/01/2020
+CREADA-3808-B-TD-001495Obras requeridas en Estación Yulebra13/01/2020
+CREADA-3808-B-TD-001496FC09.31 Reinstalación de medidor de Auca Sur a Auca 5113/01/2020
+CREADA-3808-B-TD-001497Fc03.11 Instalación de sistema de control con válvula autoreguladora13/01/2020
+CREADA-3808-B-TD-001498RSO con corte a 20 de diciembre de 201913/01/2020
+CREADA-3808-B-TD-001499FC03.11 Propuesta de Trabajos para  FC03.11 Línea de Flujo y Línea Eléctrica de Rumiyacu a Cononaco Rev. G13/01/2020
+CREADA-3808-B-TD-001500Certificación Diciembre 201913/01/2020
+CREADA-3808-B-TD-001501n/a13/01/2020
+CREADA-3808-B-TD-001502n/a13/01/2020
+CREADA-3808-B-TD-001503n/a13/01/2020
+CREADA-3808-B-TD-001504n/a13/01/2020
+CREADA-3808-B-TD-001505n/a13/01/2020
+CREADA-3808-B-TD-001506n/a13/01/2020
+CREADA-3808-B-TD-001507n/a13/01/2020
+CREADA-3808-B-TD-001508n/a13/01/2020
+CREADA-3808-B-TD-001509n/a13/01/2020
+CREADA-3808-B-TD-001510n/a13/01/2020
+CREADA-3808-B-TD-001511n/a13/01/2020
+CREADA-3808-B-TD-001512n/a13/01/2020
+CREADA-3808-B-TD-001513n/a13/01/2020
+CREADA-3808-B-TD-001514n/a13/01/2020
+CREADA-3808-B-TD-001515n/a13/01/2020
+CREADA-3808-B-TD-001516n/a13/01/2020
+CREADA-3808-B-TD-001517n/a13/01/2020
+CREADA-3808-B-TD-001518n/a13/01/2020
+CREADA-3808-B-TD-001519n/a13/01/2020
+CREADA-3808-B-TD-001520FC04.07 Retiro y bodegaje de tableros13/01/2020
+CREADA-3808-B-TD-001521RSO 3 de enero 202013/01/2020
+CREADA-3808-B-TD-001522FC09.30 Recalibración Instrumentos13/01/2020
+CREADA-3808-B-TD-001523FC09.34 Tablas de calibración de tanques de Yuca T1349 y T1350 de 500 bls c/u.13/01/2020
+CREADA-3808-B-TD-001524Certificación Noviembre13/01/2020
+CREADA-3808-B-TD-001525FC05.02 Reconformación Vial Culebra 1 Culebra 2113/01/2020
+CREADA-3808-B-TD-001526FC08.08 Trabajos adicionales en Cononaco 20 y Cononaco 2413/01/2020
+CREADA-3808-B-TD-001527FC04.07 - Trabajos Adicionales - Retiro y bodegaje de tableros13/01/2020
+CREADA-3808-B-TD-001528RSO 10-enero-202013/01/2020

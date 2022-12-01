@@ -1,0 +1,82 @@
+﻿@model List<OrdenServicio>
+
+@{
+    ViewBag.Title = "Listado Ofertas Comerciales";
+}
+
+@section page_title
+{
+    <h2>Ordenes de Servicio</h2>
+}
+@section page_toolbar {
+
+}
+<table class="table table-bordered table-hover display" id="ofertas_co_table">
+    <thead>
+        <tr>
+
+            <th>Código </th>
+            <th>Fecha OS</th>
+        
+            <th>Monto Ingeniería</th>
+            <th>Monto Construcción</th>
+            <th>Monto Suministros</th>
+            <th>Monto Subcontratos</th>
+            <th>Monto Total OS</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+
+            <
+
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo_orden_servicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_orden_servicio)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.monto_aprobado_ingeniería)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.monto_aprobado_construccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.monto_aprobado_suministros)
+            </td>
+            <td>
+            0.00
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.monto_aprobado_os)
+            </td>
+            <td>
+                @Html.ActionLink("Ver", "Index", "DetalleOrdenServicio", new { id = item.Id, principal = 1 }, new { @class = "btn btn-outline-success  btn-sm", style = " float:  left; margin-right: 0.3em;" })
+
+
+            </td>
+        </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+        
+
+            <th>Código </th>
+            <th>Fecha OS</th>
+            <th>Versión</th>
+            <th>Monto Ingeniería</th>
+            <th>Monto Construcción</th>
+            <th>Monto Suministros</th>
+            <th>Monto Subcontratos</th>
+            <th>Monto Total OS</th>
+            <th></th>
+        </tr>
+    </tfoot>
+</table>

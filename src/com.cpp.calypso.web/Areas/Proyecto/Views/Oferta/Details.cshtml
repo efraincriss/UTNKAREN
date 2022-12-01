@@ -1,0 +1,702 @@
+﻿@using System.Globalization
+@model com.cpp.calypso.proyecto.aplicacion.OfertaDto
+
+@{
+    ViewBag.Title = "Details";
+}
+<link href="~/Content/css/omega/theme.css" rel="stylesheet" />
+<link href="~/Content/css/primereact.min.css" rel="stylesheet" />
+<link href="~/Content/css/primeicons.css" rel="stylesheet" />
+<link href="~/Content/css/block-ui.css" rel="stylesheet" />
+
+<div class="@Model.Id" id="OfertaId"></div>
+<div class="Oferta" id="TipoProceso"></div>
+<div id="cod_proyecto" class="@Model.Proyecto.codigo" align="left"></div>
+<div id="cod_oferta" class="@Model.codigo" align="left"></div>
+<div id="estado_oferta" class="@Model.estado_oferta" align="left"></div>
+
+@{
+    if ((string)Session["usuario"] != null)
+    {
+        ViewBag.user = System.Web.HttpContext.Current.Session["usuario"] as String;
+    }
+
+    if (Model.es_final)
+    {
+        <div id="definitiva" class="1"></div>
+
+    }
+    else
+    {
+        <div id="definitiva" class="0"></div>
+    }
+}
+<div id="username" class="@ViewBag.user"></div>
+<style>
+    .margen {
+        margin: 3px;
+    }
+</style>
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row" align="right">
+                    <div class="col">
+
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-sm btn-outline-primary" })
+                            <div id="content-clone-wbs" style="display: inline-block;" class="@Model.Id" align="left"></div>
+                            @Html.ActionLink("+ Presupuesto", "UpdateVersionPresupuesto", "Oferta", new { idOferta = Model.Id }, new { @class = "btn btn-sm btn-outline-primary" })
+                            <div id="content-cambiar-estado" style="display: inline-block;" class="@Model.Id" align="left"></div>
+
+                            <div id="content-inlcuir-observacion" style="display: inline-block;" class="@Model.Id" align="left"></div>
+                            @Html.ActionLink("Transmital", "Index", "TransmitalCabecera", new { id = Model.Id }, new { @class = "btn btn-sm btn-outline-indigo" })
+
+                            <div id="content-notificacion" style="display: inline-block;" class="@Model.Id" align="left"></div>
+                            @Html.ActionLink("Regresar", "Details", "Requerimiento", new { id = Model.RequerimientoId }, new { @class = "btn btn-sm btn-outline-indigo" })
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                @if (Session["message"] != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        Nueva Versión Generada
+                    </div>
+                    Session["message"] = null;
+                }
+
+                @if (ViewBag.msg != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewBag.msg
+                    </div>
+
+                }
+
+                <div class="">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <h6><b>Proyecto:</b> @Html.DisplayFor(model => model.Proyecto.codigo) - @Html.DisplayFor(model => model.Proyecto.descripcion_proyecto)</h6>
+                            <h6><b>Oferta:</b>  @Html.DisplayFor(model => model.codigo) - @Html.DisplayFor(model => model.version)</h6>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <hr />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <b>Descripción: &nbsp;</b>
+                                @Html.DisplayFor(model => model.descripcion)
+                            </div>
+                            <div class="row">
+                                <b>Estado: &nbsp;</b>
+                                @Html.DisplayFor(model => model.nombreEstado)
+                            </div>
+                            <div class="row">
+                                <b>Clase: &nbsp;</b>
+                                @Html.DisplayFor(model => model.ClaseId)
+                            </div>
+                            <br />
+                            <br />
+                            <div class="row">
+                                <b>Fecha Primer Envío: &nbsp;</b>
+                                @(Model.fecha_primer_envio.ToString().Equals("") ? "dd/mm/aa" : Model.fecha_primer_envio.GetValueOrDefault().ToString("yy-MM-dd"))
+                            </div>
+                            <div class="row">
+                                <b>Fecha Último Envío: &nbsp;</b>
+                                @(Model.fecha_ultimo_envio.ToString().Equals("") ? "dd/mm/aa" : Model.fecha_ultimo_envio.GetValueOrDefault().ToString("yy-MM-dd"))
+                            </div>
+                            <div class="row">
+                                <b>Fecha Última Modificación: &nbsp;</b>
+                                @(Model.fecha_ultima_modificacion.ToString().Equals("") ? "dd/mm/aa" : Model.fecha_ultima_modificacion.GetValueOrDefault().ToString("yy-MM-dd"))
+                            </div>
+                            <div class="row">
+                                <b>Fecha de Recepción de Orden de Servicio: &nbsp;</b>
+                                @(Model.fecha_recepcion_so.ToString().Equals("") ? "dd/mm/aa" : Model.fecha_recepcion_so.GetValueOrDefault().ToString("yy-MM-dd"))
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <b>Definitiva: &nbsp;</b>
+                                <span class="margen">
+                                    @(Model.es_final == true ? "Es Definitiva" : "No Definitiva")
+                                </span>
+                            </div>
+                            <div class="row">
+                                <b>Service Request: &nbsp;</b>
+                                <span class="margen">
+                                    @Html.DisplayFor(model => model.service_request)
+                                </span>
+                            </div>
+                            <div class="row">
+                                <b>Service Order: &nbsp;</b>
+                                <span class="margen">
+                                    @Html.DisplayFor(model => model.service_order)
+                                </span>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <b>Monto Ofertado: &nbsp;</b>
+                                @Html.DisplayFor(model => model.monto_ofertado)
+                            </div>
+                            <div class="row">
+                                <b>Monto Total Orden Servicio: &nbsp;</b>
+                                @Html.DisplayFor(model => model.monto_ofertado)
+                            </div>
+                            <div class="row">
+                                <b>Monto Aprobado OS: &nbsp;</b>
+                                @Html.DisplayFor(model => model.monto_so_aprobado)
+                            </div>
+                            <div class="row">
+                                <b>Monto Pendiente Aprobación: &nbsp;</b>
+                                @Html.DisplayFor(model => model.monto_ofertado_pendiente_aprobacion)
+                            </div>
+                            <div class="row">
+                                <b>Monto Certificado Aprobado: &nbsp;</b>
+                                @Html.DisplayFor(model => model.monto_certificado_aprobado_acumulado)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div style="width: 100%;">
+
+                        <ul class="nav nav-tabs" id="empresa_tabs" role="tablist">
+                            <li class="nav-item active">
+                                <a class="nav-link" id="presupuesto-tab" data-toggle="tab" href="#presupuesto" role="tab" aria-controls="home" aria-expanded="true">Presupuesto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="so-tab" data-toggle="tab" href="#so" role="tab" aria-controls="home" aria-expanded="true">O.S.</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="avanceobra-tab" data-toggle="tab" href="#avanceobra" role="tab" aria-controls="home" aria-expanded="true">Avance Obra</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="avanceingenieria-tab" data-toggle="tab" href="#avanceingenieria" role="tab" aria-controls="home" aria-expanded="true">Avance Ingeniería</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="avanceprocura-tab" data-toggle="tab" href="#avanceprocura" role="tab" aria-controls="home" aria-expanded="true">Avance Procura</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="transmittal-tab" data-toggle="tab" href="#transmittal" role="tab" aria-controls="home" aria-expanded="true">Transmittal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="historicos-tab" data-toggle="tab" href="#historicos" role="tab" aria-controls="home" aria-expanded="true">Históricos</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="myTabContent">
+
+                            <div class="tab-pane fade" id="historicos" role="tabpanel" aria-labelledby="historicos-tab">
+                                <br />
+                                <table class="table table-bordered table-hover display">
+                                    <thead>
+                                        <tr>
+                                            <th class="align-middle text-center">Id</th>
+                                            <th class="align-middle text-center">Fecha</th>
+                                            <th class="align-middle text-center">Obeservaciones</th>
+                                            <th class="align-middle text-center">Usuario</th>
+                                            <th class="align-middle text-center">Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.HistoricosOfertaList)
+                                        {
+                                            <tr>
+                                                <td style="font-size: 10px"> @Html.DisplayFor(modelItem => item.Id)</td>
+                                                <td style="font-size: 10px"> @Html.DisplayFor(modelItem => item.fecha)</td>
+                                                <td style="font-size: 10px"> @Html.DisplayFor(modelItem => item.observaciones)</td>
+                                                <td style="font-size: 10px"> @Html.DisplayFor(modelItem => item.usuario)</td>
+                                                <td style="width: 150px; font-size: 10px">
+                                                    @Html.ActionLink("Ver", "Details", "HistoricosOferta", new { id = item.Id }, new { @class = "btn btn-outline-success", style = " float:  left; margin-right: 0.3em;" })
+                                                    <div style="float: left">
+                                                        <form onsubmit="return confirm('¿Estás seguro de Eliminar el Registro?');" action="@Url.Action("Delete", "HistoricosOferta", new {id = item.Id})" method="post" class="form-inline">
+                                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger" />
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Fecha</th>
+                                            <th>Usuario</th>
+                                            <th>Observaciones</th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+
+                            <div class="tab-pane fade show active" id="presupuesto" role="tabpanel" aria-labelledby="presupuesto-tab">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col" align="right">
+                                            @Html.ActionLink("Ver", "Details", "Presupuesto", new { id = Model.Id }, new { @class = "btn btn-outline-primary pull-right" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+
+                                <div class="table-responsive">
+                                    <table class="table table-responsive-lg table-bordered table-hover display" id="contratos_table"
+                                           style="font-size: 11px">
+                                        <thead>
+                                            <tr>
+                                                <th style="height: 50px">Código Padre</th>
+                                                <th style="height: 50px">Item Padre</th>
+                                                <th style="height: 50px">Código Item</th>
+                                                <th style="height: 50px">Descripción</th>
+                                                <th style="height: 50px">P.U.</th>
+                                                <th style="height: 50px">Cantidad</th>
+                                                <th style="height: 50px">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.Computo)
+                                            {
+
+                                                <tr>
+                                                    <td> @Html.DisplayFor(modelItem => item.Item.item_padre)</td>
+                                                    <td> @Html.DisplayFor(modelItem => item.nombreitem)</td>
+                                                    <td> @Html.DisplayFor(modelItem => item.Item.codigo)</td>
+                                                    <td> @Html.DisplayFor(modelItem => item.Item.descripcion)</td>
+                                                    <td style="text-align: right">
+                                                        @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@item.precio_unitario)))
+
+                                                    </td>
+                                                    <td style="text-align: right">
+                                                        @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@item.cantidad)))
+
+                                                    </td>
+                                                    <td style="text-align: right">
+                                                        @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@item.costo_total)))
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Código Padre</th>
+                                                <th>Item Padre</th>
+                                                <th>Código Item</th>
+                                                <th>Descripción</th>
+                                                <th>P.U.</th>
+                                                <th>Cantidad</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="avanceobra" role="tabpanel" aria-labelledby="avanceobra-tab">
+                                <br />
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover display" style="font-size: 11px;">
+                                        <thead>
+                                            <tr>
+                                                <th>Fecha</th>
+                                                <th># Avance Obra</th>
+                                                <th># Items en Oferta</th>
+                                                <th>Monto Presupuestado</th>
+                                                <th># Items No Aprobados</th>
+                                                <th>Monto Pendiente No Aprobación</th>
+                                                <th>Monto Total</th>
+                                                <th>Opciones</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            @foreach (var item in Model.avanceObra)
+                                            {
+                                                <tr>
+                                                    <td>@Html.DisplayFor(modelItem => item.fecha_presentacion)</td>
+                                                    <td>@Html.DisplayFor(modelItem => item.descripcion)</td>
+                                                    <td>@Html.DisplayFor(modelItem => item.vItemsOferta)</td>
+                                                    <td style="text-align: right">
+                                                        @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@item.vMontoPresupuestado)))
+                                                    </td>
+                                                    <td>@Html.DisplayFor(modelItem => item.vItemsNoAprobados)</td>
+                                                    <td style="text-align: right">
+                                                        @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@item.vMontoPendiente)))
+                                                    </td>
+                                                    <td style="text-align: right">
+                                                        @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@item.vTotal)))
+                                                    </td>
+
+                                                    <td style="">
+                                                        @Html.ActionLink("Ver", "Details", "AvanceObra", new { id = item.Id }, new { @class = "btn btn-sm btn-outline-success", style = " float:  left; margin-right: 0.3em;" })
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+
+                                        <tfoot>
+                                            <tr>
+                                                <th>Fecha</th>
+                                                <th># Avance Obra</th>
+                                                <th># Items en Oferta</th>
+                                                <th>Monto Presupuestado</th>
+                                                <th># Items No Aprobados</th>
+                                                <th>Monto Pendiente No Aprobación</th>
+                                                <th>Monto Total</th>
+                                                <th>Opciones</th>
+                                            </tr>
+                                        </tfoot>
+
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="so" role="tabpanel" aria-labelledby="so-tab">
+                                <div class="row">
+                                    <div class="col-sm-10" style="margin:auto">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="row">
+                                                    <b>Monto Procura: &nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Cabecera.monto_presupuestado)))
+                                                </div>
+                                                <div class="row">
+                                                    <b>Monto OS Procura:&nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Cabecera.oSmonto_presupuestado)))
+                                                </div>
+                                                <div class="row">
+                                                    <b>% OS Procura: &nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Cabecera.Pmonto_presupuestado)))
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="row">
+                                                    <b>Monto Ingeniería: &nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Cabecera.monto_ingenieria)))
+                                                </div>
+                                                <div class="row">
+                                                    <b>Monto OS Ingeniería:&nbsp; </b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Cabecera.oSmonto_ingenieria)))
+                                                </div>
+                                                <div class="row">
+                                                    <b>% OS Ingeniería: &nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Cabecera.Pmonto_ingenieria)))
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="row">
+                                                    <b>Monto Construcción: &nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Cabecera.monto_construccion)))
+                                                </div>
+                                                <div class="row">
+                                                    <b>Monto OS Construcción: &nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Cabecera.oSmonto_construccion)))
+                                                </div>
+                                                <div class="row">
+                                                    <b>% OS Construcción: &nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Cabecera.Pmonto_construccion)))
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="row">
+                                                    <b>Total: &nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Cabecera.total)))
+                                                </div>
+                                                <div class="row">
+                                                    <b>Total OS &nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Cabecera.oStotal)))
+                                                </div>
+                                                <div class="row">
+                                                    <b>% OS Total: &nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Cabecera.Ptotal)))
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <table class="table table-bordered table-hover display">
+                                    <thead>
+                                        <tr>
+                                            <th class="align-middle text-center">
+                                                Código<br />Orden de<br />Servicio
+                                            </th>
+                                            <th class="align-middle text-center">
+                                                Fecha<br />Orden de <br />Servicio
+                                            </th>
+                                            <th class="align-middle text-center">
+                                                Monto<br />Construcción
+                                            </th>
+                                            <th class="align-middle text-center">
+                                                Monto<br />Ingeniería
+                                            </th>
+                                            <th class="align-middle text-center">
+                                                Monto<br />Procura
+                                            </th>
+                                            <th class="align-middle text-center">
+                                                Monto<br /> Total
+                                            </th>
+                                            <th class="align-middle text-center">Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.OrdenesServicio)
+                                        {
+                                            <tr>
+                                                <td style="font-size:10px"> @Html.DisplayFor(modelItem => item.codigo_orden_servicio)</td>
+                                                <td style="font-size:10px"> @Html.DisplayFor(modelItem => item.fecha_orden_servicio)</td>
+                                                <td style="font-size:10px; text-align: right;">
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@item.monto_aprobado_construccion)))
+                                                </td>
+                                                <td style="font-size:10px; text-align: right;">
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@item.monto_aprobado_ingeniería)))
+                                                </td>
+                                                <td style="font-size:10px; text-align: right;">
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@item.monto_aprobado_suministros)))
+                                                </td>
+                                                <td style="font-size:10px; text-align: right;">
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@item.ValorTotal)))
+                                                </td>
+                                                <td style=" width:  150px; font-size:10px">
+                                                    @Html.ActionLink("Ver", "Index", "DetalleOrdenServicio", new { id = item.Id, url = "url" }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>
+                                                Código Orden de Servicio
+                                            </th>
+                                            <th>
+                                                Fecha Orden de Servicio
+                                            </th>
+                                            <th>
+                                                Monto Construcción
+                                            </th>
+                                            <th>
+                                                Monto Ingeniería
+                                            </th>
+                                            <th>
+                                                Monto Procura
+                                            </th>
+                                            <th>
+                                                Monto Total
+                                            </th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane" id="avanceingenieria" role="tabpanel" aria-labelledby="avanceingenieria-tab">
+                                <div class="row">
+                                    <div class="col-sm-10" style="margin:auto">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="row">
+                                                    <b>Monto Presupuestado Ingeniería: &nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Vmonto_presupuestado)))
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="row"><b>Monto Ejecutado Ingeniería: &nbsp;</b>
+                                                @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Vmonto_ejecutado)))
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="row">
+                                                    <b>Monto Certificado Ingeniería: &nbsp;</b>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <table class="table table-bordered table-hover display">
+                                    <thead>
+                                        <tr>
+                                            <th class="align-middle text-center">
+                                                Fecha<br />Presentacción
+                                            </th>
+                                            <th class="align-middle text-center">
+                                                Avance Ingeniería
+                                            </th>
+                                            <th class="align-middle text-center">
+                                                Ítems en<br />Oferta
+                                            </th>
+                                            <th class="align-middle text-center">
+                                                Monto<br />Presupuestado
+                                            </th>
+                                            <th class="align-middle text-center">Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.AvanceIngenieria)
+                                        {
+                                            <tr>
+                                                <td style="font-size:10px"> @Html.DisplayFor(modelItem => item.fecha_presentacion)</td>
+                                                <td style="font-size:10px"> @Html.DisplayFor(modelItem => item.descripcion)</td>
+                                                <td style="font-size:10px"> @Html.DisplayFor(modelItem => item.VnumeroItems)</td>
+                                                <td style="font-size:10px; text-align: right;">
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@item.monto_ingenieria)))
+                                                </td>
+                                                <td style=" width:  150px; font-size:10px">
+                                                    @Html.ActionLink("Ver", "Details", "AvanceIngenieria", new { id = item.Id, url = "url" }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane" id="avanceprocura" role="tabpanel" aria-labelledby="avanceprocura-tab">
+                                <div class="row">
+                                    <div class="col-sm-10" style="margin:auto">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="row">
+                                                    <b>Monto Presupuestado Procura: &nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Vmonto_presupuestadoProcura)))
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="row">
+                                                    <b>Monto Ejecutado Procura: &nbsp;</b>
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@Model.Vmonto_ejecutadoProcura)))
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="row">
+                                                    <b>Monto Certificado Procura: &nbsp;</b>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <table class="table table-bordered table-hover display">
+                                    <thead>
+                                        <tr>
+                                            <th class="align-middle text-center">
+                                                Fecha<br />Presentacción
+                                            </th>
+                                            <th class="align-middle text-center">
+                                                Ítems en<br />Oferta
+                                            </th>
+                                            <th class="align-middle text-center">
+                                                Monto<br />Presupuestado
+                                            </th>
+                                            <th class="align-middle text-center">Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.AvanceProcura)
+                                        {
+                                            <tr>
+                                                <td style="font-size:10px"> @Html.DisplayFor(modelItem => item.fecha_presentacion)</td>
+                                                <td style="font-size:10px"> @Html.DisplayFor(modelItem => item.VnumItems)</td>
+                                                <td style="font-size:10px; text-align: right">
+                                                    @Html.Raw(String.Format(System.Globalization.CultureInfo.CreateSpecificCulture("es-EC"), "{0:0,0.00}", Convert.ToDecimal(@item.monto_procura)))
+
+                                                </td>
+                                                <td style=" width:  150px; font-size:10px">
+                                                    @Html.ActionLink("Ver", "Details", "AvanceProcura", new { id = item.Id, url = "url" }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane" id="transmittal" role="tabpanel" aria-labelledby="transmittal-tab">
+                                <table class="table table-bordered table-hover display">
+                                    <thead>
+                                        <tr>
+                                            <th class="align-middle text-center">
+                                                Código<br />Transmittal
+                                            </th>
+                                            <th class="align-middle text-center">
+                                                Fecha<br />Emisión
+                                            </th>
+                                            <th class="align-middle text-center">
+                                                Asunto
+                                            </th>
+                                            <th class="align-middle text-center">
+                                                Estado
+                                            </th>
+                                            <th class="align-middle text-center">Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.TransmitalCabeceras)
+                                        {
+                                            <tr>
+                                                <td style="font-size:10px"> @Html.DisplayFor(modelItem => item.codigo_transmital)</td>
+                                                <td style="font-size:10px"> @Html.DisplayFor(modelItem => item.fecha_emision)</td>
+                                                <td style="font-size:10px"> @Html.DisplayFor(modelItem => item.descripcion)</td>
+                                                <td style="font-size:10px"> @(item.estado == 1 ? "Activo" : "Inactivo")</td>
+                                                <td style=" width:  150px; font-size:10px">
+                                                    @Html.ActionLink("Ver", "Details", "TransmitalCabecera", new { id = item.Id, url = "url" }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/build/cloneWbs.js"></script>
+<script src="~/Scripts/build/oferta_chage_state.js"></script>
+<script src="~/Scripts/build/oferta_include.js"></script>
+<script src="~/Scripts/build/wbs_vista.js"></script>

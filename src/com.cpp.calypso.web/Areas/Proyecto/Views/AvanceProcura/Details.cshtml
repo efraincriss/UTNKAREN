@@ -1,0 +1,167 @@
+﻿@using System.Globalization
+@model com.cpp.calypso.web.Areas.Proyecto.Models.DetalleAvanceProcuraViewModel
+@{
+    ViewBag.Title = "Avance Procura";
+}
+<link href="~/Content/css/omega/theme.css" rel="stylesheet" />
+<link href="~/Content/css/primereact.min.css" rel="stylesheet" />
+<link href="~/Content/css/primeicons.css" rel="stylesheet" />
+<link href="~/Content/css/block-ui.css" rel="stylesheet" />
+<link href="~/Content/css/time-picker.css" rel="stylesheet" />
+<div id="OfertaId" class="@Model.AvanceProcutProcuraDto.OfertaId"></div>
+<div id="AvanceProcuraId" class="@Model.AvanceProcutProcuraDto.Id"></div>
+<div id="ContratoId" class="@ViewBag.ContratoId"></div>
+<div id="FechaOfertaId" class="@ViewBag.Fecha"></div>
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Detalles Avance de Procura</h4>
+                    </div>
+
+                    <div class="col" align="right">
+                        @Html.ActionLink("Regresar", "Index", "AvanceProcura", new { id = Model.AvanceProcutProcuraDto.OfertaId }, new { @class = " btn btn-outline-primary" })
+
+                    </div>
+                    <div>
+
+
+                    </div>
+                </div>
+                <hr />
+
+                <div class="row">
+
+
+                    <div class="col-xs-12 col">
+                        <h6><b>Fecha Presentación: </b>@Model.AvanceProcutProcuraDto.fecha_presentacion.ToShortDateString()</h6>
+
+                        <h6><b>Periodo: </b> @Model.AvanceProcutProcuraDto.fecha_desde.ToShortDateString() -  @Model.AvanceProcutProcuraDto.fecha_hasta.ToShortDateString()</h6>
+
+                    </div>
+                    <div class="col-xs-12 col">
+                        <h6><b>Proyecto:  </b>@Model.AvanceProcutProcuraDto.Proyecto.codigo @Model.AvanceProcutProcuraDto.Proyecto.descripcion_proyecto </h6>
+
+
+                        <h6><b>Oferta: </b> @Model.AvanceProcutProcuraDto.Oferta.codigo -@Model.AvanceProcutProcuraDto.Oferta.version- @Model.AvanceProcutProcuraDto.Oferta.descripcion </h6>
+
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col">
+
+                        <h6><b>Estado:</b> @Model.AvanceProcutProcuraDto.estado</h6>
+                        <h6><b>Monto Presupuestado:</b> @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", ViewBag.montopresupuestado)</h6>
+                        <h6><b>Monto Avance Anterior:</b> @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", ViewBag.montoanterior)</h6>
+                        <h6><b>Monto Avance Actual:</b> @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", ViewBag.montoactual)</h6>
+                        <h6><b>Monto Total:</b> @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", Model.AvanceProcutProcuraDto.monto_procura)</h6>
+                    </div>
+                    <div class="col">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="empresa_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="novedades-tab" data-toggle="tab" href="#novedades" role="tab" aria-controls="home" aria-expanded="true">Detalles</a>
+            </li>
+
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="novedades" role="tabpanel" aria-labelledby="novedades-tab">
+                <div class="col" align="right">
+                    <div id="content-detalle-procura" style="display: inline-block;" class="@Model.AvanceProcutProcuraDto.Id" align="left"></div>
+                </div>
+                <hr />
+                <div class="table-responsive" style="width: auto">
+                    <table class="table table-responsive-lg table-bordered table-hover display" style="font-size: 10px;">
+                        <thead>
+                            <tr>
+                                <th>Orden Compra </th>
+                                <th>Código Item </th>
+                                <th> Item </th>
+                                <th>Fecha</th>
+                                <th>Cant Presupuestada</th>
+                                <th>Porcentaje</th>
+                                <th>Cant Actual</th>
+                                <th>Cant Anterior</th>
+                                <th>Cant Acum</th>
+                                <th>P.U</th>
+                                <th>USD Diario</th>
+                                <th>USD Total</th>
+                                <th>Estado</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model.DetalleAvanceProcuraDto)
+                        {
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => item.OrdenCompra.nro_pedido_compra)</td>
+                                <td> @Html.DisplayFor(modelItem => item.Item.codigo)</td>
+                                <td style="width: 250px;"> @Html.DisplayFor(modelItem => item.Item.nombre)</td>
+                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.fecha_real)</td>
+                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.Computo.cantidad)</td>
+                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.DetalleOrdenCompra.porcentaje)%</td>
+                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.calculo_diario)</td>
+                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.calculo_anterior)</td>
+                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.ingreso_acumulado)</td>
+                                <td style="text-align: right"> @Html.DisplayFor(modelItem => item.precio_unitario)</td>
+                                <td> @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", item.valor_real)</td>
+                                <td> @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", (item.ingreso_acumulado*item.precio_unitario))</td>
+                                <td> @Html.DisplayFor(modelItem => item.DetalleOrdenCompra.estado)</td>
+
+                                <td style="width: 250px;">
+                                   @Html.ActionLink("Ver", "Details", "DetalleAvanceProcura", new {id = item.Id}, new {@class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;"})
+                                    @Html.ActionLink("Editar", "Edit", "DetalleAvanceProcura", new {id = item.Id}, new {@class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;"})
+                                    <div style="float: left">
+                                        <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", "DetalleAvanceProcura", new {id = item.Id})" method="post" class="form-inline">
+                                            <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm"/>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th class="align-middle text-center">Orden Compra</th>
+                            <th class="align-middle text-center">Codigo Item </th>
+                            <th class="align-middle text-center">Item </th>
+                            <th class="align-middle text-center">Fecha</th>
+                            <th class="align-middle text-center">Cantidad Presupuestada</th>
+                            <th class="align-middle text-center">Porcentaje</th>
+                            <th class="align-middle text-center">Cantidad Actual</th>
+                            <th class="align-middle text-center">Cantidad Anterior</th>
+                            <th class="align-middle text-center">Cantidad Acumulada</th>
+                            <th class="align-middle text-center">P.U</th>
+                            <th class="align-middle text-center">USD Diario</th>
+                            <th class="align-middle text-center">USD Total</th>
+                            <th class="align-middle text-center">Estado</th>
+                            <th></th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/DetalleAvanceProcura.js"></script>

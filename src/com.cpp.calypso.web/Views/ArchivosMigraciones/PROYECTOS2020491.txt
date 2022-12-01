@@ -1,0 +1,202 @@
+CREADA-3808-B-TD-000999FC09.21 Conversión Estación Auca Sur 1 a Estación de Deshidratación13/01/2020
+CREADA-3808-B-TD-001000REPORTE SEMANAL DE OBRA 07-DIC13/01/2020
+CREADA-3808-B-TD-001001Acta de Recepción Provisoria FC9.1413/01/2020
+CREADA-3808-B-TD-001002Acta de Recepción Provisoria FC9.3313/01/2020
+CREADA-3808-B-TD-001003FC01.04 Sistema de Drenaje13/01/2020
+CREADA-3808-B-TD-001004FC09.30 Aumento de Capacidad del Sistema de Transferencia de Agua y Crudo en Auca Sur13/01/2020
+CREADA-3808-B-TD-001005REPORTE SEMANAL DE OBRA 14-DIC-201813/01/2020
+CREADA-3808-B-TD-001006FC08.07 Excavación en puntos de inspección para Fibra Óptica13/01/2020
+CREADA-3808-B-TD-001007FC02.44 Trabajos para Cierre Punch List13/01/2020
+CREADA-3808-B-TD-001008FC09.33 Pintura de Rombo de Seguridad13/01/2020
+CREADA-3808-B-TD-001009FC03.11 Trabajos para Propietarios de la Comunidad13/01/2020
+CREADA-3808-B-TD-001010FC05.02 Bombas para Re-inyección de Agua13/01/2020
+CREADA-3808-B-TD-001011REPORTE SEMANAL DE OBRA 28-DIC-201813/01/2020
+CREADA-3808-B-TD-001012Acta de Recepción Provisoria FC8.0713/01/2020
+CREADA-3808-B-TD-001013Acta de Recepción Provisoria FC2.4013/01/2020
+CREADA-3808-B-TD-001014Acta de Recepción Provisoria FC2.2113/01/2020
+CREADA-3808-B-TD-001015FC02.50 Instalación Planchas Antideslizantes y Modificación de Manifold13/01/2020
+CREADA-3808-B-TD-001016Entrega de Hoja de Firmas a Shaya FC10.2513/01/2020
+CREADA-3808-B-TD-001017Acta de Recepción Provisoria FC4.0713/01/2020
+CREADA-3808-B-TD-001018Extensión de Plazo - Montaje electromecánico bombas de reinyección de agua en PAD EDYE13/01/2020
+CREADA-3808-B-TD-001019REPORTE SEMANAL DE OBRA 04-ENE-201913/01/2020
+CREADA-3808-B-TD-001020FC02.63 Suministro y Montaje de Equipos de Superficie13/01/2020
+CREADA-3808-B-TD-001021Fabricación e Instalación de Bayoneta para pozo ACAF08613/01/2020
+CREADA-3808-B-TD-001022Acta de Recepción Provisoria FC9.1913/01/2020
+CREADA-3808-B-TD-001023Entrega de certificaciones DIC 1813/01/2020
+CREADA-3808-B-TD-001024Acta de Recepción Provisoria FC8.0313/01/2020
+CREADA-3808-B-TD-001025Acta de Recepción Provisoria FC3.2013/01/2020
+CREADA-3808-B-TD-001026Acta de Recepción Provisoria FC1.0313/01/2020
+CREADA-3808-B-TD-001027FC02.48 Desalojo y Transporte de Material de Auca 28 a Rumipamba13/01/2020
+CREADA-3808-B-TD-001028FC09.23 Suministro y Montaje de 3ra Bomba de Transferencia de Agua13/01/2020
+CREADA-3808-B-TD-001029REPORTE SEMANAL DE OBRA 11-ENE-201913/01/2020
+CREADA-3808-B-TD-001030CAPEX Trabajos para Ingreso de Taladro a CLBC-040 WIW13/01/2020
+CREADA-3808-B-TD-001031Informe Negociación APUs 201813/01/2020
+CREADA-3808-B-TD-001032REPORTE SEMANAL DE OBRA 11
+-ENE-201913/01/2020
+CREADA-3808-B-TD-001033Entrega de firmas de respaldo del FC10.2513/01/2020
+CREADA-3808-B-TD-001034REPORTE SEMANAL DE OBRA 25-ENE-201913/01/2020
+CREADA-3808-B-TD-001035Acta de Recepción Provisoria FC08.0713/01/2020
+CREADA-3808-B-TD-001036Acta de Recepción Provisoria FC02.2113/01/2020
+CREADA-3808-B-TD-001037Entrega de Hojas para Firmas a Shaya Certificación Ene 1913/01/2020
+CREADA-3808-B-TD-001038FC02.37 Trabajos de Manejo de Aguas en Locación Auca 3513/01/2020
+CREADA-3808-B-TD-001039FC02.23 Trabajos de Manejo de Aguas en la Locación Auca 5313/01/2020
+CREADA-3808-B-TD-001040FC02.48 Trabajos de Manejo de Aguas en Locación Auca 2813/01/2020
+CREADA-3808-B-TD-001041REPORTE SEMANAL DE OBRA 01-FEB-201913/01/2020
+CREADA-3808-B-TD-001042REPORTE SEMANAL DE OBRA 08-FEB-201913/01/2020
+CREADA-3808-B-TD-001043FC02.17 Adicional en Auca 6 por Cambio de Alcance13/01/2020
+CREADA-3808-B-TD-001044Trabajos Adicionales – FC02.44 - Trabajos para Facilidades de Químicos13/01/2020
+CREADA-3808-B-TD-001045FC08.07 Jaulas para Válvulas y Soportes de Hormigón para el Proyecto FC08.0713/01/2020
+CREADA-3808-B-TD-001046FC01.06 	Desarrollo de ingeniería básica fase civil para la vía y plataforma del PAD Yulebra E13/01/2020
+CREADA-3808-B-TD-001047FC01.07 Desarrollo de ingeniería básica fase civil para la vía y plataforma del PAD Anaconda C13/01/2020
+CREADA-3808-B-TD-001048Acta de Recepción Provisoria FC2.44, FC2.58, FC2.62, FC2.6313/01/2020
+CREADA-3808-B-TD-001049REPORTE SEMANAL DE OBRA 15-FEB-201913/01/2020
+CREADA-3808-B-TD-001050FC01.07 Desarrollo de ingeniería básica fase civil para la vía y plataforma del PAD Anaconda C13/01/2020
+CREADA-3808-B-TD-001051Acta de Recepción Provisoria FC2.4413/01/2020
+CREADA-3808-B-TD-001052FC01.03 Procura Rack de Comunicaciones Principal13/01/2020
+CREADA-3808-B-TD-001053FC01.04 Procura Rack de Comunicaciones13/01/2020
+CREADA-3808-B-TD-001054FC02.57 Procura Transformador trifásico seco13/01/2020
+CREADA-3808-B-TD-001055FC03.23 Procura de Panel Toas y Sistema 24 VDC13/01/2020
+CREADA-3808-B-TD-001056FC09.19 Adicionales para FC09.19 -  Trabajos para cierre de Punch List para el Proyecto FC09.1913/01/2020
+CREADA-3808-B-TD-001057REPORTE SEMANAL DE OBRA 22-FEB-201913/01/2020
+CREADA-3808-B-TD-001058FC09.19 Procura de plataforma y escalera de acceso13/01/2020
+CREADA-3808-B-TD-001059FC09.30 Procura de plataforma y escalera de acceso13/01/2020
+CREADA-3808-B-TD-001060FC09.23 Procura de plataforma y escalera de acceso13/01/2020
+CREADA-3808-B-TD-001061FC09.21 Procura de plataformas y escaleras de acceso13/01/2020
+CREADA-3808-B-TD-001062FC03.23 Trabajos Comunitarios para el Sr. Dalton Mena13/01/2020
+CREADA-3808-B-TD-001063FC03.22 Asistencia al comisionado y puesta en marcha de switchgear13/01/2020
+CREADA-3808-B-TD-001064FC08.03 Conexión de Heaters del Motor en Área de Bombas13/01/2020
+CREADA-3808-B-TD-001065REPORTE SEMANAL DE OBRA 01-MAR-201913/01/2020
+CREADA-3808-B-TD-001066Entrega de certificados a Shaya13/01/2020
+CREADA-3808-B-TD-001067FC03.23 Trabajos Comunitarios13/01/2020
+CREADA-3808-B-TD-001068n/a13/01/2020
+CREADA-3808-B-TD-001069FC02.59 Sumidero Área de Bombas de Transferencia13/01/2020
+CREADA-3808-B-TD-001070FC01.02 Construcción de Calicatas en Locación Tortuga Sur13/01/2020
+CREADA-3808-B-TD-001071FC09.21  Trabajos para Losa de Bombas Booster13/01/2020
+CREADA-3808-B-TD-001072FC03.21 Procura de Panel Toas y Sistema 24 VDC13/01/2020
+CREADA-3808-B-TD-001073FC02.53 Instalación de válvulas y Hot Tap en Locación Pitalala 113/01/2020
+CREADA-3808-B-TD-001074FC02.58 Alquiler de Grúa para Desmontaje de Shelter13/01/2020
+CREADA-3808-B-TD-001075FC09.19 Instalación de válvulas13/01/2020
+CREADA-3808-B-TD-001076FC10.25 Trabajos para ingreso de Workover en locación Auca 5213/01/2020
+CREADA-3808-B-TD-001077FC02.63 Facilidades para Pozo ACAG-051 Dual13/01/2020
+CREADA-3808-B-TD-001078FC09.23 Instalación de Válvulas Full Port13/01/2020
+CREADA-3808-B-TD-001079Acta de Recepción Provisoria FC08.08-05-RGT-025-02-001-01 YULEBRA 313/01/2020
+CREADA-3808-B-TD-001080Acta de Recepción Provisoria FC09.31-05-RGT-025-02-001-01 Auca 51
+FC09.31-05-RGT-025-02-001-01 Auca 5113/01/2020
+CREADA-3808-B-TD-001081Instalación de un tomamuestras de ¾” en la línea de descarga del tanque T-1297.13/01/2020
+CREADA-3808-B-TD-001082FC03.11 Instalación de un tomamuestras13/01/2020
+CREADA-3808-B-TD-001083FC02.53 Instalación de válvulas y Hot Tap en Locación Pitalala 113/01/2020
+CREADA-3808-B-TD-001084REPORTE SEMANAL DE OBRA 08-MAR-201913/01/2020
+CREADA-3808-B-TD-001085FC01.02 Construcción de Calicatas en Vía Tortuga Sur 0113/01/2020
+CREADA-3808-B-TD-001086FC09.21 Procura de Equipos13/01/2020
+CREADA-3808-B-TD-001087FC02.63 Cambio de línea de conducción CON-1713/01/2020
+CREADA-3808-B-TD-001088REPORTE SEMANAL DE OBRA 15-MAR-201913/01/2020
+CREADA-3808-B-TD-001089FC09.34 Instalación de Equipos Adicionales Rev. B13/01/2020
+CREADA-3808-B-TD-001090FC09.34 Instalación de Equipos Adicionales Rev. C13/01/2020
+CREADA-3808-B-TD-001091FC02.58 Trabajos por Salida de Pozo13/01/2020
+CREADA-3808-B-TD-001092Certificaciones Marzo13/01/2020
+CREADA-3808-B-TD-001093REPORTE SEMANAL DE OBRA 22-MAR-201913/01/2020
+CREADA-3808-B-TD-001094FC02.53 Procura de un Switchgear de Sincronismo de 480V13/01/2020
+CREADA-3808-B-TD-001095FC02.21 Obras requeridas en Anaconda A13/01/2020
+CREADA-3808-B-TD-001096FC02.38 Trabajos para Reparación de Interruptor13/01/2020
+CREADA-3808-B-TD-001097FC08.08 Trabajos para Interconexión de Línea de Reinyección13/01/2020
+CREADA-3808-B-TD-001098REPORTE SEMANAL DE OBRA 29-MAR-201913/01/2020
+CREADA-3808-B-TD-001099Acta de Recepción Provisoria FC02.44 Pozo YLBD-024H y SWG-012513/01/2020
+CREADA-3808-B-TD-001100REPORTE SEMANAL DE OBRA 05-ABR-201913/01/2020
+CREADA-3808-B-TD-001101Acta de Recepción Provisoria FC02.62-05-RGT-025-02-001-01 Culebra 0813/01/2020
+CREADA-3808-B-TD-001102Acta de Recepción Provisoria FC02.40-05-RGT-025-02-001-01 Culebra 0813/01/2020
+CREADA-3808-B-TD-001103Acta de Recepción Provisoria FC01.04-05-RGT-025-02-001-01 Culebra 2113/01/2020
+CREADA-3808-B-TD-001104Acta de Recepción Provisoria FC04.07-05-RGT-025-02-001-01 Varias Locaciones13/01/2020
+CREADA-3808-B-TD-001105Acta de Recepción Provisoria FC03.22 Línea Eléctrica Culebra 21 - Culebra 0113/01/2020
+CREADA-3808-B-TD-001106Acta de Recepción Provisoria FC03.22 Línea de Flujo Culebra 21 - Culebra 0113/01/2020
+CREADA-3808-B-TD-001107Acta de Recepción Provisoria para entrega del Proyecto FC02.60 - Obras en Auca Sur 1013/01/2020
+CREADA-3808-B-TD-001108Acta de Recepción Provisoria FC08.08-05-RGT-025-02-001-01 Yulebra 213/01/2020
+CREADA-3808-B-TD-001109Entrega de Hojas para Firmas a Shaya Certificación correcciones Ene 1913/01/2020
+CREADA-3808-B-TD-001110FC02.60 Suministro e instalación de codos en bajantes de agua lluvia13/01/2020
+CREADA-3808-B-TD-001111FC02.59 Traslado de tubería existente desde Auca 27 hasta Auca 5513/01/2020
+CREADA-3808-B-TD-001112REPORTE SEMANAL DE OBRA 12-ABR-201913/01/2020
+CREADA-3808-B-TD-001113FC09.19 Instalación de Instrumentos en LF de Culebra 1 a Yulebra13/01/2020
+CREADA-3808-B-TD-001114FC02.21 Instalación de iluminación en Plataforma Anaconda13/01/2020
+CREADA-3808-B-TD-001115Ticket de Transporte de material13/01/2020
+CREADA-3808-B-TD-001116FC10.25 Cuadrillas civiles y de Soldadura para mejora en plataformas existentes13/01/2020
+CREADA-3808-B-TD-001117FC02.63 - Reparación de línea de conducción de 4in de Auca 25 a Auca Sur13/01/2020
+CREADA-3808-B-TD-001118FC02.63 - Facilidades para un Pozo Adicional13/01/2020
+CREADA-3808-B-TD-001119FC08.08 Mantenimiento Preventivo de 2 Bombas HPS13/01/2020
+CREADA-3808-B-TD-001120FC11.01 Contrucción de Campamento13/01/2020
+CREADA-3808-B-TD-001121FC02.63 Manejo de Fluidos en Auca 5313/01/2020
+CREADA-3808-B-TD-001122FC09.31 Cuadrillas de topografía13/01/2020
+CREADA-3808-B-TD-001123FC09.21 Construcción de Bordillo de Hormigón13/01/2020
+CREADA-3808-B-TD-001124FC03.22 Trabajos Comunitarios para los Sres. César Barragán y Paquito Guerrero13/01/2020
+CREADA-3808-B-TD-001125FC08.06 Montaje de Grating en Pozos Existentes13/01/2020
+CREADA-3808-B-TD-001126FC03.23 Reparación de Acceso Ángel Armijos13/01/2020
+CREADA-3808-B-TD-001127FC02.59 Procura e Instalación de Aire Acondicionado13/01/2020
+CREADA-3808-B-TD-001128FC09.19 Trabajos para Toma de Presiones13/01/2020
+CREADA-3808-B-TD-001129RSO 23-04-201913/01/2020
+CREADA-3808-B-TD-001130Acta de Recepción Provisoria FC04.07-05-RGT-025-02-001-01 Auca 2813/01/2020
+CREADA-3808-B-TD-001131Acta de Recepción Provisoria FC04.07-05-RGT-025-02-001-01 Auca Sur 1013/01/2020
+CREADA-3808-B-TD-001132Acta de Recepción Provisoria FC02.21-05-RGT-025-02-001-01 Estación Anaconda 0113/01/2020
+CREADA-3808-B-TD-001133Acta de Recepción Provisoria FC09.3413/01/2020
+CREADA-3808-B-TD-001134RSO 23-04-2019-05-RGT-025-02-001-01 Estación Yulebra13/01/2020
+CREADA-3808-B-TD-001135Certificaciones Abril13/01/2020
+CREADA-3808-B-TD-001136RSO 26-04-201913/01/2020
+CREADA-3808-B-TD-001137FC09.19 Instalación de calicatas para verificación de facilidades13/01/2020
+CREADA-3808-B-TD-001138FC09.19 Trabajos en cuellos de línea de Culebra 1 a Yulebra13/01/2020
+CREADA-3808-B-TD-001139FC01.03 Desalojo de arcilla hacia Auca 1313/01/2020
+CREADA-3808-B-TD-001140FC02.59 Construcción de plataforma y vía de acceso provisional13/01/2020
+CREADA-3808-B-TD-001141Acta de Recepción Provisoria FC01.03-05-RGT-025-02-001-01 Auca 12613/01/2020
+CREADA-3808-B-TD-001142Acta de Recepción Provisoria FC02.40-05-RGT-025-02-001-01 Culebra 0813/01/2020
+CREADA-3808-B-TD-001143RSO 27 de abril al 03 de mayo de 201913/01/2020
+CREADA-3808-B-TD-001144FC03.11 Construcción de un comedor temporal13/01/2020
+CREADA-3808-B-TD-001145FC02.63 Suministro y paso de cable de 5kV desde cellar hasta losa de vent box13/01/2020
+CREADA-3808-B-TD-001146FC03.21 Instalación de facilidad para tomamuestra en trampa recibidora13/01/2020
+CREADA-3808-B-TD-001147FC02.23 Suministro y montaje de 02 cabezales en las bombas de químicos13/01/2020
+CREADA-3808-B-TD-001148FC09.23 Mantenimiento de A/C13/01/2020
+CREADA-3808-B-TD-001149FC01.04 Limpieza de drenaje y protección de talud13/01/2020
+CREADA-3808-B-TD-001150FC09.31 Suministro e instalación de 2 extintores PQS de 125 lbs13/01/2020
+CREADA-3808-B-TD-001151FC09.21 Extensión de Vía Comunidad Rumipamba13/01/2020
+CREADA-3808-B-TD-001152FC05.99 Desarrollo de Ingeniería Básica para perforación de 4 Pozos13/01/2020
+CREADA-3808-B-TD-001153FC09.21 Trabajos varios13/01/2020
+CREADA-3808-B-TD-001154FC01.04 Mejoramiento de canal y estero13/01/2020
+CREADA-3808-B-TD-001155FC03.11 Transporte y entrega de una volqueta de lastre fino13/01/2020
+CREADA-3808-B-TD-001156FC02.63 Facilidades para Intervención de Pozos Cononaco 17 y Auca 1813/01/2020
+CREADA-3808-B-TD-001157FC01.04 Suministro de arena fina para área de aterrizaje13/01/2020
+CREADA-3808-B-TD-001158FC02.48 Instalación de planchas para deshabilitación de trampa API13/01/2020
+CREADA-3808-B-TD-001159FC03.11 Transporte y entrega de una volqueta de lastre fino13/01/2020
+CREADA-3808-B-TD-001160FC09.34 Servicio de reparación de la cámara de empuje13/01/2020
+CREADA-3808-B-TD-001161FC08.08 Inspección de turbina de flujo FQI-ACA-114C13/01/2020
+CREADA-3808-B-TD-001162FC01.04 Suministro de arena fina para área de aterrizaje13/01/2020
+CREADA-3808-B-TD-001163FC01.04 Construcción de 4 nuevos cellar y sus facilidades13/01/2020
+CREADA-3808-B-TD-001164FC04.18 Construcción de cerca perimétrica13/01/2020
+CREADA-3808-B-TD-001165FC04.07 Obras requeridas para cierre de Punch List13/01/2020
+CREADA-3808-B-TD-001166FC02.60 Facilidades para Instalación de Medidor VX13/01/2020
+CREADA-3808-B-TD-001167FC02.41 Facilidades para Instalación de Medidor VX13/01/2020
+CREADA-3808-B-TD-001168FC02.43 Provisión de una volqueta de material mixto13/01/2020
+CREADA-3808-B-TD-001169FC02.58 Bayoneta para el Pozo YLBA-02013/01/2020
+CREADA-3808-B-TD-001170FC08.08 Procura de Equipos de Superficie13/01/2020
+CREADA-3808-B-TD-001171FC02.63 Procura de Equipos de Superficie13/01/2020
+CREADA-3808-B-TD-001172RSO 04 al 10 de mayo de 201913/01/2020
+CREADA-3808-B-TD-001173FC03.21 Cambio de Transformador de 3.5MVA a 3MVA13/01/2020
+CREADA-3808-B-TD-001174CAPEX Construcción y montaje de bayoneta13/01/2020
+CREADA-3808-B-TD-001175FC02.63 Suministro y montaje de 02 cabezales en las bombas de químicos13/01/2020
+CREADA-3808-B-TD-001176FC08.08 Procura de Equipos de Superficie13/01/2020
+CREADA-3808-B-TD-001177FC08.08 Construcción de una nueva línea de agua13/01/2020
+CREADA-3808-B-TD-001178FC08.08 Construcción de una nueva línea de agua13/01/2020
+CREADA-3808-B-TD-001179FC02.59 Montaje Torre Autosoportada en Auca 2713/01/2020
+CREADA-3808-B-TD-001180Acta de Recepción Provisoria FC01.04-05-RGT-025-02-001-01 Culebra 21- Flare13/01/2020
+CREADA-3808-B-TD-001181Acta de Recepción Provisoria FC02.41-05-RGT-025-02-001-01 Culebra 06 - Flare13/01/2020
+CREADA-3808-B-TD-001182Acta de Recepción Provisoria FC02.44-05-RGT-025-02-001-01 Yulebra 3 - Flare13/01/2020
+CREADA-3808-B-TD-001183Acta de Recepción Provisoria FC02.48-05-RGT-025-02-001-01 Auca 28 - Flare13/01/2020
+CREADA-3808-B-TD-001184Acta de Recepción Provisoria FC02.53-05-RGT-025-02-001-01 Pitalala - Flare13/01/2020
+CREADA-3808-B-TD-001185Acta de Recepción Provisoria FC08.08-05-RGT-025-02-001-01 Auca 6413/01/2020
+CREADA-3808-B-TD-001186Acta de Recepción Provisoria FC08.08-05-RGT-025-02-001-01 Culebra 0613/01/2020
+CREADA-3808-B-TD-001187Acta de Recepción Provisoria FC08.08-05-RGT-025-02-001-01 Auca 3513/01/2020
+CREADA-3808-B-TD-001188Acta de Recepción Provisoria FC08.08-05-RGT-025-02-001-01 Yulebra 213/01/2020
+CREADA-3808-B-TD-001189FC11.01 Construcción de Campamento13/01/2020
+CREADA-3808-B-TD-001190FC08.08 Sistema de Inyección en Auca Central13/01/2020
+CREADA-3808-B-TD-001191FC02.58 Bayoneta para Pozo Yulebra 1513/01/2020
+CREADA-3808-B-TD-001192RSO 20-05-201913/01/2020
+CREADA-3808-B-TD-001193FC09.36 Programa BL13/01/2020
+CREADA-3808-B-TD-001194FC02.53 FC02.53 - Instalación de válvula en cubeto para tanques de control de fluido13/01/2020
+CREADA-3808-B-TD-001195FC08.08 Sistema de descargas de Protección Atmosférica13/01/2020
+CREADA-3808-B-TD-001196FC09.21 Instalación de tomamuestras varios puntos13/01/2020
+CREADA-3808-B-TD-001197FC08.08 Procura de Equipos de Superficie Auca-15413/01/2020
+CREADA-3808-B-TD-001198FC09.22 Cambio del tipo de fluido en registros de las tablas de calibración de los tanques de 500 BBL13/01/2020

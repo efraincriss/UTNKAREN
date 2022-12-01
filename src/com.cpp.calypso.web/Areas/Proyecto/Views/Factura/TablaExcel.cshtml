@@ -1,0 +1,54 @@
+﻿@model List<com.cpp.calypso.proyecto.dominio.FacturaExcel>
+
+            <div class="table-responsive">
+                <table table class="table table-responsive-lg table-bordered table-hover display" id="contratos_table"
+                       style="font-size: 12px">
+
+                    <thead>
+                        <tr>
+                            <th>Sociedad</th>
+                            <th>Documento</th>
+                            <th>Fecha Emision</th>
+                            <th>Fecha Recepcion</th>
+                            <th>Factura</th>
+                            <th>Cliente</th>
+                            <th>A Cobrar</th>
+                            <th>Cobrado</th>
+                            <th>Fecha Cobro</th>
+                            <th style="display: none"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.sociedad</td>
+                                <td>@item.documento</td>
+                                <td>@item.fecha_emision</td>
+                                <td>@item.fecha_recepcion</td>
+                                <td>@item.factura</td>
+                                <td>@item.cliente</td>
+                                <td>@item.acobrar</td>
+                                <td>@item.cobrado</td>
+                                <td>@item.fecha_cobro</td>
+                                <td style="display: none"></td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Sociedad</th>
+                            <th>Documento</th>
+                            <th>Fecha Emision</th>
+                            <th>Fecha Recepcion</th>
+                            <th>Factura</th>
+                            <th>Cliente</th>
+                            <th>A Cobrar</th>
+                            <th>Cobrado</th>
+                            <th>Fecha Cobro</th>
+                            <th style="display: none"></th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>

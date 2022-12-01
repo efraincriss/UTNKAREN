@@ -1,0 +1,259 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.CartaDto
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@section page_title {<i class="fa fa-unlock-alt"></i> Nueva Carta Enviada}
+                     <div class="row">
+                         @if (ViewBag.Error != null)
+                         {
+                             <div class="alert alert-danger" role="alert">
+                                 @ViewBag.Error
+                             </div>
+                         }
+                         @if (ViewBag.Msg != null)
+                         {
+                             <div class="alert alert-success" role="alert">
+                                 @ViewBag.Msg
+                             </div>
+                         }
+
+                         <div class="col-md-2"></div>
+                         <div class="col-xs-12 col-md-8">
+
+                             @using (Html.BeginForm())
+                             {
+                                 @Html.AntiForgeryToken()
+
+                                 <div class="form-horizontal">
+
+                                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                
+
+                                     <div class="row">
+                                         <div class="col">
+                                             <div class="form-group">
+                                                 @Html.LabelFor(model => model.EmpresaId)
+                                                 @Html.DropDownListFor(model => model.EmpresaId, new SelectList(Model.Empresas, "Id", "razon_social"), "Seleccione Empresa", new { @class = "form-control" })
+                                                 @Html.ValidationMessageFor(model => model.EmpresaId, "", new { @class = "text-danger" })
+
+                                             </div>
+                                         </div>
+                                         <div class="col">
+
+                                             <div class="form-group">
+                                                 @Html.LabelFor(model => model.ClienteId)
+
+                                                 @Html.DropDownListFor(model => model.ClienteId, new SelectList(Model.Clientes, "Id", "razon_social"), "Seleccione Cliente", new { @class = "form-control" })
+                                                 @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
+
+                                             </div>
+                                         </div>
+
+                                     </div>
+
+                                     <div class="row">
+                                         <div class="col">
+                                             <div class="form-group">
+                                                 @Html.Label("Destinatario")
+
+                                                 @Html.EnumDropDownListFor(model => model.tipo_destinatario, "Seleccione Destinatario", new { @class = "form-control" })
+                                                 @Html.ValidationMessageFor(model => model.tipo_destinatario, "", new { @class = "text-danger" })
+
+                                             </div>
+                                         </div>
+                                         <div class="col">
+
+                                             <div class="form-group">
+                                                 @Html.Label("Número")
+
+                                                 @Html.EditorFor(model => model.numero_carta, new { htmlAttributes = new { @class = "form-control" } })
+                                                 @Html.ValidationMessageFor(model => model.numero_carta, "", new { @class = "text-danger" })
+
+                                             </div>
+
+                                         </div>
+                                     </div>
+
+
+                                     <div class="row">
+                                         <div class="col">
+                                             <div class="form-group">
+                                                 @Html.Label("Fecha Envío")
+
+                                                 @Html.EditorFor(model => model.fecha_envio, new { htmlAttributes = new { @class = "form-control" } })
+                                                 @Html.ValidationMessageFor(model => model.fecha_envio, "", new { @class = "text-danger" })
+
+                                             </div>
+                                         </div>
+                                         <div class="col">
+                                             <div class="form-group">
+                                                 @Html.Label("Recepción")
+
+                                                 @Html.EditorFor(model => model.fecha_recepcion, new { htmlAttributes = new { @class = "form-control" } })
+                                                 @Html.ValidationMessageFor(model => model.fecha_recepcion, "", new { @class = "text-danger" })
+
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="form-group">
+                                         @Html.LabelFor(model => model.asunto)
+
+                                         @Html.EditorFor(model => model.asunto, new { htmlAttributes = new { @class = "form-control" } })
+                                         @Html.ValidationMessageFor(model => model.asunto, "", new { @class = "text-danger" })
+
+                                     </div>
+
+                                     <div class="form-group">
+                                         @Html.LabelFor(model => model.descripcion)
+
+                                         @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                                         @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+
+                                     </div>
+                                     <div class="row">
+                                         <div class="col">
+
+                                             <div class="form-group">
+                                                 @Html.LabelFor(model => model.enviado_por)
+
+                                                 @Html.EditorFor(model => model.enviado_por, new { htmlAttributes = new { @class = "form-control" } })
+                                                 @Html.ValidationMessageFor(model => model.enviado_por, "", new { @class = "text-danger" })
+
+                                             </div>
+
+                                         </div>
+                                         <div class="col">
+                                             <div class="form-group">
+                                                 @Html.LabelFor(model => model.dirigido_a)
+                                                 @Html.HiddenFor(model => model.dirigido_a)
+                                                 @Html.DropDownListFor(model => model.DestinatariosSeleccionados, new SelectList(Model.Destinatarios, "Id", "nombre"), null, new { @class = "form-control", multiple = "multiple" })
+
+                                                 @Html.ValidationMessageFor(model => model.dirigido_a, "", new { @class = "text-danger" })
+
+                                             </div>
+
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                         <div class="col">
+                                             <div class="form-group">
+                                                 @Html.LabelFor(model => model.requiere_respuesta)
+
+                                                 @Html.DropDownListFor(model => model.tipo_destinatario, new List<SelectListItem>
+                                                 {new SelectListItem {Text = "SI", Value = "1", Selected = true},
+                                                     new SelectListItem {Text = "NO", Value = "2"},
+                                                 }, new {@class = "form-control"})
+                                                 @Html.ValidationMessageFor(model => model.requiere_respuesta, "", new { @class = "text-danger" })
+
+                                             </div>
+                                         </div>
+                                         <div class="col">
+                                             <div class="form-group">
+                                                 @Html.LabelFor(model => model.estado)
+
+                                                 <div class="checkbox">
+                                                     @Html.EditorFor(model => model.estado)
+                                                     @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+
+                                                 </div>
+                                             </div>
+
+                                         </div>
+                                     </div>
+
+                                     <div class="row">
+                                         <div class="col">
+                                             <div class="form-group">
+                                                 @Html.LabelFor(model => model.carta_origen)
+
+                                                 @Html.EditorFor(model => model.carta_origen, new { htmlAttributes = new { @class = "form-control" } })
+                                                 @Html.ValidationMessageFor(model => model.carta_origen, "", new { @class = "text-danger" })
+
+                                             </div>
+                                         </div>
+                                         <div class="col">
+
+                                             <div class="form-group">
+                                                 @Html.LabelFor(model => model.carta_respuesta)
+
+                                                 @Html.EditorFor(model => model.carta_respuesta, new { htmlAttributes = new { @class = "form-control" } })
+                                                 @Html.ValidationMessageFor(model => model.carta_respuesta, "", new { @class = "text-danger" })
+
+                                             </div>
+
+                                         </div>
+                                     </div>
+
+
+
+                                     <div class="form-group">
+                                         Archivos:<br />
+                                         <input type="file" name="file" multiple />
+                                     </div>
+
+                                     <div class="row">
+                                         <div class="col">
+                                             <div class="form-group">
+                                                 @Html.Label("Área Responsable")
+
+                                                 @Html.DropDownListFor(model => model.id_area_responsable, new List<SelectListItem>
+                                                 {new SelectListItem {Text = "Suministros", Value = "1", Selected = true},
+                                                     new SelectListItem {Text = "Administracion", Value = "2"},
+                                                     new SelectListItem {Text = "Gerencias", Value = "3"},
+                                                     new SelectListItem {Text = "PyCP", Value = "3"}
+                                                 }, "Seeccione Área", new {@class = "form-control"})
+                                                 @Html.ValidationMessageFor(model => model.id_area_responsable, "", new { @class = "text-danger" })
+
+                                             </div>
+                                         </div>
+                                         <div class="col">
+
+                                             <div class="form-group">
+                                                 @Html.Label("Categoría")
+
+                                                 @Html.EditorFor(model => model.categoria, new { htmlAttributes = new { @class = "form-control" } })
+                                                 @Html.ValidationMessageFor(model => model.categoria, "", new { @class = "text-danger" })
+
+                                             </div>
+                                         </div>
+                                     </div>
+
+
+                                     <div class="row">
+                                         <div class="col">
+                                             <div class="form-group">
+                                                 @Html.LabelFor(model => model.copia_a)
+
+                                                 @Html.EditorFor(model => model.copia_a, new { htmlAttributes = new { @class = "form-control" } })
+                                                 @Html.ValidationMessageFor(model => model.copia_a, "", new { @class = "text-danger" })
+
+                                             </div>
+
+                                         </div>
+                                         <div class="col">
+                                             <div class="form-group">
+                                                 @Html.LabelFor(model => model.copia_oculta)
+
+                                                 @Html.EditorFor(model => model.copia_oculta, new { htmlAttributes = new { @class = "form-control" } })
+                                                 @Html.ValidationMessageFor(model => model.copia_oculta, "", new { @class = "text-danger" })
+
+                                             </div>
+                                         </div>
+                                     </div>
+
+                                     <div class="form-group">
+
+                                         <input type="submit" value="Guardar" class="btn btn-primary" />
+                                         @Html.ActionLink("Regresar", "Index", "Carta", new { @class = "btn btn-outline-primary" })
+                                     </div>
+                                 </div>
+                             }
+
+                         </div>
+                     </div>
+@section Scripts{
+
+}

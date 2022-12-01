@@ -1,0 +1,101 @@
+﻿@model IEnumerable<com.cpp.calypso.proyecto.aplicacion.GRDto>
+
+@{
+    ViewBag.Title = "GR";
+}
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+            <div class="col-sm-1" style=" padding-top: 0.4em;">
+                <i class="icon-ban icons font-4xl  mt-auto" style="padding-left: 0.6em;"></i>
+            </div>
+            <div class="col-sm-11">
+                @ViewBag.Msg
+            </div>
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="text-gray-500">Generación de GR</h1>
+                    </div>
+                    <div class="col" align="right">
+                        @Html.ActionLink("Nuevo", "Create", "GR", null, new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <table class="table table-bordered table-hover display" style="font-size: 10px">
+                            <thead>
+                                <tr>
+                                    <th align="center">Cliente</th>
+                                    <th align="center">Contrato</th>
+                                    <th align="center">Proyecto</th>
+                                    <th align="center">@Html.DisplayNameFor(model => model.fecha_registro)</th>
+                                    <th align="center">@Html.DisplayNameFor(model => model.numero_gr)</th>
+                                    <th align="center">Operaciones</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Cliente.razon_social)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Contrato.Codigo)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Proyecto.codigo)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.fecha_registro)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.numero_gr)
+                                        </td>
+
+                                        <td style=" width:  200px;">
+                                            @Html.ActionLink("Ver", "Details", "GR", new { id = item.Id }, new { @class = "btn btn-sm btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                            @Html.ActionLink("Editar", "Edit", "GR", new { id = item.Id }, new { @class = "btn btn-sm btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                            <div style="float: left">
+                                                <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", "GR", new {id = item.Id})" method="post" class="form-inline">
+                                                    <input type="submit" value="Eliminar" class="btn btn-sm btn-outline-danger btn-sm" />
+                                                </form>
+                                            </div>
+                               
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Contrato</th>
+                                    <th>Proyecto</th>
+                                    <th>@Html.DisplayNameFor(model => model.fecha_registro)</th>
+                                    <th>@Html.DisplayNameFor(model => model.numero_gr)</th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

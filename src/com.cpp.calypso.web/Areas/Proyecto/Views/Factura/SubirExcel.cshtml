@@ -1,0 +1,110 @@
+﻿
+@model com.cpp.calypso.web.Areas.Proyecto.Models.FacturaExcelModel
+
+@section page_title
+{
+    <i class="fa fa-tag"></i> Carga de Archivo XLS
+    <h2>Facturas</h2>
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <div class="row">
+
+            @ViewBag.Error
+        </div>
+    </div>
+
+}
+@if (ViewBag.Msg != null)
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Msg
+    </div>
+}
+
+@using (Html.BeginForm("SubirExcel", "Factura", FormMethod.Post, new { enctype = "multipart/form-data", transaction = Model }))
+{
+     @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <b><td>Archivo:</td></b><br />
+        <input type="file" name="UploadedFile"  id="fot" required="" /><br/>
+                                                                       <div class="form-group">
+                                                                           <br />
+                                                                           <input type="submit" value="Cargar" class="btn btn-primary" />
+
+                                                                       </div>
+
+    </div>
+}
+
+
+<div class="row">
+    <div style="width:  100%;">
+
+        <ul class="nav nav-tabs" id="empresa_tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="novedades-tab" data-toggle="tab" href="#novedades" role="tab" aria-controls="home" aria-expanded="true">Facturas Válidas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="ofertas-tab" data-toggle="tab" href="#ofertas" role="tab" aria-controls="profile">Facturas No Válidas</a>
+            </li>
+
+        </ul>
+
+
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="novedades" role="tabpanel" aria-labelledby="novedades-tab">
+                <div id="productList">
+
+
+
+
+                    @{Html.RenderPartial("TablaExcel", Model.ListaFacturas);}
+                </div>
+
+            </div>
+
+
+
+
+            <div class="tab-pane fade" id="ofertas" role="tabpanel" aria-labelledby="ofertas-tab">
+                <div id="productList">
+
+
+
+
+                    @{Html.RenderPartial("TablaExcel", Model.ListaFacturasNovalidas);}
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+@section Scripts{
+    <script>  
+        function uploadAjax() {
+            var inputFileImage = document.getElementById("fot").value;
+ 
+            alert(inputFileImage);
+            $.ajax({
+
+                url: '/Proyecto/Factura/GuardarDetallesExcel',
+                type: "POST",
+                data: { UploadedFile: inputFileImage }
+            });
+        } 
+    </script>  
+}
+

@@ -1,0 +1,86 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.Dto.NovedadDto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Detalles de la Novedad</h2>
+                    </div>
+
+                    <div class="col" align="right">
+                        @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+                        @Html.ActionLink("Regresar", "Details", "Requerimiento", new { id = Model.RequerimientoId }, new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+                <hr />
+                
+                <div>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.RequerimientoId)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Requerimiento.descripcion)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.descripcion)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.descripcion)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.fecha_novedad)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.fecha_novedad)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.fecha_solucion)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.fecha_solucion)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.solucionada)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.solucionada)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.solucion)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.solucion)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.version)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.version)
+                        </dd>
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

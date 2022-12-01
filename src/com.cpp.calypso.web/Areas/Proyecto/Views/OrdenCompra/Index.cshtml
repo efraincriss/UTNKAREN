@@ -1,0 +1,113 @@
+﻿@using System.Globalization
+@model com.cpp.calypso.web.Areas.Proyecto.Models.OfertaOrdenCompraViewModel
+
+
+@{
+    ViewBag.Title = "Ordenes de Compra";
+}
+
+
+<div class="row">
+    <div style="width: 100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">Registro de Ordenes de Compra</h4>
+                    </div>
+                    <div class="col" align="right">
+
+                        @Html.ActionLink("Regresar", "IndexOrdenCompra", "OrdenCompra", null, new { @class = "btn btn-outline-primary" })
+
+                    </div>
+
+
+                </div>
+                <hr/>
+
+                <div class="row">
+                    <div class="col-xs-12 col">
+
+                        <h6><b>Proyecto: </b>@Model.oferta.Proyecto.codigo  -  @Model.oferta.Proyecto.descripcion_proyecto </h6>
+
+                    </div>
+
+                    <div class="col-xs-12 col">
+                        <h6><b>Oferta: </b> @Model.oferta.codigo -   @Model.oferta.version -   @Model.oferta.descripcion</h6>
+                        <h6><b>Definitiva: </b> @Html.DisplayFor(model => model.oferta.es_final)</h6>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="card" style="border: none;width:  100%;">
+        <div class="card-body">
+            <div class="col" align="right">
+                @Html.ActionLink("Nueva Orden de Compra", "Create", "OrdenCompra", new { id = ViewBag.Id }, new { @class = "btn btn-outline-primary" })
+            
+            </div>
+            <hr />
+
+            <table class="table table-bordered table-hover display" style="font-size: 11px">
+                <thead>
+                    <tr>
+                        <th>Oferta</th>
+                        <th>Nro Compra</th>
+                        <th>Fecha</th>
+                        <th>Valor</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model.listaordenes)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Oferta.codigo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nro_pedido_compra)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.fecha_presentacion)
+                            </td>
+                            <td style="text-align: right">
+                                @String.Format(CultureInfo.InvariantCulture, "{0:0,0.0}", item.valor_pedido_compra)
+                            </td>
+
+                            <td style="width: 200px;">
+                                @Html.ActionLink("Ver", "Index", "DetalleOrdenCompra", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                @Html.ActionLink("Editar", "Edit", "OrdenCompra", new { id = item.Id }, new { @class = "btn btn-outline-primary btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                                <div style="float: left">
+                                    <form onsubmit="return confirm('Estás seguro?');" action="@Url.Action("Delete", "OrdenCompra", new {id = item.Id})" method="post" class="form-inline">
+                                        <input type="submit" value="Eliminar" class="btn btn-outline-danger btn-sm" />
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <th>Oferta</th>
+                        <th>Nro Compra</th>
+                        <th>Fecha</th>
+                        <th>Valor</th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+
+            </table>
+
+
+
+
+        </div>
+    </div>
+</div>

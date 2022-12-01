@@ -1,0 +1,35 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.ListaDistribucionDto
+
+@{
+    ViewBag.Title = "Lista de distribución";
+}
+
+
+@section page_title
+{
+
+    <h2>@Model.nombre</h2>
+    <i class="fa fa-tag"></i> Lista de distribución
+}
+@section css {
+    @Styles.Render("~/Content/bundle_css_react")
+    @Styles.Render("~/Content/bundle_css_react_primereact_v2")
+
+
+}
+
+
+@section page_toolbar {
+    <div class="btn-toolbar" role="toolbar">
+        @Html.ActionLink("Listado", "Index", "ListaDistribucion", new { @class = "btn btn-outline-primary", style = "margin-top: 1em;" })
+    </div>
+}
+<link href="~/Content/css/omega/theme.css" rel="stylesheet" />
+<link href="~/Content/css/primereact.min.css" rel="stylesheet" />
+<link href="~/Content/css/primeicons.css" rel="stylesheet" />
+<link href="~/Content/css/block-ui.css" rel="stylesheet" />
+<link href="~/Content/css/time-picker.css" rel="stylesheet" />
+
+<div id="content" class="@Model.Id"></div>
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/lista_de_distribucion.js"></script>

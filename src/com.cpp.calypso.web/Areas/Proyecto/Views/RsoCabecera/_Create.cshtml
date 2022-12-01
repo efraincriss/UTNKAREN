@@ -1,0 +1,64 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.RdoCabeceraDto
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8">
+        @using (Html.BeginForm("_Create","RdoCabecera",FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Información Cabecera Rdo</h4>
+              @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    
+                    <div class="col-md-10">
+                        @Html.HiddenFor(model => model.ProyectoId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ProyectoId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.codigo_rdo)
+                   
+                        @Html.EditorFor(model => model.codigo_rdo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.codigo_rdo, "", new { @class = "text-danger" })
+                 
+                </div>
+                <div class="row">
+                    <div class="col">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha_rdo)
+
+                        @Html.EditorFor(model => model.fecha_rdo, new {htmlAttributes = new {@class = "form-control"}})
+                        @Html.ValidationMessageFor(model => model.fecha_rdo, "", new {@class = "text-danger"})
+
+                    </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.fecha_envio)
+
+                            @Html.EditorFor(model => model.fecha_envio, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.fecha_envio, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    
+                        <input type="submit" value="Guardar" class="btn btn-primary" />
+                    <input type="button" value="Cancelar" id="cerrarcabecera" class="btn btn-outline-primary" />
+                    </div>
+                </div>
+          
+        }
+
+        <div>
+          
+        </div>
+
+
+    </div>
+
+</div>

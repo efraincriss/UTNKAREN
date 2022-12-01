@@ -1,0 +1,39 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.CartaArchivoDto
+@{
+    ViewBag.Title = "Details";
+}
+<div class="row">
+    <div style="width:  100%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title">Información Archivo</h2>
+                    </div>
+                    <div class="col" align="right">
+                        @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-primary" })
+                        @Html.ActionLink("Regresar", "Details", "Carta", new { id = Model.CartaId }, new { @class = "btn btn-outline-primary" })
+                    </div>
+                </div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CartaId)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CartaId)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.descripcion)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.descripcion)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿@model List<Proyecto>
+
+
+@{
+    ViewBag.Title = "Proyectos";
+}
+
+@section page_title
+{
+
+    <h2>Proyectos</h2>
+}
+
+@section page_toolbar {
+
+}
+
+
+
+<table class="table table-bordered table-hover display" id="proyectos_table">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Contrato</th>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.codigo)</td>
+                <td> @Html.DisplayFor(modelItem => item.Contrato.Codigo)</td>
+                <td> @Html.DisplayFor(modelItem => item.nombre_proyecto)</td>
+                <td> @(item.estado_proyecto == true ? "Activo" : "Inactivo") </td>
+                <td style=" width:  200px;">
+                    @Html.ActionLink("Ver", "Index", "ProyectoObservacion", new { id = item.Id }, new { @class = "btn btn-outline-success btn-sm", style = " float:  left; margin-right: 0.3em;" })
+                   
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+
+            <th>Código</th>
+            <th>Contrato</th>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th></th>
+        </tr>
+
+
+    </tfoot>
+</table>
+

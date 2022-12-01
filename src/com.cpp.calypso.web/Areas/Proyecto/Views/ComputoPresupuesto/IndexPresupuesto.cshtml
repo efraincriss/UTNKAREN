@@ -1,0 +1,66 @@
+﻿@model List<Presupuesto>
+
+@{
+    ViewBag.Title = "Presupuestos";
+}
+
+@section page_title
+{
+    <h2>Presupuestos Definitivos</h2>
+}
+@section page_toolbar {
+
+}
+<table class="table table-bordered table-hover display" id="cofertas_table">
+    <thead>
+        <tr>
+            <th>Proyecto </th>
+            <th>Código Requerimiento</th>
+            <th>Código Presupuesto</th>
+            <th>Versión</th>
+            <th>Fecha Registro</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Requerimiento.Proyecto.codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Requerimiento.codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.version)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_registro)
+                </td>
+               
+                <td>
+                    @Html.ActionLink("Ver", "Index","ComputoPresupuesto", new { id = item.Id ,principal=1}, new { @class = "btn btn-outline-success  btn-sm", style = " float:  left; margin-right: 0.3em;" })
+
+                
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+
+            <th>Proyecto </th>
+            <th>Código Requerimiento</th>
+            <th>Código Presupuesto</th>
+            <th>Versión</th>
+            <th>Fecha Registro</th>
+            <th></th>
+        </tr>
+    </tfoot>
+</table>

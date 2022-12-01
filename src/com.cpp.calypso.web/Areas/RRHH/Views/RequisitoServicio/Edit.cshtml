@@ -1,0 +1,36 @@
+﻿@model com.cpp.calypso.proyecto.aplicacion.Dto.RequisitoServicioDto
+
+@{
+	ViewBag.Title = "Editar Requisito";
+}
+
+@section css {
+	@Styles.Render("~/Content/bundle_css_react")
+}
+
+<style>
+
+	.margen {
+		margin-top: 30px;
+	}
+</style>
+
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-sm-12 col-md-8">
+		<div align="right" style="margin-bottom: 0.5em;">
+
+		</div>
+		<div class="card">
+			<div class="card-body">
+				<h2 class="card-title">Administración de Requisito por Servicio</h2>
+				<div id="content-editar-requisito">
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<script src="~/Scripts/build/vendors.js"></script>
+<script src="~/Scripts/build/editar_requisito_servicio.js"></script>
