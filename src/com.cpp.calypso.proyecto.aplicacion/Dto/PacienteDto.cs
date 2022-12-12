@@ -26,11 +26,28 @@ namespace com.cpp.calypso.proyecto.aplicacion.Dto
         public Catalogo Sexo { get; set; }
         public decimal Talla { get; set; }
 
+        public int CentroId { get; set; }
+ 
+        public string GrupoEdad { get; set; }
+        public string NivelEducativo { get; set; }
+        public string EstadoCivil { get; set; }
+        public string ViveSolo { get; set; }
+        public string ConsumeAlcohol { get; set; }
+        public string ConsumeCigarillo { get; set; }
+        public string AutoReporteSalud { get; set; }
+        public string Hospitalizacion { get; set; }
+        public string Emergencia { get; set; }
+        public string HipertencionArterial { get; set; }
+        public string InsuficienciaArterial { get; set; }
+        public string InsuficienciaCardicaCongestiva { get; set; }
+        public string Epoc { get; set; }
+        public string EnfermedadCerebroVascular { get; set; }
 
 
         public virtual string  sexoString { get; set;}
 
-    public bool IsDeleted { get; set; }
+        public virtual string centroString { get; set; }
+        public bool IsDeleted { get; set; }
 
         public long? CreatorUserId { get; set; }
 

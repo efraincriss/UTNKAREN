@@ -32,8 +32,10 @@ namespace com.cpp.calypso.proyecto.dominio
         public bool Alimentacion { get; set; }
 
         public string Calificacion { get; set; }
+        public string CalificacionDependiente { get; set; }
         public decimal Puntuacion { get; set; }
 
+        public DateTime FechaRegistro { get; set; }
 
         public bool IsDeleted { get; set; }
 

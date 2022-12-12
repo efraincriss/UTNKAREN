@@ -801,6 +801,22 @@
     <Compile Include="Migrations\202211271505228_Estructura_Inicial1.Designer.cs">
       <DependentUpon>202211271505228_Estructura_Inicial1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212020432068_Katz.cs" />
+    <Compile Include="Migrations\202212020432068_Katz.Designer.cs">
+      <DependentUpon>202212020432068_Katz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212020457496_FechregistoKat.cs" />
+    <Compile Include="Migrations\202212020457496_FechregistoKat.Designer.cs">
+      <DependentUpon>202212020457496_FechregistoKat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212020857430_Oacientes.cs" />
+    <Compile Include="Migrations\202212020857430_Oacientes.Designer.cs">
+      <DependentUpon>202212020857430_Oacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212020924269_Oacientes2w.cs" />
+    <Compile Include="Migrations\202212020924269_Oacientes2w.Designer.cs">
+      <DependentUpon>202212020924269_Oacientes2w.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuditableEntityViewModel.cs" />
     <Compile Include="Models\BaseWbsComputoViewModel.cs" />
@@ -3061,6 +3077,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202211271505228_Estructura_Inicial1.resx">
       <DependentUpon>202211271505228_Estructura_Inicial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212020432068_Katz.resx">
+      <DependentUpon>202212020432068_Katz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212020457496_FechregistoKat.resx">
+      <DependentUpon>202212020457496_FechregistoKat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212020857430_Oacientes.resx">
+      <DependentUpon>202212020857430_Oacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212020924269_Oacientes2w.resx">
+      <DependentUpon>202212020924269_Oacientes2w.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\MvcResources.Overwrite.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

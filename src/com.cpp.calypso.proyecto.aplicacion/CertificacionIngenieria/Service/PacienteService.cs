@@ -55,6 +55,24 @@ namespace com.cpp.calypso.proyecto.aplicacion.CertificacionIngenieria.Service
             e.SexoId = i.SexoId;
             e.Talla = i.Talla;
             e.Edad = i.Edad;
+
+            e.AutoReporteSalud = i.AutoReporteSalud;
+            e.CentroId = i.CentroId;
+            e.ConsumeAlcohol = i.ConsumeAlcohol;
+            e.ConsumeCigarillo = i.ConsumeCigarillo;
+            e.EnfermedadCerebroVascular = i.EnfermedadCerebroVascular;
+            e.Epoc = i.Epoc;
+            e.EstadoCivil = i.EstadoCivil;
+            e.GrupoEdad = i.GrupoEdad;
+            e.HipertencionArterial = i.HipertencionArterial;
+            e.InsuficienciaArterial = i.InsuficienciaArterial;
+            e.InsuficienciaCardicaCongestiva = i.InsuficienciaCardicaCongestiva;
+            e.NivelEducativo = i.NivelEducativo;
+            e.ViveSolo = i.ViveSolo;
+            e.Hospitalizacion = i.Hospitalizacion;
+            e.Emergencia = i.Emergencia;
+
+
             return true;
         }
 
@@ -68,6 +86,8 @@ namespace com.cpp.calypso.proyecto.aplicacion.CertificacionIngenieria.Service
             e.Vestido = i.Vestido;
             e.Transferencias = i.Transferencias;
             e.Calificacion = i.Calificacion;
+            e.CalificacionDependiente = i.CalificacionDependiente;
+            e.FechaRegistro = DateTime.Now;
             e.Puntuacion = i.Puntuacion;
 
             return true;
@@ -157,7 +177,9 @@ namespace com.cpp.calypso.proyecto.aplicacion.CertificacionIngenieria.Service
 
         public bool insertarKat(Katz entity)
         {
+            entity.FechaRegistro = DateTime.Now;
             _KatzRepo.Insert(entity);
+           
             return true;
         }
 
@@ -167,14 +189,15 @@ namespace com.cpp.calypso.proyecto.aplicacion.CertificacionIngenieria.Service
             {
                 if (entity.Puntuacion >= 12)
                 {
-                    entity.DetallePuntuacion = "NORMAL";
+                    entity.DetallePuntuacion = "ESTADO NUTRICIONAL NORMAL";
                 }
+               
             }
             else
             {
                 if (entity.Puntuacion >= 24)
                 {
-                    entity.DetallePuntuacion = "ESTADO NUTRICIONAL SATISFACTORIO";
+                    entity.DetallePuntuacion = "ESTADO NUTRICIONAL NORMAL";
                 }
                 if (entity.Puntuacion > 16 && entity.Puntuacion <= Convert.ToDecimal(23.5))
                 {
@@ -182,7 +205,7 @@ namespace com.cpp.calypso.proyecto.aplicacion.CertificacionIngenieria.Service
                 }
                 if (entity.Puntuacion < 17)
                 {
-                    entity.DetallePuntuacion = "MAL ESTADO NUTRICIONAL";
+                    entity.DetallePuntuacion = "MALNUTRICIÓN";
                 }
             }
             _MnaRepo.Insert(entity);
@@ -410,7 +433,7 @@ namespace com.cpp.calypso.proyecto.aplicacion.CertificacionIngenieria.Service
 
         public List<PacienteDto> pacientes()
         {
-            var query = Repository.GetAllIncluding(x => x.Sexo).ToList();
+            var query = Repository.GetAllIncluding(x => x.Sexo,x=>x.Centro).ToList();
             var dto = (from e in query
                        select new PacienteDto()
                        {
@@ -421,7 +444,24 @@ namespace com.cpp.calypso.proyecto.aplicacion.CertificacionIngenieria.Service
                            Peso = e.Peso,
                            SexoId = e.SexoId,
                            Talla = e.Talla,
-                           sexoString = e.Sexo.nombre
+                           sexoString = e.Sexo.nombre,
+                           centroString=e.Centro.nombre,
+                           AutoReporteSalud=e.AutoReporteSalud,
+                           CentroId=e.CentroId,
+                           ConsumeAlcohol=e.ConsumeAlcohol,
+                           ConsumeCigarillo=e.ConsumeCigarillo,
+                           EnfermedadCerebroVascular=e.EnfermedadCerebroVascular,
+                           Epoc=e.Epoc,
+                           EstadoCivil=e.EstadoCivil,
+                           GrupoEdad=e.GrupoEdad,
+                           HipertencionArterial=e.HipertencionArterial,
+                           InsuficienciaArterial=e.InsuficienciaArterial,
+                           InsuficienciaCardicaCongestiva=e.InsuficienciaCardicaCongestiva,
+                           NivelEducativo=e.NivelEducativo,
+                           ViveSolo=e.ViveSolo,
+                           Emergencia=e.Emergencia,
+                           Hospitalizacion=e.Hospitalizacion
+                           
 
                        }).ToList();
 
@@ -659,7 +699,8 @@ namespace com.cpp.calypso.proyecto.aplicacion.CertificacionIngenieria.Service
 
             count++;
 
-            var query = _MnaRepo.GetAllIncluding(x => x.Paciente.Sexo,
+            var query = _MnaRepo.GetAllIncluding(c=>c.Paciente,
+                x => x.Paciente.Sexo,
                  c => c.PerdidaApetito,
                   c => c.PerdidaPeso,
                    c => c.Movilidad,
@@ -678,7 +719,8 @@ namespace com.cpp.calypso.proyecto.aplicacion.CertificacionIngenieria.Service
                                 c => c.EstadoSalud,
                                  c => c.CircunferenciaBraquial,
                                   c => c.CircunferenciaPierna
-                                                   ).ToList();
+                                                   ).Where(x=>x.IsDeleted==false)
+                                                   .Where(x => x.Paciente.IsDeleted == false).ToList();
 
             foreach (var ra in query)
             {
@@ -849,10 +891,131 @@ namespace com.cpp.calypso.proyecto.aplicacion.CertificacionIngenieria.Service
             h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
             h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
 
+            cell = "G" + count;
+            h1.Cells[cell].Value = "CENTRO GERIATRICO";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
+            cell = "H" + count;
+            h1.Cells[cell].Value = "GRUPOEDAD";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
 
+            cell = "I" + count;
+            h1.Cells[cell].Value = "NIVEL EDUCATIVO";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
+
+            cell = "J" + count;
+            h1.Cells[cell].Value = "ESTADO CIVIL";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
+
+            cell = "K" + count;
+            h1.Cells[cell].Value = "VIVE SOLO";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
+
+            cell = "L" + count;
+            h1.Cells[cell].Value = "CONSUMO ALCOHOL";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
+
+
+            cell = "M" + count;
+            h1.Cells[cell].Value = "CONSUMO CIGARRILLO";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
+
+            cell = "N" + count;
+            h1.Cells[cell].Value = "AUTO REPORTE SALUD";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
+
+
+            cell = "O" + count;
+            h1.Cells[cell].Value = "HIPERTENCION ARTERIAL";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
+
+
+            cell = "P" + count;
+            h1.Cells[cell].Value = "INSUFICIENCIA ARTERIAL";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
+
+            cell = "Q" + count;
+            h1.Cells[cell].Value = "INSUFICIENCIA CARDIACA CONGESTIVA";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
+
+            cell = "R" + count;
+            h1.Cells[cell].Value = "EPOC";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
+
+            cell = "S" + count;
+            h1.Cells[cell].Value = "ENFERMEDAD CEREBROVASCULAR";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
+
+
+            cell = "T" + count;
+            h1.Cells[cell].Value = "HOSPITALIZACIONES ULTIMO AÑO";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
+
+            cell = "U" + count;
+            h1.Cells[cell].Value = "VISITAS EMERGENCIA ULTIMO AÑO";
+            h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+            h1.Cells[cell].Style.Font.Bold = true;
+            h1.Cells[cell].Style.Fill.PatternType = ExcelFillStyle.Solid;
+            h1.Cells[cell].Style.Fill.BackgroundColor.SetColor(Color.DarkBlue);
+            h1.Cells[cell].Style.Font.Color.SetColor(Color.White);
 
             int p = 2;
-            var pacientes = Repository.GetAllIncluding(c => c.Sexo).ToList();
+            var pacientes = Repository.GetAllIncluding(c => c.Sexo,x=>x.Centro).Where(x => x.IsDeleted == false).ToList();
             foreach (var pa in pacientes)
             {
                 cell = "A" + p;
@@ -877,10 +1040,63 @@ namespace com.cpp.calypso.proyecto.aplicacion.CertificacionIngenieria.Service
                 cell = "F" + p;
                 h1.Cells[cell].Value = pa.Peso;
                 h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+                cell = "G" + p;
+                h1.Cells[cell].Value = pa.Centro.nombre;
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+
+                cell = "H" + p;
+                h1.Cells[cell].Value = pa.GrupoEdad;
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+                cell = "I" + p;
+                h1.Cells[cell].Value = pa.NivelEducativo;
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+                cell = "J" + p;
+                h1.Cells[cell].Value = pa.EstadoCivil;
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+                cell = "K" + p;
+                h1.Cells[cell].Value = pa.ViveSolo;
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+                cell = "L" + p;
+                h1.Cells[cell].Value = pa.ConsumeAlcohol;
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+                cell = "M" + p;
+                h1.Cells[cell].Value = pa.ConsumeCigarillo;
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+                cell = "N" + p;
+                h1.Cells[cell].Value = pa.AutoReporteSalud;
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+                cell = "O" + p;
+                h1.Cells[cell].Value = pa.HipertencionArterial;
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+                cell = "P" + p;
+                h1.Cells[cell].Value = pa.InsuficienciaArterial;
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+                cell = "Q" + p;
+                h1.Cells[cell].Value = pa.InsuficienciaCardicaCongestiva;
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+                cell = "R" + p;
+                h1.Cells[cell].Value = pa.Epoc;
+
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+                cell = "S" + p;
+                h1.Cells[cell].Value = pa.EnfermedadCerebroVascular;
+
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+
+                cell = "T" + p;
+                h1.Cells[cell].Value = pa.Hospitalizacion;
+
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+                cell = "U" + p;
+                h1.Cells[cell].Value = pa.Emergencia;
+
+                h1.Cells[cell].Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Dotted);
+
+
                 p++;
             }
 
-            var kartz = _KatzRepo.GetAllIncluding(c => c.Paciente).ToList();
+            var kartz = _KatzRepo.GetAllIncluding(c => c.Paciente).Where(x => x.IsDeleted == false).Where(x => x.Paciente.IsDeleted == false).ToList();
 
             count = 1;
             cell = "A" + count;

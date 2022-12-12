@@ -4,6 +4,7 @@ import BlockUi from "react-block-ui"
 import axios from "axios"
 import CurrencyFormat from "react-currency-format"
 import Field from "../Base/Field-v2"
+
 import wrapForm from "../Base/BaseWrapper"
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table"
 import { Dialog } from "primereact-v3.3/dialog"
@@ -13,7 +14,7 @@ import { TabView, TabPanel } from "primereact-v3.3/tabview";
 import { Checkbox } from "primereact-v3.3/checkbox"
 import { Panel } from 'primereact-v3.3/panel';
 import { Fieldset } from 'primereact-v3.3/fieldset';
-
+import { ToggleButton } from 'primereact-v3.3/togglebutton';
 
 class PacienteContainer extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class PacienteContainer extends React.Component {
     this.state = {
       errors: {},
       errorsMNA: {},
+      errorsKatz: {},
       action: "list", actionMNA: "", actionKatz: "createKTZ",
       view: false,
       viewKatz: false,
@@ -61,6 +63,74 @@ class PacienteContainer extends React.Component {
       Edad: 0,
       SexoId: 0,
       Talla: 0,
+      Centros: [],
+      CentroId: 0,
+
+      GrupoEdad: "",
+      NivelEducativo: "",
+      EstadoCivil: "",
+      ViveSolo: "",
+      ConsumeAlcohol: "",
+      ConsumeCigarillo: "",
+      AutoReporteSalud: "",
+      HipertencionArterial: "",
+      InsuficienciaArterial: "",
+      InsuficienciaCardicaCongestiva: "",
+      Epoc: "",
+      EnfermedadCerebroVascular: "",
+      Hospitalizacion: "",
+      Emergencia: "",
+      opciones: [
+        { label: "SI", value: "SI" },
+        { label: "NO", value: "NO" },
+      ],
+      opcionesAlcohol: [
+        { label: "Actual", value: "Actual" },
+        { label: "Pasado", value: "Pasado" },
+        { label: "NO", value: "NO" },
+      ],
+      tipoSalud: [
+        { label: "Bueno", value: "Bueno" },
+        { label: "Regular", value: "Regular" },
+        { label: "Malo", value: "Malo" },
+
+      ],
+      opcionesVisitas: [
+        { label: "Ninguna", value: "Ninguna" },
+        { label: "1", value: "1" },
+        { label: "2", value: "2" },
+        { label: "3", value: "3" },
+        { label: "4", value: "4" },
+        { label: "Más de 4", value: "Más de 4" },
+      ],
+
+      niveles: [
+        { label: "Primaria", value: "Primaria" },
+        { label: "Secundaria", value: "Secundaria" },
+        { label: "Superior", value: "Superior" },
+      ],
+      estados: [
+        { label: "Soltero(a)", value: "Soltero(a)" },
+        { label: "Casado(a)", value: "Casado(a)" },
+        { label: "Viudo(a)", value: "Viudo(a)" },
+        { label: "Divorciado(a)", value: "Divorciado(a)" },
+      ],
+
+
+      gruposEdad: [
+        { label: "60 - 65", value: "60 - 65" },
+        { label: "66 - 71", value: "66 - 71" },
+        { label: "72 - 77", value: "72 - 77" },
+        { label: "78 - 83", value: "78 - 83" },
+        { label: "84 - 89", value: "84 - 89" },
+        { label: "90 - 95", value: "90 - 95" },
+        { label: "96 - 101", value: "96 - 101" },
+      ],
+
+
+
+
+
 
 
       detalles: [],
@@ -78,7 +148,7 @@ class PacienteContainer extends React.Component {
       MedicamentoDiaId: 0,
       UlceraLesionId: 0,
       ComidaDiariaId: 0,
-      ConsumoPersonaId: 0,
+      ConsumoPersonaId: 11392,
       ConsumeLacteos: false,
       ConsumeLegumbres: false,
       ConsumeCarne: false,
@@ -92,16 +162,23 @@ class PacienteContainer extends React.Component {
 
 
       IdKATZ: 0,
-      Bano: false,
-      Vestido: false,
+      Bano: null,
+      Vestido: null,
 
-      Sanitario: false,
+      Sanitario: null,
 
-      Transferencias: false,
-      Continencia: false,
-      Alimentacion: false,
+      Transferencias: null,
+      Continencia: null,
+      Alimentacion: null,
 
       Calificacion: "",
+      CalificacionDependencia: "",
+
+      opcionkatz: [
+        { label: "1 - Independiente", value: true },
+        { label: "0 - Dependiente", value: false }
+
+      ],
 
     }
 
@@ -113,9 +190,10 @@ class PacienteContainer extends React.Component {
     this.mostrarForm = this.mostrarForm.bind(this)
     this.mostrarFormMNA = this.mostrarFormMNA.bind(this)
     this.mostrarFormKatz = this.mostrarFormKatz.bind(this)
-    this.OcultarFormulario = this.OcultarFormulario.bind()
-    this.isValid = this.isValid.bind()
-    this.isValidMNA = this.isValidMNA.bind()
+    this.OcultarFormulario = this.OcultarFormulario.bind(this)
+    this.isValid = this.isValid.bind(this)
+    this.isValidMNA = this.isValidMNA.bind(this)
+    this.isValidaKatz = this.isValidaKatz.bind(this)
     this.EnviarFormulario = this.EnviarFormulario.bind(this)
     this.EnviarFormularioMNA = this.EnviarFormularioMNA.bind(this)
     this.EnviarFormularioKTZ = this.EnviarFormularioKTZ.bind(this)
@@ -201,6 +279,10 @@ class PacienteContainer extends React.Component {
           return { label: item.nombre, dataKey: item.Id, value: item.Id }
         })
 
+        var itemscentros = response.data.centros.map((item) => {
+          return { label: item.nombre, dataKey: item.Id, value: item.Id }
+        })
+
 
 
 
@@ -226,7 +308,8 @@ class PacienteContainer extends React.Component {
           preguntas16: items16,
 
           preguntas17: items17,
-          preguntas18: items18
+          preguntas18: items18,
+          Centros: itemscentros
         })
       })
       .catch((error) => {
@@ -248,40 +331,199 @@ class PacienteContainer extends React.Component {
     if (this.state.SexoId == 0) {
       errors.SexoId = "Campo Requerido"
     }
-    if (this.state.Edad == 0) {
+    if (this.state.Edad == "") {
       errors.Edad = "Campo Requerido"
     }
-    if (this.state.Talla == 0) {
+    if (this.state.Talla == "") {
       errors.Talla = "Campo Requerido"
     }
-    if (this.state.Peso == 0) {
+    if (this.state.Peso == "") {
       errors.Peso = "Campo Requerido"
     }
+    if (this.state.CentroId == 0) {
+      errors.CentroId = "Campo Requerido"
+    }
+
+    if (this.state.GrupoEdad == "") {
+      errors.GrupoEdad = "Campo Requerido"
+    }
+
+    if (this.state.NivelEducativo == "") {
+      errors.NivelEducativo = "Campo Requerido"
+    }
+
+    if (this.state.EstadoCivil == "") {
+      errors.EstadoCivil = "Campo Requerido"
+    }
+
+    if (this.state.ViveSolo == "") {
+      errors.ViveSolo = "Campo Requerido"
+    }
+
+    if (this.state.ConsumeAlcohol == "") {
+      errors.ConsumeAlcohol = "Campo Requerido"
+    }
+
+    if (this.state.ConsumeCigarillo == "") {
+      errors.ConsumeCigarillo = "Campo Requerido"
+    }
+
+    if (this.state.AutoReporteSalud == "") {
+      errors.AutoReporteSalud = "Campo Requerido"
+    }
+
+    if (this.state.HipertencionArterial == "") {
+      errors.HipertencionArterial = "Campo Requerido"
+    }
+
+    if (this.state.InsuficienciaArterial == "") {
+      errors.InsuficienciaArterial = "Campo Requerido"
+    }
+
+    if (this.state.InsuficienciaCardicaCongestiva == "") {
+      errors.InsuficienciaCardicaCongestiva = "Campo Requerido"
+    }
+
+    if (this.state.Epoc == "") {
+      errors.Epoc = "Campo Requerido"
+    }
+
+    if (this.state.EnfermedadCerebroVascular == "") {
+      errors.EnfermedadCerebroVascular = "Campo Requerido"
+    }
+
+    /*if (this.state.Hospitalizacion == "") {
+      errors.Hospitalizacion = "Campo Requerido"
+    }
+
+    if (this.state.Emergencia == "") {
+      errors.Emergencia = "Campo Requerido"
+    }*/
 
     this.setState({ errors })
     return Object.keys(errors).length === 0
   }
   contarKatz = () => {
     let total = 0;
+    let totalDep = 0;
+    let calif = "";
+    let califD = "";
     if (this.state.Bano) {
       total = total + 1;
+    }
+    if (this.state.Bano === false) {
+      totalDep = totalDep + 1;
+
     }
     if (this.state.Vestido) {
       total = total + 1;
     }
+
+    if (this.state.Vestido === false) {
+      totalDep = totalDep + 1;
+
+    }
     if (this.state.Sanitario) {
       total = total + 1;
+    }
+    if (this.state.Sanitario === false) {
+      totalDep = totalDep + 1;
+
     }
     if (this.state.Transferencias) {
       total = total + 1;
     }
+    if (this.state.Transferencias === false) {
+      totalDep = totalDep + 1;
+
+    }
     if (this.state.Continencia) {
       total = total + 1;
+    }
+    if (this.state.Continencia === false) {
+      totalDep = totalDep + 1;
+
     }
     if (this.state.Alimentacion) {
       total = total + 1;
     }
-    this.setState({ totalkat: total });
+    if (this.state.Alimentacion === false) {
+      totalDep = totalDep + 1;
+
+    }
+    if (total == 6) {
+      calif = "A";
+    }
+    if (total == 5) {
+      calif = "B";
+    };
+    if (
+      (this.state.Bano != null && this.state.Bano == false) &&
+      (this.state.Vestido != null && this.state.Vestido == false ||
+        this.state.Sanitario != null && this.state.Sanitario == false ||
+        this.state.Transferencias != null && this.state.Transferencias == false ||
+        this.state.Continencia != null && this.state.Continencia == false ||
+        this.state.Alimentacion != null && this.state.Alimentacion == false)) {
+      calif = "C";
+
+    }
+    if (
+      (this.state.Bano != null && this.state.Bano == false) && (this.state.Vestido != null && this.state.Vestido == false) &&
+      (
+        this.state.Sanitario != null && this.state.Sanitario == false ||
+        this.state.Transferencias != null && this.state.Transferencias == false ||
+        this.state.Continencia != null && this.state.Continencia == false ||
+        this.state.Alimentacion != null && this.state.Alimentacion == false)) {
+      calif = "D";
+
+    }
+    if (
+      (this.state.Bano != null && this.state.Bano == false) && (this.state.Vestido != null && this.state.Vestido == false) && (
+        this.state.Sanitario != null && this.state.Sanitario == false) &&
+      (
+
+        this.state.Transferencias != null && this.state.Transferencias == false ||
+        this.state.Continencia != null && this.state.Continencia == false ||
+        this.state.Alimentacion != null && this.state.Alimentacion == false)) {
+      calif = "E";
+
+    }
+    if (
+      (this.state.Bano != null && this.state.Bano == false) && (this.state.Vestido != null && this.state.Vestido == false) && (
+        this.state.Sanitario != null && this.state.Sanitario == false) && (this.state.Transferencias != null && this.state.Transferencias == false) &&
+      (
+        this.state.Continencia != null && this.state.Continencia == false ||
+        this.state.Alimentacion != null && this.state.Alimentacion == false)) {
+      calif = "F";
+
+    }
+    if (totalDep === 6) {
+      calif = "G"
+    }
+    if (totalDep >= 2 && (calif != "C" && calif != "D" && calif != "E" && calif != "F")
+    ) {
+      calif = "H"
+    }
+
+    if (calif === "A" || calif === "B") {
+      califD = "Ausencia de incapacidad o incapacidad leve.";
+    }
+    if (calif === "C" || calif === "D" || calif == "H") {
+      califD = "Incapacidad moderada.";
+    }
+    if (calif === "E" || calif === "F" || calif == "G") {
+      califD = "Incapacidad severa.";
+    }
+
+
+    if (totalDep === 6) {
+      calif = "G"
+    }
+    console.log("CALIFICACION ", calif);
+    console.log("total ", total);
+    console.log("Dependencia", califD)
+
+    this.setState({ totalkat: total, Calificacion: calif, CalificacionDependencia: califD });
 
   }
 
@@ -406,6 +648,31 @@ class PacienteContainer extends React.Component {
     this.setState({ errors })
     return Object.keys(errors).length === 0
   }
+  isValidaKatz = () => {
+
+    const errorsKatz = {}
+    if (this.state.Bano == null) {
+      errorsKatz.Bano = "Campo Requerido";
+    }
+    if (this.state.Vestido == null) {
+      errorsKatz.Vestido = "Campo Requerido";
+    }
+    if (this.state.Sanitario == null) {
+      errorsKatz.Sanitario = "Campo Requerido";
+    }
+    if (this.state.Transferencias == null) {
+      errorsKatz.Transferencias = "Campo Requerido";
+    }
+    if (this.state.Continencia == null) {
+      errorsKatz.Continencia = "Campo Requerido";
+    }
+    if (this.state.Alimentacion == null) {
+      errorsKatz.Alimentacion = "Campo Requerido";
+    }
+    console.log("errores", errorsKatz)
+    this.setState({ errorsKatz })
+    return Object.keys(errorsKatz).length === 0
+  }
 
   OcultarFormularioOrden = () => {
     this.setState({ pacienteSeleccionado: null, action: "list" })
@@ -431,6 +698,20 @@ class PacienteContainer extends React.Component {
   }
 
   GetTotal1 = () => {
+
+    let valorIMC = this.state.pacienteSeleccionado != null ? (this.state.pacienteSeleccionado.Peso / (this.state.pacienteSeleccionado.Talla * this.state.pacienteSeleccionado.Talla)) : 0;
+    if (valorIMC < 19) {
+      this.setState({ IndiceMasaId: 11372 });
+    }
+    if (valorIMC >= 19 && valorIMC < 21) {
+      this.setState({ IndiceMasaId: 11374 });
+    }
+    if (valorIMC >= 21 && valorIMC < 23) {
+      this.setState({ IndiceMasaId: 11375 });
+    }
+    if (valorIMC >= 23) {
+      this.setState({ IndiceMasaId: 11376 });
+    }
 
     axios
       .post("/Documentos/Documento/GetTotal1", {
@@ -523,7 +804,18 @@ class PacienteContainer extends React.Component {
       [name]: value,
     });
     setTimeout(() => {
+
+
+
       this.GetTotal1()
+    }, 500);
+  }
+  onChangeValueDependencia = (name, value) => {
+    this.setState({
+      [name]: value,
+    })
+    setTimeout(() => {
+      this.contarKatz()
     }, 500);
   }
 
@@ -633,6 +925,24 @@ class PacienteContainer extends React.Component {
         Edad: row.Edad,
         SexoId: row.SexoId,
         Talla: row.Talla,
+
+        CentroId: row.CentroId,
+
+        GrupoEdad: row.GrupoEdad,
+        NivelEducativo: row.NivelEducativo,
+        EstadoCivil: row.EstadoCivil,
+        ViveSolo: row.ViveSolo,
+        ConsumeAlcohol: row.ConsumeAlcohol,
+        ConsumeCigarillo: row.ConsumeCigarillo,
+        AutoReporteSalud: row.AutoReporteSalud,
+        HipertencionArterial: row.HipertencionArterial,
+        InsuficienciaArterial: row.InsuficienciaArterial,
+        InsuficienciaCardicaCongestiva: row.InsuficienciaCardicaCongestiva,
+        Epoc: row.Epoc,
+        EnfermedadCerebroVascular: row.EnfermedadCerebroVascular,
+        Hospitalizacion: row.Hospitalizacion,
+        Emergencia: row.Emergencia
+
       })
     } else {
       this.setState({
@@ -645,6 +955,22 @@ class PacienteContainer extends React.Component {
         SexoId: 0,
         Talla: 0,
 
+        CentroId: 0,
+
+        GrupoEdad: "",
+        NivelEducativo: "",
+        EstadoCivil: "",
+        ViveSolo: "",
+        ConsumeAlcohol: "",
+        ConsumeCigarillo: "",
+        AutoReporteSalud: "",
+        HipertencionArterial: "",
+        InsuficienciaArterial: "",
+        InsuficienciaCardicaCongestiva: "",
+        Epoc: "",
+        EnfermedadCerebroVascular: "",
+        Hospitalizacion: "",
+        Emergencia: ""
 
 
 
@@ -681,10 +1007,14 @@ class PacienteContainer extends React.Component {
         EstadoSaludId: row.EstadoSaludId,
         CircunferenciaBraquialId: row.CircunferenciaBraquialId,
         CircunferenciaPiernaId: row.CircunferenciaPiernaId,
-        total11: row.Puntuacion,
-        total2: row.Puntuacion
 
       })
+      setTimeout(() => {
+        this.seleccionarConsumePersona()
+
+        this.GetTotal1()
+      }, 500);
+
     } else {
       this.setState({
         IdMNA: 0,
@@ -703,7 +1033,7 @@ class PacienteContainer extends React.Component {
         MedicamentoDiaId: 0,
         UlceraLesionId: 0,
         ComidaDiariaId: 0,
-        ConsumoPersonaId: 0,
+        ConsumoPersonaId: 11392,
         ConsumeLacteos: false,
         ConsumeLegumbres: false,
         ConsumeCarne: false,
@@ -740,6 +1070,7 @@ class PacienteContainer extends React.Component {
         Alimentacion: row.Alimentacion,
 
         Calificacion: row.Calificacion,
+        CalificacionDependencia: row.CalificacionDependiente,
         totalkat: row.Puntuacion
       })
     } else {
@@ -748,20 +1079,15 @@ class PacienteContainer extends React.Component {
         viewKatz: true,
         view: false,
         actionKatz: "createKatz",
-        Bano: false,
-        Vestido: false,
-
-        Sanitario: false,
-
-        Transferencias: false,
-        Continencia: false,
-        Alimentacion: false,
-
+        Bano: null,
+        Vestido: null,
+        totalkat: 0,
+        Sanitario: null,
+        Transferencias: null,
+        Continencia: null,
+        Alimentacion: null,
         Calificacion: "",
-
-
-
-
+        CalificacionDependencia: ""
       })
     }
   }
@@ -862,7 +1188,10 @@ class PacienteContainer extends React.Component {
     )
   }
 
+
+
   generarBotonesDetallesKtz = (cell, row) => {
+
     return (
       <div>
         <button
@@ -1048,6 +1377,8 @@ class PacienteContainer extends React.Component {
       )
     } else if (this.state.action === "detalles") {
 
+      let valorIMC = this.state.pacienteSeleccionado != null ? (this.state.pacienteSeleccionado.Peso / (this.state.pacienteSeleccionado.Talla * this.state.pacienteSeleccionado.Talla)) : 0;
+
       return (
         <Panel header="Anexos Katz  y MNA">
 
@@ -1104,6 +1435,25 @@ class PacienteContainer extends React.Component {
                 <h6>
                   <b>Peso (kg) :</b>{" "}
                   {this.state.pacienteSeleccionado != null ? this.state.pacienteSeleccionado.Peso : ""}
+                </h6>
+              </div>
+              <div className="col">
+                <h6>
+                  <b>Centro Geriátrico :</b> {this.state.pacienteSeleccionado != null ? this.state.pacienteSeleccionado.centroString : ""}
+                </h6>
+              </div>
+            </div>
+            <div className="row">
+
+              <div className="col">
+                <h6>
+                  <b>Grupo Edad:</b>{" "}
+                  {this.state.pacienteSeleccionado != null ? this.state.pacienteSeleccionado.GrupoEdad : ""}
+                </h6>
+              </div>
+              <div className="col">
+                <h6>
+                  <b>Estado de Salud:</b> {this.state.pacienteSeleccionado != null ? this.state.pacienteSeleccionado.AutoReporteSalud : ""}
                 </h6>
               </div>
             </div>
@@ -1227,7 +1577,7 @@ class PacienteContainer extends React.Component {
                               error={this.state.errorsMNA.Fecha}
                             />
                           </div>
-                          <div className="col" align="right">
+                          <div className="col" align="right" style={{ fontSize: '20px' }}>
                             <p><b>Puntuación Total :</b>{this.state.total2}</p>
                           </div>
                         </div>
@@ -1239,7 +1589,9 @@ class PacienteContainer extends React.Component {
                                   name="PerdidaApetitoId"
                                   required
                                   value={this.state.PerdidaApetitoId}
-                                  label="1. Ha perdido el apetito? Ha comido menos por tener hambre, problemas digestivos, dificultad para masticar o alimentarse en lo últimos tres meses."
+                                  label="1. Ha perdido el apetito? Ha comido menos por falta de
+                                  apetito, problemas digestivos, dificultades de
+                                  masticación o deglución en los últimos 3 meses?."
                                   options={this.state.preguntas1}
                                   type={"select"}
                                   // filter={true}
@@ -1293,7 +1645,7 @@ class PacienteContainer extends React.Component {
                                   name="EnfermedadAgudaId"
                                   required
                                   value={this.state.EnfermedadAgudaId}
-                                  label="4.Ha habido enfermedad aguda o situación de estrés psicológico en los últimos tres meses "
+                                  label="4.Ha tenido enfermedad aguda o situación de estrés psicológico en los últimos tres meses "
                                   options={this.state.preguntas4}
                                   type={"select"}
                                   // filter={true}
@@ -1330,7 +1682,7 @@ class PacienteContainer extends React.Component {
                                   name="IndiceMasaId"
                                   required
                                   value={this.state.IndiceMasaId}
-                                  label="6.Índice de masa corporal "
+                                  label={"6.Índice de masa corporal (IMC) = peso en kg / (talla en m)²;   IMC= " + valorIMC.toFixed(2)}
                                   options={this.state.preguntas6}
                                   type={"select"}
                                   // filter={true}
@@ -1350,9 +1702,9 @@ class PacienteContainer extends React.Component {
                         {this.state.total11 >= 12 && (
                           <><div className="row">
                             <div className="col">
-                              <div className="alert alert-success" role="alert">
+                              <div className="alert alert-success" role="alert" style={{ fontSize: '20px' }}>
 
-                                <b >≥12 puntos: </b>Normal, no es necesaria una valoración completa.
+                                <b >12 - 14 puntos: </b>Estado nutricional normal, no es necesaria una valoración completa.
                               </div>
                             </div>
                             <div className="col">
@@ -1374,9 +1726,14 @@ class PacienteContainer extends React.Component {
 
 
                           </>)}
-                        {(this.state.total11 != 0 && this.state.total11 < 12) && (
-                          <div className="alert alert-danger" role="alert">
-                            <b >≤ 11 puntos: </b>Posible malnutrición, continuar con la valoración.
+                        {(this.state.total11 != 0 && this.state.total11 < 12 && this.state.total11 >= 8) && (
+                          <div className="alert alert-warning" role="alert" style={{ fontSize: '20px' }}>
+                            <b >8 - 11 puntos: </b>Riesgo de malnutrición, continuar con la valoración.
+                          </div>
+                        )}
+                        {(this.state.total11 != 0 && this.state.total11 <= 7) && (
+                          <div className="alert alert-danger" role="alert" style={{ fontSize: '20px' }}>
+                            <b >0 - 7 puntos: </b>Malnutrición, continuar con la valoración.
                           </div>
                         )}
 
@@ -1388,7 +1745,7 @@ class PacienteContainer extends React.Component {
                                   name="ViveDomicilioId"
                                   required
                                   value={this.state.ViveDomicilioId}
-                                  label="7. La persona vive en su domicilio"
+                                  label="7. El paciente vive independiente en su domicilio?"
                                   options={this.state.preguntas7}
                                   type={"select"}
                                   // filter={true}
@@ -1405,7 +1762,7 @@ class PacienteContainer extends React.Component {
                                   name="MedicamentoDiaId"
                                   required
                                   value={this.state.MedicamentoDiaId}
-                                  label="8. Toma más de 3 medicamentos al día "
+                                  label="8. Toma más de 3 medicamentos al día? "
                                   options={this.state.preguntas8}
                                   type={"select"}
                                   // filter={true}
@@ -1426,7 +1783,7 @@ class PacienteContainer extends React.Component {
                                   name="UlceraLesionId"
                                   required
                                   value={this.state.UlceraLesionId}
-                                  label="9. Úlceras o lesiones cutáneas"
+                                  label="9. Úlceras o lesiones cutáneas?"
                                   options={this.state.preguntas9}
                                   type={"select"}
                                   // filter={true}
@@ -1443,7 +1800,7 @@ class PacienteContainer extends React.Component {
                                   name="ComidaDiariaId"
                                   required
                                   value={this.state.ComidaDiariaId}
-                                  label="10. Cuantas comidas hace al día?"
+                                  label="10. Cuántas comidas completas toma al día?"
                                   options={this.state.preguntas10}
                                   type={"select"}
                                   // filter={true}
@@ -1459,17 +1816,71 @@ class PacienteContainer extends React.Component {
                             </div>
 
                             <div className="row">
+
                               <div className="col">
+                                <div className="row">
+                                  <div className="col">
+                                    <p>11. Consume el paciente</p>
+                                  </div>
+                                </div>
+                                <div className="row">
+                                  <div className="col-8">
+                                    <label htmlFor="ab1" className="p-checkbox-label">
+                                      ¿Productos lácteos al menos una vez al día?
+                                    </label> {" "}
+                                  </div>
+                                  <div className="col-4">
+                                    <ToggleButton style={{ width: '50px' }}
+                                      checked={this.state.ConsumeLacteos}
+                                      onChange={(e) => this.changeBoxLacters(e.value)}
+                                      onLabel="SI"
+                                      offLabel="NO"
+                                    />
+                                  </div>
+                                </div>
+                                <div className="row">
+                                  <div className="col-8">
+                                    <label htmlFor="ab2" className="p-checkbox-label">
+                                      ¿Huevos o legumbres una o dos veces a la  semana?
+                                    </label>
+                                  </div>
+                                  <div className="col-4">
+                                    <ToggleButton style={{ width: '50px' }}
+                                      checked={this.state.ConsumeLegumbres}
+                                      onChange={(e) => this.changeBoxLeg(e.value)}
+                                      onLabel="SI"
+                                      offLabel="NO" />
+
+                                  </div>
+                                </div>
+
+                                <div className="row">
+                                  <div className="col-8">
+                                    <label htmlFor="ab3" className="p-checkbox-label">
+                                      ¿Carne, pescado o aves diariamente?
+                                    </label>
+                                  </div>
+                                  <div className="col-4">
+                                    <ToggleButton style={{ width: '50px' }}
+                                      checked={this.state.ConsumeCarne}
+                                      onChange={(e) => this.changeBoxCarnes(e.value)} onLabel="SI"
+                                      offLabel="NO" />
+                                  </div>
+                                </div>
+
+
+
                                 <Field
                                   name="ConsumoPersonaId"
                                   required
                                   value={this.state.ConsumoPersonaId}
-                                  label="11. La persona consume?"
+                                  label="Valoración"
                                   options={this.state.preguntas11}
                                   type={"select"}
                                   // filter={true}
                                   onChange={this.onChangeValueT}
                                   error={this.state.errorsMNA.ConsumoPersonaId}
+                                  edit={false}
                                   readOnly={false}
                                   placeholder="Seleccione.."
                                   filterPlaceholder="Seleccione.."
@@ -1481,7 +1892,7 @@ class PacienteContainer extends React.Component {
                                   name="ConsumoFrutasVerdurasId"
                                   required
                                   value={this.state.ConsumoFrutasVerdurasId}
-                                  label="12.Consume frutas o verduras por lo menos dos veces al día?"
+                                  label="12.Consume frutas o verduras al menos dos veces al día?"
                                   options={this.state.preguntas12}
                                   type={"select"}
                                   // filter={true}
@@ -1495,14 +1906,14 @@ class PacienteContainer extends React.Component {
 
                               </div>
                             </div>
-
+                            <hr></hr>
                             <div className="row">
                               <div className="col">
                                 <Field
                                   name="NumeroVasosAguaId"
                                   required
                                   value={this.state.NumeroVasosAguaId}
-                                  label="13. Cuantos vasos de agua o otros líquidos toma al día?"
+                                  label="13. Cuantos vasos de agua u otros líquidos toma al día? (agua, zumos, café, te, leche)"
                                   options={this.state.preguntas13}
                                   type={"select"}
                                   // filter={true}
@@ -1519,7 +1930,7 @@ class PacienteContainer extends React.Component {
                                   name="ModoAlimentarseId"
                                   required
                                   value={this.state.ModoAlimentarseId}
-                                  label="14.Consume frutas o verduras por lo menos dos veces al día?"
+                                  label="14. Forma de alimentarse"
                                   options={this.state.preguntas14}
                                   type={"select"}
                                   // filter={true}
@@ -1540,7 +1951,7 @@ class PacienteContainer extends React.Component {
                                   name="ConsideracionEnfermoId"
                                   required
                                   value={this.state.ConsideracionEnfermoId}
-                                  label="15. El enfermo se considera, a él mismo bien nutrido (problemas nutricionales) ?"
+                                  label="15. Se considera el paciente que está bien nutrido?"
                                   options={this.state.preguntas15}
                                   type={"select"}
                                   // filter={true}
@@ -1557,7 +1968,8 @@ class PacienteContainer extends React.Component {
                                   name="EstadoSaludId"
                                   required
                                   value={this.state.EstadoSaludId}
-                                  label="16. Comparándose con las personas de su 16.edad. Como esta su estado de salud?"
+                                  label="16. En comparación con las personas de su edad, cómo encuentra el
+                                  paciente su estado de salud?"
                                   options={this.state.preguntas16}
                                   type={"select"}
                                   // filter={true}
@@ -1596,8 +2008,8 @@ class PacienteContainer extends React.Component {
                                   name="CircunferenciaPiernaId"
                                   required
                                   value={this.state.CircunferenciaPiernaId}
-                                  label="18. Circunferencia de la pierna (CC en cm.)"
-                                  options={this.state.preguntas15}
+                                  label="18. Circunferencia braquial (CB en cm)"
+                                  options={this.state.preguntas18}
                                   type={"select"}
                                   // filter={true}
                                   onChange={this.onChangeValueT}
@@ -1616,7 +2028,7 @@ class PacienteContainer extends React.Component {
                               <div className="col">
 
                               </div>
-                              <div className="col">
+                              <div className="col" style={{ fontSize: '20px' }}>
                                 <label><strong>Puntuación Total:  </strong>{this.state.total2}</label>
                               </div>
                             </div>
@@ -1624,19 +2036,19 @@ class PacienteContainer extends React.Component {
                           </div>
                         </div>
                         {this.state.total2 >= 24 && (
-                          <div className="alert alert-success" role="alert">
+                          <div className="alert alert-success" role="alert" style={{ fontSize: '20px' }}>
 
-                            <b >≥24 puntos: </b> Estado nutricional satifactorio.
+                            <b >De 24 a 30 puntos: </b> Estado nutricional normal.
                           </div>
                         )}
-                        {(this.state.total2 != 0 && this.state.total2 > 16 && this.state.total2 <= 23.5) && (
-                          <div className="alert alert-warning" role="alert">
-                            <b >17 a 23.5 puntos: </b>Riesgo de malnutrición.
+                        {(this.state.total2 != 0 && this.state.total2 > 16.5 && this.state.total2 <= 23.5) && (
+                          <div className="alert alert-warning" role="alert" style={{ fontSize: '20px' }}>
+                            <b >De 17 a 23.5 puntos: </b>Riesgo de malnutrición.
                           </div>
                         )}
                         {(this.state.total2 != 0 && this.state.total2 < 17) && (
-                          <div className="alert alert-danger" role="alert">
-                            <b > menos de 17 puntos: </b> Mal estado nutricional.
+                          <div className="alert alert-danger" role="alert" style={{ fontSize: '20px' }}>
+                            <b > menos de 17 puntos: </b> Malnutrición.
                           </div>
                         )}
 
@@ -1704,6 +2116,18 @@ class PacienteContainer extends React.Component {
                       >
                         Nº
                       </TableHeaderColumn>
+                      <TableHeaderColumn
+
+                        dataField="FechaRegistro"
+                        filter={{ type: "TextFilter", delay: 500 }}
+                        tdStyle={{ whiteSpace: "normal", fontSize: "11px" }}
+                        thStyle={{ whiteSpace: "normal", fontSize: "11px" }}
+                        dataSort={true}
+                        editable={false}
+                        dataFormat={this.formatoFechaCorta}
+                      >
+                        Fecha
+                      </TableHeaderColumn>
 
                       <TableHeaderColumn
 
@@ -1729,12 +2153,23 @@ class PacienteContainer extends React.Component {
                         Calificación
                       </TableHeaderColumn>
 
+                      <TableHeaderColumn
 
+                        dataField="CalificacionDependiente"
+
+                        filter={{ type: "TextFilter", delay: 500 }}
+                        tdStyle={{ whiteSpace: "normal", fontSize: "11px" }}
+                        thStyle={{ whiteSpace: "normal", fontSize: "11px" }}
+                        dataSort={true}
+                        editable={false}
+                      >
+                        Grado
+                      </TableHeaderColumn>
                       <TableHeaderColumn
                         dataField="Id"
                         isKey
                         width={"14%"}
-                        dataFormat={this.generarBotonesDetalles}
+                        dataFormat={this.generarBotonesDetallesKtz}
                         thStyle={{ whiteSpace: "normal", textAlign: "center" }}
                       >
                         Opciones
@@ -1742,195 +2177,195 @@ class PacienteContainer extends React.Component {
                     </BootstrapTable>
                   )}
                   {this.state.viewKatz && (
-                    <Card title="KATZ">
+                    <Card >
 
                       <form onSubmit={this.EnviarFormularioKTZ}>
-                        <div className="row align-items-center">
-                          <div className="col">
-                            <h4> 1) Baño (Esponja, regadera o tina)</h4>
-                            <p> Sí: No recibe asistencia (puede entrar y salir de la tina u otra forma de baño).
-                            </p>
-                            <p>Sí: Que reciba asistencia durante el baño en una sola parte del cuerpo
-                              (ej. espalda o pierna). </p>
-                            <p>  No: Que reciba asistencia durante el baño en más de una parte.</p>
-                          </div>
-
-                          <div className="col">
-                            <Fragment>
-                              <Checkbox
-                                inputId="bb1"
-                                checked={this.state.Bano}
-                                onChange={(e) => this.handleChangebox(e)}
-                                name="Bano"
-                              />
-                              <label htmlFor="bb1" className="p-checkbox-label">
-                                SI/NO
-                              </label>
-                            </Fragment>
-                          </div>
-                        </div>
-                        <hr></hr>
-                        <div className="row align-items-center">
-                          <div className="col">
-                            <h4> 2) Vestido</h4>
-                            <p> Sí: Que pueda tomar las prendas y vestirse completamente, sin asistencia.</p>
-                            <p> Sí: Que pueda tomar las prendas y vestirse sin asistencia excepto en
-                              abrocharse los zapatos.</p>
-                            <p>  No: Que reciba asistencia para tomar las prendas y vestirse.</p>
-                          </div>
-
-                          <div className="col">
-                            <Fragment>
-                              <Checkbox
-                                inputId="bb2"
-                                checked={this.state.Vestido}
-                                onChange={(e) => this.handleChangebox(e)}
-                                name="Vestido"
-                              />
-                              <label htmlFor="bb2" className="p-checkbox-label">
-                                SI/NO
-                              </label>
-                            </Fragment>
-                          </div>
-                        </div>
-                        <hr></hr>
-                        <div className="row align-items-center">
-                          <div className="col">
-                            <h4>  3) Uso del sanitario</h4>
-                            <p> Sí: Sin ninguna asistencia (puede utilizar algún objeto de soporte como bastón
-                              o silla de ruedas y/o que pueda arreglar su ropa o el uso de pañal o cómodo).</p>
-                            <p> Sí: Que reciba asistencia al ir al baño, en limpiarse y que pueda manejar por si
-                              mismo/a el pañal o cómodo vaciándolo.</p>
-                            <p>  No: Que no vaya al baño por si mismo/a.</p>
-                          </div>
-
-                          <div className="col">
-                            <Fragment>
-                              <Checkbox
-                                inputId="bb3"
-                                checked={this.state.Sanitario}
-                                onChange={(e) => this.handleChangebox(e)}
-                                name="Sanitario"
-                              />
-                              <label htmlFor="bb3" className="p-checkbox-label">
-                                SI/NO
-                              </label>
-                            </Fragment>
-                          </div>
-                        </div>
-                        <hr></hr>
-                        <div className="row align-items-center">
-                          <div className="col">
-                            <h4> 4) Transferencias</h4>
-                            <p> Sí: Que se mueva dentro y fuera de la cama y silla sin ninguna asistencia
-                              (puede estar utilizando un auxiliar de la marcha u objeto de soporte).</p>
-                            <p> Sí: Que pueda moverse dentro y fuera de la cama y silla con asistencia.</p>
-                            <p>  No: Que no pueda salir de la cama.</p>
-                          </div>
-
-                          <div className="col">
-                            <Fragment>
-                              <Checkbox
-                                inputId="bb4"
-                                checked={this.state.Transferencias}
-                                onChange={(e) => this.handleChangebox(e)}
-                                name="Transferencias"
-                              />
-                              <label htmlFor="bb4" className="p-checkbox-label">
-                                SI/NO
-                              </label>
-                            </Fragment>
-                          </div>
-                        </div>
-                        <hr></hr>
-                        <div className="row align-items-center">
-                          <div className="col">
-                            <h4> 5) Continencia</h4>
-                            <p> Sí: Control total de esfínteres.</p>
-                            <p>  Sí: Que tenga accidentes ocasionales que no afectan su vida social.</p>
-                            <p>   No: Necesita ayuda para supervisión del control de esfínteres, utiliza sonda
-                              o es incontinente.</p>
-                          </div>
-
-                          <div className="col">
-                            <Fragment>
-                              <Checkbox
-                                inputId="bb5"
-                                checked={this.state.Continencia}
-                                onChange={(e) => this.handleChangebox(e)}
-                                name="Continencia"
-                              />
-                              <label htmlFor="bb5" className="p-checkbox-label">
-                                SI/NO
-                              </label>
-                            </Fragment>
-                          </div>
-                        </div>
-                        <hr></hr>
-                        <div className="row align-items-center">
-                          <div className="col">
-                            <h4> 6) Alimentación</h4>
-                            <p> Sí: Que se alimente por si solo sin asistencia alguna.</p>
-                            <p>  Sí: Que se alimente solo y que tenga asistencia sólo para cortar la carne o
-                              untar mantequilla.</p>
-                            <p> No: Que reciba asistencia en la alimentación o que se alimente parcial o
-                              totalmente por vía enteral o parenteral.
-                            </p>
-                          </div>
-
-                          <div className="col">
-                            <Fragment>
-                              <Checkbox
-                                inputId="bb6"
-                                checked={this.state.Alimentacion}
-                                onChange={(e) => this.handleChangebox(e)}
-                                name="Alimentacion"
-                              />
-                              <label htmlFor="bb6" className="p-checkbox-label">
-                                SI/NO
-                              </label>
-                            </Fragment>
-                          </div>
-                        </div>
                         <div className="row">
-                          <div className="col">
-
-                            <div class="card card-accent-info">
-                              <div class="card-header">
-                                <b>CALIFICACIÓN DE KATZ</b>
-                              </div>
-                              <div class="card-body">
-                                <p>[A] Independencia en todas las actividades básicas de la vida diaria.</p>
-                                <p>[B] Independencia en todas las actividades menos en una.</p>
-                                <p>[C] Independencia en todo menos en bañarse y otra actividad adicional.</p>
-                                <p>[D] Independencia en todo menos bañarse, vestirse y otra actividad adicional.</p>
-                                <p>[E] Dependencia en el baño, vestido, uso del sanitario y otra actividadadicional.</p>
-                                <p>[F] Dependencia en el baño, vestido, uso del sanitario, transferencias y otra actividad.</p>
-                                <p>[G] Dependiente en las seis actividades básicas de la vida diaria.</p>
-                                <p>[H] Dependencia en dos actividades pero que no clasifican en C, D, E, y F.</p>
-
-                              </div>
-                            </div>
-
-
+                          <div className="col-2"><b>ACTIVIDAD</b></div>
+                          <div className="col-6"><b>DESCRIPCIÓN DE DEPENDENCIA</b></div>
+                          <div className="col-4"><b>PUNTUACIÓN</b></div>
+                        </div>
+                        <hr></hr>
+                        <div className="row">
+                          <div className="col-2"><b>1) Baño (Esponja, regadera o tina)</b></div>
+                          <div className="col-6">
+                            <p><b>Independiente:</b> Necesita ayuda para lavarse una sola parte (con la espalda o una extremidad incapacitada) o se baña completamente sin ayuda.</p>
+                            <p><b>Dependiente:</b>  Necesita ayuda para lavarse más de una parte del cuerpo, para salir o entrar en la bañera o no se lava solo.</p>
                           </div>
-                          <div className="col">
-                            <label><strong>Resultado </strong>{this.state.totalkat}/6</label>
-                          </div>
-                          <div className="col">
+                          <div className="col-4">
                             <Field
-                              name="Calificacion"
-                              label="Calificación"
+                              name="Bano"
                               required
-                              edit={true}
+                              value={this.state.Bano}
+                              label="Seleccione Dependencia"
+                              options={this.state.opcionkatz}
+                              type={"select"}
+                              // filter={true}
+                              onChange={this.onChangeValueDependencia}
+                              error={this.state.errorsKatz.Bano}
                               readOnly={false}
-                              value={this.state.Calificacion}
-                              onChange={this.handleChange}
-                              error={this.state.errorsMNA.Calificacion}
+                              placeholder="Seleccione.."
+                              filterPlaceholder="Seleccione.."
                             />
+
+                          </div>
+                        </div>
+                        <hr></hr>
+                        <div className="row">
+                          <div className="col-2"><b>2) Vestido</b></div>
+                          <div className="col-6">
+                            <p><b>Independiente:</b> Coge la ropa de cajones y armarios, se la pone y puede abrocharse. Se excluye el acto de atarse los zapatos.</p>
+                            <p><b>Dependiente:</b> No se viste por sí mismo o permanece parcialmente desvestido.</p>
+                          </div>
+                          <div className="col-4">
+                            <Field
+                              name="Vestido"
+                              required
+                              value={this.state.Vestido}
+                              label="Seleccione Dependencia"
+                              options={this.state.opcionkatz}
+                              type={"select"}
+                              // filter={true}
+                              onChange={this.onChangeValueDependencia}
+                              error={this.state.errorsKatz.Vestido}
+                              readOnly={false}
+                              placeholder="Seleccione.."
+                              filterPlaceholder="Seleccione.."
+                            />
+
+                          </div>
+                        </div>
+                        <hr></hr>
+                        <div className="row">
+                          <div className="col-2"><b>3) Uso del sanitario</b></div>
+                          <div className="col-6">
+                            <p><b>Independiente:</b> Accede al sanitario, entra y sale de él, se limpia los órganos excretores y se arregla la ropa.</p>
+                            <p><b>Dependiente:</b> Necesita ayuda para ir al sanitario.</p>
+                          </div>
+                          <div className="col-4">
+                            <Field
+                              name="Sanitario"
+                              required
+                              value={this.state.Sanitario}
+                              label="Seleccione Dependencia"
+                              options={this.state.opcionkatz}
+                              type={"select"}
+                              // filter={true}
+                              onChange={this.onChangeValueDependencia}
+                              error={this.state.errorsKatz.Sanitario}
+                              readOnly={false}
+                              placeholder="Seleccione.."
+                              filterPlaceholder="Seleccione.."
+                            />
+
+                          </div>
+                        </div>
+                        <hr></hr>
+
+                        <div className="row">
+                          <div className="col-2"><b>4) Movilidad</b></div>
+                          <div className="col-6">
+                            <p><b>Independiente:</b> Se levanta y acuesta en la cama por sí mismo y puede sentarse y levantarse de una silla por sí mismo.</p>
+                            <p><b>Dependiente:</b> Necesita ayuda para levantarse y acostarse en la cama y/o silla, no realiza uno o más desplazamientos.</p>
+                          </div>
+                          <div className="col-4">
+                            <Field
+                              name="Transferencias"
+                              required
+                              value={this.state.Transferencias}
+                              label="Seleccione Dependencia"
+                              options={this.state.opcionkatz}
+                              type={"select"}
+                              // filter={true}
+                              onChange={this.onChangeValueDependencia}
+                              error={this.state.errorsKatz.Transferencias}
+                              readOnly={false}
+                              placeholder="Seleccione.."
+                              filterPlaceholder="Seleccione.."
+                            />
+
+                          </div>
+                        </div>
+                        <hr></hr>
+                        <div className="row">
+                          <div className="col-2"><b>5) Continencia</b></div>
+                          <div className="col-6">
+                            <p><b>Independiente:</b> Control completo de micción y defecación.</p>
+                            <p><b>Dependiente:</b> Incontinencia urinaria o fecal parcial o total.</p>
+                          </div>
+                          <div className="col-4">
+                            <Field
+                              name="Continencia"
+                              required
+                              value={this.state.Continencia}
+                              label="Seleccione Dependencia"
+                              options={this.state.opcionkatz}
+                              type={"select"}
+                              // filter={true}
+                              onChange={this.onChangeValueDependencia}
+                              error={this.state.errorsKatz.Continencia}
+                              readOnly={false}
+                              placeholder="Seleccione.."
+                              filterPlaceholder="Seleccione.."
+                            />
+
+                          </div>
+                        </div>
+                        <hr></hr>
+
+                        <div className="row">
+                          <div className="col-2"><b>6) Alimentación</b></div>
+                          <div className="col-6">
+                            <p><b>Independiente:</b> Lleva el alimento a la boca desde el plato o equivalente. Se excluye cortar la carne.</p>
+                            <p><b>Dependiente:</b> Necesita ayuda para comer, no come en absoluto o requiere alimentación parenteral.</p>
+                          </div>
+                          <div className="col-4">
+                            <Field
+                              name="Alimentacion"
+                              required
+                              value={this.state.Alimentacion}
+                              label="Seleccione Dependencia"
+                              options={this.state.opcionkatz}
+                              type={"select"}
+                              // filter={true}
+                              onChange={this.onChangeValueDependencia}
+                              error={this.state.errorsKatz.Alimentacion}
+                              readOnly={false}
+                              placeholder="Seleccione.."
+                              filterPlaceholder="Seleccione.."
+                            />
+
+                          </div>
+                        </div>
+                        <hr></hr>
+
+
+                        <div className="row">
+                          <div className="col-6">
+                            <p> <b>CLASIFICACIÓN</b></p>
+                            <p>A. Independiente en todas sus funciones.</p>
+                            <p>B. Independiente en todas las funciones menos en una de ellas.</p>
+                            <p>C. Independiente en todas las funciones menos en el baño y otra cualquiera.</p>
+                            <p>D. Independiente en todas las funciones menos en el baño, vestido y otra cualquiera.</p>
+                            <p>E. Independiente en todas las funciones menos en el baño, vestido, uso del sanitario y otra cualquiera.</p>
+                            <p>F. Independencia en todas las funciones menos en el baño, vestido, uso del sanitario, movilidad y otra cualquiera de las dos restantes.</p>
+                            <p>G. Dependiente en todas las funciones.</p>
+                            <p>H. Dependiente en al menos dos funciones, pero no clasificable como C, D, E o F.</p>
+                          </div>
+                          <div className="col-3">
+                            <p> <b>RESULTADO:</b></p>
+                            <p style={{ fontSize: "15px" }}>{this.state.totalkat}/6</p>
+                          </div>
+                          <div className="col-3">
+                            <p> <b>CALIFICACIÓN INDEPENDENCIA:</b></p>
+                            <p style={{ fontSize: "15px" }}>{this.state.Calificacion}</p>
+                            <hr></hr>
+                            <p> <b>GRADO DE DEPENDENCIA:</b></p>
+                            <p style={{ fontSize: "15px" }}>{this.state.CalificacionDependencia}</p>
                           </div>
                         </div>
 
+                        <hr></hr>
                         <button type="submit" className="btn btn-outline-primary">
                           Guardar
                         </button>
@@ -1962,7 +2397,7 @@ class PacienteContainer extends React.Component {
                 <div className="col">
                   <Field
                     name="Identificacion"
-                    label="Identificacion"
+                    label="Identificación"
                     required
                     edit={true}
                     readOnly={false}
@@ -2043,6 +2478,271 @@ class PacienteContainer extends React.Component {
                   />
                 </div>
               </div>
+              <hr></hr>
+
+
+              <div className="row">
+                <div className="col">
+                  <Field
+                    name="CentroId"
+                    required
+                    value={this.state.CentroId}
+                    label="Centro Geriátrico "
+                    options={this.state.Centros}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.CentroId}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+                <div className="col">
+                  <Field
+                    name="GrupoEdad"
+                    required
+                    value={this.state.GrupoEdad}
+                    label="Grupo Edad"
+                    options={this.state.gruposEdad}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.GrupoEdad}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                  <Field
+                    name="NivelEducativo"
+                    required
+                    value={this.state.NivelEducativo}
+                    label="Nivel Educativo "
+                    options={this.state.niveles}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.NivelEducativo}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+                <div className="col">
+                  <Field
+                    name="EstadoCivil"
+                    required
+                    value={this.state.EstadoCivil}
+                    label="Estado Civil"
+                    options={this.state.estados}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.EstadoCivil}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                  <Field
+                    name="ViveSolo"
+                    required
+                    value={this.state.ViveSolo}
+                    label="Vive Solo "
+                    options={this.state.opciones}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.ViveSolo}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+                <div className="col">
+                  <Field
+                    name="AutoReporteSalud"
+                    required
+                    value={this.state.AutoReporteSalud}
+                    label="Auto Reporte Salud"
+                    options={this.state.tipoSalud}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.AutoReporteSalud}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col">
+                  <Field
+                    name="ConsumeAlcohol"
+                    required
+                    value={this.state.ConsumeAlcohol}
+                    label="Consume Alcohol "
+                    options={this.state.opcionesAlcohol}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.ConsumeAlcohol}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+                <div className="col">
+                  <Field
+                    name="ConsumeCigarillo"
+                    required
+                    value={this.state.ConsumeCigarillo}
+                    label="Consume Cigarillo"
+                    options={this.state.opcionesAlcohol}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.ConsumeCigarillo}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                  <Field
+                    name="HipertencionArterial"
+                    required
+                    value={this.state.HipertencionArterial}
+                    label="Hipertención Arterial "
+                    options={this.state.opciones}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.HipertencionArterial}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+                <div className="col">
+                  <Field
+                    name="InsuficienciaArterial"
+                    required
+                    value={this.state.InsuficienciaArterial}
+                    label="Diabetes"
+                    options={this.state.opciones}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.InsuficienciaArterial}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col">
+                  <Field
+                    name="InsuficienciaCardicaCongestiva"
+                    required
+                    value={this.state.InsuficienciaCardicaCongestiva}
+                    label="Insuficiencia Cardiaca Congestiva "
+                    options={this.state.opciones}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.InsuficienciaCardicaCongestiva}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+                <div className="col">
+                  <Field
+                    name="Epoc"
+                    required
+                    value={this.state.Epoc}
+                    label="EPOC"
+                    options={this.state.opciones}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.Epoc}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col">
+                  <Field
+                    name="EnfermedadCerebroVascular"
+                    required
+                    value={this.state.EnfermedadCerebroVascular}
+                    label="Enfermedad CerebroVascular "
+                    options={this.state.opciones}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.EnfermedadCerebroVascular}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+                <div className="col">
+
+                </div>
+              </div>
+              {/*  <div className="row">
+                <div className="col">
+                  <Field
+                    name="Hospitalizacion"
+                    required
+                    value={this.state.Hospitalizacion}
+                    label="Hospitalizaciones el último año"
+                    options={this.state.opcionesVisitas}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.Hospitalizacion}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+                <div className="col">
+                  <Field
+                    name="Emergencia"
+                    required
+                    value={this.state.Emergencia}
+                    label="Visitas a emergencias el último año"
+                    options={this.state.opcionesVisitas}
+                    type={"select"}
+                    //filter={true}
+                    onChange={this.onChangeValue}
+                    error={this.state.errors.Emergencia}
+                    readOnly={false}
+                    placeholder="Seleccione.."
+                    filterPlaceholder="Seleccione.."
+                  />
+                </div>
+              </div>
+              */}
               <button type="submit" className="btn btn-outline-primary">
                 Guardar
               </button>
@@ -2094,7 +2794,24 @@ class PacienteContainer extends React.Component {
             SexoId: this.state.SexoId,
             Talla: this.state.Talla,
             Peso: this.state.Peso,
-            Edad: this.state.Edad
+            Edad: this.state.Edad,
+            CentroId: this.state.CentroId,
+
+            GrupoEdad: this.state.GrupoEdad,
+            NivelEducativo: this.state.NivelEducativo,
+            EstadoCivil: this.state.EstadoCivil,
+            ViveSolo: this.state.ViveSolo,
+            ConsumeAlcohol: this.state.ConsumeAlcohol,
+            ConsumeCigarillo: this.state.ConsumeCigarillo,
+            AutoReporteSalud: this.state.AutoReporteSalud,
+            HipertencionArterial: this.state.HipertencionArterial,
+            InsuficienciaArterial: this.state.InsuficienciaArterial,
+            InsuficienciaCardicaCongestiva: this.state.InsuficienciaCardicaCongestiva,
+            Epoc: this.state.Epoc,
+            EnfermedadCerebroVascular: this.state.EnfermedadCerebroVascular,
+            Hospitalizacion: this.state.Hospitalizacion,
+            Emergencia: this.state.Emergencia
+
 
           })
           .then((response) => {
@@ -2122,7 +2839,23 @@ class PacienteContainer extends React.Component {
             SexoId: this.state.SexoId,
             Talla: this.state.Talla,
             Peso: this.state.Peso,
-            Edad: this.state.Edad
+            Edad: this.state.Edad,
+            CentroId: this.state.CentroId,
+
+            GrupoEdad: this.state.GrupoEdad,
+            NivelEducativo: this.state.NivelEducativo,
+            EstadoCivil: this.state.EstadoCivil,
+            ViveSolo: this.state.ViveSolo,
+            ConsumeAlcohol: this.state.ConsumeAlcohol,
+            ConsumeCigarillo: this.state.ConsumeCigarillo,
+            AutoReporteSalud: this.state.AutoReporteSalud,
+            HipertencionArterial: this.state.HipertencionArterial,
+            InsuficienciaArterial: this.state.InsuficienciaArterial,
+            InsuficienciaCardicaCongestiva: this.state.InsuficienciaCardicaCongestiva,
+            Epoc: this.state.Epoc,
+            EnfermedadCerebroVascular: this.state.EnfermedadCerebroVascular,
+            Hospitalizacion: this.state.Hospitalizacion,
+            Emergencia: this.state.Emergencia
           })
           .then((response) => {
             if (response.data == "OK") {
@@ -2253,9 +2986,9 @@ class PacienteContainer extends React.Component {
     event.preventDefault()
     this.props.blockScreen()
 
-    if (this.state.Calificacion == "") {
+    if (!this.isValidaKatz) {
       abp.notify.error(
-        "Se debe agregar un calificación al anexo Katz.",
+        "Debe completar datos del formulario Katz",
         "Validación"
       )
       this.props.unlockScreen()
@@ -2276,6 +3009,7 @@ class PacienteContainer extends React.Component {
             Alimentacion: this.state.Alimentacion,
 
             Calificacion: this.state.Calificacion,
+            CalificacionDependiente: this.state.CalificacionDependencia,
             Puntuacion: this.state.totalkat
 
           })
@@ -2297,10 +3031,8 @@ class PacienteContainer extends React.Component {
       } else {
 
         axios
-          .post("/Documentos/Documento/FGetEditMNA", {
+          .post("/Documentos/Documento/FGetEditK", {
             Id: this.state.IdKATZ,
-            PacienteId: this.state.pacienteSeleccionado.Id,
-            Id: 0,
             PacienteId: this.state.pacienteSeleccionado.Id,
             Bano: this.state.Bano,
             Vestido: this.state.Vestido,
@@ -2312,6 +3044,7 @@ class PacienteContainer extends React.Component {
             Alimentacion: this.state.Alimentacion,
 
             Calificacion: this.state.Calificacion,
+            CalificacionDependiente: this.state.CalificacionDependencia,
             Puntuacion: this.state.Puntuacion
           })
           .then((response) => {
@@ -2434,10 +3167,61 @@ class PacienteContainer extends React.Component {
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
     this.setState({ [name]: value })
+
+
     setTimeout(() => {
-      this.contarKatz()
+      this.seleccionarConsumePersona()
     }, 500);
   };
+
+  changeBoxLacters = (value) => {
+    this.setState({ ConsumeLacteos: value });
+    setTimeout(() => {
+      this.seleccionarConsumePersona()
+
+      this.GetTotal1()
+    }, 500);
+  }
+  changeBoxCarnes = (value) => {
+    this.setState({ ConsumeCarne: value });
+    setTimeout(() => {
+      this.seleccionarConsumePersona()
+      this.GetTotal1()
+    }, 500);
+
+  }
+  changeBoxLeg = (value) => {
+
+    this.setState({ ConsumeLegumbres: value });
+    setTimeout(() => {
+      this.seleccionarConsumePersona()
+      this.GetTotal1()
+    }, 500);
+  }
+  seleccionarConsumePersona = () => {
+    var totalSI = 0;
+
+    if (this.state.ConsumeLacteos) {
+      totalSI = totalSI + 1;
+    }
+    if (this.state.ConsumeLegumbres) {
+      totalSI = totalSI + 1;
+    }
+    if (this.state.ConsumeCarne) {
+      totalSI = totalSI + 1;
+    }
+    if (totalSI === 0 || totalSI === 1) {
+      this.setState({ ConsumoPersonaId: 11392 });
+    }
+    if (totalSI === 2) {
+      this.setState({ ConsumoPersonaId: 11393 });
+    }
+    if (totalSI === 3) {
+      this.setState({ ConsumoPersonaId: 11394 });
+    }
+
+  }
+
   handleChange(event) {
     if (event.target.files) {
       console.log(event.target.files)

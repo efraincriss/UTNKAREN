@@ -9,7 +9,7 @@ namespace com.cpp.calypso.web.Models
 {
     public class MNAModels
     {
-   
+        public List<CatalogoDto> centros { get; set; }
         public List<CatalogoDto> pr1 { get; set; }
         public List<CatalogoDto> pr2 { get; set; }
         public List<CatalogoDto> pr3 { get; set; }

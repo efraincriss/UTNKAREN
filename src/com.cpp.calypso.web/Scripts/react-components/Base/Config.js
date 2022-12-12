@@ -5,12 +5,12 @@ const config = {
   //appUrl: "http://10.26.102.61:90/",
   // apiUrl: "http://45.35.14.178/",
   //appUrl: "http://45.35.14.178/",
-  //apiUrl: "http://45.35.14.178:100/",
-  //appUrl: "http://45.35.14.178:100/",
+  apiUrl: "http://45.35.14.178:100/",
+  appUrl: "http://45.35.14.178:100/",
 
   //formFormatDate:"DD-MM-YYYY",*/
-  apiUrl: "http://localhost:7090/",
-  appUrl: "http://localhost:7090/",
+  //apiUrl: "http://localhost:7090/",
+  //appUrl: "http://localhost:7090/",
   //apiUrl: "http://pdmis.teic.techint.net/", //Prod teiecwas102
   //appUrl: "http://pdmis.teic.techint.net/",//
   formatDate: "YYYY-MM-DD",

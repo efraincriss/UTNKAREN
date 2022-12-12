@@ -84,6 +84,7 @@ namespace com.cpp.calypso.web.Areas.Documentos.Controllers
             list.pr16 = _catalogoService.APIObtenerCatalogos("MNA_16");
             list.pr17 = _catalogoService.APIObtenerCatalogos("MNA_17");
             list.pr18 = _catalogoService.APIObtenerCatalogos("MNA_18");
+            list.centros = _catalogoService.APIObtenerCatalogos("CENTRO_GE");
             var result = JsonConvert.SerializeObject(list);
             return Content(result);
         }
